@@ -10,6 +10,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 70.0
 offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("1_v0qcp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
@@ -21,6 +23,7 @@ theme_override_constants/margin_top = 20
 
 [node name="SettingsButton" type="TextureButton" parent="MarginContainer" unique_id=1509285366]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture_normal = ExtResource("2_6jogs")
 texture_pressed = ExtResource("2_6jogs")

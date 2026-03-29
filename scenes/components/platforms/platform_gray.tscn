@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://birhevdxnyshv"]
+
+[ext_resource type="Texture2D" uid="uid://be4ph14delhb3" path="res://assets/platforms/Platform-gray-.png" id="1_ffpul"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkyd1"]
+radius = 171.45236
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6lwu"]
+size = Vector2(124.5, 249)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01fni"]
+size = Vector2(122, 248)
+
+[node name="PlatformGray" type="StaticBody2D" unique_id=873861247]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=731532568]
+texture = ExtResource("1_ffpul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=528054166]
+position = Vector2(-1.1920929e-07, -27.142859)
+shape = SubResource("CircleShape2D_jkyd1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=278717421]
+position = Vector2(-112.25, 84.5)
+shape = SubResource("RectangleShape2D_q6lwu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1362425572]
+position = Vector2(112, 85)
+shape = SubResource("RectangleShape2D_01fni")

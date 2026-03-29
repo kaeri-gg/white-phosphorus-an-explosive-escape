@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://chp22pksyjabh"]
+
+[ext_resource type="Texture2D" uid="uid://d2snu503ihutf" path="res://assets/platforms/Platform-white-electricity.png" id="1_3mf8q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds5ei"]
+radius = 121.06033
+height = 497.93448
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx6lm"]
+size = Vector2(524, 326)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mf8q"]
+radius = 16.421837
+height = 155.432
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx6lm"]
+radius = 14.0
+height = 144.1189
+
+[node name="PlatformWhiteElectricity" type="StaticBody2D" unique_id=1775069916]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=98179778]
+texture = ExtResource("1_3mf8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550452087]
+position = Vector2(10, -34)
+rotation = 1.5707511
+shape = SubResource("CapsuleShape2D_ds5ei")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1555355613]
+position = Vector2(9, 19)
+shape = SubResource("RectangleShape2D_bx6lm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1397994747]
+position = Vector2(-175.99998, -133)
+rotation = 1.4971586
+shape = SubResource("CapsuleShape2D_3mf8q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=804102601]
+position = Vector2(207.00002, -136.00002)
+rotation = 1.6395829
+scale = Vector2(0.96524334, -0.8507699)
+shape = SubResource("CapsuleShape2D_bx6lm")

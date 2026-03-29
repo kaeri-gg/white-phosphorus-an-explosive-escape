@@ -4,8 +4,8 @@
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_bmajt"]
 [ext_resource type="Script" uid="uid://dd8b2soj8keq5" path="res://scripts/managers/modal_manager.gd" id="2_suqfr"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="2_v65hy"]
-[ext_resource type="Script" uid="uid://wiwu7rye4fmx" path="res://scripts/settings_control.gd" id="3_qtb06"]
-[ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/close_button.tscn" id="3_suqfr"]
+[ext_resource type="Script" uid="uid://wiwu7rye4fmx" path="res://scripts/managers/settings_control.gd" id="3_qtb06"]
+[ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
 bg_color = Color(0.767407, 0.80040485, 0.9949432, 1)

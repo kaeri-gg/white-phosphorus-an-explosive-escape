@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://qk4cctayieey"]
 
-[ext_resource type="FontFile" uid="uid://bjtvtthbexde8" path="res://assets/fonts/ShantellSans-Regular.ttf" id="1_3mj2l"]
-[ext_resource type="Script" uid="uid://c8alujorx7t72" path="res://scripts/splash_screen.gd" id="1_hsxvm"]
-[ext_resource type="Texture2D" uid="uid://blmnrqs2rcstn" path="res://assets/images/godot_monochrome_light.svg" id="1_n4g2v"]
-[ext_resource type="Texture2D" uid="uid://4dek45kyjmyb" path="res://assets/images/godot_monochrome_light_2.svg" id="3_4gp4q"]
+[ext_resource type="FontFile" uid="uid://bjtvtthbexde8" path="res://assets/fonts/ShantellSans-Regular.ttf" id="1_wh6tg"]
+[ext_resource type="Script" uid="uid://c8alujorx7t72" path="res://scripts/ui/splash_screen.gd" id="2_usb1j"]
+[ext_resource type="Texture2D" uid="uid://blmnrqs2rcstn" path="res://assets/images/godot_monochrome_light.svg" id="3_lhnum"]
+[ext_resource type="Texture2D" uid="uid://4dek45kyjmyb" path="res://assets/images/godot_monochrome_light_2.svg" id="4_it15u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mj2l"]
 bg_color = Color(0.7101403, 0.72772706, 0.99529153, 1)
@@ -17,7 +17,7 @@ corner_radius_bottom_left = 5
 [sub_resource type="Theme" id="Theme_vbcv6"]
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/font_sizes/font_size = 16
-ProgressBar/fonts/font = ExtResource("1_3mj2l")
+ProgressBar/fonts/font = ExtResource("1_wh6tg")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_3mj2l")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_3mj2l")
 
@@ -35,7 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vbcv6")
-script = ExtResource("1_hsxvm")
+script = ExtResource("2_usb1j")
 
 [node name="Background" type="PanelContainer" parent="." unique_id=1190280473]
 layout_mode = 1
@@ -64,7 +64,7 @@ size_flags_vertical = 4
 [node name="GodotLogo" type="TextureRect" parent="MarginContainer" unique_id=1645713020]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_n4g2v")
+texture = ExtResource("3_lhnum")
 expand_mode = 5
 stretch_mode = 5
 
@@ -86,7 +86,7 @@ size_flags_vertical = 4
 [node name="GodotTeeth" type="TextureRect" parent="MarginContainer2" unique_id=1637186331]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("3_4gp4q")
+texture = ExtResource("4_it15u")
 expand_mode = 5
 stretch_mode = 5
 

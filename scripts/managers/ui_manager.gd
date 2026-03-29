@@ -23,5 +23,14 @@ func initiate_modal_and() -> ModalManager:
 func open_settings_modal() -> void:
 	initiate_modal_and().show_settings()
 
+func toggle_settings_modal() -> void:
+	var manager := initiate_modal_and()
+
+	if manager.is_open():
+		manager.close_modal()
+		return
+
+	manager.show_settings()
+
 func open_about_us_modal() -> void:
 	initiate_modal_and().show_about_us()

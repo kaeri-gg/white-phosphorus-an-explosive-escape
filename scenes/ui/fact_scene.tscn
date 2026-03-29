@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d2xguvgncyliw"]
+
+[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="1_lfn46"]
+[ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="1_vo2tk"]
+[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="2_hepna"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="3_vo2tk"]
+[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="4_hepna"]
+
+[sub_resource type="Theme" id="Theme_0p1u4"]
+
+[node name="FactScreen" type="Control" unique_id=524710273]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vo2tk")
+
+[node name="Background" type="TextureRect" parent="." unique_id=313513725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0p1u4")
+texture = ExtResource("1_lfn46")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("2_hepna")]
+layout_mode = 0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("3_vo2tk")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=655536415]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="ProceedButton" parent="MarginContainer" unique_id=237858599 instance=ExtResource("4_hepna")]
+layout_mode = 2
+custom_label_text = "Proceed"

@@ -14,11 +14,15 @@ func _ready() -> void:
 		"settings": settings,
 		"about-the-game": about_the_game,
 	}
+	hide()
 
 	sound_manager.play("EnterGame")
 	
 	close_button.on_click.connect(close_modal)
 	return_to_home_link.pressed.connect(return_to_home)
+
+func is_open() -> bool:
+	return visible
 	
 func open_modal(view_name: String) -> void:
 	for view in modal_views.values():
@@ -44,4 +48,4 @@ func close_modal() -> void:
 	
 func return_to_home() -> void:
 	close_modal()
-	get_tree().change_scene_to_file("res://scenes/game_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/game_menu.tscn")

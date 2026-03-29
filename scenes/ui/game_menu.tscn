@@ -1,15 +1,33 @@
 [gd_scene format=3 uid="uid://4ht2ox1qqc7q"]
 
-[ext_resource type="Texture2D" uid="uid://bc68rpohsx0ea" path="res://assets/images/godot_monochrome_dark.svg" id="1_qdaa4"]
-[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_vrsc2"]
-[ext_resource type="Script" uid="uid://qbmmulf7ilvg" path="res://scripts/game_menu.gd" id="2_ldg7d"]
-[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/settings_button.tscn" id="3_ysvk1"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_3rbob"]
+[ext_resource type="Script" uid="uid://qbmmulf7ilvg" path="res://scripts/ui/game_menu.gd" id="2_bpafv"]
+[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="3_1djrs"]
+[ext_resource type="Texture2D" uid="uid://bc68rpohsx0ea" path="res://assets/images/godot_monochrome_dark.svg" id="4_yyry6"]
+[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_ah5xx"]
+[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="6_nrj1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdnys"]
 bg_color = Color(0.8557774, 0.85455686, 0.9922696, 1)
 
 [sub_resource type="Theme" id="Theme_cdnys"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_cdnys")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldg7d"]
+bg_color = Color(0.93333334, 0.93333334, 0.93333334, 0.85882354)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.1254902)
+shadow_size = 7
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_aru3y"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ldg7d")
 
 [node name="GameMenu" type="Control" unique_id=1655687596]
 layout_mode = 3
@@ -18,10 +36,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_vrsc2")
-script = ExtResource("2_ldg7d")
+theme = ExtResource("1_3rbob")
+script = ExtResource("2_bpafv")
 
-[node name="Background" type="PanelContainer" parent="." unique_id=1569627646]
+[node name="Background" type="TextureRect" parent="." unique_id=395751314]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +47,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cdnys")
+texture = ExtResource("3_1djrs")
+expand_mode = 5
 
 [node name="ContentsContainer" type="VBoxContainer" parent="." unique_id=46252598]
 custom_minimum_size = Vector2(500, 0)
@@ -54,15 +74,22 @@ size_flags_vertical = 4
 [node name="GodotLogo" type="TextureRect" parent="ContentsContainer/LogoContainer" unique_id=1414926119]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_qdaa4")
+texture = ExtResource("4_yyry6")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="DescriptionContainer" type="MarginContainer" parent="ContentsContainer" unique_id=232728006]
+[node name="DescriptionContainer" type="PanelContainer" parent="ContentsContainer" unique_id=1148303446]
 layout_mode = 2
+theme = SubResource("Theme_aru3y")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentsContainer/DescriptionContainer" unique_id=340691453]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="ContentsContainer/DescriptionContainer" unique_id=1685365600]
+[node name="Label" type="Label" parent="ContentsContainer/DescriptionContainer/MarginContainer" unique_id=1685365600]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
@@ -70,15 +97,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ButtonContainer" type="MarginContainer" parent="ContentsContainer" unique_id=58304629]
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="StartGameButton" type="Button" parent="ContentsContainer/ButtonContainer" unique_id=1062541276]
+[node name="StartGameButton" parent="ContentsContainer" unique_id=1077547119 instance=ExtResource("5_ah5xx")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Start Game"
+custom_label_text = "Start game"
 
 [node name="LinksContainer" type="MarginContainer" parent="ContentsContainer" unique_id=873313402]
 layout_mode = 2
@@ -90,9 +112,10 @@ size_flags_horizontal = 4
 text = "About"
 underline = 1
 
-[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("3_ysvk1")]
+[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("6_nrj1f")]
 unique_name_in_owner = true
 layout_mode = 0
+grow_horizontal = 1
+grow_vertical = 1
 
-[connection signal="pressed" from="ContentsContainer/ButtonContainer/StartGameButton" to="." method="start_game"]
 [connection signal="pressed" from="ContentsContainer/LinksContainer/AboutLinkButton" to="." method="show_about_us"]

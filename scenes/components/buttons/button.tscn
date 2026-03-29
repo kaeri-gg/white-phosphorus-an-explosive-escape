@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1pv2we0ls36c"]
+
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_gpd8i"]
+[ext_resource type="Script" path="res://scripts/components/button.gd" id="2_xafwk"]
+
+[node name="ButtonContainer" type="Control" unique_id=237858599]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 60.0
+size_flags_horizontal = 4
+theme = ExtResource("1_gpd8i")
+script = ExtResource("2_xafwk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1195312166]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 60.0
+theme = ExtResource("1_gpd8i")
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=428969513]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
