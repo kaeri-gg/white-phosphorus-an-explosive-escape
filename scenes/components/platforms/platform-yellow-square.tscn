@@ -1,28 +1,48 @@
 [gd_scene format=3 uid="uid://bn6iix4bnoteb"]
 
-[ext_resource type="Texture2D" uid="uid://o6bppqyqi2h5" path="res://assets/platforms/Platform-yellow-square.png" id="1_4aq06"]
+[ext_resource type="Texture2D" uid="uid://gx5schxd4hk8" path="res://assets/platforms/Platform 1.png" id="1_a8sec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aq06"]
-radius = 67.0
-height = 384.0
+radius = 24.285713
+height = 364.2724
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8sec"]
+radius = 10.736526
 
 [node name="PlatformYellowSquare" type="StaticBody2D" unique_id=1399212371]
 scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=698126964]
-texture = ExtResource("1_4aq06")
+position = Vector2(-2.857143, 41.42857)
+scale = Vector2(0.38812786, 0.40983605)
+texture = ExtResource("1_a8sec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=363459197]
-position = Vector2(-3, -103)
+position = Vector2(-8.571429, -139.99998)
 rotation = 1.5707964
+scale = Vector2(-1.0646107, 0.7059082)
 shape = SubResource("CapsuleShape2D_4aq06")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=388068112]
-position = Vector2(-139, 35.000015)
+position = Vector2(-172.85715, 50)
 rotation = -3.1415925
+scale = Vector2(1, 0.92814094)
 shape = SubResource("CapsuleShape2D_4aq06")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=934088349]
-position = Vector2(133, 33)
+position = Vector2(161.42857, 50.000004)
 rotation = -3.1415925
+scale = Vector2(1, 0.9460231)
 shape = SubResource("CapsuleShape2D_4aq06")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1823055878]
+position = Vector2(-148.57143, -122.85714)
+rotation = -0.66212565
+scale = Vector2(-5.152846, 2.6962752)
+shape = SubResource("CircleShape2D_a8sec")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1143716813]
+position = Vector2(137.14284, -124.28566)
+rotation = 0.6555064
+scale = Vector2(-5.152846, 2.6962752)
+shape = SubResource("CircleShape2D_a8sec")

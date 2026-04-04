@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://ckj7fgxtg1c"]
 
 [ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="1_m802k"]
+[ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level_01.gd" id="1_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform-yellow-square.tscn" id="2_i2aat"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
 [ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="4_uvc87"]
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray.tscn" id="5_qdh5e"]
 [ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between.tscn" id="6_50wog"]
 [ext_resource type="PackedScene" uid="uid://chp22pksyjabh" path="res://scenes/components/platforms/platform_white_electricity.tscn" id="7_1ey3t"]
+[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t0hvh")
 
 [node name="Background" type="TextureRect" parent="." unique_id=513751204]
 layout_mode = 1
@@ -27,7 +30,15 @@ texture = ExtResource("1_m802k")
 expand_mode = 3
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
-position = Vector2(177, 345)
+unique_name_in_owner = true
+position = Vector2(382, 526)
+JUMP_VELOCITY = -500.0
+
+[node name="Water" type="Node2D" parent="." unique_id=1444035852]
+position = Vector2(297, 491)
+script = ExtResource("9_kfebt")
+water_size = Vector2(310, 140)
+metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="PlatformYellowSquare" parent="." unique_id=1399212371 instance=ExtResource("2_i2aat")]
 position = Vector2(180, 588)

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bm4ep4v6dstvw"]
+
+[ext_resource type="Texture2D" uid="uid://dlhoum7k1oqpe" path="res://assets/platforms/Water tank 2.png" id="1_uep1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fgos"]
+size = Vector2(485, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deapc"]
+size = Vector2(26, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ixvt"]
+size = Vector2(23, 209)
+
+[node name="PlatformGrayTank" type="StaticBody2D" unique_id=1432242628]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1649247852]
+scale = Vector2(0.56248206, 0.5615937)
+texture = ExtResource("1_uep1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797202129]
+position = Vector2(27.5, 92.5)
+shape = SubResource("RectangleShape2D_5fgos")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=153015270]
+position = Vector2(-201, -125)
+shape = SubResource("RectangleShape2D_deapc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=463113267]
+position = Vector2(259.5, -125.5)
+shape = SubResource("RectangleShape2D_8ixvt")

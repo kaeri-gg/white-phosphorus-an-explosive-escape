@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dedns20av8iss"]
+
+[ext_resource type="Texture2D" uid="uid://dbbmphekxei3m" path="res://assets/platforms/Inbetween 3.png" id="1_hvn37"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvn37"]
+size = Vector2(62.549713, 31.386055)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0whge"]
+size = Vector2(64, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clqvb"]
+radius = 11.710628
+
+[node name="PlatformRedInBetween2" type="StaticBody2D" unique_id=1892193927]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1506521768]
+scale = Vector2(0.25306225, 0.2572802)
+texture = ExtResource("1_hvn37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252064559]
+position = Vector2(-7.5, 22)
+scale = Vector2(1.4868174, 1.9116769)
+shape = SubResource("RectangleShape2D_hvn37")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1864638344]
+position = Vector2(-62, -38)
+shape = SubResource("RectangleShape2D_0whge")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1602465429]
+position = Vector2(-56.000004, 10)
+rotation = -0.32125157
+scale = Vector2(3.1320963, 3.1999764)
+shape = SubResource("CircleShape2D_clqvb")

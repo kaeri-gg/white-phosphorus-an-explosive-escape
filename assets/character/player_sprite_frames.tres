@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://51dfugtruwpv"]
+
+[ext_resource type="Texture2D" uid="uid://dtgb8n5wo8q6j" path="res://assets/character/shaking.png" id="1_cej5n"]
+[ext_resource type="Texture2D" uid="uid://3hkacelqwncl" path="res://assets/character/evolved.png" id="1_dchb2"]
+[ext_resource type="Texture2D" uid="uid://8faows0vjy1y" path="res://assets/character/stable.png" id="1_h8nax"]
+[ext_resource type="Texture2D" uid="uid://damv1o27t2vw6" path="res://assets/character/burning.png" id="1_lxjjv"]
+[ext_resource type="Texture2D" uid="uid://c4cmsvj71gn1p" path="res://assets/character/tutorial-images/Phosphorus VIBRATING glowing tutorial.png" id="2_jfkvh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfkvh"]
+atlas = ExtResource("1_lxjjv")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxjjv"]
+atlas = ExtResource("2_jfkvh")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ksb"]
+atlas = ExtResource("1_dchb2")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dchb2"]
+atlas = ExtResource("1_cej5n")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cej5n"]
+atlas = ExtResource("1_h8nax")
+region = Rect2(0, 0, 1920, 1080)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfkvh")
+}],
+"loop": true,
+"name": &"burning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxjjv")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6ksb")
+}],
+"loop": true,
+"name": &"evolved",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dchb2")
+}],
+"loop": true,
+"name": &"shaking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cej5n")
+}],
+"loop": true,
+"name": &"stable",
+"speed": 5.0
+}]

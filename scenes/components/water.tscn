@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cid873k1mkag8"]
+
+[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="1_goeht"]
+
+[node name="Water" type="Node2D" unique_id=285385396]
+script = ExtResource("1_goeht")
+surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.90588236)
+water_fill_color = Color(0.21568628, 0.6901961, 0.77254903, 0.54901963)

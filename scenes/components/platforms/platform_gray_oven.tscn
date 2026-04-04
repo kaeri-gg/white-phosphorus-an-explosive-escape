@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://db1bpjitnkams"]
+
+[ext_resource type="Texture2D" uid="uid://cfrqjqel35ywv" path="res://assets/platforms/Vaccum oven_without glass.png" id="1_j73on"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io0u6"]
+size = Vector2(810, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0umn"]
+size = Vector2(84, 389)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bfph"]
+size = Vector2(266, 387)
+
+[node name="PlatformGrayOven" type="StaticBody2D" unique_id=2138956466]
+scale = Vector2(0.99299026, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236366085]
+scale = Vector2(0.90935105, 0.9108993)
+texture = ExtResource("1_j73on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1761331364]
+position = Vector2(38, 290)
+shape = SubResource("RectangleShape2D_io0u6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2115977280]
+position = Vector2(-324, -27.5)
+shape = SubResource("RectangleShape2D_q0umn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1284659822]
+position = Vector2(309, -29.5)
+shape = SubResource("RectangleShape2D_5bfph")

@@ -1,30 +1,35 @@
 [gd_scene format=3 uid="uid://di6q1k56qura0"]
 
-[ext_resource type="Texture2D" uid="uid://hc11wqiak3nj" path="res://assets/platforms/Platform inbetween 1.png" id="1_uokra"]
+[ext_resource type="Texture2D" uid="uid://ccr4ihej3jug" path="res://assets/platforms/Inbetween 1.png" id="1_bjdiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kanhf"]
-size = Vector2(324, 51)
+size = Vector2(327.7143, 45.142857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uuw"]
-size = Vector2(20, 71)
+size = Vector2(20, 62.642857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjeu"]
-size = Vector2(14, 73)
+size = Vector2(17, 63.64286)
 
 [node name="PlatformYellowInbetween" type="StaticBody2D" unique_id=532329559]
 scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=145495478]
-texture = ExtResource("1_uokra")
+position = Vector2(-8.571428, -2.8571434)
+scale = Vector2(0.22593348, 0.19506174)
+texture = ExtResource("1_bjdiq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237264755]
-position = Vector2(-1, -2.5)
+position = Vector2(-5.7142863, -5.714286)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_kanhf")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1423474684]
-position = Vector2(-173, -5)
+position = Vector2(-179.99997, -5.6071424)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_45uuw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=133118104]
-position = Vector2(168, -3.5)
+position = Vector2(167.21425, -4.678569)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_wtjeu")

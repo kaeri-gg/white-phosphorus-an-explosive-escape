@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://iblv3dg4o762"]
+
+[ext_resource type="Texture2D" uid="uid://c0jlfv5gyfav7" path="res://assets/platforms/Inbetween 4.png" id="1_i3cf8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3cf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efs7p"]
+size = Vector2(254, 107)
+
+[node name="PlatformGrayInBetween3" type="StaticBody2D" unique_id=1596610064]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193171271]
+position = Vector2(24, 22)
+scale = Vector2(0.6763866, 0.6763866)
+texture = ExtResource("1_i3cf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=276899749]
+position = Vector2(-2.0000005, 6.0000005)
+scale = Vector2(17.939043, 17.601463)
+shape = SubResource("CircleShape2D_i3cf8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1704102572]
+position = Vector2(-4, 216.5)
+shape = SubResource("RectangleShape2D_efs7p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=818832412]
+position = Vector2(-4, -182)
+shape = SubResource("RectangleShape2D_efs7p")
