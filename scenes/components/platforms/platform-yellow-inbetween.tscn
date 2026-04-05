@@ -2,15 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ccr4ihej3jug" path="res://assets/platforms/Inbetween 1.png" id="1_bjdiq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kanhf"]
-size = Vector2(327.7143, 45.142857)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uuw"]
-size = Vector2(20, 62.642857)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjeu"]
-size = Vector2(17, 63.64286)
-
 [node name="PlatformYellowInbetween" type="StaticBody2D" unique_id=532329559]
 scale = Vector2(0.7, 0.7)
 
@@ -19,17 +10,6 @@ position = Vector2(-8.571428, -2.8571434)
 scale = Vector2(0.22593348, 0.19506174)
 texture = ExtResource("1_bjdiq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237264755]
-position = Vector2(-5.7142863, -5.714286)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_kanhf")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1423474684]
-position = Vector2(-179.99997, -5.6071424)
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_45uuw")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=133118104]
-position = Vector2(167.21425, -4.678569)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_wtjeu")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1093761122]
+build_mode = 1
+polygon = PackedVector2Array(-181.42856, -38.571426, -177.14285, -38.571426, -171.42856, -35.714283, -169.99998, -28.571426, -58.571426, -28.571426, 155.71428, -28.571426, 157.14285, -32.85714, 159.99998, -35.714283, 164.2857, -37.142857, 169.99998, -37.142857, 174.2857, -34.285713, 175.71428, -31.42857, 175.71428, 19.999998, 174.2857, 22.857141, 169.99998, 25.714285, 164.2857, 25.714285, 159.99998, 24.285713, 157.14285, 19.999998, 157.14285, 17.142857, 19.999998, 17.142857, -169.99998, 17.142857, -169.99998, 19.999998, -172.85713, 24.285713, -178.57141, 27.142855, -184.2857, 25.714285, -188.57141, 22.857141, -189.99998, 17.142857, -189.99998, -29.999998, -188.57141, -32.85714, -187.14285, -35.714283)

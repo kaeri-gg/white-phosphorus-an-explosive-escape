@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://damv1o27t2vw6"
-path="res://.godot/imported/burning.png-6990813645afd798d013136701b27a61.ctex"
+uid="uid://bawbh7jdeb3u"
+path="res://.godot/imported/IDLE-blink-Animation-_06.png-b7e320383536d5c24dc338aa00fd5489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/burning.png"
-dest_files=["res://.godot/imported/burning.png-6990813645afd798d013136701b27a61.ctex"]
+source_file="res://assets/character/stable-blink/IDLE-blink-Animation-_06.png"
+dest_files=["res://.godot/imported/IDLE-blink-Animation-_06.png-b7e320383536d5c24dc338aa00fd5489.ctex"]
 
 [params]
 

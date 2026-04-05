@@ -2,11 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c0jlfv5gyfav7" path="res://assets/platforms/Inbetween 4.png" id="1_i3cf8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i3cf8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efs7p"]
-size = Vector2(254, 107)
-
 [node name="PlatformGrayInBetween3" type="StaticBody2D" unique_id=1596610064]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193171271]
@@ -14,15 +9,6 @@ position = Vector2(24, 22)
 scale = Vector2(0.6763866, 0.6763866)
 texture = ExtResource("1_i3cf8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=276899749]
-position = Vector2(-2.0000005, 6.0000005)
-scale = Vector2(17.939043, 17.601463)
-shape = SubResource("CircleShape2D_i3cf8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1704102572]
-position = Vector2(-4, 216.5)
-shape = SubResource("RectangleShape2D_efs7p")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=818832412]
-position = Vector2(-4, -182)
-shape = SubResource("RectangleShape2D_efs7p")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1696525463]
+build_mode = 1
+polygon = PackedVector2Array(-134, -237, 122, -236, 127, -220, 125, -208, 107, -178, 84, -175, 84, -154, 120, -129, 140, -104, 157, -76, 167, -49, 173, -24, 177, 6, 173, 41, 160, 79, 149, 104, 131, 128, 112, 149, 85, 168, 83, 215, 108, 216, 124, 246, 124, 271, -132, 274, -136, 267, -135, 243, -119, 217, -93, 217, -93, 165, -111, 152, -127, 139, -140, 124, -154, 105, -165, 82, -173, 62, -177, 45, -180, 19, -179, -12, -174, -41, -165, -69, -148, -100, -128, -124, -107, -142, -93, -152, -93, -177, -127, -182, -134, -207)

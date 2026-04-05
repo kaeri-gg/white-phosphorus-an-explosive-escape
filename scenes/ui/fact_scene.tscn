@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d2xguvgncyliw"]
 
-[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="1_lfn46"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="1_vo2tk"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="2_hepna"]
+[ext_resource type="Texture2D" uid="uid://rwyihd4c8chh" path="res://assets/backgrounds/tutorial-backgrounds/Screen 0.1_Tutorial light.png" id="2_vo2tk"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="3_vo2tk"]
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="4_hepna"]
 
@@ -25,7 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0p1u4")
-texture = ExtResource("1_lfn46")
+texture = ExtResource("2_vo2tk")
 expand_mode = 3
 stretch_mode = 5
 

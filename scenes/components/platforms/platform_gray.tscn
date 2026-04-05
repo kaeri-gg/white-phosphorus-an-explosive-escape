@@ -2,19 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://baxkf7sbk4cha" path="res://assets/platforms/Platform 2.png" id="1_ffpul"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6lwu"]
-size = Vector2(114.28572, 346.14285)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_01fni"]
-size = Vector2(115.85713, 344.71426)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffpul"]
-radius = 102.713486
-height = 205.42697
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpul"]
-size = Vector2(236.78574, 95.000046)
-
 [node name="PlatformGray" type="StaticBody2D" unique_id=873861247]
 scale = Vector2(0.7, 0.7)
 
@@ -23,27 +10,7 @@ position = Vector2(0, 12.857143)
 scale = Vector2(0.5416824, 0.5416824)
 texture = ExtResource("1_ffpul")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=278717421]
-position = Vector2(-115.71427, 35.928562)
-scale = Vector2(0.99999964, 0.99999964)
-shape = SubResource("RectangleShape2D_q6lwu")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1362425572]
-position = Vector2(115.071396, 36.642864)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_01fni")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=176758518]
-position = Vector2(-118.57143, -137.14285)
-scale = Vector2(0.5237268, 0.5424244)
-shape = SubResource("CapsuleShape2D_ffpul")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1409830720]
-position = Vector2(118.57143, -137.14285)
-scale = Vector2(0.5237268, 0.5424244)
-shape = SubResource("CapsuleShape2D_ffpul")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=1934424995]
-position = Vector2(-2.6785572, -145.3571)
-scale = Vector2(0.99999964, 0.99999964)
-shape = SubResource("RectangleShape2D_ffpul")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=380821707]
+position = Vector2(-130, -192.85715)
+build_mode = 1
+polygon = PackedVector2Array(11.428566, -1.4285736, 131.42856, -2.8571472, 247.14284, -2.8571472, 264.2857, 1.4285736, 277.14282, 7.142853, 288.5714, 15.714279, 297.14282, 27.142853, 302.85712, 40, 305.71426, 50, 307.14282, 94.285706, 305.71426, 370, 309.99997, 377.14282, 312.85712, 394.2857, 311.42853, 404.2857, 185.71426, 405.71426, -45.714294, 405.71426, -52.857147, 401.42853, -55.714294, 390, -50, 385.71426, -45.714294, 357.14282, -44.28572, 60, -41.428574, 40, -37.142868, 30, -31.428574, 21.428574, -20, 10, -10, 4.285721, 0, 0)

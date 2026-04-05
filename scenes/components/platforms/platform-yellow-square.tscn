@@ -2,13 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://gx5schxd4hk8" path="res://assets/platforms/Platform 1.png" id="1_a8sec"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aq06"]
-radius = 24.285713
-height = 364.2724
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a8sec"]
-radius = 10.736526
-
 [node name="PlatformYellowSquare" type="StaticBody2D" unique_id=1399212371]
 scale = Vector2(0.7, 0.7)
 
@@ -17,32 +10,6 @@ position = Vector2(-2.857143, 41.42857)
 scale = Vector2(0.38812786, 0.40983605)
 texture = ExtResource("1_a8sec")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=363459197]
-position = Vector2(-8.571429, -139.99998)
-rotation = 1.5707964
-scale = Vector2(-1.0646107, 0.7059082)
-shape = SubResource("CapsuleShape2D_4aq06")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=388068112]
-position = Vector2(-172.85715, 50)
-rotation = -3.1415925
-scale = Vector2(1, 0.92814094)
-shape = SubResource("CapsuleShape2D_4aq06")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=934088349]
-position = Vector2(161.42857, 50.000004)
-rotation = -3.1415925
-scale = Vector2(1, 0.9460231)
-shape = SubResource("CapsuleShape2D_4aq06")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1823055878]
-position = Vector2(-148.57143, -122.85714)
-rotation = -0.66212565
-scale = Vector2(-5.152846, 2.6962752)
-shape = SubResource("CircleShape2D_a8sec")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1143716813]
-position = Vector2(137.14284, -124.28566)
-rotation = 0.6555064
-scale = Vector2(-5.152846, 2.6962752)
-shape = SubResource("CircleShape2D_a8sec")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1763126541]
+build_mode = 1
+polygon = PackedVector2Array(-171.42856, -141.42856, -157.14285, -152.85713, -142.85713, -159.99998, -119.99999, -165.71428, -32.85714, -167.14285, 109.99999, -165.71428, 131.42856, -161.42856, 148.57143, -152.85713, 158.57143, -144.2857, 168.57141, -134.2857, 177.14285, -122.85713, 184.2857, -108.57142, 189.99998, -91.428566, 192.85713, -72.85714, 192.85713, 207.14284, 199.99998, 208.57141, 204.2857, 212.85713, 205.71428, 231.42856, 131.42856, 231.42856, 127.14285, 222.85713, 129.99998, 214.2857, 132.85713, 208.57141, 141.42856, 205.71428, 141.42856, -62.85714, 139.99998, -81.428566, 134.2857, -94.285706, 122.85713, -105.71428, 108.57142, -111.428566, 97.14285, -112.85714, 0, -112.85714, -112.85714, -112.85714, -119.99999, -111.428566, -131.42856, -105.71428, -139.99998, -98.57143, -145.71428, -88.57143, -148.57143, -77.14285, -148.57143, 0, -148.57143, 207.14284, -141.42856, 208.57141, -137.14285, 214.2857, -137.14285, 227.14284, -141.42856, 231.42856, -152.85713, 232.85713, -205.71428, 232.85713, -212.85713, 228.57141, -217.14284, 218.57141, -212.85713, 211.42856, -208.57141, 208.57141, -202.85713, 207.14284, -201.42856, -75.71428, -198.57141, -91.428566, -195.71428, -102.85714, -189.99998, -115.71428, -181.42856, -129.99998)

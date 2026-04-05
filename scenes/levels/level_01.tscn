@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between.tscn" id="6_50wog"]
 [ext_resource type="PackedScene" uid="uid://chp22pksyjabh" path="res://scenes/components/platforms/platform_white_electricity.tscn" id="7_1ey3t"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
+[ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/timer.tscn" id="10_r72dd"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -32,7 +33,6 @@ expand_mode = 3
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
 position = Vector2(382, 526)
-JUMP_VELOCITY = -500.0
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(297, 491)
@@ -41,16 +41,20 @@ water_size = Vector2(310, 140)
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="PlatformYellowSquare" parent="." unique_id=1399212371 instance=ExtResource("2_i2aat")]
-position = Vector2(180, 588)
+position = Vector2(181, 557)
 
 [node name="PlatformYellowInbetween" parent="." unique_id=532329559 instance=ExtResource("4_uvc87")]
 position = Vector2(449, 619.00006)
 
 [node name="PlatformGray" parent="." unique_id=873861247 instance=ExtResource("5_qdh5e")]
-position = Vector2(694, 576)
+position = Vector2(694.00006, 571.00006)
 
 [node name="PlatformRedInBetween" parent="." unique_id=1493183219 instance=ExtResource("6_50wog")]
-position = Vector2(849.00006, 635)
+position = Vector2(854.00006, 616)
 
 [node name="PlatformWhiteElectricity" parent="." unique_id=1775069916 instance=ExtResource("7_1ey3t")]
-position = Vector2(1060.0001, 591)
+position = Vector2(1073, 574)
+scale = Vector2(0.7972327, 0.7972327)
+
+[node name="Timer" parent="." unique_id=291529227 instance=ExtResource("10_r72dd")]
+layout_mode = 1

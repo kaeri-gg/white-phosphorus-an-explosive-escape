@@ -2,15 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c337mop1l6jon" path="res://assets/platforms/Platform 4.png" id="1_n6siv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lyw3"]
-size = Vector2(550, 54)
-
 [node name="PlatformGrayPipe" type="StaticBody2D" unique_id=1415318706]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=489830136]
 scale = Vector2(0.37177783, 0.37177783)
 texture = ExtResource("1_n6siv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1807340793]
-position = Vector2(-14, -34)
-shape = SubResource("RectangleShape2D_2lyw3")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=898364908]
+build_mode = 1
+polygon = PackedVector2Array(-289, -78, -269, -76, -268, -62, 238, -63, 241, -78, 258, -79, 263, -6, 255, 9, -289, 8)

@@ -2,21 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://6dve5fy882mo" path="res://assets/platforms/Platform 3.png" id="1_3mf8q"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds5ei"]
-radius = 37.142723
-height = 220.00075
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx6lm"]
-size = Vector2(451.4286, 340.00003)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mf8q"]
-radius = 16.421837
-height = 155.432
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx6lm"]
-radius = 14.0
-height = 145.4505
-
 [node name="PlatformWhiteElectricity" type="StaticBody2D" unique_id=1775069916]
 scale = Vector2(0.7, 0.7)
 
@@ -24,25 +9,6 @@ scale = Vector2(0.7, 0.7)
 scale = Vector2(0.43921652, 0.43921652)
 texture = ExtResource("1_3mf8q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550452087]
-position = Vector2(11.428572, -137.14285)
-rotation = 1.5707511
-scale = Vector2(0.96390647, 1.0579653)
-shape = SubResource("CapsuleShape2D_ds5ei")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1555355613]
-position = Vector2(7.1428695, 24.285725)
-scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_bx6lm")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1397994747]
-position = Vector2(-121.42856, -150.00003)
-rotation = 1.4943845
-scale = Vector2(1.0241964, 0.94809926)
-shape = SubResource("CapsuleShape2D_3mf8q")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=804102601]
-position = Vector2(148.57147, -155.71428)
-rotation = 1.6395829
-scale = Vector2(0.96524334, -0.8507699)
-shape = SubResource("CapsuleShape2D_bx6lm")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1040010998]
+build_mode = 1
+polygon = PackedVector2Array(-218.57141, -147.14285, -199.99998, -148.57143, -187.14285, -161.42856, -115.71428, -169.99998, 0, -174.2857, 117.14285, -171.42856, 204.2857, -164.2857, 219.99998, -147.14285, 231.42856, -145.71428, 234.2857, 11.428571, 245.71426, 9.999999, 247.14284, 92.85714, 232.85713, 99.99999, 232.85713, 182.85713, 105.71428, 194.2857, -2.8571427, 195.71428, -155.71428, 188.57141, -217.14284, 182.85713, -217.14284, 91.428566, -227.14284, 94.285706, -231.42856, 89.99999, -231.42856, 14.285713, -225.71428, 7.1428566, -215.71428, 5.7142854)

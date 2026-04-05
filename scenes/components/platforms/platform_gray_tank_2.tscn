@@ -2,23 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dehsrfp5vb4v3" path="res://assets/platforms/Platform 5.png" id="1_d4ku3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2cc3"]
-size = Vector2(459, 391)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n12bg"]
-size = Vector2(513, 29)
-
 [node name="PlatformGrayTank2" type="StaticBody2D" unique_id=1863363077]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=676758134]
 scale = Vector2(0.61246127, 0.61463857)
 texture = ExtResource("1_d4ku3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2054156221]
-position = Vector2(11.5, -32.5)
-shape = SubResource("RectangleShape2D_e2cc3")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=936901874]
-position = Vector2(11.5, -243.5)
-scale = Vector2(1.001661, 1)
-shape = SubResource("RectangleShape2D_n12bg")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1633394133]
+build_mode = 1
+polygon = PackedVector2Array(-247, -255, 267, -255, 268, -249, 241, -211, 241, 2, 256, 2, 257, 163, 234, 163, 28, 176, -2, 177, -243, 163, -243, 158, -234, 157, -234, 0, -220, 1, -219, -211)

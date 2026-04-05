@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3hkacelqwncl"
-path="res://.godot/imported/evolved.png-f6c702dbb18c8c83101874b4e0e19ef0.ctex"
+uid="uid://bnlpw82bcy24e"
+path="res://.godot/imported/IDLEbrowsmove3.png-3bd5125ca8cb835acb0a5d6e3b88d736.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/evolved.png"
-dest_files=["res://.godot/imported/evolved.png-f6c702dbb18c8c83101874b4e0e19ef0.ctex"]
+source_file="res://assets/character/stable-eyebrows-move/IDLEbrowsmove3.png"
+dest_files=["res://.godot/imported/IDLEbrowsmove3.png-3bd5125ca8cb835acb0a5d6e3b88d736.ctex"]
 
 [params]
 

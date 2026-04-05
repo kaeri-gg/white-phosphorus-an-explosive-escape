@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://3uq6i8pr7jqi" path="res://assets/platforms/Inbetween 2.png" id="1_5r730"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r730"]
-size = Vector2(94.88706, 50)
-
 [node name="PlatformRedInBetween" type="StaticBody2D" unique_id=1493183219]
 scale = Vector2(0.7, 0.7)
 
@@ -12,7 +9,6 @@ scale = Vector2(0.7, 0.7)
 scale = Vector2(0.13614133, 0.11673608)
 texture = ExtResource("1_5r730")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=64433214]
-position = Vector2(-2.1428518, -0.99999964)
-scale = Vector2(1.0388288, 0.93943137)
-shape = SubResource("RectangleShape2D_5r730")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1427279283]
+build_mode = 1
+polygon = PackedVector2Array(-38.571426, -22.857141, 35.714283, -22.857141, 48.571426, -22.857141, 48.571426, 22.857141, 34.285713, 22.857141, -38.571426, 24.285713, -51.42857, 24.285713, -51.42857, -22.857141)

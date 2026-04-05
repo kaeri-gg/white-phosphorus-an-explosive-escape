@@ -2,15 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://8bef6ea04lbe" path="res://assets/platforms/Water tank 1.png" id="1_7pilo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dxfe"]
-size = Vector2(525, 220)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6x01"]
-size = Vector2(24, 178)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux1bb"]
-size = Vector2(27, 175)
-
 [node name="PlatformWhiteTank" type="StaticBody2D" unique_id=1227335199]
 position = Vector2(-1, -1)
 
@@ -18,14 +9,6 @@ position = Vector2(-1, -1)
 scale = Vector2(0.5112313, 0.5112313)
 texture = ExtResource("1_7pilo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1474937665]
-position = Vector2(9.5, 115)
-shape = SubResource("RectangleShape2D_0dxfe")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1648218146]
-position = Vector2(-240, -85)
-shape = SubResource("RectangleShape2D_r6x01")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1111418841]
-position = Vector2(257.5, -84.5)
-shape = SubResource("RectangleShape2D_ux1bb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1694042833]
+build_mode = 1
+polygon = PackedVector2Array(-253, -171, -228, -174, -221, -143, -215, -123, -209, -107, -202, -93, -194, -81, -185, -69, -171, -53, -155, -39, -132, -25, -115, -17, -94, -9, -71, -3, -43, 2, -18, 5, 2, 5, 24, 5, 45, 4, 63, 2, 90, -2, 119, -11, 136, -18, 153, -26, 172, -38, 188, -52, 203, -68, 214, -84, 222, -98, 227, -110, 232, -124, 237, -139, 240, -152, 243, -166, 243, -173, 256, -173, 270, -171, 272, -120, 272, 11, 277, 9, 281, 9, 287, 14, 288, 25, 288, 103, 285, 109, 274, 110, 271, 114, 271, 215, 203, 221, 113, 226, 2, 227, -88, 226, -252, 215, -252, 108, -259, 110, -266, 108, -269, 104, -270, 17, -266, 10, -261, 9, -254, 11, -252, 12)
