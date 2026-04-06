@@ -33,6 +33,7 @@ expand_mode = 3
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
 position = Vector2(382, 526)
+JUMP_VELOCITY = -600.0
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(297, 491)

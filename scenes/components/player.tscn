@@ -24,9 +24,9 @@ script = ExtResource("1_h3cwf")
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"stable_eyebrow"
+animation = &"shaking"
 autoplay = "stable"
-frame = 11
+frame = 26
 frame_progress = 1.0
 script = ExtResource("3_sjsxr")
 
