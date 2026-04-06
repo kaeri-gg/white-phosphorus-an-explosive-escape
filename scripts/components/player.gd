@@ -4,10 +4,13 @@ extends CharacterBody2D
 @onready var player_sprite: PlayerExpressions = %PlayerExpressionController
 @onready var air_timer: Timer = %AirTimer
 
-@export var SPEED = 400.0
-@export var JUMP_VELOCITY = -600.0
-@export var AIR_SURVIVAL_TIME = 3.0
-@export var PLAYER_HEALTH = 7
+@export var SPEED : float = 400.0
+@export var JUMP_VELOCITY : float = -500.0
+@export var AIR_SURVIVAL_TIME : float = 3.0
+@export var PLAYER_HEALTH : float = 7 
+
+const max_jump: int = 2
+var jump_count: int
 
 signal is_stable
 signal is_burning
@@ -65,13 +68,17 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if is_on_floor():
+		jump_count = 0
+		
 	if current_state == STATE.DEAD:
 		move_and_slide()
 		flip_char_on_move()
 		return
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jump:
+		jump_count += 1
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

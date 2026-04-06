@@ -37,10 +37,6 @@ func on_player_state_change(new_state: int) -> void:
 	if current_state == Player.STATE.SHAKING:
 		_start_shake_tween()
 		return
-		
-	if current_state == Player.STATE.BURNING:
-		_start_shake_tween()
-		return	
 
 	_stop_shake_tween()
 	if current_state != Player.STATE.STABLE:

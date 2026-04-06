@@ -32,6 +32,7 @@ func _ready() -> void:
 		i.queue_free()
 
 	initiate_water()
+	
 
 func initiate_water() -> void:
 	segment_data.clear()
