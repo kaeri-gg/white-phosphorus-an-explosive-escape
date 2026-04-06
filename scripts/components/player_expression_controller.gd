@@ -9,11 +9,19 @@ extends AnimatedSprite2D
 
 @export var EYEBROW_MIN_INTERVAL: float = 4.0
 @export var EYEBROW_MAX_INTERVAL: float = 8.0
+@export var SHAKE_TWEEN_OFFSET: float = 10.0
+@export var SHAKE_TWEEN_STEP_DURATION: float = 0.05
+@export var SHAKE_TWEEN_ROTATION_DEGREES: float = 4
 
 var current_state: int = Player.STATE.STABLE
 var is_playing_expression: bool = false
+var base_position: Vector2
+var base_rotation_degrees: float
+var shake_tween: Tween
 
 func _ready() -> void:
+	base_position = position
+	base_rotation_degrees = rotation_degrees
 	blink_timer.timeout.connect(_on_blink_timer_timeout)
 	eyebrow_timer.timeout.connect(_on_eyebrow_timer_timeout)
 	animation_finished.connect(_on_animation_finished)
@@ -25,6 +33,17 @@ func on_player_state_change(new_state: int) -> void:
 	current_state = new_state
 	if current_state != Player.STATE.STABLE:
 		is_playing_expression = false
+
+	if current_state == Player.STATE.SHAKING:
+		_start_shake_tween()
+		return
+		
+	if current_state == Player.STATE.BURNING:
+		_start_shake_tween()
+		return	
+
+	_stop_shake_tween()
+	if current_state != Player.STATE.STABLE:
 		return
 
 	play("stable")
@@ -66,3 +85,23 @@ func _on_animation_finished() -> void:
 	is_playing_expression = false
 	if current_state == Player.STATE.STABLE:
 		play("stable")
+
+func _start_shake_tween() -> void:
+	if shake_tween:
+		return
+
+	shake_tween = create_tween().set_loops()
+	shake_tween.tween_property(self, "position:x", SHAKE_TWEEN_OFFSET, SHAKE_TWEEN_STEP_DURATION).as_relative()
+	shake_tween.parallel().tween_property(self, "rotation_degrees", SHAKE_TWEEN_ROTATION_DEGREES, SHAKE_TWEEN_STEP_DURATION).as_relative()
+	shake_tween.tween_property(self, "position:x", -SHAKE_TWEEN_OFFSET * 2.0, SHAKE_TWEEN_STEP_DURATION * 2.0).as_relative()
+	shake_tween.parallel().tween_property(self, "rotation_degrees", -SHAKE_TWEEN_ROTATION_DEGREES * 2.0, SHAKE_TWEEN_STEP_DURATION * 2.0).as_relative()
+	shake_tween.tween_property(self, "position:x", SHAKE_TWEEN_OFFSET, SHAKE_TWEEN_STEP_DURATION).as_relative()
+	shake_tween.parallel().tween_property(self, "rotation_degrees", SHAKE_TWEEN_ROTATION_DEGREES, SHAKE_TWEEN_STEP_DURATION).as_relative()
+
+func _stop_shake_tween() -> void:
+	if shake_tween:
+		shake_tween.kill()
+		shake_tween = null
+
+	position = base_position
+	rotation_degrees = base_rotation_degrees

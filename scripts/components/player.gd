@@ -5,8 +5,9 @@ extends CharacterBody2D
 @onready var air_timer: Timer = %AirTimer
 
 @export var SPEED = 400.0
-@export var JUMP_VELOCITY = -900.0
+@export var JUMP_VELOCITY = -600.0
 @export var AIR_SURVIVAL_TIME = 3.0
+@export var PLAYER_HEALTH = 7
 
 signal is_stable
 signal is_burning
