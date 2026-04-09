@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="3_1djrs"]
 [ext_resource type="Texture2D" uid="uid://bc68rpohsx0ea" path="res://assets/images/godot_monochrome_dark.svg" id="4_yyry6"]
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_ah5xx"]
+[ext_resource type="Theme" uid="uid://bgddj2twi4roa" path="res://theme/panel_bg.tres" id="5_bpafv"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="6_nrj1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdnys"]
@@ -12,22 +13,6 @@ bg_color = Color(0.8557774, 0.85455686, 0.9922696, 1)
 
 [sub_resource type="Theme" id="Theme_cdnys"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_cdnys")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldg7d"]
-bg_color = Color(0.93333334, 0.93333334, 0.93333334, 0.85882354)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.1254902)
-shadow_size = 7
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="Theme" id="Theme_aru3y"]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_ldg7d")
 
 [node name="GameMenu" type="Control" unique_id=1655687596]
 layout_mode = 3
@@ -80,7 +65,7 @@ stretch_mode = 5
 
 [node name="DescriptionContainer" type="PanelContainer" parent="ContentsContainer" unique_id=1148303446]
 layout_mode = 2
-theme = SubResource("Theme_aru3y")
+theme = ExtResource("5_bpafv")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentsContainer/DescriptionContainer" unique_id=340691453]
 layout_mode = 2

@@ -1,12 +1,34 @@
-[gd_scene format=3 uid="uid://b5bct2oaokwv0"]
+[gd_scene format=3 uid="uid://0txwnlwqetgm"]
 
-[ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="1_t0rsu"]
-[ext_resource type="Texture2D" uid="uid://bclacrjf70ut8" path="res://assets/backgrounds/tutorial-backgrounds/Screen 0_Tutorial dark.png" id="2_t0rsu"]
-[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="3_5egdi"]
-[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_bdxta"]
-[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_hwoty"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_def8c"]
+[ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="2_7oowi"]
+[ext_resource type="Texture2D" uid="uid://rwyihd4c8chh" path="res://assets/backgrounds/tutorial-backgrounds/Screen 0.1_Tutorial light.png" id="3_xs378"]
+[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="4_jpguu"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="5_dx6pe"]
+[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="6_pde0m"]
+[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_rlmc2"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldg7d"]
+bg_color = Color(0.93333334, 0.93333334, 0.93333334, 0.85882354)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.1254902)
+shadow_size = 7
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_03iov"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ldg7d")
+
+[sub_resource type="Theme" id="Theme_fap61"]
+
+[sub_resource type="Theme" id="Theme_5m2np"]
 
 [node name="FactScene_02" type="Control" unique_id=524710273]
 layout_mode = 3
@@ -15,7 +37,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t0rsu")
+theme = ExtResource("1_def8c")
+script = ExtResource("2_7oowi")
 next_scene_path = "uid://b5xrdjbarad25"
 
 [node name="Background" type="TextureRect" parent="." unique_id=313513725]
@@ -26,16 +49,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0p1u4")
-texture = ExtResource("2_t0rsu")
+texture = ExtResource("3_xs378")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("3_5egdi")]
+[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("4_jpguu")]
 layout_mode = 0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("4_bdxta")]
+[node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("5_dx6pe")]
 layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=655536415]
@@ -52,7 +75,54 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 50
 
-[node name="ProceedButton" parent="MarginContainer" unique_id=237858599 instance=ExtResource("5_hwoty")]
+[node name="ProceedButton" parent="MarginContainer" unique_id=237858599 instance=ExtResource("6_pde0m")]
 unique_name_in_owner = true
 layout_mode = 2
-custom_label_text = "Next level"
+custom_label_text = "Okay, let's continue"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -150.0
+offset_right = 340.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_03iov")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer" unique_id=92191970]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2" unique_id=1516481599]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1852119583]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = SubResource("Theme_fap61")
+theme_override_fonts/font = ExtResource("7_rlmc2")
+theme_override_font_sizes/font_size = 23
+text = "Did you know how special I am?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1456016261]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+theme = SubResource("Theme_5m2np")
+text = "I don't want to brag but, I am essential for DNA, bones, and teeth, even plants needs me to grow! I am being used as a fertilizers too! Because I help build cell membranes in all living things! How's that?
+
+I am dangerously essential !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
