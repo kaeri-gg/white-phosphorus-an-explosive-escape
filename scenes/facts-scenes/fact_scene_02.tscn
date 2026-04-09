@@ -6,25 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="4_jpguu"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="5_dx6pe"]
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="6_pde0m"]
+[ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_bdxta"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_rlmc2"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldg7d"]
-bg_color = Color(0.93333334, 0.93333334, 0.93333334, 0.85882354)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.1254902)
-shadow_size = 7
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="Theme" id="Theme_03iov"]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_ldg7d")
 
 [sub_resource type="Theme" id="Theme_fap61"]
 
@@ -92,7 +77,7 @@ offset_right = 340.5
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_03iov")
+theme = ExtResource("7_bdxta")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer" unique_id=92191970]
 layout_mode = 2

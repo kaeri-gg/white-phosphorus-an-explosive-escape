@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b5xrdjbarad25"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_yklhy"]
-[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="2_o4ql5"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_4hx2o"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="4_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/water.tscn" id="5_km0xc"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_in_between-2.tscn" id="8_n536o"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_01hg1"]
+[ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="13_km0xc"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="14_n536o"]
 
@@ -106,7 +106,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o4ql5")
+texture = ExtResource("10_n536o")
 expand_mode = 5
 
 [node name="Timer" parent="CanvassLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
@@ -131,4 +131,4 @@ scale = Vector2(0.20961541, 0.20961541)
 
 [node name="Portal" parent="." unique_id=1863363077 instance=ExtResource("13_km0xc")]
 position = Vector2(1556, 556)
-next_scene_path = "uid://b5gf47bkbc0k3"
+next_scene_path = "uid://ca5kehyb1ts0t"

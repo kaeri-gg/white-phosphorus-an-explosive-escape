@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
-bg_color = Color(0.767407, 0.80040485, 0.9949432, 1)
+bg_color = Color(0.8729885, 0.8593587, 0.83212805, 1)
 border_width_right = 1
 border_width_bottom = 1
 corner_radius_top_left = 10
@@ -62,6 +62,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
 
 [node name="SettingsControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=156718134]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 script = ExtResource("3_qtb06")
 
@@ -180,7 +181,6 @@ underline = 1
 
 [node name="AboutTheGameControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=190346835]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="About" type="GridContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl" unique_id=221004420]
@@ -221,7 +221,7 @@ theme_override_constants/separation = 20
 [node name="Description" type="Label" parent="MarginContainer/PanelContainer/AboutTheGameControl/About/LabelContainer" unique_id=1588838205]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+text = "This game was created as a safe and enjoyable way for students and players to learn about phosphorus. Through a light and interactive experience, we aim that this game encourages curiosity and understanding in a way that feels both educational and fun."
 horizontal_alignment = 1
 autowrap_mode = 2
 

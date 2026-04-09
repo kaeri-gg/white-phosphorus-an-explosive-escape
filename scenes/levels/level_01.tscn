@@ -42,7 +42,7 @@ position = Vector2(694.00006, 571.00006)
 [node name="Portal_01" parent="." unique_id=1863363077 instance=ExtResource("11_ijn0p")]
 unique_name_in_owner = true
 position = Vector2(1240, 557)
-next_scene_path = "uid://b5bct2oaokwv0"
+next_scene_path = "uid://0txwnlwqetgm"
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)

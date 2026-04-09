@@ -16,7 +16,7 @@ fill_from = Vector2(0.525641, 1)
 fill_to = Vector2(0.53846157, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_portal_trigger"]
-size = Vector2(438, 207)
+size = Vector2(438, 111)
 
 [node name="Portal" type="StaticBody2D" unique_id=1863363077]
 script = ExtResource("2_p2r1g")
@@ -34,7 +34,7 @@ texture = SubResource("GradientTexture2D_crtgh")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea" unique_id=2067579054]
-position = Vector2(12, -82.5)
+position = Vector2(12, -34.5)
 shape = SubResource("RectangleShape2D_portal_trigger")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=676758134]
@@ -44,4 +44,4 @@ texture = ExtResource("1_d4ku3")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1633394133]
 position = Vector2(0, 3)
 build_mode = 1
-polygon = PackedVector2Array(-247, -255, -213, -255, -186, -187, 206, -186, 233, -257, 267, -257, 241, -211, 241, 2, 256, 2, 257, 163, 234, 163, 28, 176, -2, 177, -243, 163, -243, 158, -234, 157, -234, 0, -220, 1, -219, -211)
+polygon = PackedVector2Array(-247, -255, -213, -255, -169, -37, 208, -40, 233, -257, 267, -257, 241, -211, 241, 2, 256, 2, 257, 163, 234, 163, 28, 176, -2, 177, -243, 163, -243, 158, -234, 157, -234, 0, -220, 1, -219, -211)
