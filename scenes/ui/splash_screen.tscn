@@ -27,6 +27,14 @@ bg_color = Color(0.5795962, 0.5657938, 0.8264051, 1)
 [sub_resource type="Theme" id="Theme_ep5rh"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ndlxt")
 
+[sub_resource type="Gradient" id="Gradient_wh6tg"]
+colors = PackedColorArray(0.5803922, 0.5647059, 0.827451, 1, 0.50032175, 0.597222, 0.81090826, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_usb1j"]
+gradient = SubResource("Gradient_wh6tg")
+fill_from = Vector2(0.7094017, 0.6111111)
+fill_to = Vector2(0.9230769, 0.102564104)
+
 [node name="SplashScreen" type="Control" unique_id=1606166660]
 layout_mode = 3
 anchors_preset = 15
@@ -37,7 +45,7 @@ grow_vertical = 2
 theme = SubResource("Theme_vbcv6")
 script = ExtResource("2_usb1j")
 
-[node name="Background" type="PanelContainer" parent="." unique_id=1190280473]
+[node name="Background" type="TextureRect" parent="." unique_id=333811721]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +53,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ep5rh")
+texture = SubResource("GradientTexture2D_usb1j")
+expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1333662163]
 layout_mode = 1

@@ -57,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_m802k")
-expand_mode = 3
+expand_mode = 5
 
 [node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_r72dd")]
 unique_name_in_owner = true

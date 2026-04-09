@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="The Phosphorus Game"
+config/description="A small platformer about a phosphorus character who survives in water, burns in air, and uncovers strange facts about phosphorus along the way."
 run/main_scene="uid://qk4cctayieey"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false

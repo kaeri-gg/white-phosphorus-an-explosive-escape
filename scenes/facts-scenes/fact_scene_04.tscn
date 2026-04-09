@@ -26,8 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0p1u4")
 texture = ExtResource("2_6nuw7")
-expand_mode = 3
-stretch_mode = 5
+expand_mode = 5
 
 [node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("3_bpptv")]
 layout_mode = 0
