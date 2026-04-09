@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://iblv3dg4o762"]
+
+[ext_resource type="Script" uid="uid://cm0q1c82xflve" path="res://scripts/components/switch_valve.gd" id="1_fwh2d"]
+[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="2_7r1kg"]
+[ext_resource type="Texture2D" uid="uid://bwue41xjl8xks" path="res://assets/interactables/switch/Switch_1.png" id="2_nusrt"]
+[ext_resource type="Texture2D" uid="uid://b03d3pvpeqglg" path="res://assets/interactables/switch/Switch_2.png" id="3_8n05u"]
+[ext_resource type="Texture2D" uid="uid://bfbklt8848h7d" path="res://assets/interactables/switch/Switch_3.png" id="4_fvgau"]
+[ext_resource type="Texture2D" uid="uid://bbhbbnqplfuvu" path="res://assets/interactables/switch/Switch_4.png" id="5_ur8x8"]
+[ext_resource type="Texture2D" uid="uid://rn0xrq4kjvh0" path="res://assets/interactables/switch/Switch_5.png" id="6_0w7r6"]
+[ext_resource type="Texture2D" uid="uid://ocv3f5qbjkhi" path="res://assets/interactables/switch/Switch_6.png" id="7_rk4tj"]
+[ext_resource type="Texture2D" uid="uid://dm7jt8n86c0hv" path="res://assets/interactables/switch/Switch_7.png" id="8_etvg5"]
+[ext_resource type="Texture2D" uid="uid://b16jwwdibovly" path="res://assets/interactables/switch/Switch_8.png" id="9_svkv6"]
+[ext_resource type="Texture2D" uid="uid://5gu1g0ksphwf" path="res://assets/interactables/switch/Switch_9.png" id="10_l14ty"]
+[ext_resource type="Texture2D" uid="uid://dqavdskgy8jma" path="res://assets/interactables/switch/Switch_10.png" id="11_g440e"]
+[ext_resource type="Texture2D" uid="uid://dya0v2tlrwawp" path="res://assets/interactables/switch/Switch_11.png" id="12_h8pyx"]
+[ext_resource type="Texture2D" uid="uid://ctxttwmj5r14x" path="res://assets/interactables/switch/Switch_12.png" id="13_01f55"]
+[ext_resource type="Texture2D" uid="uid://7uiqjkj7ccre" path="res://assets/interactables/switch/Switch_13.png" id="14_5xqhm"]
+[ext_resource type="Texture2D" uid="uid://eoifmyyanjlo" path="res://assets/interactables/switch/Switch_14.png" id="15_it1j0"]
+[ext_resource type="Texture2D" uid="uid://bdj8ts553nb5a" path="res://assets/interactables/switch/Switch_15.png" id="16_bpy6h"]
+[ext_resource type="Texture2D" uid="uid://c0u1gq2qq0ut" path="res://assets/interactables/switch/Switch_16.png" id="17_0x68x"]
+[ext_resource type="Texture2D" uid="uid://dousrmsceuhgv" path="res://assets/interactables/switch/Switch_17.png" id="18_uasnl"]
+[ext_resource type="Texture2D" uid="uid://g6pcruev82hi" path="res://assets/interactables/switch/Switch_18.png" id="19_snbg0"]
+[ext_resource type="Texture2D" uid="uid://wiktkd44d7kp" path="res://assets/interactables/switch/Switch_19.png" id="20_btpqo"]
+[ext_resource type="Texture2D" uid="uid://c0lokock1gjsv" path="res://assets/interactables/switch/Switch_20.png" id="21_wu7au"]
+[ext_resource type="Texture2D" uid="uid://cww3wdmd4yajg" path="res://assets/interactables/switch/Switch_21.png" id="22_sj1c6"]
+[ext_resource type="Texture2D" uid="uid://b56wgae0jmwvu" path="res://assets/interactables/switch/Switch_22.png" id="23_xx0aj"]
+[ext_resource type="Texture2D" uid="uid://w36vhc24iem6" path="res://assets/interactables/switch/Switch_23.png" id="24_kinb0"]
+[ext_resource type="Texture2D" uid="uid://dqxaixakbirwk" path="res://assets/interactables/switch/Switch_24.png" id="25_te668"]
+[ext_resource type="Texture2D" uid="uid://3qdki2wbkuel" path="res://assets/interactables/switch/Switch_25.png" id="26_8x3ot"]
+[ext_resource type="Texture2D" uid="uid://kk6sj2kw4uec" path="res://assets/interactables/switch/Switch_26.png" id="27_4opuj"]
+[ext_resource type="Texture2D" uid="uid://d1qbxfgmbm2w4" path="res://assets/interactables/switch/Switch_27.png" id="28_pa8yl"]
+[ext_resource type="Texture2D" uid="uid://cmycy22tdnmwv" path="res://assets/interactables/switch/Switch_28.png" id="29_pm23e"]
+[ext_resource type="Texture2D" uid="uid://2jf6iqdmw10u" path="res://assets/interactables/switch/Switch_29.png" id="30_pm85d"]
+[ext_resource type="Texture2D" uid="uid://fympt7mtg3ic" path="res://assets/interactables/switch/Switch_30.png" id="31_cjsle"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_why7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nusrt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nusrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8n05u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fvgau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur8x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0w7r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rk4tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_etvg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_svkv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l14ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g440e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_h8pyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_01f55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5xqhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_it1j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bpy6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0x68x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uasnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_snbg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_btpqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wu7au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sj1c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xx0aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kinb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_te668")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8x3ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4opuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pa8yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pm23e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_pm85d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_cjsle")
+}],
+"loop": false,
+"name": &"interact",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8n0am"]
+radius = 550.0
+
+[sub_resource type="Theme" id="Theme_gxx5q"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/outline_size = 5
+Label/constants/shadow_offset_x = 2
+Label/constants/shadow_offset_y = 2
+Label/constants/shadow_outline_size = 5
+Label/fonts/font = ExtResource("2_7r1kg")
+
+[node name="Switch" type="StaticBody2D" unique_id=1596610064]
+script = ExtResource("1_fwh2d")
+
+[node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]
+unique_name_in_owner = true
+position = Vector2(-2, 10)
+scale = Vector2(0.6763866, 0.6763866)
+sprite_frames = SubResource("SpriteFrames_why7j")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1696525463]
+build_mode = 1
+polygon = PackedVector2Array(-134, -237, 122, -236, 127, -220, 125, -208, 107, -178, 84, -175, 84, -154, 120, -129, 140, -104, 157, -76, 167, -49, 173, -24, 177, 6, 173, 41, 160, 79, 149, 104, 131, 128, 112, 149, 85, 168, 83, 215, 108, 216, 124, 246, 124, 271, -132, 274, -136, 267, -135, 243, -119, 217, -93, 217, -93, 165, -111, 152, -127, 139, -140, 124, -154, 105, -165, 82, -173, 62, -177, 45, -180, 19, -179, -12, -174, -41, -165, -69, -148, -100, -128, -124, -107, -142, -93, -152, -93, -177, -127, -182, -134, -207)
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1372377333]
+unique_name_in_owner = true
+position = Vector2(-7, 9)
+scale = Vector2(0.5611951, 0.5611951)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=551203391]
+shape = SubResource("CircleShape2D_8n0am")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=1918063184]
+unique_name_in_owner = true
+z_index = 100
+offset_right = 200.0
+offset_bottom = 40.0
+theme = SubResource("Theme_gxx5q")
+text = "[E] to interact"
+horizontal_alignment = 1

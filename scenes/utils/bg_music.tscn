@@ -6,4 +6,4 @@
 stream = ExtResource("1_f6gl3")
 autoplay = true
 bus = &"Music"
-parameters/looping = false
+parameters/looping = true

@@ -19,6 +19,7 @@ signal is_shaking
 signal is_dead
 signal is_evolved
 signal air_timer_value(time_left: int)
+signal switch_pressed
 
 # signals for animation
 signal state_change(new_state: int)
@@ -33,11 +34,14 @@ var was_moving: bool = false
 
 func _ready() -> void:
 	add_to_group("can_interact_with_water")
+	
 	air_timer.timeout.connect(_on_air_timer_timeout)
 	state_change.connect(player_sprite.on_player_state_change)
 	movement_change.connect(player_sprite.on_player_movement_change)
+	
 	update_visual_state()
 	emit_timer_value()
+	
 	state_change.emit(current_state)
 	movement_change.emit(was_moving)
 
@@ -77,12 +81,12 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jump:
+	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
 		jump_count += 1
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -157,18 +161,18 @@ func update_visual_state() -> void:
 		STATE.SHAKING:
 			player_sprite.play("shaking")
 		STATE.DEAD:
-			player_sprite.play("dead")
+			player_sprite.play("stable")
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
-func get_timer_display_value() -> float:
+func update_timer_display() -> float:
 	if env_state == ENV.AIR and not air_timer.is_stopped():
 		return air_timer.time_left
 
 	return AIR_SURVIVAL_TIME
 
 func emit_timer_value() -> void:
-	air_timer_value.emit(get_timer_display_value())
+	air_timer_value.emit(update_timer_display())
 	
 func flip_char_on_move() -> void:
 	if velocity.x > 0:
@@ -176,3 +180,6 @@ func flip_char_on_move() -> void:
 	if velocity.x < 0:	
 		player_sprite.flip_h = true
 		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("press_e_to_interact") and not event.is_echo():
+		switch_pressed.emit()

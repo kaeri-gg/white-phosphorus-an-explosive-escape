@@ -33,7 +33,6 @@ func _ready() -> void:
 
 	initiate_water()
 	
-
 func initiate_water() -> void:
 	segment_data.clear()
 	for i in range(segment_count):

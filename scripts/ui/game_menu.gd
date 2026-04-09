@@ -1,7 +1,7 @@
 class_name GameMenu
 extends Control
 
-const COMMERCIAL_SCENE = preload("uid://d2xguvgncyliw")
+const FACT_SCENE = preload("uid://d2xguvgncyliw")
 @onready var start_game_button: ActionButton = %StartGameButton
 
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func start_game() -> void:
 	sound_manager.play("EnterGame")
-	get_tree().change_scene_to_packed(COMMERCIAL_SCENE)
+	get_tree().change_scene_to_packed(FACT_SCENE)
 
 func show_about_us() -> void:
 	ui_manager.open_about_us_modal()

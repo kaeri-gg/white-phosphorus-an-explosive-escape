@@ -10,3 +10,9 @@ script = ExtResource("1_ffuv1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1231291275]
 position = Vector2(0, 1)
 shape = SubResource("WorldBoundaryShape2D_uo3px")
+
+[node name="Timer" type="Timer" parent="." unique_id=270430918]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
