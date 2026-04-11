@@ -2,11 +2,13 @@ class_name Player
 extends CharacterBody2D
 
 @onready var player_sprite: PlayerExpressions = %PlayerExpressionController
-@onready var air_timer: Timer = %AirTimer
+@onready var die_timer: Timer = %DieTimer
+@onready var burn_timer: Timer = %BurnTimer
 
 @export var SPEED : float = 400.0
 @export var JUMP_VELOCITY : float = -500.0
-@export var AIR_SURVIVAL_TIME : float = 3.0
+@export var EASY_SURVIVAL_TIME : float = 5.0
+@export var HARD_AIR_SURVIVAL_TIME : float = 7.0
 @export var PLAYER_HEALTH : float = 7 
 
 const max_jump: int = 2
@@ -18,7 +20,7 @@ signal is_shaking
 
 signal is_dead
 signal is_evolved
-signal air_timer_value(time_left: int)
+signal die_timer_value(time_left: int)
 signal switch_pressed
 
 # signals for animation
@@ -35,12 +37,13 @@ var was_moving: bool = false
 func _ready() -> void:
 	add_to_group("can_interact_with_water")
 	
-	air_timer.timeout.connect(_on_air_timer_timeout)
+	die_timer.timeout.connect(player_will_die)
+	burn_timer.timeout.connect(player_will_burn)
 	state_change.connect(player_sprite.on_player_state_change)
 	movement_change.connect(player_sprite.on_player_movement_change)
 	
 	update_visual_state()
-	emit_timer_value()
+	remaining_survival_timer_value()
 	
 	state_change.emit(current_state)
 	movement_change.emit(was_moving)
@@ -67,7 +70,7 @@ func change_state(new_state: STATE) -> void:
 			is_evolved.emit()
 
 func _physics_process(delta: float) -> void:
-	emit_timer_value()
+	survival_timer_label_updater()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -101,16 +104,21 @@ func _physics_process(delta: float) -> void:
 
 func detect_environment() -> void:
 	if env_state == ENV.WATER:
-		if not air_timer.is_stopped():
-			air_timer.stop()
+		if not die_timer.is_stopped():
+			die_timer.stop()
+		if not burn_timer.is_stopped():
+			burn_timer.stop()
 
 		change_state(STATE.STABLE)
 		return
 
 	check_hp()
 	change_state(STATE.SHAKING)
-	if air_timer.is_stopped():
-		air_timer.start()
+	
+	if burn_timer.is_stopped():
+		burn_timer.start()
+	if die_timer.is_stopped():
+		die_timer.start()
 
 func enter_water() -> void:
 	check_hp()
@@ -124,32 +132,36 @@ func leave_water() -> void:
 
 func update_environment(location: ENV) -> void:
 	env_state = location
+
+func player_will_die() -> void:
+	print("die")
+	if env_state != ENV.AIR:
+		return
+	
+	#if air_timer.
+	die()
+	
+func player_will_burn() -> void:
+	print("burn")
+	check_hp()
+
+	if not burn_timer.is_stopped():
+		burn_timer.stop()
+
+	change_state(STATE.BURNING)	
 	
 func check_hp() -> void:
 	if current_state == STATE.DEAD:
 		return
 	# TODO: Add health
 	
-func burn() -> void:
-	check_hp()
-
-	if not air_timer.is_stopped():
-		air_timer.stop()
-
-	change_state(STATE.BURNING)
-	
 func die() -> void:
-	if not air_timer.is_stopped():
-		air_timer.stop()
-
+	if not die_timer.is_stopped():
+		die_timer.stop()
+		
 	change_state(STATE.DEAD)
-
-func _on_air_timer_timeout() -> void:
-	if env_state != ENV.AIR:
-		return
-
-	burn()
-
+	
+	
 func update_visual_state() -> void:
 	match current_state:
 		STATE.STABLE:
@@ -161,18 +173,18 @@ func update_visual_state() -> void:
 		STATE.SHAKING:
 			player_sprite.play("shaking")
 		STATE.DEAD:
-			player_sprite.play("stable")
+			player_sprite.play("dead")
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
-func update_timer_display() -> float:
-	if env_state == ENV.AIR and not air_timer.is_stopped():
-		return air_timer.time_left
+func remaining_survival_timer_value() -> float:
+	if env_state == ENV.AIR and not die_timer.is_stopped():
+		return die_timer.time_left
 
-	return AIR_SURVIVAL_TIME
+	return EASY_SURVIVAL_TIME
 
-func emit_timer_value() -> void:
-	air_timer_value.emit(update_timer_display())
+func survival_timer_label_updater() -> void:
+	die_timer_value.emit(remaining_survival_timer_value())
 	
 func flip_char_on_move() -> void:
 	if velocity.x > 0:

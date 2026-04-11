@@ -15,9 +15,9 @@ config/description="A small platformer about a phosphorus character who survives
 run/main_scene="uid://qk4cctayieey"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
-boot_splash/show_godot_logo=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
+boot_splash/show_godot_logo=false
 
 [audio]
 
