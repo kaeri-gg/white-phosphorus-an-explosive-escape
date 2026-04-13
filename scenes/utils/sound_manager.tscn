@@ -11,26 +11,26 @@
 [node name="SoundManager" type="Node" unique_id=2116437054]
 script = ExtResource("1_mpi5b")
 
-[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=278305593]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1593950205]
 stream = ExtResource("1_gbdfy")
 bus = &"SFX"
 
-[node name="WrongAnswer" type="AudioStreamPlayer2D" parent="." unique_id=483938059]
+[node name="WrongAnswer" type="AudioStreamPlayer" parent="." unique_id=1604662299]
 stream = ExtResource("2_v1pt3")
 bus = &"SFX"
 
-[node name="CorrectAnswer" type="AudioStreamPlayer2D" parent="." unique_id=147425404]
+[node name="CorrectAnswer" type="AudioStreamPlayer" parent="." unique_id=397218901]
 stream = ExtResource("3_mpi5b")
 bus = &"SFX"
 
-[node name="WinningSound" type="AudioStreamPlayer2D" parent="." unique_id=778040891]
+[node name="WinningSound" type="AudioStreamPlayer" parent="." unique_id=579816704]
 stream = ExtResource("4_aa63w")
 bus = &"SFX"
 
-[node name="Tick" type="AudioStreamPlayer2D" parent="." unique_id=1928620420]
+[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=90270882]
 stream = ExtResource("5_k1d7a")
 bus = &"SFX"
 
-[node name="EnterGame" type="AudioStreamPlayer2D" parent="." unique_id=1051888898]
+[node name="EnterGame" type="AudioStreamPlayer" parent="." unique_id=831615878]
 stream = ExtResource("6_gb18h")
 bus = &"SFX"

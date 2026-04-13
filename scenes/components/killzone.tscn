@@ -14,5 +14,3 @@ shape = SubResource("WorldBoundaryShape2D_uo3px")
 [node name="Timer" type="Timer" parent="." unique_id=270430918]
 unique_name_in_owner = true
 one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

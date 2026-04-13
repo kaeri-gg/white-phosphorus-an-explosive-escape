@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform-yellow-square.tscn" id="2_i2aat"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
+[ext_resource type="PackedScene" uid="uid://b1pimif3nkdvn" path="res://scenes/components/obstacles/obstacle-fire.tscn" id="3_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="4_uvc87"]
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray.tscn" id="5_qdh5e"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
@@ -22,7 +23,11 @@ script = ExtResource("1_t0hvh")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
-position = Vector2(382, 526)
+position = Vector2(448, 520)
+
+[node name="ObstaclesFire" parent="." unique_id=868786613 instance=ExtResource("3_ijn0p")]
+position = Vector2(110, 421)
+scale = Vector2(0.1370473, 0.1370473)
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(297, 491)

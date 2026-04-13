@@ -72,6 +72,7 @@ func _process(delta: float) -> void:
 	update_physics(delta)
 	update_visuals()
 
+	
 func update_physics(delta: float) -> void:
 	for i in range(segment_count):
 		var displacement = segment_data[i]["height"] - surface_pos_y

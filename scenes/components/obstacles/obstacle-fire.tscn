@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b1pimif3nkdvn"]
+
+[ext_resource type="Texture2D" uid="uid://dodmut8bita5x" path="res://assets/obstacles/fire.png" id="1_ehk1u"]
+[ext_resource type="Script" uid="uid://dnaawwoi6lwwl" path="res://scripts/components/killzone.gd" id="1_uwf5k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwf5k"]
+radius = 175.5
+height = 435.0
+
+[node name="ObstacleFire" type="Area2D" unique_id=213981158]
+script = ExtResource("1_uwf5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381941758]
+texture = ExtResource("1_ehk1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=295713907]
+position = Vector2(-3, 34)
+scale = Vector2(1.2330097, 0.65088755)
+shape = SubResource("CapsuleShape2D_uwf5k")

@@ -1,7 +1,7 @@
 class_name CloseButton
 extends Control
 
-signal on_click
+signal clicked
 
 @onready var close_button: TextureButton = %CloseButton
 
@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func close_self() -> void:
 	sound_manager.play("Click")
-	on_click.emit()
+	clicked.emit()

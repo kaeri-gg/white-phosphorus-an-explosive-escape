@@ -26,7 +26,7 @@ script = ExtResource("1_yklhy")
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
-position = Vector2(110.00002, 385)
+position = Vector2(104, 538)
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(-37, 504)
@@ -97,10 +97,10 @@ position = Vector2(581, 483.99997)
 rotation = 1.5707964
 scale = Vector2(0.545239, 0.7308498)
 
-[node name="CanvassLayer" type="CanvasLayer" parent="." unique_id=1043999466]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1043999466]
 layer = -10
 
-[node name="Background" type="TextureRect" parent="CanvassLayer" unique_id=513751204]
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=513751204]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -109,7 +109,7 @@ grow_vertical = 2
 texture = ExtResource("10_n536o")
 expand_mode = 5
 
-[node name="Timer" parent="CanvassLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
+[node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
 unique_name_in_owner = true
 offset_left = -66.0
 offset_top = 3.0

@@ -68,10 +68,6 @@ press_e_to_interact={
 
 2d_physics/layer_2="interactions"
 
-[physics]
-
-3d/physics_engine="Jolt Physics"
-
 [rendering]
 
 rendering_device/driver.windows="d3d12"

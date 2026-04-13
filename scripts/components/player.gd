@@ -11,16 +11,12 @@ extends CharacterBody2D
 @export var HARD_AIR_SURVIVAL_TIME : float = 7.0
 @export var PLAYER_HEALTH : float = 7 
 
-const max_jump: int = 2
-var jump_count: int
+signal stabilized
+signal burned
+signal shook
 
-signal is_stable
-signal is_burning
-signal is_shaking
-
-signal is_dead
-signal is_evolved
-signal die_timer_value(time_left: int)
+signal died # emitted after death animation finishes
+signal die_timer_value(time_left: float)
 signal switch_pressed
 
 # signals for animation
@@ -30,9 +26,13 @@ signal movement_change(is_moving: bool)
 enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
+const max_jump: int = 2
+
+var jump_count: int
 var current_state: STATE = STATE.STABLE
-var env_state: ENV = ENV.WATER
+var env_state: ENV = ENV.AIR
 var was_moving: bool = false
+var is_dying: bool = false
 
 func _ready() -> void:
 	add_to_group("can_interact_with_water")
@@ -42,8 +42,8 @@ func _ready() -> void:
 	state_change.connect(player_sprite.on_player_state_change)
 	movement_change.connect(player_sprite.on_player_movement_change)
 	
+	detect_environment()
 	update_visual_state()
-	remaining_survival_timer_value()
 	
 	state_change.emit(current_state)
 	movement_change.emit(was_moving)
@@ -53,24 +53,28 @@ func change_state(new_state: STATE) -> void:
 		return
 		
 	current_state = new_state
-	update_visual_state()
 	state_change.emit(current_state)
+	
+	if new_state != STATE.DEAD:
+		update_visual_state()
 	
 	# Emit corresponding signal
 	match new_state:
 		STATE.STABLE: 
-			is_stable.emit()
+			stabilized.emit()
 		STATE.BURNING: 
-			is_burning.emit()
+			burned.emit()
 		STATE.SHAKING: 
-			is_shaking.emit()
-		STATE.DEAD: 
-			is_dead.emit()
-		STATE.EVOLVED: 
-			is_evolved.emit()
+			shook.emit()
 
 func _physics_process(delta: float) -> void:
 	survival_timer_label_updater()
+
+	if current_state == STATE.DEAD:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -78,11 +82,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		
-	if current_state == STATE.DEAD:
-		move_and_slide()
-		flip_char_on_move()
-		return
-
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump:
 		jump_count += 1
@@ -134,15 +133,11 @@ func update_environment(location: ENV) -> void:
 	env_state = location
 
 func player_will_die() -> void:
-	print("die")
 	if env_state != ENV.AIR:
 		return
-	
-	#if air_timer.
 	die()
 	
 func player_will_burn() -> void:
-	print("burn")
 	check_hp()
 
 	if not burn_timer.is_stopped():
@@ -156,24 +151,42 @@ func check_hp() -> void:
 	# TODO: Add health
 	
 func die() -> void:
+	if is_dying or current_state == STATE.DEAD:
+		return
+	
+	is_dying = true
+	
 	if not die_timer.is_stopped():
 		die_timer.stop()
-		
-	change_state(STATE.DEAD)
+	if not burn_timer.is_stopped():
+		burn_timer.stop()	
+	
+	current_state = STATE.DEAD
+	state_change.emit(current_state)
+	
+	await play_death_animation()
+	died.emit()
+	
+func play_death_animation() -> void:
+	player_sprite.play("start_burning")
+	await utils.timeout(0.7)
+	player_sprite.play("dead")
 	
 	
 func update_visual_state() -> void:
+	var state_at_call := current_state
 	match current_state:
 		STATE.STABLE:
 			player_sprite.play("stable")
 		STATE.BURNING:
 			player_sprite.play("start_burning")
 			await utils.timeout(0.5)
+			if current_state != state_at_call:
+				return
+				
 			player_sprite.play("repeat_burning")
 		STATE.SHAKING:
 			player_sprite.play("shaking")
-		STATE.DEAD:
-			player_sprite.play("dead")
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
@@ -184,7 +197,8 @@ func remaining_survival_timer_value() -> float:
 	return EASY_SURVIVAL_TIME
 
 func survival_timer_label_updater() -> void:
-	die_timer_value.emit(remaining_survival_timer_value())
+	if env_state == ENV.AIR and not die_timer.is_stopped():
+		die_timer_value.emit(remaining_survival_timer_value())
 	
 func flip_char_on_move() -> void:
 	if velocity.x > 0:

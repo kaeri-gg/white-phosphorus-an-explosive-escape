@@ -2,7 +2,7 @@ class_name HomeButton
 extends Control
 
 @onready var home_button: TextureButton = %HomeButton
-@export_file("*.tscn") var target_scene_path: String = "res://scenes/ui/game_menu.tscn"
+@export_file("*.tscn") var target_scene_path: String = "uid://4ht2ox1qqc7q"
 
 func _ready() -> void:
 	home_button.pressed.connect(return_home)

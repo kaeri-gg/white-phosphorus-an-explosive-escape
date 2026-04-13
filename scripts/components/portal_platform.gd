@@ -8,9 +8,9 @@ extends StaticBody2D
 var is_transitioning: bool = false
 
 func _ready() -> void:
-	portal_area.body_entered.connect(_on_portal_area_body_entered)
+	portal_area.body_entered.connect(_show_next_scene)
 
-func _on_portal_area_body_entered(body: Node) -> void:
+func _show_next_scene(body: Node) -> void:
 	if is_transitioning:
 		return
 
@@ -27,13 +27,7 @@ func _on_portal_area_body_entered(body: Node) -> void:
 		return
 
 	is_transitioning = true
-	await utils.timeout(1)
 	sound_manager.play("EnterGame")
 	
-	call_deferred("_change_to_scene", resolved_scene_path)
-	
-func _change_to_scene(scene_path: String) -> void:
-	var result: Error = get_tree().change_scene_to_file(scene_path)
-	if result != OK:
-		is_transitioning = false
-		push_warning("%s failed to change scene to %s (error %s)." % [name, scene_path, result])
+	await utils.fade_out(get_tree().current_scene, 0.5)
+	get_tree().change_scene_to_file(resolved_scene_path)

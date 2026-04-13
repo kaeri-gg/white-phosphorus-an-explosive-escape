@@ -3,12 +3,12 @@ extends Control
 
 const GAME_MENU = preload("uid://4ht2ox1qqc7q")
 
+@onready var logo_container: MarginContainer = %Logo
 @onready var godot_teeth: TextureRect = %GodotTeeth
 @onready var logo : TextureRect = %GodotLogo
 
 func _ready() -> void:
-	utils.fade(logo, GAME_MENU)
-	utils.fade(godot_teeth, GAME_MENU)
+	utils.fade(logo_container, GAME_MENU)
 	yoyo()
 
 func yoyo() -> void:
