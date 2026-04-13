@@ -32,13 +32,16 @@ position = Vector2(104, 538)
 position = Vector2(-37, 504)
 script = ExtResource("4_km0xc")
 water_size = Vector2(290, 140)
+min_height = 10.0
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
 [node name="Water2" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
-position = Vector2(602, 528)
-water_size = Vector2(600, 100)
+position = Vector2(576, 628)
+water_size = Vector2(600, 10)
 surface_color = Color(0.7647059, 0.9843137, 0.96862745, 0.627451)
 water_fill_color = Color(0.34117648, 0.81960785, 0.9098039, 0.41960785)
+min_height = 10.0
+starts_full = null
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("6_4hx2o")]
 position = Vector2(102.00001, 600.99994)
@@ -119,10 +122,13 @@ offset_bottom = 3.0
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("14_n536o")]
 position = Vector2(1028, 783)
 
-[node name="Switch" parent="." unique_id=1596610064 instance=ExtResource("7_km0xc")]
+[node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("7_km0xc")]
 position = Vector2(321, 636)
 rotation = 1.5707964
 scale = Vector2(0.20961541, 0.20961541)
+source_water = NodePath("../Water")
+target_water = NodePath("../Water2")
+transfer_duration = 1.0
 
 [node name="Switch2" parent="." unique_id=19979149 instance=ExtResource("7_km0xc")]
 position = Vector2(739, 309)

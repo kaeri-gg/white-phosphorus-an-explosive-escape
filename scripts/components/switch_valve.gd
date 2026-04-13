@@ -3,10 +3,22 @@ extends StaticBody2D
 signal interacted(actor: Node2D)
 
 @export var prompt_offset: Vector2 = Vector2(-100, -120)
+## The water that drains when the switch is activated.
+## Leave empty for single-container mode (target just fills/drains on its own).
+@export var source_water: Water
+
+## The water that fills when the switch is activated. Required.
+@export var target_water: Water
+
+## How long the transfer animation takes (seconds).
+@export var transfer_duration: float = 3.0
 
 @onready var interact_area: Area2D = %InteractArea
 @onready var prompt_label: Label = %PromptLabel
 @onready var switch_sprite: AnimatedSprite2D = %SwitchSprite
+
+var is_transferred: bool = false   # false = source is full, true = target is full
+var is_transferring: bool = false   # true while animation is playing (blocks input)
 
 var current_player: Player
 
@@ -38,9 +50,45 @@ func _on_player_pressed_switch() -> void:
 	if current_player == null:
 		return
 
+	# Block interaction while water is moving
+	if is_transferring:
+		return
+
 	switch_sprite.play("interact")
 	interact(current_player)
+	_start_water_transfer()
 
+func _start_water_transfer() -> void:
+	# Safety check: we need at least a target
+	if target_water == null:
+		push_warning("%s: target_water is not set." % name)
+		return
+
+	is_transferring = true
+
+	# Optional: play a water-flow sound
+	# sound_manager.play("WaterFlow")
+
+	if not is_transferred:
+		# Forward: drain source (if any), fill target
+		if source_water:
+			source_water.animate_fill(source_water.min_height, transfer_duration)
+		target_water.animate_fill(target_water.max_height, transfer_duration)
+	else:
+		# Reverse: fill source back (if any), drain target
+		if source_water:
+			source_water.animate_fill(source_water.max_height, transfer_duration)
+		target_water.animate_fill(target_water.min_height, transfer_duration)
+
+	# Wait for the target animation to finish (source runs in parallel, same duration)
+	await target_water.fill_completed
+
+	# Optional: stop the water-flow sound
+	# sound_manager.stop("WaterFlow")
+
+	is_transferred = !is_transferred
+	is_transferring = false
+	
 func _set_current_player(player: Player) -> void:
 	if current_player == player:
 		return
