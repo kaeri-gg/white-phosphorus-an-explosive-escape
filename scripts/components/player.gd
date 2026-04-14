@@ -9,7 +9,9 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY : float = -500.0
 @export var EASY_SURVIVAL_TIME : float = 5.0
 @export var HARD_AIR_SURVIVAL_TIME : float = 7.0
-@export var PLAYER_HEALTH : float = 7 
+@export var PLAYER_HEALTH : int = 7 
+
+var current_health : int
 
 signal stabilized
 signal burned
@@ -23,6 +25,8 @@ signal switch_pressed
 signal state_change(new_state: int)
 signal movement_change(is_moving: bool)
 
+signal health_changed(current: int, max_hp: int)
+
 enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
@@ -35,6 +39,9 @@ var was_moving: bool = false
 var is_dying: bool = false
 
 func _ready() -> void:
+	current_health = PLAYER_HEALTH
+	health_changed.emit(current_health, PLAYER_HEALTH)
+	
 	add_to_group("can_interact_with_water")
 	
 	die_timer.timeout.connect(player_will_die)
@@ -111,7 +118,6 @@ func detect_environment() -> void:
 		change_state(STATE.STABLE)
 		return
 
-	check_hp()
 	change_state(STATE.SHAKING)
 	
 	if burn_timer.is_stopped():
@@ -120,12 +126,11 @@ func detect_environment() -> void:
 		die_timer.start()
 
 func enter_water() -> void:
-	check_hp()
 	update_environment(ENV.WATER)
+	heal()
 	detect_environment()
 
 func leave_water() -> void:
-	check_hp()
 	update_environment(ENV.AIR)
 	detect_environment()
 
@@ -135,20 +140,26 @@ func update_environment(location: ENV) -> void:
 func player_will_die() -> void:
 	if env_state != ENV.AIR:
 		return
-	die()
+	
+	if current_state == STATE.BURNING:
+		take_damage(1)
 	
 func player_will_burn() -> void:
-	check_hp()
+	print("burn")
 
 	if not burn_timer.is_stopped():
 		burn_timer.stop()
 
 	change_state(STATE.BURNING)	
+	take_damage(1)
 	
-func check_hp() -> void:
+func heal() -> void:
 	if current_state == STATE.DEAD:
 		return
-	# TODO: Add health
+	# when player enters water, he's going to recover
+	if env_state == ENV.WATER:
+		current_health = PLAYER_HEALTH
+		health_changed.emit(current_health, PLAYER_HEALTH)
 	
 func die() -> void:
 	if is_dying or current_state == STATE.DEAD:
@@ -171,6 +182,17 @@ func play_death_animation() -> void:
 	player_sprite.play("start_burning")
 	await utils.timeout(0.7)
 	player_sprite.play("dead")
+	
+	
+func take_damage(amount: int) -> void:
+	if current_state == STATE.DEAD:
+		return
+
+	current_health -= amount
+	health_changed.emit(current_health, PLAYER_HEALTH) # Add this
+	
+	if current_health <= 0:
+		die()
 	
 	
 func update_visual_state() -> void:

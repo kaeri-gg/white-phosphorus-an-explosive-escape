@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray_curved_tube.tscn" id="5_qdh5e"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
+[ext_resource type="PackedScene" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_r72dd"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="11_ijn0p"]
 
@@ -63,6 +64,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_m802k")
 expand_mode = 5
+
+[node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
+player = NodePath("../../Player")
 
 [node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_r72dd")]
 unique_name_in_owner = true
