@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dwmjprt58e4bh"]
+
+[ext_resource type="Texture2D" uid="uid://4b5o2n74t2nm" path="res://assets/platforms/new/Metall rope.png" id="1_hk8wk"]
+
+[node name="PlatformGrayMetalRope" type="StaticBody2D" unique_id=1970424927]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987466163]
+position = Vector2(19, 363)
+texture = ExtResource("1_hk8wk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=26691075]
+build_mode = 1
+polygon = PackedVector2Array(-7, -180, 5, -179, 8, 303, 42, 358, -44, 360, -10, 301)

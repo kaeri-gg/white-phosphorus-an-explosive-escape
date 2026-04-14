@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxy5c76pw0sy2"]
+
+[ext_resource type="Texture2D" uid="uid://b06iybc02kjtr" path="res://assets/platforms/new/Inbetween 5.png" id="1_66bb8"]
+
+[node name="PlatformYellowConnectionPipe" type="StaticBody2D" unique_id=1005057957]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=867849545]
+texture = ExtResource("1_66bb8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1536868098]
+build_mode = 1
+polygon = PackedVector2Array(-133, -269, -134, -106, -130, -76, -119, -54, -100, -39, -66, -32, 157, -33, 158, 207, -165, 208, -210, 203, -252, 191, -289, 174, -315, 154, -341, 127, -360, 81, -369, 24, -371, -44, -370, -268)

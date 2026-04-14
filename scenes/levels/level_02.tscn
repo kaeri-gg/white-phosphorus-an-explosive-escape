@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/water.tscn" id="5_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="6_4hx2o"]
-[ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="6_m2jhg"]
+[ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform_yellow_long_pipe.tscn" id="6_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://iblv3dg4o762" path="res://scenes/components/platforms/switch_valve.tscn" id="7_km0xc"]
-[ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between.tscn" id="8_4dr30"]
-[ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_in_between-2.tscn" id="8_n536o"]
+[ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between_spring.tscn" id="8_4dr30"]
+[ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="8_n536o"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_01hg1"]
 [ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
@@ -33,8 +33,8 @@ water_size = Vector2(280, 200)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
-position = Vector2(584, 513)
-water_size = Vector2(600, 130)
+position = Vector2(584, 633)
+water_size = Vector2(600, 10)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
 min_height = 10.0
 starts_full = false
@@ -119,7 +119,7 @@ offset_bottom = 3.0
 position = Vector2(1028, 783)
 
 [node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("7_km0xc")]
-position = Vector2(321, 636)
+position = Vector2(325, 635.00006)
 rotation = 1.5707964
 scale = Vector2(0.20961541, 0.20961541)
 source_water = NodePath("../Water")

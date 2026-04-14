@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dug7k3iil71ms"]
+
+[ext_resource type="Texture2D" uid="uid://csigmwvke1bwe" path="res://assets/platforms/new/Water tank 3.png" id="1_yvyqa"]
+
+[node name="PlatformGrayShortWaterTank" type="StaticBody2D" unique_id=597132713]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=411501785]
+texture = ExtResource("1_yvyqa")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=109131981]
+build_mode = 1
+polygon = PackedVector2Array(-611, -202, -494, -200, -471, -104, -441, -47, -402, -18, -347, 15, -273, 43, -206, 59, -143, 70, -82, 75, -16, 80, 42, 78, 110, 77, 194, 72, 245, 64, 300, 56, 358, 41, 413, 19, 458, -10, 500, -47, 527, -89, 543, -141, 546, -199, 677, -196, 608, -38, 609, 149, 640, 168, 664, 247, 584, 257, 31, 280, -523, 259, -603, 260, -576, 168, -542, 120, -536, -60)
