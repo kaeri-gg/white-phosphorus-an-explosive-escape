@@ -189,7 +189,7 @@ func take_damage(amount: int) -> void:
 		return
 
 	current_health -= amount
-	health_changed.emit(current_health, PLAYER_HEALTH) # Add this
+	health_changed.emit(current_health, PLAYER_HEALTH)
 	
 	if current_health <= 0:
 		die()

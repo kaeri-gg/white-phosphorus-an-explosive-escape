@@ -11,9 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_01hg1"]
 [ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
-[ext_resource type="PackedScene" path="res://scenes/utils/health_bar.tscn" id="12_m2jhg"]
+[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="12_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="13_km0xc"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="14_n536o"]
+[ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="15_4dr30"]
+[ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="16_dscar"]
+[ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform_yellow_long_curved_pipe.tscn" id="17_01hg1"]
 
 [node name="Level_02" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -34,8 +37,8 @@ water_size = Vector2(280, 200)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
-position = Vector2(584, 633)
-water_size = Vector2(600, 10)
+position = Vector2(585, 506)
+water_size = Vector2(430, 130)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
 min_height = 10.0
 starts_full = false
@@ -59,17 +62,13 @@ position = Vector2(624.0001, 624)
 scale = Vector2(0.62275726, 0.62275726)
 
 [node name="PlatformRedInBetween5" parent="." unique_id=1201935249 instance=ExtResource("8_n536o")]
-position = Vector2(1176, 597)
+position = Vector2(1005.9999, 595.00006)
 rotation = -1.5707966
 scale = Vector2(0.6227572, 0.6227572)
 
 [node name="PlatformRedInBetween6" parent="." unique_id=60558813 instance=ExtResource("8_n536o")]
-position = Vector2(1150, 529)
-rotation = 3.1415927
-scale = Vector2(0.6227572, 0.6227572)
-
-[node name="PlatformRedInBetween7" parent="." unique_id=2128328487 instance=ExtResource("8_n536o")]
-position = Vector2(1101, 502)
+position = Vector2(1032, 546)
+rotation = 1.5707964
 scale = Vector2(0.6227572, 0.6227572)
 
 [node name="PlatformGrayPipe" parent="." unique_id=1415318706 instance=ExtResource("9_m2jhg")]
@@ -83,9 +82,17 @@ rotation = -3.1415925
 scale = Vector2(0.35434592, 0.5503671)
 
 [node name="PlatformGrayPipe3" parent="." unique_id=1219730633 instance=ExtResource("9_m2jhg")]
-position = Vector2(879, 619)
+position = Vector2(796.99994, 618)
 rotation = -3.1415925
-scale = Vector2(0.8757383, 0.54425216)
+scale = Vector2(0.56914014, 0.58312494)
+
+[node name="PlatformGrayPipe4" parent="." unique_id=1253907052 instance=ExtResource("9_m2jhg")]
+position = Vector2(1381.9999, 630)
+scale = Vector2(0.6582093, 0.6582093)
+
+[node name="PlatformGrayPipe5" parent="." unique_id=478350501 instance=ExtResource("9_m2jhg")]
+position = Vector2(2077, 621)
+scale = Vector2(0.5502849, 0.6481322)
 
 [node name="PlatformRedInBetween" parent="." unique_id=1493183219 instance=ExtResource("8_4dr30")]
 position = Vector2(585, 352)
@@ -96,6 +103,45 @@ scale = Vector2(0.55138034, 0.55138034)
 position = Vector2(581, 483.99997)
 rotation = 1.5707964
 scale = Vector2(0.545239, 0.7308498)
+
+[node name="PlatformYellow4WayConnector" parent="." unique_id=574683061 instance=ExtResource("15_4dr30")]
+position = Vector2(1124.0001, 522)
+scale = Vector2(0.15609452, 0.15609452)
+
+[node name="PlatformGrayConnectionPipe" parent="." unique_id=464077310 instance=ExtResource("16_dscar")]
+position = Vector2(1166, 592)
+scale = Vector2(0.15342914, 0.15342914)
+
+[node name="PlatformRedInBetweenSpring" parent="." unique_id=2116395097 instance=ExtResource("8_4dr30")]
+position = Vector2(1217.0001, 505.99994)
+
+[node name="PlatformYellowLongCurvedPipe" parent="." unique_id=1399212371 instance=ExtResource("17_01hg1")]
+position = Vector2(1734, 382)
+
+[node name="PlatformGrayConnectionPipe2" parent="." unique_id=1670408561 instance=ExtResource("16_dscar")]
+position = Vector2(1596, 569)
+rotation = -1.5648487
+scale = Vector2(0.1574853, 0.1574853)
+
+[node name="PlatformGrayConnectionPipe3" parent="." unique_id=318811390 instance=ExtResource("16_dscar")]
+position = Vector2(1891, 586)
+rotation = -6.29216
+scale = Vector2(0.15423302, 0.15423302)
+
+[node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("7_km0xc")]
+position = Vector2(325, 635.00006)
+rotation = 1.5707964
+scale = Vector2(0.20961541, 0.20961541)
+source_water = NodePath("../Water")
+target_water = NodePath("../Water2")
+transfer_duration = 1.0
+
+[node name="Portal" parent="." unique_id=1863363077 instance=ExtResource("13_km0xc")]
+position = Vector2(2456, 553)
+next_scene_path = "uid://ca5kehyb1ts0t"
+
+[node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("14_n536o")]
+position = Vector2(1028, 783)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1043999466]
 layer = -10
@@ -118,23 +164,3 @@ offset_bottom = 3.0
 
 [node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
 player = NodePath("../../Player")
-
-[node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("14_n536o")]
-position = Vector2(1028, 783)
-
-[node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("7_km0xc")]
-position = Vector2(325, 635.00006)
-rotation = 1.5707964
-scale = Vector2(0.20961541, 0.20961541)
-source_water = NodePath("../Water")
-target_water = NodePath("../Water2")
-transfer_duration = 1.0
-
-[node name="Switch2" parent="." unique_id=19979149 instance=ExtResource("7_km0xc")]
-position = Vector2(739, 309)
-rotation = 1.5707964
-scale = Vector2(0.20961541, 0.20961541)
-
-[node name="Portal" parent="." unique_id=1863363077 instance=ExtResource("13_km0xc")]
-position = Vector2(1556, 556)
-next_scene_path = "uid://ca5kehyb1ts0t"

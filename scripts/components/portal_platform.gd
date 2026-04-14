@@ -29,5 +29,5 @@ func _show_next_scene(body: Node) -> void:
 	is_transitioning = true
 	sound_manager.play("EnterGame")
 	
-	await utils.fade_out(get_tree().current_scene, 0.5)
-	get_tree().change_scene_to_file(resolved_scene_path)
+	#await utils.fade_out(get_tree().current_scene, 0.5)
+	get_tree().call_deferred("change_scene_to_file", resolved_scene_path)

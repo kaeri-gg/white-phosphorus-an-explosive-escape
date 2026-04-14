@@ -11,7 +11,7 @@ func _ready() -> void:
 		previous_health = player.PLAYER_HEALTH
 		player.health_changed.connect(update_health_display)
 
-func update_health_display(current: int, max_hp: int) -> void:
+func update_health_display(current: int, _max_hp: int) -> void:
 	health_label.text = str(current)
 	
 	if previous_health != -1 and current < previous_health:
@@ -36,6 +36,6 @@ func shake_camera() -> void:
 	if cam != null:
 		var tween = get_tree().create_tween()
 		
-		tween.tween_property(cam, "offset", Vector2(randf_range(-15, 15), randf_range(-15, 15)), 0.05)
-		tween.tween_property(cam, "offset", Vector2(randf_range(-10, 10), randf_range(-10, 10)), 0.05)
+		tween.tween_property(cam, "offset", Vector2(randf_range(-5, 5), randf_range(-5, 5)), 0.03)
+		tween.tween_property(cam, "offset", Vector2(randf_range(-5, 5), randf_range(-5, 5)), 0.03)
 		tween.tween_property(cam, "offset", Vector2.ZERO, 0.05)
