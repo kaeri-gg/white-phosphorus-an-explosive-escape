@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_yklhy"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_4hx2o"]
-[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="4_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/water.tscn" id="5_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="6_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://di6q1k56qura0" path="res://scenes/components/platforms/platform-yellow-inbetween.tscn" id="6_m2jhg"]
@@ -28,20 +27,17 @@ script = ExtResource("1_yklhy")
 unique_name_in_owner = true
 position = Vector2(104, 538)
 
-[node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(-37, 504)
-script = ExtResource("4_km0xc")
-water_size = Vector2(290, 140)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
+position = Vector2(-34, 505)
+water_size = Vector2(280, 200)
+surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
-[node name="Water2" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
-position = Vector2(576, 628)
-water_size = Vector2(600, 10)
-surface_color = Color(0.7647059, 0.9843137, 0.96862745, 0.627451)
-water_fill_color = Color(0.34117648, 0.81960785, 0.9098039, 0.41960785)
+[node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
+position = Vector2(584, 513)
+water_size = Vector2(600, 130)
+surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
 min_height = 10.0
-starts_full = null
+starts_full = false
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("6_4hx2o")]
 position = Vector2(102.00001, 600.99994)
