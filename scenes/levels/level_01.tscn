@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="11_ijn0p"]
-[ext_resource type="PackedScene" uid="uid://c5wlfyhswpm60" path="res://scenes/components/obstacles/obstacle-burnable.tscn" id="13_tyxjt"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -64,11 +63,6 @@ expand_mode = 5
 [node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
 player = NodePath("../../Player")
 
-[node name="ObstacleBurnable" parent="." unique_id=111111111 instance=ExtResource("13_tyxjt")]
-position = Vector2(729, 409)
-scale = Vector2(0.12640259, 0.12640259)
-
-[node name="ObstacleFire" parent="." unique_id=213981158 instance=ExtResource("3_ijn0p")]
-position = Vector2(133, 410)
-scale = Vector2(0.18557037, 0.18557037)
-is_fire = true
+[node name="ObstacleFire" parent="." unique_id=955298734 instance=ExtResource("3_ijn0p")]
+position = Vector2(128, 414)
+scale = Vector2(0.1512608, 0.1512608)

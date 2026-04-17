@@ -3,13 +3,19 @@
 [ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_burnable"]
 [ext_resource type="Texture2D" uid="uid://dodmut8bita5x" path="res://assets/obstacles/fire.png" id="1_ehk1u"]
 
-[node name="ObstacleFire" type="Area2D" unique_id=1256502193]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fire"]
+radius = 175.5
+height = 435.0
+
+[node name="ObstacleFire" type="Area2D" unique_id=213981158]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_burnable")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1381941758]
 texture = ExtResource("1_ehk1u")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1336226968]
-light_mask = 2
-visibility_layer = 2
-polygon = PackedVector2Array(-224, -111, -243, 158, 256, 180, 160, -112)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=295713907]
+position = Vector2(-3, 34)
+scale = Vector2(1.233, 0.651)
+shape = SubResource("CapsuleShape2D_fire")

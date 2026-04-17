@@ -1,68 +1,93 @@
 class_name BurnableObstacle
 extends Area2D
 
-enum BURN_STATE { NORMAL, BURNING, ASH }
+enum TYPE { FIRE, FIREWORK, WOOD }
 
-@export var is_fire: bool = false
+const KILL_DELAY: float = 0.5
+const WOOD_BURN_DURATION: float = 1.0
 
-var burn_state: BURN_STATE = BURN_STATE.NORMAL
+@export var type: TYPE
+
+var _kill_timer: Timer
+var _pending_victim: Player = null
+var _was_firework: bool = false
+var _wood_ignited: bool = false
 
 func _ready() -> void:
-	if "fire" in name.to_lower():
-		is_fire = true
+	_kill_timer = Timer.new()
+	_kill_timer.one_shot = true
+	_kill_timer.wait_time = KILL_DELAY
+	_kill_timer.timeout.connect(_on_kill_timer_timeout)
+	add_child(_kill_timer)
+
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
-func _on_body_entered(player: Node) -> void:
-	if player is Player:
-		if is_fire:
-			_handle_fire_obstacle(player)
-		else:
-			_handle_burnable_obstacle(player)
+func _on_body_entered(body: Node) -> void:
+	if body is not Player:
+		return
+	var player := body as Player
+	match type:
+		TYPE.FIRE:
+			_handle_fire(player)
+		TYPE.FIREWORK:
+			_handle_firework(player)
+		TYPE.WOOD:
+			_handle_wood(player)
 
-func _handle_fire_obstacle(player: Player) -> void:
-	if player.current_state == Player.STATE.BURNING:
-		_spread_fire()
+func _on_body_exited(body: Node) -> void:
+	if body is not Player:
+		return
+	if _was_firework and _pending_victim == body:
+		_kill_timer.stop()
+		_pending_victim = null
+
+func _handle_fire(player: Player) -> void:
+	print("entered fire")
+	if _was_firework:
+		_start_kill_countdown(player)
 	else:
 		player.die()
 
-func _handle_burnable_obstacle(player: Player) -> void:
-	if player.current_state == Player.STATE.BURNING:
-		_burn_to_ash()
-	else:
-		player.die()
-
-func _spread_fire() -> void:
-	if burn_state != BURN_STATE.NORMAL:
+func _handle_firework(player: Player) -> void:
+	print("entered firework")
+	if player.current_state != Player.STATE.BURNING:
+		print("player is not burning, firework will not convert to fire")
 		return
+	print("should changed to fire")
+	type = TYPE.FIRE
+	_was_firework = true
+	_start_kill_countdown(player)
 
-	burn_state = BURN_STATE.BURNING
-	modulate = Color(1.4, 1.2, 0.8, 1.0)
-
-	await utils.timeout(0.3)
-	modulate = Color(1.6, 1.0, 0.6, 1.0)
-
-	await utils.timeout(0.3)
-	modulate = Color(1.8, 0.8, 0.4, 1.0)
-
-	await utils.timeout(0.3)
-	modulate = Color(2.0, 0.5, 0.2, 1.0)
-
-	await utils.timeout(0.3)
-	modulate = Color(1, 1, 1, 1.0)
-
-func _burn_to_ash() -> void:
-	if burn_state != BURN_STATE.NORMAL:
+func _handle_wood(player: Player) -> void:
+	print("touched wood, but its not working")
+	# TODO: Work on this bug
+	
+	if _wood_ignited:
 		return
+	if player.current_state != Player.STATE.BURNING:
+		return
+	_ignite_wood()
 
-	burn_state = BURN_STATE.BURNING
+func _start_kill_countdown(player: Player) -> void:
+	print("should start countdown")
+	_pending_victim = player
+	_kill_timer.start()
 
-	var sprite := get_node_or_null("Sprite2D") as Sprite2D
+func _on_kill_timer_timeout() -> void:
+	if _pending_victim and is_instance_valid(_pending_victim):
+		print("player should die")
+		_pending_victim.die()
+	_pending_victim = null
+
+func _ignite_wood() -> void:
+	_wood_ignited = true
+	print("wood burned")
+	var sprite := get_node_or_null("Sprite2D")
 	if sprite:
-		var tween := create_tween()
-		tween.set_parallel(true)
-		tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
-		tween.tween_property(sprite, "scale", sprite.scale * 1.3, 0.5)
-		await tween.finished
-
-	burn_state = BURN_STATE.ASH
+		sprite.modulate = Color(0.3, 0.3, 0.3, 1.0)
+	var solid := get_node_or_null("StaticBody2D")
+	if solid:
+		solid.queue_free()
+	await utils.timeout(WOOD_BURN_DURATION)
 	queue_free()
