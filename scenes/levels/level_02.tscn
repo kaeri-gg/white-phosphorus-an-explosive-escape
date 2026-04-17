@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between_spring.tscn" id="8_4dr30"]
 [ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="8_n536o"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
-[ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_01hg1"]
 [ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
 [ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="12_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="13_km0xc"]
@@ -37,8 +36,8 @@ water_size = Vector2(280, 200)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
-position = Vector2(585, 506)
-water_size = Vector2(430, 130)
+position = Vector2(585, 626)
+water_size = Vector2(430, 10)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
 min_height = 10.0
 starts_full = false
@@ -154,13 +153,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_n536o")
 expand_mode = 5
-
-[node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_01hg1")]
-unique_name_in_owner = true
-offset_left = -66.0
-offset_top = 3.0
-offset_right = -66.0
-offset_bottom = 3.0
 
 [node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
 player = NodePath("../../Player")

@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray_curved_tube.tscn" id="5_qdh5e"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
-[ext_resource type="PackedScene" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
-[ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/utils/timer.tscn" id="10_r72dd"]
+[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="11_ijn0p"]
+[ext_resource type="PackedScene" uid="uid://c5wlfyhswpm60" path="res://scenes/components/obstacles/obstacle-burnable.tscn" id="13_tyxjt"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -25,10 +25,6 @@ script = ExtResource("1_t0hvh")
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
 position = Vector2(448, 520)
-
-[node name="ObstaclesFire" parent="." unique_id=868786613 instance=ExtResource("3_ijn0p")]
-position = Vector2(110, 421)
-scale = Vector2(0.1370473, 0.1370473)
 
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(297, 491)
@@ -68,5 +64,11 @@ expand_mode = 5
 [node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
 player = NodePath("../../Player")
 
-[node name="Timer" parent="CanvasLayer" unique_id=291529227 instance=ExtResource("10_r72dd")]
-unique_name_in_owner = true
+[node name="ObstacleBurnable" parent="." unique_id=111111111 instance=ExtResource("13_tyxjt")]
+position = Vector2(729, 409)
+scale = Vector2(0.12640259, 0.12640259)
+
+[node name="ObstacleFire" parent="." unique_id=213981158 instance=ExtResource("3_ijn0p")]
+position = Vector2(133, 410)
+scale = Vector2(0.18557037, 0.18557037)
+is_fire = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddocum5vf1g4u"]
 
-[ext_resource type="Script" uid="uid://dnaawwoi6lwwl" path="res://scripts/components/killzone.gd" id="1_rr0s8"]
+[ext_resource type="Script" uid="uid://burnable123" path="res://scripts/components/burnable_obstacle.gd" id="1_rr0s8"]
 [ext_resource type="Texture2D" uid="uid://6tteg7qxiuns" path="res://assets/obstacles/Firework.png" id="2_r6fbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qfs0"]
