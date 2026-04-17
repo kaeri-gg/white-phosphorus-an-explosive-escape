@@ -29,6 +29,7 @@ script = ExtResource("1_yklhy")
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
 position = Vector2(104, 538)
+camera_bounds = Rect2(0, 0, 3000, 720)
 
 [node name="Water" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
 position = Vector2(-34, 505)
@@ -36,8 +37,8 @@ water_size = Vector2(280, 200)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 
 [node name="Water2" parent="." unique_id=450277356 instance=ExtResource("5_km0xc")]
-position = Vector2(585, 626)
-water_size = Vector2(430, 10)
+position = Vector2(588, 495)
+water_size = Vector2(430, 140)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.4392157)
 min_height = 10.0
 starts_full = false

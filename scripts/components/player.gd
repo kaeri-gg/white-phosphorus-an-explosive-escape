@@ -4,10 +4,14 @@ extends CharacterBody2D
 @onready var player_sprite: PlayerExpressions = %PlayerExpressionController
 @onready var burn_timer: Timer = %BurnTimer
 @onready var damage_timer: Timer = %DamageTimer
+@onready var player_camera: Camera2D = $Camera2D
 
 @export var SPEED: float = 400.0
 @export var JUMP_VELOCITY: float = -500.0
 @export var PLAYER_HEALTH: int = 7
+
+@export_group("Camera")
+@export var camera_bounds: Rect2 = Rect2(0, 0, 1280, 720)
 
 var current_health: int
 
@@ -39,6 +43,7 @@ func _ready() -> void:
 	health_changed.emit(current_health, PLAYER_HEALTH)
 
 	add_to_group("can_interact_with_water")
+	_apply_camera_bounds()
 
 	damage_timer.timeout.connect(_on_damage_tick)
 	burn_timer.timeout.connect(_on_burn_timer_timeout)
@@ -50,6 +55,13 @@ func _ready() -> void:
 
 	state_change.emit(current_state)
 	movement_change.emit(was_moving)
+
+func _apply_camera_bounds() -> void:
+	var bounds := camera_bounds.abs()
+	player_camera.limit_left = floori(bounds.position.x)
+	player_camera.limit_top = floori(bounds.position.y)
+	player_camera.limit_right = ceili(bounds.end.x)
+	player_camera.limit_bottom = ceili(bounds.end.y)
 
 func change_state(new_state: STATE) -> void:
 	if current_state == new_state:
