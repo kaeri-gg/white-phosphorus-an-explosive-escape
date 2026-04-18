@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dog2aa6dlyy52"
-path="res://.godot/imported/VIBRATING_continue_1.png-3069b6389442083af03ed620a9118671.ctex"
+uid="uid://d2ahcmqywqpd6"
+path="res://.godot/imported/1.png-9078bc11c6f7a8872d755368ea954c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/vibrating/vibrating-continue/VIBRATING_continue_1.png"
-dest_files=["res://.godot/imported/VIBRATING_continue_1.png-3069b6389442083af03ed620a9118671.ctex"]
+source_file="res://assets/character/stable-moving/1.png"
+dest_files=["res://.godot/imported/1.png-9078bc11c6f7a8872d755368ea954c9c.ctex"]
 
 [params]
 

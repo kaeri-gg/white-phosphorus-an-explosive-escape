@@ -34,7 +34,7 @@ func on_player_state_change(new_state: int) -> void:
 	if current_state != Player.STATE.STABLE:
 		is_playing_expression = false
 
-	if current_state == Player.STATE.SHAKING:
+	if current_state == Player.STATE.VIBRATING:
 		_start_shake_tween()
 		return
 
@@ -45,7 +45,8 @@ func on_player_state_change(new_state: int) -> void:
 	play("stable")
 
 func on_player_movement_change(_moving: bool) -> void:
-	pass
+	if not _moving and current_state == Player.STATE.STABLE:
+		play("stable")
 
 func _schedule_next_blink() -> void:
 	blink_timer.wait_time = randf_range(BLINK_MIN_INTERVAL, BLINK_MAX_INTERVAL)
@@ -75,6 +76,16 @@ func _can_play_expression() -> bool:
 	return current_state == Player.STATE.STABLE and not is_playing_expression
 
 func _on_animation_finished() -> void:
+	if animation == "vibrating_jump":
+		if current_state == Player.STATE.VIBRATING:
+			play("vibrating")
+		return
+
+	if animation == "stable_jump":
+		if current_state == Player.STATE.STABLE:
+			play("stable")
+		return
+
 	if animation != "stable_blink" and animation != "stable_eyebrow":
 		return
 

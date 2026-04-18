@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfxx2acyb8qe"
-path="res://.godot/imported/VIBRATING_beginning_4.png-09efa3a5d9f519b2a5a6cec9dd371fa0.ctex"
+uid="uid://2a65qssk48lm"
+path="res://.godot/imported/5.png-476c655e75e75df45ae14e77021bf0bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/vibrating/VIBRATING_beginning_4.png"
-dest_files=["res://.godot/imported/VIBRATING_beginning_4.png-09efa3a5d9f519b2a5a6cec9dd371fa0.ctex"]
+source_file="res://assets/character/vibrating/vibrating-continue/5.png"
+dest_files=["res://.godot/imported/5.png-476c655e75e75df45ae14e77021bf0bd.ctex"]
 
 [params]
 

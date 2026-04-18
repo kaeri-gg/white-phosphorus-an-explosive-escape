@@ -24,7 +24,7 @@ script = ExtResource("1_h3cwf")
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"stable"
+animation = &"stable_moving"
 autoplay = "stable"
 script = ExtResource("3_sjsxr")
 
@@ -52,6 +52,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
+
+[node name="VibrateTimer" type="Timer" parent="." unique_id=892961114]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=301574021]
 unique_name_in_owner = true

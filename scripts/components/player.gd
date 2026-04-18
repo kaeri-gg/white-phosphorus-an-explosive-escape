@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var player_sprite: PlayerExpressions = %PlayerExpressionController
 @onready var burn_timer: Timer = %BurnTimer
 @onready var damage_timer: Timer = %DamageTimer
+@onready var water_exit_delay_timer: Timer = %VibrateTimer
+
 @onready var player_camera: Camera2D = $Camera2D
 
 @export var SPEED: float = 400.0
@@ -27,7 +29,7 @@ signal state_change(new_state: int)
 signal movement_change(is_moving: bool)
 signal health_changed(current: int, max_hp: int)
 
-enum STATE { STABLE, BURNING, SHAKING, DEAD, EVOLVED }
+enum STATE { STABLE, BURNING, VIBRATING, DEAD, EVOLVED }
 enum ENV { AIR, WATER }
 
 const MAX_JUMP: int = 2
@@ -37,6 +39,7 @@ var current_state: STATE = STATE.STABLE
 var env_state: ENV = ENV.AIR
 var was_moving: bool = false
 var is_dying: bool = false
+var just_left_water: bool = false
 
 func _ready() -> void:
 	current_health = PLAYER_HEALTH
@@ -47,6 +50,7 @@ func _ready() -> void:
 
 	damage_timer.timeout.connect(_on_damage_tick)
 	burn_timer.timeout.connect(_on_burn_timer_timeout)
+	water_exit_delay_timer.timeout.connect(_on_water_exit_delay_timer_timeout)
 	state_change.connect(player_sprite.on_player_state_change)
 	movement_change.connect(player_sprite.on_player_movement_change)
 
@@ -78,7 +82,7 @@ func change_state(new_state: STATE) -> void:
 			stabilized.emit()
 		STATE.BURNING:
 			burned.emit()
-		STATE.SHAKING:
+		STATE.VIBRATING:
 			shook.emit()
 
 func _physics_process(_delta: float) -> void:
@@ -96,9 +100,17 @@ func _physics_process(_delta: float) -> void:
 		jump_count = 0
 
 	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMP:
+		if current_state == STATE.VIBRATING:
+			player_sprite.stop()
+			player_sprite.play("vibrating_jump")
+			
+		if current_state == STATE.STABLE:
+			player_sprite.stop()
+			player_sprite.play("stable_jump")
+			
 		jump_count += 1
 		velocity.y = JUMP_VELOCITY
-
+		
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -108,6 +120,9 @@ func _physics_process(_delta: float) -> void:
 	var is_moving_now: bool = abs(velocity.x) > 0.1
 	if is_moving_now != was_moving:
 		was_moving = is_moving_now
+		player_sprite.stop()
+		if was_moving and current_state == STATE.STABLE:
+			player_sprite.play("stable_moving")
 		movement_change.emit(was_moving)
 
 	move_and_slide()
@@ -119,8 +134,13 @@ func detect_environment() -> void:
 		change_state(STATE.STABLE)
 		return
 
+	if just_left_water:
+		if burn_timer.is_stopped():
+			burn_timer.start()
+		return
+
 	if current_state != STATE.BURNING:
-		change_state(STATE.SHAKING)
+		change_state(STATE.VIBRATING)
 
 	if burn_timer.is_stopped():
 		burn_timer.start()
@@ -132,18 +152,25 @@ func _stop_timers() -> void:
 		damage_timer.stop()
 
 func enter_water() -> void:
+	just_left_water = false
 	update_environment(ENV.WATER)
 	detect_environment()
 
 func leave_water() -> void:
+	just_left_water = true
 	update_environment(ENV.AIR)
-	detect_environment()
+	water_exit_delay_timer.start()
 
 func update_environment(location: ENV) -> void:
 	env_state = location
 
+func _on_water_exit_delay_timer_timeout() -> void:
+	just_left_water = false
+	if env_state == ENV.AIR:
+		detect_environment()
+
 func _on_burn_timer_timeout() -> void:
-	if current_state == STATE.BURNING:
+	if just_left_water or current_state == STATE.BURNING:
 		return
 
 	change_state(STATE.BURNING)
@@ -194,8 +221,8 @@ func update_visual_state() -> void:
 			if current_state != state_at_call:
 				return
 			player_sprite.play("repeat_burning")
-		STATE.SHAKING:
-			player_sprite.play("shaking")
+		STATE.VIBRATING:
+			player_sprite.play("vibrating")
 		STATE.EVOLVED:
 			player_sprite.play("evolved")
 
