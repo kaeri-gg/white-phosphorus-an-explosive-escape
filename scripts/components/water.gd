@@ -53,8 +53,9 @@ func _ready() -> void:
 	# Anchor = world position of the tank bottom. This never changes.
 	_anchor_bottom_y = global_position.y + surface_pos_y + water_size.y
 
-	# If this tank should start nearly empty, set it to min_height now
-	if not starts_full:
+	# If this tank should start nearly empty, set it to min_height now.
+	# Guarded against @tool editor runs so water_size.y isn't overwritten on save.
+	if not starts_full and not Engine.is_editor_hint():
 		set_water_fill_height(min_height)
 	
 func initiate_water() -> void:
@@ -197,7 +198,7 @@ func _on_body_exited(body: Node2D) -> void:
 ## Instantly set the water to a specific fill height.
 ## Updates visuals, collision shape, and node position so the tank bottom stays anchored.
 func set_water_fill_height(new_height: float) -> void:
-	var clamped : int = clamp(new_height, min_height, max_height)
+	var clamped: float = clamp(new_height, min_height, max_height)
 	water_size.y = clamped
 
 	# Move node so the tank bottom stays at _anchor_bottom_y
@@ -220,8 +221,8 @@ func animate_fill(target_height: float, duration: float) -> void:
 	if _fill_tween and _fill_tween.is_running():
 		_fill_tween.kill()
 
-	var start_height := water_size.y
-	var clamped_target: int = clamp(target_height, min_height, max_height)
+	var start_height: float = water_size.y
+	var clamped_target: float = clamp(target_height, min_height, max_height)
 	
 	# tween_method(callable, from_value, to_value, duration)
 	# tween_method calls set_water_fill_height every frame with an interpolated value

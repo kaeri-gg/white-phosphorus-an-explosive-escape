@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b1pimif3nkdvn"]
+
+[ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_bva6d"]
+[ext_resource type="Texture2D" uid="uid://bw8wpf80nasx0" path="res://assets/obstacles/pipe-fire/1.png" id="2_j5ke7"]
+[ext_resource type="Texture2D" uid="uid://b4wdfxk87rxrg" path="res://assets/obstacles/pipe-fire/2.png" id="3_o7y8w"]
+[ext_resource type="Texture2D" uid="uid://blajfpvfg2ij2" path="res://assets/obstacles/pipe-fire/3.png" id="4_1yh1n"]
+[ext_resource type="Texture2D" uid="uid://nssya7smh0r8" path="res://assets/obstacles/pipe-fire/4.png" id="5_cxq2u"]
+[ext_resource type="Texture2D" uid="uid://dl4gvkponvbu7" path="res://assets/obstacles/pipe-fire/5.png" id="6_byfs6"]
+[ext_resource type="Texture2D" uid="uid://chrip7wlxuivq" path="res://assets/obstacles/pipe-fire/6.png" id="7_pnovd"]
+[ext_resource type="Texture2D" uid="uid://b8bxaxugtqlrn" path="res://assets/obstacles/pipe-fire/7.png" id="8_e4d4p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yek8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j5ke7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7y8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1yh1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cxq2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_byfs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pnovd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e4d4p")
+}],
+"loop": true,
+"name": &"big_fire",
+"speed": 7.0
+}]
+
+[node name="ObstaclePipeFire" type="Area2D" unique_id=1256502193]
+script = ExtResource("1_bva6d")
+
+[node name="PipeFireSprite" type="AnimatedSprite2D" parent="." unique_id=867445764]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_yek8d")
+animation = &"big_fire"
+frame_progress = 0.013021804
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1336226968]
+light_mask = 2
+visibility_layer = 2
+build_mode = 1
+polygon = PackedVector2Array(-139, -268, -166, 331, 103, 330, 67, -274)

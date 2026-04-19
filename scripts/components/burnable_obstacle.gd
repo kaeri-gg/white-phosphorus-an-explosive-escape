@@ -23,6 +23,11 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
+	if type == TYPE.FIRE:
+		var sprite := get_node_or_null("%PipeFireSprite") as AnimatedSprite2D
+		if sprite:
+			sprite.play("big_fire")
+
 func _on_body_entered(body: Node) -> void:
 	if body is not Player:
 		return
