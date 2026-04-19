@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://birhevdxnyshv" path="res://scenes/components/platforms/platform_gray_curved_tube.tscn" id="5_qdh5e"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
-[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
+[ext_resource type="PackedScene" uid="uid://c1ft1k3swvmqf" path="res://scenes/utils/health_ui.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/portal.tscn" id="11_ijn0p"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
@@ -60,7 +60,7 @@ grow_vertical = 2
 texture = ExtResource("1_m802k")
 expand_mode = 5
 
-[node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
+[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
 player = NodePath("../../Player")
 
 [node name="ObstacleFire" parent="." unique_id=955298734 instance=ExtResource("3_ijn0p")]

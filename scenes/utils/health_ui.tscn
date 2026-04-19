@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c1ft1k3swvmqf"]
+
+[ext_resource type="Script" uid="uid://talfkr48fajb" path="res://scripts/components/health_bar.gd" id="1_cgjq4"]
+[ext_resource type="Texture2D" uid="uid://cfduccob7nxeh" path="res://assets/ui/Healthbar_7HP.png" id="9_vj54e"]
+
+[node name="HealthUI" type="Control" unique_id=1134340404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_cgjq4")
+
+[node name="HealthBar" type="TextureRect" parent="." unique_id=330004889]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 926.99994
+offset_top = -13.0
+offset_right = 1567.0
+offset_bottom = 1067.0
+grow_horizontal = 2
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("9_vj54e")
+
+[node name="DamageFlash" type="ColorRect" parent="." unique_id=1859712310]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.58431375, 0.09019608, 0.101960786, 1)
