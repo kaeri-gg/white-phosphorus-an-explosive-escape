@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfmwwmfs6owv2"]
 
-[ext_resource type="Texture2D" uid="uid://nsmgujvp5bj8" path="res://assets/platforms/new/Pipe closing cap 2.png" id="1_ij2km"]
+[ext_resource type="Texture2D" uid="uid://nsmgujvp5bj8" path="res://assets/platforms/Pipe closing cap 2.png" id="1_ij2km"]
 
 [node name="PlatformRedClosingPipe" type="StaticBody2D" unique_id=818493941]
 
@@ -9,4 +9,4 @@ texture = ExtResource("1_ij2km")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1912710165]
 build_mode = 1
-polygon = PackedVector2Array(207, -415, 210, 369, -56, 374, -138, 369, -205, 340, -270, 289, -308, 204, -315, 118, -312, -204, -294, -286, -260, -331, -213, -375, -146, -402, -60, -415, 81, -408)
+polygon = PackedVector2Array(210, 369, -56, 374, -138, 369, -205, 340, -270, 289, -308, 204, -315, 118, -312, -204, -294, -286, -260, -331, -213, -375, -146, -402, -60, -415, 210, -413)

@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://xn1egvlreu04"]
 
-[ext_resource type="Texture2D" uid="uid://df0pl5v61iab8" path="res://assets/platforms/new/No collision platform 2.png" id="1_gxcny"]
+[ext_resource type="Texture2D" uid="uid://df0pl5v61iab8" path="res://assets/platforms/No collision platform 2.png" id="1_gxcny"]
 
-[node name="NoCollisionGrayConnectionPipe" type="StaticBody2D" unique_id=1653150243]
+[node name="NoCollisionGrayConnectionPipe" type="Node2D" unique_id=1019894451]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=948481353]
 texture = ExtResource("1_gxcny")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2144261234]
-build_mode = 1
-polygon = PackedVector2Array(-377, -270, -130, -271, -132, -102, -128, -74, -114, -53, -100, -41, -79, -32, 159, -32, 158, 209, -180, 205, -248, 196, -289, 175, -325, 148, -348, 116, -368, 61, -372, -9, -373, -108)

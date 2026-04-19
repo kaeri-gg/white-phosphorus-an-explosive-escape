@@ -8,8 +8,8 @@ extends CharacterBody2D
 
 @onready var player_camera: Camera2D = $Camera2D
 
-@export var SPEED: float = 400.0
-@export var JUMP_VELOCITY: float = -500.0
+@export var SPEED: float = 220.0
+@export var JUMP_VELOCITY: float = -480.0
 @export var PLAYER_HEALTH: int = 7
 
 @export_group("Camera")

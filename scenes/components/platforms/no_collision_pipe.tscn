@@ -1,16 +1,8 @@
 [gd_scene format=3 uid="uid://n58h4ax3xvsn"]
 
-[ext_resource type="Texture2D" uid="uid://bac23wlimevju" path="res://assets/platforms/new/No collision platform 1.png" id="1_hn2sb"]
+[ext_resource type="Texture2D" uid="uid://bac23wlimevju" path="res://assets/platforms/No collision platform 1.png" id="1_hn2sb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn2sb"]
-size = Vector2(1465, 86)
-
-[node name="NoCollisionPipe" type="StaticBody2D" unique_id=253815070]
+[node name="NoCollisionPipe" type="Node2D" unique_id=1300504481]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=524549503]
 texture = ExtResource("1_hn2sb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=545690217]
-visible = false
-position = Vector2(-38.5, -46)
-shape = SubResource("RectangleShape2D_hn2sb")

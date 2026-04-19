@@ -1,4 +1,3 @@
-class_name PortalArea
 extends Area2D
 
 @export_file("*.tscn") var next_scene_path: String = ""
@@ -11,13 +10,14 @@ func _ready() -> void:
 func _show_next_scene(body: Node) -> void:
 	if is_transitioning or not (body is Player):
 		return
+
 	if next_scene_path.is_empty():
-		push_warning("%s is missing a Next Scene." % get_parent().name)
+		push_warning("%s is missing a Next Scene in the inspector." % get_parent().name)
 		return
 
 	var resolved := ResourceUID.ensure_path(next_scene_path)
 	if resolved.is_empty():
-		push_warning("Could not resolve: %s" % next_scene_path)
+		push_warning("Could not resolve scene path: %s" % next_scene_path)
 		return
 
 	is_transitioning = true

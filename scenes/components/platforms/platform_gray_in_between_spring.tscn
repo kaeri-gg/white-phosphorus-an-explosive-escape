@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0lh0fde8veiu"]
+
+[ext_resource type="Texture2D" uid="uid://dlnvrh8w0qne1" path="res://assets/platforms/Inbetween 3.1.png" id="1_giobx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlivk"]
+size = Vector2(728, 400)
+
+[node name="PlatformGrayInBetween" type="StaticBody2D" unique_id=1488933027]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1271831090]
+texture = ExtResource("1_giobx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2122907822]
+position = Vector2(-13, 2)
+shape = SubResource("RectangleShape2D_qlivk")

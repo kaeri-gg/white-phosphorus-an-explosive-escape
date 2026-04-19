@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bucepi4j07dk3"]
+
+[ext_resource type="Texture2D" uid="uid://dehsrfp5vb4v3" path="res://assets/platforms/Platform 5.png" id="1_d4ku3"]
+[ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="2_qoelv"]
+
+[node name="PlatformBlueTank" type="StaticBody2D" unique_id=1863363077]
+
+[node name="PortalArea" parent="." unique_id=1878742614 instance=ExtResource("2_qoelv")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676758134]
+scale = Vector2(0.61246127, 0.61463857)
+texture = ExtResource("1_d4ku3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1633394133]
+position = Vector2(0, 3)
+build_mode = 1
+polygon = PackedVector2Array(-251, -258, 267, -257, 241, -211, 241, 2, 256, 2, 257, 163, 234, 163, 28, 176, -2, 177, -243, 163, -243, 158, -234, 157, -234, 0, -220, 1, -219, -211)

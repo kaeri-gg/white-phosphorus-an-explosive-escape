@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://da5nksoow0a2v"]
+
+[ext_resource type="Texture2D" uid="uid://cslhcd3nljomd" path="res://assets/platforms/Platform 6.png" id="1_t2amh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4tyf"]
+size = Vector2(1535, 233)
+
+[node name="PlatformRedPipe" type="StaticBody2D" unique_id=465465747]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894501109]
+texture = ExtResource("1_t2amh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672239581]
+position = Vector2(10.5, -13.5)
+shape = SubResource("RectangleShape2D_x4tyf")
