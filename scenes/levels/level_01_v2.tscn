@@ -53,7 +53,7 @@ position = Vector2(908, 771)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_chfmd")]
 unique_name_in_owner = true
-position = Vector2(113, 428)
+position = Vector2(129, 320.00003)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2700, 720)
 
@@ -336,19 +336,23 @@ scale = Vector2(0.39102107, 0.39102107)
 [node name="PortalArea" parent="PlatformWhiteTank" unique_id=1878742614 instance=ExtResource("20_srg4k")]
 position = Vector2(10.229621, 17.901768)
 scale = Vector2(2.2360053, 0.71702933)
-next_scene_path = "uid://ckj7fgxtg1c"
+next_scene_path = "uid://b5xrdjbarad25"
 
-[node name="PlatformGrayMetalRope" parent="PlatformWhiteTank" unique_id=393274938 instance=ExtResource("21_ofm1i")]
-position = Vector2(-5367.9976, -1649.5276)
+[node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("21_ofm1i")]
+position = Vector2(462.99976, -158.00003)
+scale = Vector2(0.39102107, 0.39102107)
 
-[node name="PlatformGrayMetalRope2" parent="PlatformWhiteTank" unique_id=2034378478 instance=ExtResource("21_ofm1i")]
-position = Vector2(-4848.8438, -1649.5276)
+[node name="PlatformGrayMetalRope2" parent="." unique_id=2034378478 instance=ExtResource("21_ofm1i")]
+position = Vector2(665.9999, -158.00003)
+scale = Vector2(0.39102107, 0.39102107)
 
-[node name="PlatformGrayMetalRope3" parent="PlatformWhiteTank" unique_id=512153886 instance=ExtResource("21_ofm1i")]
-position = Vector2(-3342.5308, -1534.4442)
+[node name="PlatformGrayMetalRope3" parent="." unique_id=512153886 instance=ExtResource("21_ofm1i")]
+position = Vector2(1255, -112.99997)
+scale = Vector2(0.39102107, 0.39102107)
 
-[node name="PlatformGrayMetalRope4" parent="PlatformWhiteTank" unique_id=131448312 instance=ExtResource("21_ofm1i")]
-position = Vector2(-2820.8198, -1526.7721)
+[node name="PlatformGrayMetalRope4" parent="." unique_id=131448312 instance=ExtResource("21_ofm1i")]
+position = Vector2(1459, -110.00003)
+scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformGrayInBetween" parent="." unique_id=1488933027 instance=ExtResource("20_25ywd")]
 position = Vector2(559, 689.00006)

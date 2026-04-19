@@ -75,7 +75,7 @@ scale = Vector2(0.46169168, 0.46169168)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
-position = Vector2(1903.0001, 53)
+position = Vector2(96.00001, 54.000004)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 4300, 720)
 

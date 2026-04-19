@@ -63,6 +63,10 @@ position = Vector2(171, 393)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 3000, 720)
 
+[node name="PlatformGrayMetalRope" parent="." unique_id=1970424927 instance=ExtResource("18_3g50r")]
+position = Vector2(1677, 144)
+scale = Vector2(0.78759336, 0.8251494)
+
 [node name="Water" type="Node2D" parent="." unique_id=1444035852]
 position = Vector2(61, 468.00003)
 scale = Vector2(1.0599455, 1.0599455)
@@ -240,10 +244,6 @@ scale = Vector2(0.023432447, 0.049700674)
 [node name="PlatformGrayTank2" parent="." unique_id=1975080868 instance=ExtResource("14_07lms")]
 position = Vector2(1653.9999, 450.00003)
 scale = Vector2(0.5153952, 0.47327387)
-
-[node name="PlatformGrayMetalRope" parent="." unique_id=1970424927 instance=ExtResource("18_3g50r")]
-position = Vector2(1677, 144)
-scale = Vector2(0.78759336, 0.8251494)
 
 [node name="PlatformGrayCurvedTube" parent="." unique_id=873861247 instance=ExtResource("19_iu1m7")]
 position = Vector2(1857.0001, 388)
