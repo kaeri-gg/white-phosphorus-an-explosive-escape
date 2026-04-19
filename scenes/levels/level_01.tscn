@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://jh0nfxnb2kq2" path="res://scenes/components/platforms/platform_gray_concrete.tscn" id="9_r72dd"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
-[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="10_jmes4"]
+[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between_spring.tscn" id="10_tyxjt"]
 [ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="11_07lms"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="11_ijn0p"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="23_1b0o8"]
 [ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="24_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://chp22pksyjabh" path="res://scenes/components/platforms/platform_white_electricity.tscn" id="24_w4kkx"]
-[ext_resource type="Script" uid="uid://bx4jl4vjfm01m" path="res://scripts/components/portal_platform.gd" id="25_lswbx"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -279,7 +278,6 @@ scale = Vector2(0.56081295, 0.50881106)
 
 [node name="PortalArea" parent="PlatformWhiteElectricity" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(5.3493776, -165.09076)
-script = ExtResource("25_lswbx")
 next_scene_path = "uid://iuq1gve72064"
 
 [node name="PlatformBlueTank" parent="." unique_id=1863363077 instance=ExtResource("11_ijn0p")]

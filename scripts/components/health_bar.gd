@@ -2,8 +2,7 @@ extends Control
 
 @export var player: Player 
 @onready var damage_flash: ColorRect = %DamageFlash
-
-@onready var health_bar: TextureRect = $HealthBar
+@onready var health_bar: TextureRect = %HealthBar
 
 var health_textures: Array[Texture2D] = []
 
@@ -24,7 +23,7 @@ func _ready() -> void:
 		previous_health = player.PLAYER_HEALTH
 		player.health_changed.connect(update_health_display)
 
-func update_health_display(current: int, max_hp: int) -> void:
+func update_health_display(current: int, _max_hp: int) -> void:
 	var current_index = clamp(current, 0, health_textures.size() - 1)
 
 	if health_textures[current_index] != null:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_g7yh2"]
 [ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="2_fj4w7"]
-[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="3_3lc04"]
+[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_srg4k"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="4_qxqhv"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_chfmd"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="6_n78s0"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="20_srg4k"]
 [ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="21_5rluq"]
 [ext_resource type="PackedScene" uid="uid://jh0nfxnb2kq2" path="res://scenes/components/platforms/platform_gray_concrete.tscn" id="21_itrr5"]
+[ext_resource type="PackedScene" uid="uid://dsq06ou0cfyhp" path="res://scenes/components/platforms/platform_white_metal_rope.tscn" id="21_ofm1i"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="24_wexib"]
 
 [node name="Level_01_v2" type="Control" unique_id=627543149]
@@ -44,11 +45,7 @@ grow_vertical = 2
 texture = ExtResource("2_fj4w7")
 expand_mode = 5
 
-[node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_3lc04")]
-offset_left = -3.0
-offset_top = 2.0
-offset_right = -3.0
-offset_bottom = 2.0
+[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_srg4k")]
 player = NodePath("../../Player")
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("4_qxqhv")]
@@ -340,6 +337,18 @@ scale = Vector2(0.39102107, 0.39102107)
 position = Vector2(10.229621, 17.901768)
 scale = Vector2(2.2360053, 0.71702933)
 next_scene_path = "uid://ckj7fgxtg1c"
+
+[node name="PlatformGrayMetalRope" parent="PlatformWhiteTank" unique_id=393274938 instance=ExtResource("21_ofm1i")]
+position = Vector2(-5367.9976, -1649.5276)
+
+[node name="PlatformGrayMetalRope2" parent="PlatformWhiteTank" unique_id=2034378478 instance=ExtResource("21_ofm1i")]
+position = Vector2(-4848.8438, -1649.5276)
+
+[node name="PlatformGrayMetalRope3" parent="PlatformWhiteTank" unique_id=512153886 instance=ExtResource("21_ofm1i")]
+position = Vector2(-3342.5308, -1534.4442)
+
+[node name="PlatformGrayMetalRope4" parent="PlatformWhiteTank" unique_id=131448312 instance=ExtResource("21_ofm1i")]
+position = Vector2(-2820.8198, -1526.7721)
 
 [node name="PlatformGrayInBetween" parent="." unique_id=1488933027 instance=ExtResource("20_25ywd")]
 position = Vector2(559, 689.00006)

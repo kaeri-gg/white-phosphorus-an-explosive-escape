@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="8_n536o"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="9_m2jhg"]
 [ext_resource type="Texture2D" uid="uid://bplo8aemsfb12" path="res://assets/backgrounds/level-backgrounds/Screen 2.png" id="10_n536o"]
-[ext_resource type="PackedScene" uid="uid://dahss2pusbyrs" path="res://scenes/utils/health_bar.tscn" id="12_m2jhg"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="13_km0xc"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="14_n536o"]
 [ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="15_4dr30"]
 [ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="16_dscar"]
+[ext_resource type="PackedScene" path="res://scenes/utils/health_ui.tscn" id="16_q6ljp"]
 [ext_resource type="PackedScene" uid="uid://bn6iix4bnoteb" path="res://scenes/components/platforms/platform_yellow_long_curved_pipe.tscn" id="17_01hg1"]
 
 [node name="Level_02" type="Control" unique_id=627543149]
@@ -138,7 +138,6 @@ transfer_duration = 1.0
 
 [node name="Portal" parent="." unique_id=1863363077 instance=ExtResource("13_km0xc")]
 position = Vector2(2456, 553)
-next_scene_path = "uid://ca5kehyb1ts0t"
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("14_n536o")]
 position = Vector2(1028, 783)
@@ -155,5 +154,4 @@ grow_vertical = 2
 texture = ExtResource("10_n536o")
 expand_mode = 5
 
-[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("12_m2jhg")]
-player = NodePath("../../Player")
+[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 instance=ExtResource("16_q6ljp")]

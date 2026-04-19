@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsq06ou0cfyhp"]
+
+[ext_resource type="Texture2D" uid="uid://c8jyvp7e3wfx8" path="res://assets/platforms/Metall rope 2.png" id="1_xe8sw"]
+
+[node name="PlatformGrayMetalRope" type="Node2D" unique_id=393274938]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987466163]
+position = Vector2(19, 363)
+texture = ExtResource("1_xe8sw")
