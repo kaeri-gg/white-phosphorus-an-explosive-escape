@@ -44,7 +44,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yklhy")
-metadata/_edit_horizontal_guides_ = [721.0, 644.0]
+metadata/_edit_horizontal_guides_ = [721.0, 644.0, 696.0]
+metadata/_edit_vertical_guides_ = [3623.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1043999466]
 layer = -10
@@ -77,7 +78,7 @@ scale = Vector2(0.46169168, 0.46169168)
 unique_name_in_owner = true
 position = Vector2(96.00001, 54.000004)
 scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 4300, 720)
+camera_bounds = Rect2(0, 0, 3620, 720)
 
 [node name="Water" parent="." unique_id=285385396 instance=ExtResource("5_km0xc")]
 position = Vector2(27, 132)
@@ -124,11 +125,11 @@ rotation = 1.5707963
 scale = Vector2(0.11463839, 0.080400266)
 
 [node name="ObstaclePipeFire5" parent="." unique_id=1817310128 instance=ExtResource("34_ymej5")]
-position = Vector2(279, 566)
+position = Vector2(284, 618)
 scale = Vector2(0.11463839, 0.07794691)
 
 [node name="ObstaclePipeFire6" parent="." unique_id=1771934319 instance=ExtResource("34_ymej5")]
-position = Vector2(969.00006, 277)
+position = Vector2(967, 193)
 scale = Vector2(0.10102904, 0.077944875)
 
 [node name="ObstaclePipeFire9" parent="." unique_id=261492295 instance=ExtResource("34_ymej5")]
@@ -162,14 +163,14 @@ rotation = 1.5707964
 scale = Vector2(0.10102904, 0.077944875)
 
 [node name="ObstaclePipeFire7" parent="." unique_id=81275172 instance=ExtResource("34_ymej5")]
-position = Vector2(1027, 334.99997)
+position = Vector2(1024.9999, 250.99997)
 rotation = 1.5707963
 scale = Vector2(0.11463839, 0.08892882)
 
 [node name="ObstaclePipeFire8" parent="." unique_id=1332704315 instance=ExtResource("34_ymej5")]
-position = Vector2(963.00006, 374)
+position = Vector2(960.9999, 301.00003)
 rotation = -3.1415925
-scale = Vector2(0.1021123, 0.052817557)
+scale = Vector2(0.11186557, 0.08199022)
 
 [node name="PlatformGrayTank" parent="." unique_id=1432242628 instance=ExtResource("7_ppbiy")]
 position = Vector2(127.99998, 219.00002)
@@ -225,7 +226,7 @@ position = Vector2(2543, 641)
 scale = Vector2(0.09323896, 0.09323896)
 
 [node name="PlatformRed4WayConnector" parent="." unique_id=270802758 instance=ExtResource("16_4dr30")]
-position = Vector2(964, 340.99997)
+position = Vector2(961.99994, 256.99997)
 scale = Vector2(0.09323896, 0.09323896)
 
 [node name="PlatformRed4WayConnector2" parent="." unique_id=533646122 instance=ExtResource("16_4dr30")]
@@ -238,7 +239,7 @@ rotation = 1.5707964
 scale = Vector2(0.09181707, 0.09181707)
 
 [node name="PlatformGray4WayConnector" parent="." unique_id=1176904481 instance=ExtResource("18_dscar")]
-position = Vector2(273, 628)
+position = Vector2(278, 680)
 scale = Vector2(0.09323896, 0.09323896)
 
 [node name="PlatformGrayShortWaterTank" parent="." unique_id=597132713 instance=ExtResource("19_01hg1")]
@@ -281,7 +282,7 @@ scale = Vector2(1.6418248, 0.6578493)
 next_scene_path = "uid://b7i2keg4pq27p"
 
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("24_ies7a")]
-position = Vector2(118.999985, 630)
+position = Vector2(124, 682)
 rotation = 3.1415927
 scale = Vector2(-0.18005992, -0.24815387)
 
@@ -295,7 +296,7 @@ position = Vector2(513, 556)
 scale = Vector2(-0.14084314, -0.21888995)
 
 [node name="NoCollisionPipe4" parent="." unique_id=39575283 instance=ExtResource("24_ies7a")]
-position = Vector2(841.00006, 320)
+position = Vector2(839, 236)
 scale = Vector2(-0.12083359, -0.26755315)
 
 [node name="NoCollisionPipe5" parent="." unique_id=158868388 instance=ExtResource("24_ies7a")]
