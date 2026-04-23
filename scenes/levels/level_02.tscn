@@ -421,7 +421,7 @@ rotation = -4.712389
 scale = Vector2(0.08942558, 0.08942558)
 
 [node name="NoCollisionGrayConnectionPipe3" parent="." unique_id=1674377826 instance=ExtResource("27_xwa1x")]
-position = Vector2(733, 354.99997)
+position = Vector2(731, 271)
 rotation = -4.712389
 scale = Vector2(0.08942558, 0.08942558)
 
