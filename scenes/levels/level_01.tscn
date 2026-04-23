@@ -34,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t0hvh")
+metadata/_edit_vertical_guides_ = [2865.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=49017652]
 layer = -10
@@ -61,7 +62,7 @@ position = Vector2(908, 771)
 unique_name_in_owner = true
 position = Vector2(171, 393)
 scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 3000, 720)
+camera_bounds = Rect2(0, 0, 2865, 720)
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=1970424927 instance=ExtResource("18_3g50r")]
 position = Vector2(1677, 144)

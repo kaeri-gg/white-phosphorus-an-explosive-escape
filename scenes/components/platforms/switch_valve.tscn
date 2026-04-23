@@ -157,7 +157,7 @@ script = ExtResource("1_fwh2d")
 
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]
 unique_name_in_owner = true
-position = Vector2(-2, 10)
+position = Vector2(-1, 10)
 scale = Vector2(0.6763866, 0.6763866)
 sprite_frames = SubResource("SpriteFrames_why7j")
 animation = &"idle"
