@@ -785,9 +785,9 @@ position = Vector2(1438, -29)
 scale = Vector2(0.3854598, 0.34087494)
 
 [node name="PlatformGrayInBetween" parent="." unique_id=1488933027 instance=ExtResource("20_25ywd")]
-position = Vector2(559, 689.00006)
+position = Vector2(561, 689)
 rotation = 1.5707964
-scale = Vector2(0.08661787, 0.08661787)
+scale = Vector2(0.07386649, 0.079842515)
 
 [node name="PlatformGrayInBetween2" parent="." unique_id=1121447509 instance=ExtResource("20_25ywd")]
 position = Vector2(1279.0002, 488.00003)

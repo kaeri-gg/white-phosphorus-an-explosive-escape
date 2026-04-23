@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6y2y3")
 metadata/_edit_horizontal_guides_ = [721.0, 644.0, 622.0, 213.0]
-metadata/_edit_vertical_guides_ = [1683.0]
+metadata/_edit_vertical_guides_ = [1683.0, 2530.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1043999466]
 layer = -10
@@ -46,26 +46,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_on0ou")
 expand_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_a0y88")]
 player = NodePath("../../Player")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true
 position = Vector2(171.00002, 200)
 scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 4500, 720)
+camera_bounds = Rect2(0, 0, 2530, 720)
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("7_12k85")]
 position = Vector2(1028, 783)
 
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("26_l7hco")]
-position = Vector2(682, 604.00006)
+position = Vector2(682, 600.00006)
 rotation = -1.5707964
 scale = Vector2(0.10790594, 0.2375902)
 
 [node name="NoCollisionPipe2" parent="." unique_id=758496578 instance=ExtResource("26_l7hco")]
-position = Vector2(828, 604)
+position = Vector2(828, 600)
 rotation = -1.5707964
 scale = Vector2(0.10790594, 0.2375902)
 
@@ -111,7 +113,7 @@ surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="Water4" parent="." unique_id=1643629407 instance=ExtResource("6_o0b03")]
-position = Vector2(1685, 164)
+position = Vector2(1701, 168)
 water_size = Vector2(200, 100)
 surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
@@ -129,7 +131,7 @@ surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
 starts_full = false
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("15_rqlq8")]
-position = Vector2(159, 327)
+position = Vector2(159, 345)
 scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformWhiteTank2" parent="." unique_id=2043989429 instance=ExtResource("15_rqlq8")]
@@ -137,9 +139,9 @@ position = Vector2(741, 518)
 scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformWhiteTank3" parent="." unique_id=426919599 instance=ExtResource("15_rqlq8")]
-position = Vector2(1261, 595)
+position = Vector2(1260.9999, 597)
 rotation = 0.0051677627
-scale = Vector2(0.38884607, 0.4345949)
+scale = Vector2(0.3955066, 0.388428)
 
 [node name="PlatformWhiteTank4" parent="." unique_id=2031510763 instance=ExtResource("15_rqlq8")]
 position = Vector2(1788, 595)
@@ -147,7 +149,7 @@ rotation = 0.0051677627
 scale = Vector2(0.38884607, 0.4345949)
 
 [node name="PlatformWhiteTank5" parent="." unique_id=967096852 instance=ExtResource("15_rqlq8")]
-position = Vector2(1780.9999, 217.99998)
+position = Vector2(1797, 217)
 scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformWhiteTank6" parent="." unique_id=240197895 instance=ExtResource("15_rqlq8")]
@@ -155,15 +157,15 @@ position = Vector2(2397, 348)
 scale = Vector2(0.39102107, 0.39102107)
 
 [node name="PlatformGrayClosingPipe" parent="." unique_id=818493941 instance=ExtResource("22_jclrk")]
-position = Vector2(45, 352)
+position = Vector2(45, 370)
 scale = Vector2(0.04295186, 0.04295186)
 
 [node name="PlatformGrayClosingPipe2" parent="." unique_id=1964449684 instance=ExtResource("22_jclrk")]
-position = Vector2(1583, 405)
-scale = Vector2(0.04295186, 0.04295186)
+position = Vector2(1586, 411)
+scale = Vector2(0.03845534, 0.03384071)
 
 [node name="PlatformGrayPipeInsertCap" parent="." unique_id=1089872355 instance=ExtResource("31_rliwq")]
-position = Vector2(280.00003, 348.99997)
+position = Vector2(280.00003, 366.99997)
 rotation = 1.5707964
 scale = Vector2(0.03531767, 0.038901262)
 
@@ -188,17 +190,17 @@ rotation = -7.853982
 scale = Vector2(0.03531767, 0.038901262)
 
 [node name="PlatformGrayPipeInsertCap4" parent="." unique_id=1057709999 instance=ExtResource("31_rliwq")]
-position = Vector2(1676, 225)
+position = Vector2(1684, 239.99998)
 rotation = -1.5707964
 scale = Vector2(0.03531767, 0.038901262)
 
 [node name="PlatformGrayPipeInsertCap5" parent="." unique_id=1605953166 instance=ExtResource("31_rliwq")]
-position = Vector2(1900.9999, 241)
+position = Vector2(1917.9999, 241)
 rotation = -4.712389
 scale = Vector2(0.03531767, 0.038901262)
 
 [node name="PlatformGrayConnectionPipe" parent="." unique_id=464077310 instance=ExtResource("18_ive4r")]
-position = Vector2(308, 358)
+position = Vector2(308, 376)
 rotation = 3.1415927
 scale = Vector2(0.10582009, 0.10582009)
 
@@ -208,9 +210,9 @@ rotation = 3.1415927
 scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayConnectionPipe9" parent="." unique_id=1711185773 instance=ExtResource("18_ive4r")]
-position = Vector2(1937, 392.00003)
+position = Vector2(1956.0001, 382.00003)
 rotation = 4.712389
-scale = Vector2(0.10582009, 0.10582009)
+scale = Vector2(0.11186875, 0.101181)
 
 [node name="PlatformGrayConnectionPipe12" parent="." unique_id=1117717751 instance=ExtResource("18_ive4r")]
 position = Vector2(1948.0001, 591)
@@ -223,9 +225,8 @@ rotation = 4.712389
 scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayConnectionPipe11" parent="." unique_id=606419008 instance=ExtResource("18_ive4r")]
-position = Vector2(1637.0001, 268)
-rotation = 1.5707964
-scale = Vector2(0.10582009, 0.10582009)
+position = Vector2(1656, 252)
+scale = Vector2(0.107906386, -0.13013698)
 
 [node name="PlatformGrayConnectionPipe13" parent="." unique_id=1891463907 instance=ExtResource("18_ive4r")]
 position = Vector2(1967.0001, 557)
@@ -238,16 +239,16 @@ rotation = 1.5707964
 scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayConnectionPipe10" parent="." unique_id=1269228155 instance=ExtResource("18_ive4r")]
-position = Vector2(1934, 265)
-rotation = -1.5707964
-scale = Vector2(-0.099091396, 0.11285623)
+position = Vector2(1942.9999, 252)
+rotation = -3.1415927
+scale = Vector2(0.09371626, 0.12564097)
 
 [node name="PlatformGrayConnectionPipe8" parent="." unique_id=1523161472 instance=ExtResource("18_ive4r")]
 position = Vector2(1138, 609)
 scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayConnectionPipe2" parent="." unique_id=15065338 instance=ExtResource("18_ive4r")]
-position = Vector2(326, 403)
+position = Vector2(326, 421)
 rotation = 4.712389
 scale = Vector2(0.10582009, 0.10582009)
 
@@ -262,7 +263,7 @@ rotation = 4.712389
 scale = Vector2(0.10582009, 0.10582009)
 
 [node name="PlatformGrayConnectionPipe3" parent="." unique_id=901552730 instance=ExtResource("18_ive4r")]
-position = Vector2(281, 440)
+position = Vector2(281, 458)
 scale = Vector2(0.10581682, -0.10674717)
 
 [node name="PlatformGrayConnectionPipe6" parent="." unique_id=1202194507 instance=ExtResource("18_ive4r")]
@@ -270,11 +271,15 @@ position = Vector2(618, 551)
 scale = Vector2(0.10581682, -0.10674717)
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("11_8o2w1")]
-position = Vector2(264, -20)
+position = Vector2(264, -2)
+scale = Vector2(0.3238669, 0.3238669)
+
+[node name="PlatformGrayMetalRope7" parent="." unique_id=1190563296 instance=ExtResource("11_8o2w1")]
+position = Vector2(70, -1)
 scale = Vector2(0.3238669, 0.3238669)
 
 [node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
-position = Vector2(254, 501)
+position = Vector2(254, 520)
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water")
 target_water = NodePath("../Water2")
@@ -289,17 +294,19 @@ target_water = NodePath("../Water3")
 transfer_duration = 1.2
 
 [node name="Switch4" parent="." unique_id=836971773 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
-position = Vector2(1944, 319)
+position = Vector2(1628, 325)
 rotation = -3.1415925
+scale = Vector2(0.13637778, 0.13637778)
+source_water = NodePath("../Water3")
+target_water = NodePath("../Water4")
+transfer_duration = 1.2
+
+[node name="Switch3" parent="." unique_id=84159234 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
+position = Vector2(1801.0001, 412.00003)
+rotation = 1.5707964
 scale = Vector2(0.13637778, 0.13637778)
 source_water = NodePath("../Water4")
 target_water = NodePath("../Water5")
-transfer_duration = 1.2
-
-[node name="Switch3" parent="." unique_id=84159234 instance=ExtResource("34_bphnd")]
-position = Vector2(1788.0001, 419.00003)
-rotation = 1.5707964
-scale = Vector2(0.13637778, 0.13637778)
 transfer_duration = 1.2
 
 [node name="Switch5" parent="." unique_id=1102822862 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("34_bphnd")]
@@ -311,9 +318,9 @@ target_water = NodePath("../Water6")
 transfer_duration = 1.2
 
 [node name="PlatformGrayPipe" parent="." unique_id=1415318706 instance=ExtResource("33_mj800")]
-position = Vector2(239, 605.00006)
+position = Vector2(239, 614)
 rotation = 1.5707964
-scale = Vector2(0.22925842, 0.42528394)
+scale = Vector2(0.20191349, 0.44136092)
 
 [node name="PlatformGrayPipe3" parent="." unique_id=644448638 instance=ExtResource("33_mj800")]
 position = Vector2(577, 622)
@@ -336,22 +343,22 @@ rotation = -3.1415925
 scale = Vector2(0.35962185, 0.4356778)
 
 [node name="PlatformGrayPipe6" parent="." unique_id=1508941727 instance=ExtResource("33_mj800")]
-position = Vector2(1642, 514)
+position = Vector2(1642.9998, 508.99997)
 rotation = -1.5707964
-scale = Vector2(0.25512496, 0.44035974)
+scale = Vector2(0.26792148, 0.4434968)
 
 [node name="PlatformGrayPipe7" parent="." unique_id=1970245771 instance=ExtResource("33_mj800")]
-position = Vector2(1642, 319.00003)
+position = Vector2(1981, 330)
 rotation = -1.5707964
-scale = Vector2(0.19031425, 0.42527646)
+scale = Vector2(0.16893072, 0.4436076)
 
 [node name="PlatformGrayPipe8" parent="." unique_id=1602893109 instance=ExtResource("33_mj800")]
-position = Vector2(1709, 432)
-scale = Vector2(0.16033024, 0.41417584)
+position = Vector2(1716, 423.99997)
+scale = Vector2(0.1799874, 0.40425187)
 
 [node name="PlatformGrayPipe9" parent="." unique_id=350206568 instance=ExtResource("33_mj800")]
-position = Vector2(1867.0001, 432)
-scale = Vector2(0.16033024, 0.41417584)
+position = Vector2(1883, 424)
+scale = Vector2(0.17173456, 0.41417584)
 
 [node name="PlatformGrayPipe2" parent="." unique_id=1700624451 instance=ExtResource("33_mj800")]
 position = Vector2(417.00003, 688)
@@ -364,9 +371,9 @@ rotation = 1.5707964
 scale = Vector2(0.68637884, 0.6711068)
 
 [node name="PlatformRedInBetweenSpring2" parent="." unique_id=466217672 instance=ExtResource("11_sui0o")]
-position = Vector2(978.99994, 683)
+position = Vector2(979.00006, 684.00006)
 rotation = 1.5707964
-scale = Vector2(0.68637884, 0.6711068)
+scale = Vector2(0.70768875, 0.67634785)
 
 [node name="PlatformRed4WayConnector" parent="." unique_id=270802758 instance=ExtResource("17_c3646")]
 position = Vector2(116, 626)
@@ -377,15 +384,15 @@ position = Vector2(461, 168.00002)
 scale = Vector2(0.118206255, 0.120278984)
 
 [node name="PlatformRed4WayConnector3" parent="." unique_id=1204446925 instance=ExtResource("17_c3646")]
-position = Vector2(1140, 348.00003)
+position = Vector2(1140, 393)
 scale = Vector2(0.118206255, 0.120278984)
 
 [node name="PlatformRed4WayConnector4" parent="." unique_id=5520403 instance=ExtResource("17_c3646")]
-position = Vector2(1504, 364)
+position = Vector2(1481, 383)
 scale = Vector2(0.118206255, 0.120278984)
 
 [node name="PlatformRed4WayConnector5" parent="." unique_id=1304375953 instance=ExtResource("17_c3646")]
-position = Vector2(2064, 362)
+position = Vector2(2086, 379)
 scale = Vector2(0.118206255, 0.120278984)
 
 [node name="PlatformRed4WayConnector6" parent="." unique_id=678507794 instance=ExtResource("17_c3646")]
@@ -397,29 +404,24 @@ position = Vector2(251, 616)
 scale = Vector2(0.12204812, 0.12204812)
 
 [node name="PlatformRedPipe6" parent="." unique_id=745132601 instance=ExtResource("16_seqs6")]
-position = Vector2(975.99994, 514)
+position = Vector2(977, 537)
 rotation = 1.5707964
-scale = Vector2(0.17057782, 0.1332352)
+scale = Vector2(0.14202344, 0.12451192)
 
 [node name="PlatformRedInBetweenSpring3" parent="." unique_id=21598862 instance=ExtResource("11_sui0o")]
-position = Vector2(1507.0001, 684)
+position = Vector2(1483, 685.99994)
 rotation = 1.5707964
 scale = Vector2(0.68637884, 0.6711068)
 
-[node name="PlatformRedInBetweenSpring4" parent="." unique_id=732241758 instance=ExtResource("11_sui0o")]
-position = Vector2(2403, 685.00006)
-rotation = 1.5707964
-scale = Vector2(0.66460973, 0.64982206)
-
 [node name="PlatformRedPipe8" parent="." unique_id=847130046 instance=ExtResource("16_seqs6")]
-position = Vector2(1505, 515)
+position = Vector2(1481, 525)
 rotation = 1.5707964
-scale = Vector2(0.17057782, 0.122524925)
+scale = Vector2(0.16004704, 0.120830074)
 
 [node name="PlatformRedPipe9" parent="." unique_id=1754508012 instance=ExtResource("16_seqs6")]
-position = Vector2(1669.0001, 350)
-rotation = 3.1371655
-scale = Vector2(0.15630955, 0.11718155)
+position = Vector2(1665, 367)
+rotation = 3.1389055
+scale = Vector2(0.18250345, 0.10849289)
 
 [node name="PlatformRedPipe11" parent="." unique_id=558321609 instance=ExtResource("16_seqs6")]
 position = Vector2(2288, 497.00003)
@@ -432,19 +434,19 @@ rotation = -1.5707964
 scale = Vector2(0.08783007, 0.11733513)
 
 [node name="PlatformRedPipe10" parent="." unique_id=693412858 instance=ExtResource("16_seqs6")]
-position = Vector2(1909, 348.99997)
-rotation = 3.1371655
-scale = Vector2(0.15534961, 0.11705217)
+position = Vector2(1927.0001, 366)
+rotation = 3.1389055
+scale = Vector2(0.15952972, 0.109990045)
 
 [node name="PlatformRedPipe7" parent="." unique_id=965360323 instance=ExtResource("16_seqs6")]
-position = Vector2(1063, 334)
+position = Vector2(1063, 378.99997)
 rotation = -3.1415925
 scale = Vector2(0.05340317, 0.11835208)
 
 [node name="PlatformRedPipe5" parent="." unique_id=789232515 instance=ExtResource("16_seqs6")]
-position = Vector2(550, 291)
+position = Vector2(551, 271.00003)
 rotation = 1.5707964
-scale = Vector2(0.12204812, 0.12204812)
+scale = Vector2(0.09599927, 0.12204812)
 
 [node name="PlatformRedClosingPipe" parent="." unique_id=895660859 instance=ExtResource("10_cwa4x")]
 position = Vector2(72, 615)
@@ -455,9 +457,33 @@ position = Vector2(463, 114)
 rotation = 1.5707964
 scale = Vector2(0.036797598, 0.036797598)
 
+[node name="PlatformRedClosingPipe6" parent="." unique_id=3278298 instance=ExtResource("10_cwa4x")]
+position = Vector2(354.00003, 614.00006)
+rotation = 3.1415927
+scale = Vector2(0.036797598, 0.036797598)
+
 [node name="PlatformRedClosingPipe3" parent="." unique_id=632379330 instance=ExtResource("10_cwa4x")]
-position = Vector2(1142, 294.00003)
+position = Vector2(1142, 339)
 rotation = 1.5707964
+scale = Vector2(0.036797598, 0.036797598)
+
+[node name="PlatformRedClosingPipe8" parent="." unique_id=772148840 instance=ExtResource("10_cwa4x")]
+position = Vector2(1437.0001, 372)
+scale = Vector2(0.036797598, 0.036797598)
+
+[node name="PlatformRedClosingPipe9" parent="." unique_id=1794179405 instance=ExtResource("10_cwa4x")]
+position = Vector2(2090, 407.00003)
+rotation = -1.5707964
+scale = Vector2(0.036797598, 0.036797598)
+
+[node name="PlatformRedClosingPipe10" parent="." unique_id=140492144 instance=ExtResource("10_cwa4x")]
+position = Vector2(2136, 367)
+rotation = -3.1415927
+scale = Vector2(0.036797598, 0.036797598)
+
+[node name="PlatformRedClosingPipe7" parent="." unique_id=1670407686 instance=ExtResource("10_cwa4x")]
+position = Vector2(1143, 422)
+rotation = 4.712389
 scale = Vector2(0.036797598, 0.036797598)
 
 [node name="PlatformRedClosingPipe4" parent="." unique_id=396835405 instance=ExtResource("10_cwa4x")]
@@ -475,11 +501,11 @@ position = Vector2(178, 486)
 scale = Vector2(0.0103613, 0.010204774)
 
 [node name="PlatformGrayMetalRope3" parent="." unique_id=274195785 instance=ExtResource("11_8o2w1")]
-position = Vector2(1886.0001, -124)
+position = Vector2(1902.0001, -127)
 scale = Vector2(0.3238669, 0.3238669)
 
 [node name="PlatformGrayMetalRope4" parent="." unique_id=2033968494 instance=ExtResource("11_8o2w1")]
-position = Vector2(1692, -116.999985)
+position = Vector2(1709, -121)
 scale = Vector2(0.3190985, 0.31427798)
 
 [node name="PlatformGrayMetalRope5" parent="." unique_id=1644847128 instance=ExtResource("11_8o2w1")]
@@ -496,7 +522,7 @@ rotation = 1.5707964
 scale = Vector2(0.46391442, 0.46391442)
 
 [node name="PlatformRedInBetween4" parent="." unique_id=743091688 instance=ExtResource("21_bdb6i")]
-position = Vector2(989.00006, 366)
+position = Vector2(989, 410.99997)
 rotation = 1.5707964
 scale = Vector2(0.46391442, 0.46391442)
 
@@ -506,11 +532,11 @@ rotation = 3.1415927
 scale = Vector2(0.46391442, 0.46391442)
 
 [node name="PlatformGray4WayConnector" parent="." unique_id=1176904481 instance=ExtResource("19_6s3n3")]
-position = Vector2(1625.0001, 628.00006)
-scale = Vector2(0.10379602, 0.10379602)
+position = Vector2(1625.0001, 629)
+scale = Vector2(0.106122576, 0.10858284)
 
 [node name="PlatformGray4WayConnector2" parent="." unique_id=1766454839 instance=ExtResource("19_6s3n3")]
-position = Vector2(1625.0001, 429)
+position = Vector2(1626.0001, 421.00003)
 scale = Vector2(0.10379602, 0.10379602)
 
 [node name="PlatformGrayInBetween" parent="." unique_id=1488933027 instance=ExtResource("20_3jcsa")]
@@ -520,281 +546,302 @@ scale = Vector2(0.09533596, -0.086293325)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=933236835]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 408.0
-offset_right = 1918.0
-offset_bottom = 1488.0
+offset_left = 5.9999957
+offset_top = 420.0
+offset_right = 1926.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect10" type="TextureRect" parent="." unique_id=1645235069]
 layout_mode = 0
-offset_left = -25.999998
-offset_top = 436.0
-offset_right = 1894.0
-offset_bottom = 1516.0
+offset_left = -18.000002
+offset_top = 448.0
+offset_right = 1902.0
+offset_bottom = 1528.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect11" type="TextureRect" parent="." unique_id=1566637721]
 layout_mode = 0
-offset_left = 153.99998
-offset_top = 464.00003
-offset_right = 2074.0
-offset_bottom = 1544.0
+offset_left = 161.99998
+offset_top = 476.00003
+offset_right = 2082.0
+offset_bottom = 1556.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect12" type="TextureRect" parent="." unique_id=635704340]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 464.0
-offset_right = 2023.0
-offset_bottom = 1544.0
+offset_left = 110.99999
+offset_top = 476.0
+offset_right = 2031.0
+offset_bottom = 1556.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect13" type="TextureRect" parent="." unique_id=1086402912]
 layout_mode = 0
-offset_left = 52.000004
-offset_top = 464.0
-offset_right = 1972.0
-offset_bottom = 1544.0
+offset_left = 60.0
+offset_top = 476.0
+offset_right = 1980.0
+offset_bottom = 1556.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect14" type="TextureRect" parent="." unique_id=429354062]
 layout_mode = 0
-offset_left = 2.0000038
-offset_top = 464.0
-offset_right = 1922.0
-offset_bottom = 1544.0
+offset_left = 10.0
+offset_top = 476.0
+offset_right = 1930.0
+offset_bottom = 1556.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect15" type="TextureRect" parent="." unique_id=2106004037]
 layout_mode = 0
-offset_left = -52.999996
-offset_top = 408.0
-offset_right = 1867.0
-offset_bottom = 1488.0
+offset_left = -45.0
+offset_top = 420.0
+offset_right = 1875.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect16" type="TextureRect" parent="." unique_id=1502226829]
 layout_mode = 0
-offset_left = -49.0
-offset_top = 464.0
-offset_right = 1871.0
-offset_bottom = 1544.0
+offset_left = -41.000004
+offset_top = 476.0
+offset_right = 1879.0
+offset_bottom = 1556.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect17" type="TextureRect" parent="." unique_id=1451623546]
 layout_mode = 0
-offset_left = 26.999992
-offset_top = 492.0
-offset_right = 1947.0
-offset_bottom = 1572.0
+offset_left = 34.99999
+offset_top = 504.0
+offset_right = 1955.0
+offset_bottom = 1584.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect18" type="TextureRect" parent="." unique_id=185553749]
 layout_mode = 0
-offset_left = -23.999996
-offset_top = 492.00003
-offset_right = 1896.0
-offset_bottom = 1572.0
+offset_left = -16.0
+offset_top = 504.00003
+offset_right = 1904.0
+offset_bottom = 1584.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect19" type="TextureRect" parent="." unique_id=1295263386]
 layout_mode = 0
-offset_left = 77.999985
-offset_top = 492.00003
-offset_right = 1998.0
-offset_bottom = 1572.0
+offset_left = 85.99998
+offset_top = 504.00003
+offset_right = 2006.0
+offset_bottom = 1584.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect20" type="TextureRect" parent="." unique_id=836938616]
 layout_mode = 0
-offset_left = 54.000008
-offset_top = 520.0
-offset_right = 1974.0
-offset_bottom = 1600.0
+offset_left = 62.000004
+offset_top = 532.0
+offset_right = 1982.0
+offset_bottom = 1612.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect21" type="TextureRect" parent="." unique_id=40487788]
 layout_mode = 0
-offset_left = 3.0000076
-offset_top = 520.00006
-offset_right = 1923.0
-offset_bottom = 1600.0
+offset_left = 11.000004
+offset_top = 532.00006
+offset_right = 1931.0
+offset_bottom = 1612.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect22" type="TextureRect" parent="." unique_id=750548194]
 layout_mode = 0
-offset_left = -47.999996
-offset_top = 520.00006
-offset_right = 1872.0
-offset_bottom = 1600.0
+offset_left = -40.0
+offset_top = 532.00006
+offset_right = 1880.0
+offset_bottom = 1612.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect23" type="TextureRect" parent="." unique_id=611793810]
 layout_mode = 0
-offset_left = 29.999989
-offset_top = 548.00006
-offset_right = 1950.0
-offset_bottom = 1628.0
+offset_left = 37.999985
+offset_top = 560.00006
+offset_right = 1958.0
+offset_bottom = 1640.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect24" type="TextureRect" parent="." unique_id=1195855613]
 layout_mode = 0
-offset_left = -20.999992
-offset_top = 548.0
-offset_right = 1899.0
-offset_bottom = 1628.0
+offset_left = -12.999996
+offset_top = 560.0
+offset_right = 1907.0
+offset_bottom = 1640.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect25" type="TextureRect" parent="." unique_id=290076281]
 layout_mode = 0
-offset_left = 4.999996
-offset_top = 576.0
-offset_right = 1925.0
-offset_bottom = 1656.0
+offset_left = 12.999992
+offset_top = 588.0
+offset_right = 1933.0
+offset_bottom = 1668.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect26" type="TextureRect" parent="." unique_id=1837153004]
 layout_mode = 0
-offset_left = -45.999996
-offset_top = 576.00006
-offset_right = 1874.0
-offset_bottom = 1656.0
+offset_left = -38.0
+offset_top = 588.00006
+offset_right = 1882.0
+offset_bottom = 1668.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect27" type="TextureRect" parent="." unique_id=902204079]
-layout_mode = 0
-offset_left = -18.000006
-offset_top = 604.00006
-offset_right = 1902.0
-offset_bottom = 1684.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect28" type="TextureRect" parent="." unique_id=1958043802]
 layout_mode = 0
-offset_left = -18.000006
-offset_top = 604.00006
-offset_right = 1902.0
-offset_bottom = 1684.0
+offset_left = -10.00001
+offset_top = 616.00006
+offset_right = 1910.0
+offset_bottom = 1696.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect29" type="TextureRect" parent="." unique_id=911368544]
 layout_mode = 0
-offset_left = -44.0
-offset_top = 632.00006
-offset_right = 1876.0
-offset_bottom = 1712.0
+offset_left = -36.000004
+offset_top = 644.00006
+offset_right = 1884.0
+offset_bottom = 1724.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect30" type="TextureRect" parent="." unique_id=2136372848]
-layout_mode = 0
-offset_left = 615.0
-offset_top = 683.0
-offset_right = 2535.0
-offset_bottom = 1763.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect31" type="TextureRect" parent="." unique_id=1592647582]
-layout_mode = 0
-offset_left = 666.0
-offset_top = 683.0
-offset_right = 2586.0
-offset_bottom = 1763.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect32" type="TextureRect" parent="." unique_id=1071824079]
-layout_mode = 0
-offset_left = 717.0
-offset_top = 683.0
-offset_right = 2637.0
-offset_bottom = 1763.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect33" type="TextureRect" parent="." unique_id=30067766]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 683.0
-offset_right = 2688.0
-offset_bottom = 1763.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
-
-[node name="TextureRect35" type="TextureRect" parent="." unique_id=770346414]
-layout_mode = 0
-offset_left = 819.0
-offset_top = 683.0
-offset_right = 2739.0
-offset_bottom = 1763.0
-scale = Vector2(0.03247055, 0.03247055)
-texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect36" type="TextureRect" parent="." unique_id=1405168632]
 layout_mode = 0
-offset_left = 1136.0
-offset_top = 685.0
-offset_right = 3056.0
-offset_bottom = 1765.0
-scale = Vector2(0.03247055, 0.03247055)
+offset_left = 1117.016
+offset_top = 678.0001
+offset_right = 3037.016
+offset_bottom = 1758.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
 texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect37" type="TextureRect" parent="." unique_id=1964872284]
 layout_mode = 0
-offset_left = 1187.0
-offset_top = 685.0
-offset_right = 3107.0
-offset_bottom = 1765.0
-scale = Vector2(0.03247055, 0.03247055)
+offset_left = 1174.016
+offset_top = 678.0
+offset_right = 3094.016
+offset_bottom = 1758.0
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
 texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect38" type="TextureRect" parent="." unique_id=1346898379]
 layout_mode = 0
-offset_left = 1238.0
-offset_top = 685.0
-offset_right = 3158.0
-offset_bottom = 1765.0
-scale = Vector2(0.03247055, 0.03247055)
+offset_left = 1231.0161
+offset_top = 678.0001
+offset_right = 3151.016
+offset_bottom = 1758.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479757)
 texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect39" type="TextureRect" parent="." unique_id=1872761917]
 layout_mode = 0
-offset_left = 1289.0
-offset_top = 685.0
-offset_right = 3209.0
-offset_bottom = 1765.0
-scale = Vector2(0.03247055, 0.03247055)
+offset_left = 1288.016
+offset_top = 678.0001
+offset_right = 3208.016
+offset_bottom = 1758.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
 texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect40" type="TextureRect" parent="." unique_id=967131547]
 layout_mode = 0
-offset_left = 1341.0001
-offset_top = 685.0
-offset_right = 3261.0
-offset_bottom = 1765.0
-scale = Vector2(0.03247055, 0.03247055)
+offset_left = 1345.016
+offset_top = 678.0
+offset_right = 3265.016
+offset_bottom = 1758.0
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
+texture = ExtResource("22_ilnvv")
+
+[node name="TextureRect51" type="TextureRect" parent="." unique_id=2106937411]
+layout_mode = 0
+offset_left = 600.0159
+offset_top = 680.0001
+offset_right = 2520.016
+offset_bottom = 1760.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
+texture = ExtResource("22_ilnvv")
+
+[node name="TextureRect52" type="TextureRect" parent="." unique_id=1486682486]
+layout_mode = 0
+offset_left = 657.0159
+offset_top = 680.0
+offset_right = 2577.016
+offset_bottom = 1760.0
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
+texture = ExtResource("22_ilnvv")
+
+[node name="TextureRect53" type="TextureRect" parent="." unique_id=2114362533]
+layout_mode = 0
+offset_left = 714.01605
+offset_top = 680.0001
+offset_right = 2634.016
+offset_bottom = 1760.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479757)
+texture = ExtResource("22_ilnvv")
+
+[node name="TextureRect54" type="TextureRect" parent="." unique_id=299395577]
+layout_mode = 0
+offset_left = 771.0159
+offset_top = 680.0001
+offset_right = 2691.016
+offset_bottom = 1760.0001
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
+texture = ExtResource("22_ilnvv")
+
+[node name="TextureRect55" type="TextureRect" parent="." unique_id=1299499060]
+layout_mode = 0
+offset_left = 828.0159
+offset_top = 680.0
+offset_right = 2748.016
+offset_bottom = 1760.0
+rotation = 0.00036448435
+scale = Vector2(0.036506347, 0.040479753)
 texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect41" type="TextureRect" parent="." unique_id=646960809]
@@ -889,119 +936,108 @@ texture = ExtResource("22_ilnvv")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=387264312]
 layout_mode = 0
-offset_left = 48.999996
-offset_top = 408.0
-offset_right = 1969.0
-offset_bottom = 1488.0
+offset_left = 56.999992
+offset_top = 420.0
+offset_right = 1977.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1140537572]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 408.0
-offset_right = 2020.0
-offset_bottom = 1488.0
+offset_left = 107.99999
+offset_top = 420.0
+offset_right = 2028.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=39297288]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 408.0
-offset_right = 2071.0
-offset_bottom = 1488.0
+offset_left = 159.0
+offset_top = 420.0
+offset_right = 2079.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect5" type="TextureRect" parent="." unique_id=549258801]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 436.0
-offset_right = 2047.0
-offset_bottom = 1516.0
+offset_left = 135.0
+offset_top = 448.0
+offset_right = 2055.0
+offset_bottom = 1528.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect6" type="TextureRect" parent="." unique_id=1278384104]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 436.0
-offset_right = 1996.0
-offset_bottom = 1516.0
+offset_left = 83.99999
+offset_top = 448.0
+offset_right = 2004.0
+offset_bottom = 1528.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect7" type="TextureRect" parent="." unique_id=2141800453]
 layout_mode = 0
-offset_left = 25.000006
-offset_top = 436.00003
-offset_right = 1945.0
-offset_bottom = 1516.0
+offset_left = 33.0
+offset_top = 448.00003
+offset_right = 1953.0
+offset_bottom = 1528.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect8" type="TextureRect" parent="." unique_id=66502860]
 layout_mode = 0
-offset_left = 202.00002
-offset_top = 408.0
-offset_right = 2122.0
-offset_bottom = 1488.0
+offset_left = 210.00002
+offset_top = 420.0
+offset_right = 2130.0
+offset_bottom = 1500.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
 
 [node name="TextureRect9" type="TextureRect" parent="." unique_id=1408548156]
 layout_mode = 0
-offset_left = 178.00002
-offset_top = 436.0
-offset_right = 2098.0
-offset_bottom = 1516.0
+offset_left = 186.00002
+offset_top = 448.0
+offset_right = 2106.0
+offset_bottom = 1528.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("22_ilnvv")
+metadata/_edit_group_ = true
+
+[node name="PlatformRedInBetweenSpring4" parent="." unique_id=732241758 instance=ExtResource("11_sui0o")]
+position = Vector2(2403, 685.00006)
+rotation = 1.5707964
+scale = Vector2(0.66460973, 0.64982206)
 
 [node name="ObstaclePipeFire" parent="." unique_id=1256502193 instance=ExtResource("8_h25l4")]
 position = Vector2(468, 231)
 scale = Vector2(0.13115941, -0.1230676)
 
-[node name="ObstaclePipeFire2" parent="." unique_id=1296388150 instance=ExtResource("8_h25l4")]
-position = Vector2(382, 611)
-rotation = -1.5707964
-scale = Vector2(0.11337642, -0.11418439)
-
 [node name="ObstaclePipeFire3" parent="." unique_id=1709151005 instance=ExtResource("8_h25l4")]
-position = Vector2(548, 414)
+position = Vector2(548.00006, 379.00003)
 scale = Vector2(-0.12902838, -0.09659366)
 
-[node name="ObstaclePipeFire4" parent="." unique_id=850863393 instance=ExtResource("8_h25l4")]
-position = Vector2(1146, 395.00003)
-scale = Vector2(0.11048974, -0.092725806)
-
 [node name="ObstaclePipeFire5" parent="." unique_id=1530067299 instance=ExtResource("8_h25l4")]
-position = Vector2(1216, 333.00003)
+position = Vector2(1216, 378)
 rotation = -1.5707964
 scale = Vector2(0.10393483, -0.10279709)
 
-[node name="ObstaclePipeFire6" parent="." unique_id=2115951295 instance=ExtResource("8_h25l4")]
-position = Vector2(1428, 355.00003)
-rotation = 1.5707964
-scale = Vector2(0.11804573, -0.11926985)
-
 [node name="ObstaclePipeFire7" parent="." unique_id=544353922 instance=ExtResource("8_h25l4")]
-position = Vector2(1504.0001, 274)
+position = Vector2(1480, 315)
 rotation = -3.1415927
-scale = Vector2(0.13172401, -0.14091842)
+scale = Vector2(0.07247271, -0.06527853)
 
 [node name="ObstaclePipeFire8" parent="." unique_id=2099858839 instance=ExtResource("8_h25l4")]
-position = Vector2(2062, 281)
+position = Vector2(2084.0002, 296)
 rotation = 3.1415925
 scale = Vector2(0.13172401, -0.11018159)
-
-[node name="ObstaclePipeFire9" parent="." unique_id=133478715 instance=ExtResource("8_h25l4")]
-position = Vector2(2139, 347)
-rotation = -1.5707964
-scale = Vector2(0.13172401, -0.1148125)
-
-[node name="ObstaclePipeFire10" parent="." unique_id=203376371 instance=ExtResource("8_h25l4")]
-position = Vector2(2070, 411.99997)
-rotation = 0.0038438584
-scale = Vector2(0.10953753, -0.08706952)

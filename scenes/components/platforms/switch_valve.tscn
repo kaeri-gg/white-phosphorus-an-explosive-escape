@@ -173,6 +173,8 @@ position = Vector2(-7, 9)
 scale = Vector2(0.5611951, 0.5611951)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=551203391]
+rotation = -0.0029506716
+scale = Vector2(1.7276099, 1.6847423)
 shape = SubResource("CircleShape2D_8n0am")
 
 [node name="PromptLabel" type="Label" parent="." unique_id=1918063184]
