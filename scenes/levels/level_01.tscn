@@ -49,14 +49,16 @@ grow_vertical = 2
 texture = ExtResource("1_m802k")
 expand_mode = 5
 
-[node name="HealthBar" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=386863599]
+
+[node name="HealthBar" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
 offset_left = -3.0
 offset_top = 2.0
 offset_right = -3.0
 offset_bottom = 2.0
 player = NodePath("../../Player")
 
-[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
+[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)

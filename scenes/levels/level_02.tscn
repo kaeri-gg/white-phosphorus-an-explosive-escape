@@ -60,10 +60,12 @@ grow_vertical = 2
 texture = ExtResource("2_lcydj")
 expand_mode = 5
 
-[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("16_q6ljp")]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1115624526]
+
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("16_q6ljp")]
 player = NodePath("../../Player")
 
-[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("36_lcydj")]
+[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("36_lcydj")]
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("14_m2jhg")]
 position = Vector2(146, 43)

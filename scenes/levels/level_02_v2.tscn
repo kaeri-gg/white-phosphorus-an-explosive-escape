@@ -50,11 +50,13 @@ texture = ExtResource("2_on0ou")
 expand_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_a0y88")]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=229300876]
+
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_a0y88")]
 player = NodePath("../../Player")
 metadata/_edit_lock_ = true
 
-[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("25_on0ou")]
+[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("25_on0ou")]
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true

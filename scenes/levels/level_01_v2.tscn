@@ -48,10 +48,12 @@ grow_vertical = 2
 texture = ExtResource("2_fj4w7")
 expand_mode = 5
 
-[node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_srg4k")]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]
+
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_srg4k")]
 player = NodePath("../../Player")
 
-[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("24_g7yh2")]
+[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("24_g7yh2")]
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("4_qxqhv")]
 position = Vector2(908, 771)
