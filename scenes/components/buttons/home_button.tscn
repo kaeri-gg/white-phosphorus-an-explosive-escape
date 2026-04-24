@@ -7,22 +7,16 @@
 
 [node name="HomeButton" type="Control" unique_id=445205108]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -70.0
+anchors_preset = 0
+offset_right = 70.0
 offset_bottom = 70.0
-grow_horizontal = 0
 script = ExtResource("1_piodm")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -70.0
-offset_bottom = 70.0
-grow_horizontal = 0
+offset_right = 90.0
+offset_bottom = 90.0
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 

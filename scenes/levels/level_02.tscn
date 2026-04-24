@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5xrdjbarad25"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_yklhy"]
-[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="2_keemd"]
+[ext_resource type="Texture2D" uid="uid://bjwbq34lkj56d" path="res://assets/backgrounds/level-backgrounds/Level 2 Background.png" id="2_lcydj"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/water.tscn" id="5_km0xc"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="6_4hx2o"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bvkntfywgonmf" path="res://scenes/components/platforms/platform_red_pipe_insert_cap.tscn" id="30_cu4fk"]
 [ext_resource type="PackedScene" uid="uid://b1pimif3nkdvn" path="res://scenes/components/obstacles/obstacle-pipe-fire.tscn" id="34_ymej5"]
 [ext_resource type="PackedScene" uid="uid://chl1kkxx1ycen" path="res://scenes/components/platforms/platform_gray_short_tank.tscn" id="35_8orqj"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="36_lcydj"]
 
 [node name="Level_02" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -56,11 +57,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_keemd")
+texture = ExtResource("2_lcydj")
 expand_mode = 5
 
 [node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("16_q6ljp")]
 player = NodePath("../../Player")
+
+[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("36_lcydj")]
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("14_m2jhg")]
 position = Vector2(146, 43)
@@ -76,7 +79,7 @@ scale = Vector2(0.46169168, 0.46169168)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_4hx2o")]
 unique_name_in_owner = true
-position = Vector2(96.00001, 54.000004)
+position = Vector2(146, 37.000004)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 3620, 720)
 
@@ -279,7 +282,7 @@ scale = Vector2(0.56081295, 0.50881106)
 [node name="PortalArea" parent="PlatformWhiteElectricity" unique_id=1878742614 instance=ExtResource("24_7873c")]
 position = Vector2(10.698731, -147.4025)
 scale = Vector2(1.6418248, 0.6578493)
-next_scene_path = "uid://b7i2keg4pq27p"
+next_scene_path = "uid://ca5kehyb1ts0t"
 
 [node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("24_ies7a")]
 position = Vector2(124, 682)

@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="20_srg4k"]
 [ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="21_5rluq"]
 [ext_resource type="PackedScene" uid="uid://dsq06ou0cfyhp" path="res://scenes/components/platforms/platform_white_metal_rope.tscn" id="21_ofm1i"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="24_g7yh2"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="24_wexib"]
 
 [node name="Level_01_v2" type="Control" unique_id=627543149]
@@ -49,6 +50,8 @@ expand_mode = 5
 
 [node name="HealthUI" parent="CanvasLayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_srg4k")]
 player = NodePath("../../Player")
+
+[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("24_g7yh2")]
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("4_qxqhv")]
 position = Vector2(908, 771)
@@ -766,7 +769,7 @@ scale = Vector2(0.32505605, 0.32505605)
 [node name="PortalArea" parent="PlatformWhiteTank" unique_id=1878742614 instance=ExtResource("20_srg4k")]
 position = Vector2(10.229621, 17.901768)
 scale = Vector2(2.2360053, 0.71702933)
-next_scene_path = "uid://b5xrdjbarad25"
+next_scene_path = "uid://b7i2keg4pq27p"
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("21_ofm1i")]
 position = Vector2(476, -31)

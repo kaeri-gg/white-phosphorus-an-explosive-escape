@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="23_1b0o8"]
 [ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="24_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://chp22pksyjabh" path="res://scenes/components/platforms/platform_white_electricity.tscn" id="24_w4kkx"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="26_lswbx"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -54,6 +55,8 @@ offset_top = 2.0
 offset_right = -3.0
 offset_bottom = 2.0
 player = NodePath("../../Player")
+
+[node name="HomeButton" parent="CanvasLayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)
@@ -279,7 +282,7 @@ scale = Vector2(0.56081295, 0.50881106)
 
 [node name="PortalArea" parent="PlatformWhiteElectricity" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(5.3493776, -165.09076)
-next_scene_path = "uid://iuq1gve72064"
+next_scene_path = "uid://b5xrdjbarad25"
 
 [node name="PlatformBlueTank" parent="." unique_id=1863363077 instance=ExtResource("11_ijn0p")]
 position = Vector2(1047, 631)
