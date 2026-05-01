@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://besrmivwm4nx"]
+
+[ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_o8xgl"]
+[ext_resource type="Texture2D" uid="uid://dwssqnw8ht100" path="res://assets/obstacles/Bomb.png" id="2_gt7l3"]
+
+[node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
+script = ExtResource("1_o8xgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1087512263]
+texture = ExtResource("2_gt7l3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2091618054]
+build_mode = 1
+polygon = PackedVector2Array(-539, -138, -571, -42, -555, 104, 103, 132, 747, 10, 337, -122, 97, -152, -433, -160, -521, -142)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckj7fgxtg1c"]
 
-[ext_resource type="Texture2D" uid="uid://dvm06j4ydbo5s" path="res://assets/backgrounds/Background.png" id="1_m802k"]
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
+[ext_resource type="Texture2D" uid="uid://bxn1ujbj0mdcv" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_lswbx"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="4_t0hvh"]
 [ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
@@ -46,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_m802k")
+texture = ExtResource("2_lswbx")
 expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=386863599]

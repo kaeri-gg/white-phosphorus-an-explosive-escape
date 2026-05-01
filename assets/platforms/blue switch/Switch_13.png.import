@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tteg7qxiuns"
-path="res://.godot/imported/Firework.png-9b3a9da1a22c7407484e0243083cbc14.ctex"
+uid="uid://ddlr6b7stqfao"
+path="res://.godot/imported/Switch_13.png-af6bdaee7fc431e00bc27d0b38ee5871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obstacles/Firework.png"
-dest_files=["res://.godot/imported/Firework.png-9b3a9da1a22c7407484e0243083cbc14.ctex"]
+source_file="res://assets/platforms/blue switch/Switch_13.png"
+dest_files=["res://.godot/imported/Switch_13.png-af6bdaee7fc431e00bc27d0b38ee5871.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg2pvyvb2002u"
-path="res://.godot/imported/Screen 1.png-55cb0cb659ef006e421aefbefcfaf609.ctex"
+uid="uid://vw4024aawq3e"
+path="res://.godot/imported/Switch_19.png-546a882a8662b0a826f81fd94744a4d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/level-backgrounds/Screen 1.png"
-dest_files=["res://.godot/imported/Screen 1.png-55cb0cb659ef006e421aefbefcfaf609.ctex"]
+source_file="res://assets/platforms/blue switch/Switch_19.png"
+dest_files=["res://.godot/imported/Switch_19.png-546a882a8662b0a826f81fd94744a4d7.ctex"]
 
 [params]
 
