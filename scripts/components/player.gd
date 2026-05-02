@@ -192,6 +192,15 @@ func take_damage(amount: int) -> void:
 	if current_health <= 0:
 		die()
 
+func heal(amount: int) -> void:
+	if current_state == STATE.DEAD:
+		return
+	if current_health >= PLAYER_HEALTH:
+		return
+
+	current_health = mini(current_health + amount, PLAYER_HEALTH)
+	health_changed.emit(current_health, PLAYER_HEALTH)
+
 func die() -> void:
 	if is_dying or current_state == STATE.DEAD:
 		return

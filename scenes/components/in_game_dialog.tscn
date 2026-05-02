@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bw8wh8h711eih"]
+
+[ext_resource type="Script" uid="uid://bo1akwu1pcnv" path="res://scripts/components/in_game_dialog.gd" id="1_pdm6y"]
+[ext_resource type="Theme" uid="uid://bgddj2twi4roa" path="res://theme/panel_bg.tres" id="2_panel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdm6y"]
+size = Vector2(170, 738)
+
+[node name="InGameDialog" type="Area2D" unique_id=1528114602]
+script = ExtResource("1_pdm6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323847666]
+position = Vector2(-2, -13)
+shape = SubResource("RectangleShape2D_pdm6y")
+
+[node name="DialogCanvasLayer" type="CanvasLayer" parent="." unique_id=142619689]
+unique_name_in_owner = true
+
+[node name="DialogPanel" type="PanelContainer" parent="DialogCanvasLayer" unique_id=2090922074]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -274.5
+offset_top = -140.0
+offset_right = 274.5
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_panel")
+
+[node name="DialogMargin" type="MarginContainer" parent="DialogCanvasLayer/DialogPanel" unique_id=355252163]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogLabel" type="Label" parent="DialogCanvasLayer/DialogPanel/DialogMargin" unique_id=951393573]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+text = "Press [space] to jump."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

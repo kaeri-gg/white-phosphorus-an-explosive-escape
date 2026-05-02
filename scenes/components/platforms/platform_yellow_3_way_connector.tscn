@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://b3vpd3488us4k"]
+[gd_scene format=3 uid="uid://n8l3qulrjduv"]
 
-[ext_resource type="Texture2D" uid="uid://dwn4hw4jely18" path="res://assets/platforms/Inbetween 15.png" id="1_lby7e"]
+[ext_resource type="Texture2D" uid="uid://b48ovg54ndouc" path="res://assets/platforms/Inbetween 16.png" id="1_jb7i2"]
 
-[node name="PlatformGray3WayConnector" type="StaticBody2D" unique_id=1176904481]
+[node name="PlatformYellow3WayConnector" type="StaticBody2D" unique_id=1176904481]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1101139747]
-texture = ExtResource("1_lby7e")
+texture = ExtResource("1_jb7i2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=950527728]
 build_mode = 1

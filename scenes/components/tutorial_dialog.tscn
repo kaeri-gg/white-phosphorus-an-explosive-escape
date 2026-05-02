@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bqkoavunp5sgc"]
+
+[ext_resource type="Script" uid="uid://rn086ojdfyb7" path="res://scripts/components/tutorial_dialog.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="2_theme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(120, 200)
+
+[node name="TutorialDialog" type="Area2D" unique_id=44206821]
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543134037]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="HideTimer" type="Timer" parent="." unique_id=1631413221]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="BubbleLabel" type="Label" parent="." unique_id=1139992313]
+unique_name_in_owner = true
+offset_right = 300.0
+offset_bottom = 50.0
+theme = ExtResource("2_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Watch out for the fire!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
