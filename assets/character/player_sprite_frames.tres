@@ -1,13 +1,12 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://51dfugtruwpv"]
 
-[ext_resource type="Texture2D" uid="uid://nta5o68bnmw4" path="res://assets/character/burning/BURNING begin 1.png" id="1_woyij"]
-[ext_resource type="Texture2D" uid="uid://dqaqae4gpus75" path="res://assets/character/burning/BURNING begin 2.png" id="2_8pcgx"]
 [ext_resource type="Texture2D" uid="uid://c4cmsvj71gn1p" path="res://assets/character/tutorial-images/Phosphorus VIBRATING glowing tutorial.png" id="2_jfkvh"]
-[ext_resource type="Texture2D" uid="uid://c55uidwewe0ul" path="res://assets/character/burning/BURNING begin 3.png" id="3_e1w22"]
+[ext_resource type="Texture2D" uid="uid://bphtl4qqgiiq5" path="res://assets/character/burning/Burning continuous/7.png" id="2_wav6o"]
+[ext_resource type="Texture2D" uid="uid://7tcvywndu7rt" path="res://assets/character/burning/Burning continuous/8.png" id="3_6hpya"]
+[ext_resource type="Texture2D" uid="uid://c33q6ykvcyk2s" path="res://assets/character/burning/Burning continuous/9.png" id="4_6goq3"]
 [ext_resource type="Texture2D" uid="uid://ywlunuotp0np" path="res://assets/character/vibrating/VIBRATING_beginning_1.png" id="4_8v0nb"]
-[ext_resource type="Texture2D" uid="uid://j0m27gv7ty8" path="res://assets/character/burning/BURNING begin 4.png" id="4_ex0or"]
 [ext_resource type="Texture2D" uid="uid://cqt7412bhoo88" path="res://assets/character/vibrating/VIBRATING_beginning_2.png" id="5_aucnq"]
-[ext_resource type="Texture2D" uid="uid://73xxyo3fhwx4" path="res://assets/character/burning/BURNING begin 5.png" id="5_vlg2h"]
+[ext_resource type="Texture2D" uid="uid://be2bxf2xr0yiw" path="res://assets/character/burning/Burning continuous/10.png" id="5_oyq2r"]
 [ext_resource type="Texture2D" uid="uid://b37ltmsnhlgg" path="res://assets/character/stable-eyebrows-move/IDLEbrowsmove1.png" id="6_4q1kq"]
 [ext_resource type="Texture2D" uid="uid://dkkau6tjdafc0" path="res://assets/character/stable-blink/IDLE-blink-Animation-_01.png" id="6_5i8uq"]
 [ext_resource type="Texture2D" uid="uid://ddb4bkt86tb6n" path="res://assets/character/vibrating/VIBRATING_beginning_3.png" id="6_hqlnj"]
@@ -60,6 +59,12 @@
 [ext_resource type="Texture2D" uid="uid://d2ahcmqywqpd6" path="res://assets/character/stable-moving/1.png" id="34_bqphj"]
 [ext_resource type="Texture2D" uid="uid://dj0bhtyb6j5wr" path="res://assets/character/stable-moving/2.png" id="35_iyya5"]
 [ext_resource type="Texture2D" uid="uid://cy02p74hxj2ls" path="res://assets/character/stable-moving/3.png" id="36_bv6yl"]
+[ext_resource type="Texture2D" uid="uid://bt0nura2ldth" path="res://assets/character/burning/Starts burning/1.png" id="37_46w6s"]
+[ext_resource type="Texture2D" uid="uid://by0ee1875tdup" path="res://assets/character/burning/Starts burning/2.png" id="38_wav6o"]
+[ext_resource type="Texture2D" uid="uid://dcqt0warm3wox" path="res://assets/character/burning/Starts burning/3.png" id="39_6hpya"]
+[ext_resource type="Texture2D" uid="uid://dxn2ewnaqhh60" path="res://assets/character/burning/Starts burning/4.png" id="40_6goq3"]
+[ext_resource type="Texture2D" uid="uid://cdfrwmpve68wf" path="res://assets/character/burning/Starts burning/5.png" id="41_oyq2r"]
+[ext_resource type="Texture2D" uid="uid://c1m5f1j0sgayf" path="res://assets/character/burning/Starts burning/6.png" id="42_jtfmq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxjjv"]
 atlas = ExtResource("2_jfkvh")
@@ -77,37 +82,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": ExtResource("3_e1w22")
+"texture": ExtResource("2_wav6o")
 }, {
 "duration": 3.0,
-"texture": ExtResource("4_ex0or")
+"texture": ExtResource("3_6hpya")
 }, {
 "duration": 3.0,
-"texture": ExtResource("5_vlg2h")
+"texture": ExtResource("4_6goq3")
 }, {
 "duration": 3.0,
-"texture": ExtResource("3_e1w22")
+"texture": ExtResource("5_oyq2r")
 }, {
 "duration": 3.0,
-"texture": ExtResource("4_ex0or")
+"texture": ExtResource("2_wav6o")
 }, {
 "duration": 3.0,
-"texture": ExtResource("5_vlg2h")
+"texture": ExtResource("3_6hpya")
 }, {
 "duration": 3.0,
-"texture": ExtResource("4_ex0or")
+"texture": ExtResource("4_6goq3")
 }, {
 "duration": 3.0,
-"texture": ExtResource("5_vlg2h")
+"texture": ExtResource("5_oyq2r")
 }, {
 "duration": 3.0,
-"texture": ExtResource("3_e1w22")
+"texture": ExtResource("2_wav6o")
 }, {
 "duration": 3.0,
-"texture": ExtResource("4_ex0or")
+"texture": ExtResource("3_6hpya")
 }, {
 "duration": 3.0,
-"texture": ExtResource("5_vlg2h")
+"texture": ExtResource("4_6goq3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_oyq2r")
 }],
 "loop": true,
 "name": &"repeat_burning",
@@ -239,16 +247,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": ExtResource("1_woyij")
+"texture": ExtResource("37_46w6s")
 }, {
 "duration": 3.0,
-"texture": ExtResource("1_woyij")
+"texture": ExtResource("38_wav6o")
 }, {
 "duration": 3.0,
-"texture": ExtResource("2_8pcgx")
+"texture": ExtResource("39_6hpya")
 }, {
 "duration": 3.0,
-"texture": ExtResource("2_8pcgx")
+"texture": ExtResource("40_6goq3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("41_oyq2r")
+}, {
+"duration": 3.0,
+"texture": ExtResource("42_jtfmq")
 }],
 "loop": false,
 "name": &"start_burning",

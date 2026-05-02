@@ -1,52 +1,53 @@
 [gd_scene format=3 uid="uid://dtmvr3p1i4qkg"]
 
 [ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_yhnx3"]
-[ext_resource type="Texture2D" uid="uid://bw8wpf80nasx0" path="res://assets/obstacles/pipe-fire/1.png" id="2_bnswj"]
-[ext_resource type="Texture2D" uid="uid://b4wdfxk87rxrg" path="res://assets/obstacles/pipe-fire/2.png" id="3_7uhqr"]
-[ext_resource type="Texture2D" uid="uid://blajfpvfg2ij2" path="res://assets/obstacles/pipe-fire/3.png" id="4_25sfv"]
-[ext_resource type="Texture2D" uid="uid://nssya7smh0r8" path="res://assets/obstacles/pipe-fire/4.png" id="5_whsy0"]
-[ext_resource type="Texture2D" uid="uid://dl4gvkponvbu7" path="res://assets/obstacles/pipe-fire/5.png" id="6_iogvq"]
-[ext_resource type="Texture2D" uid="uid://chrip7wlxuivq" path="res://assets/obstacles/pipe-fire/6.png" id="7_31iqk"]
-[ext_resource type="Texture2D" uid="uid://b8bxaxugtqlrn" path="res://assets/obstacles/pipe-fire/7.png" id="8_1gwct"]
+[ext_resource type="Texture2D" uid="uid://crsdnqy1uyjrs" path="res://assets/obstacles/platform-fire/1.png" id="2_25sfv"]
+[ext_resource type="Texture2D" uid="uid://cdmcisy5qbi8w" path="res://assets/obstacles/platform-fire/2.png" id="3_whsy0"]
+[ext_resource type="Texture2D" uid="uid://djcxal05itqp1" path="res://assets/obstacles/platform-fire/3.png" id="4_iogvq"]
+[ext_resource type="Texture2D" uid="uid://cm1jtiygnp2s" path="res://assets/obstacles/platform-fire/4.png" id="5_31iqk"]
+[ext_resource type="Texture2D" uid="uid://bgnqycgrjwogq" path="res://assets/obstacles/platform-fire/5.png" id="6_1gwct"]
+[ext_resource type="Texture2D" uid="uid://dtf7lg5mrfx8" path="res://assets/obstacles/platform-fire/6.png" id="7_kaya4"]
+[ext_resource type="Texture2D" uid="uid://dqurscf2hkv6u" path="res://assets/obstacles/platform-fire/7.png" id="8_pm831"]
+[ext_resource type="Texture2D" uid="uid://dpd6vpu0aqxk0" path="res://assets/obstacles/platform-fire/8.png" id="9_juu77"]
+[ext_resource type="Texture2D" uid="uid://c5hr55ps3h0gs" path="res://assets/obstacles/platform-fire/9.png" id="10_r204w"]
+[ext_resource type="Texture2D" uid="uid://b7lt1jxkv4ek4" path="res://assets/obstacles/platform-fire/10.png" id="11_ig8pu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yek8d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bnswj")
+"texture": ExtResource("2_25sfv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7uhqr")
+"texture": ExtResource("3_whsy0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_25sfv")
+"texture": ExtResource("4_iogvq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_whsy0")
+"texture": ExtResource("5_31iqk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_iogvq")
+"texture": ExtResource("6_1gwct")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_31iqk")
+"texture": ExtResource("7_kaya4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_1gwct")
+"texture": ExtResource("8_pm831")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_juu77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r204w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ig8pu")
 }],
 "loop": true,
-"name": &"big_fire",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_bnswj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_7uhqr")
-}],
-"loop": true,
-"name": &"small_fire",
-"speed": 10.0
+"name": &"default",
+"speed": 5.0
 }]
 
 [node name="ObstaclePipeFire" type="Area2D" unique_id=1256502193]
@@ -54,10 +55,10 @@ script = ExtResource("1_yhnx3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867445764]
 sprite_frames = SubResource("SpriteFrames_yek8d")
-animation = &"big_fire"
-frame_progress = 0.71111804
+frame_progress = 0.31282836
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1336226968]
 light_mask = 2
 visibility_layer = 2
-polygon = PackedVector2Array(-147, -423, -138, 335, 103, 330, 65, -421)
+position = Vector2(-320, 50)
+polygon = PackedVector2Array(-109, -117, -138, 335, 765, 351, 707, -85)

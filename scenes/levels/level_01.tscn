@@ -529,6 +529,7 @@ scale = Vector2(0.371954, -0.43274227)
 [node name="PortalArea" parent="PlatformWhitePortalTank" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(13.441879, 9.243414)
 scale = Vector2(1.9678702, 1.0553372)
+next_scene_path = "uid://cwsod8q72c6hw"
 
 [node name="PlatformGrayMetalRope5" parent="." unique_id=867876061 instance=ExtResource("23_qy4h0")]
 position = Vector2(2402, -68)

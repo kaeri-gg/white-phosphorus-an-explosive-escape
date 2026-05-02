@@ -24,7 +24,7 @@ script = ExtResource("1_h3cwf")
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"stable_moving"
+animation = &"start_burning"
 autoplay = "stable"
 script = ExtResource("3_sjsxr")
 

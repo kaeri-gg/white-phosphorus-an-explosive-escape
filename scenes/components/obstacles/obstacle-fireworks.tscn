@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ddocum5vf1g4u"]
+
+[ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_j2mxa"]
+[ext_resource type="Texture2D" uid="uid://bu3ndwqinkqxv" path="res://assets/obstacles/firework-blowup/1.png" id="2_5p4u1"]
+[ext_resource type="Texture2D" uid="uid://bv0lvye1maxuh" path="res://assets/obstacles/firework-blowup/2.png" id="3_50y2g"]
+[ext_resource type="Texture2D" uid="uid://cfsi74jhu0vr0" path="res://assets/obstacles/firework-blowup/3.png" id="4_1tj5q"]
+[ext_resource type="Texture2D" uid="uid://c4f5dqb4eynko" path="res://assets/obstacles/firework-blowup/4.png" id="5_50p76"]
+[ext_resource type="Texture2D" uid="uid://54v1rd04mpe5" path="res://assets/obstacles/firework-blowup/5.png" id="6_kp6x0"]
+[ext_resource type="Texture2D" uid="uid://4kk3uwewb8b0" path="res://assets/obstacles/firework-blowup/6.png" id="7_0fixv"]
+[ext_resource type="Texture2D" uid="uid://cer6kwgsvbjrb" path="res://assets/obstacles/firework-blowup/7.png" id="8_03rsl"]
+[ext_resource type="Texture2D" uid="uid://562am1t484h5" path="res://assets/obstacles/firework-blowup/8.png" id="9_w8mpb"]
+[ext_resource type="Texture2D" uid="uid://dgny0q7m8poao" path="res://assets/obstacles/firework-blowup/9.png" id="10_dysn8"]
+[ext_resource type="Texture2D" uid="uid://bni0hylkl24fd" path="res://assets/obstacles/firework-blowup/10.png" id="11_6gv4e"]
+[ext_resource type="Texture2D" uid="uid://c6edehpgdptbs" path="res://assets/obstacles/firework-blowup/11.png" id="12_xlemi"]
+[ext_resource type="Texture2D" uid="uid://c40duat4ehakm" path="res://assets/obstacles/firework-blowup/12.png" id="13_hny5v"]
+[ext_resource type="Texture2D" uid="uid://qxpu0cgy40i7" path="res://assets/obstacles/firework-blowup/13.png" id="14_o2wmb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5a3ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5p4u1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5p4u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_50y2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1tj5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_50p76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kp6x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0fixv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_03rsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w8mpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dysn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6gv4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xlemi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hny5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_o2wmb")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 15.0
+}]
+
+[node name="ObstacleFireworks" type="Area2D" unique_id=90185703]
+script = ExtResource("1_j2mxa")
+type = 1
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=534281166]
+position = Vector2(101.00001, 42.000004)
+scale = Vector2(0.8268519, 0.8268519)
+sprite_frames = SubResource("SpriteFrames_5a3ft")
+frame_progress = 0.86345136
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=965514273]
+position = Vector2(131, 95.00001)
+rotation = -1.8147064
+polygon = PackedVector2Array(-426, -25, 206, -69, 469, -68, 549, -6, 457.47144, 45.835503, 207, 41, -433, 5)

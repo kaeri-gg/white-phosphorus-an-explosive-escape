@@ -1,14 +1,82 @@
 [gd_scene format=3 uid="uid://besrmivwm4nx"]
 
 [ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_o8xgl"]
-[ext_resource type="Texture2D" uid="uid://dwssqnw8ht100" path="res://assets/obstacles/Bomb.png" id="2_gt7l3"]
+[ext_resource type="Texture2D" uid="uid://dac38iavkw81d" path="res://assets/obstacles/bomb-blowup/1.png" id="2_gc0md"]
+[ext_resource type="Texture2D" uid="uid://bw042pv4oga60" path="res://assets/obstacles/bomb-blowup/2.png" id="3_bsnj2"]
+[ext_resource type="Texture2D" uid="uid://dql0qvg58ir2a" path="res://assets/obstacles/bomb-blowup/3.png" id="4_b2xit"]
+[ext_resource type="Texture2D" uid="uid://cvqccy31la5ay" path="res://assets/obstacles/bomb-blowup/4.png" id="5_hdh4k"]
+[ext_resource type="Texture2D" uid="uid://ix5d1qkwfe07" path="res://assets/obstacles/bomb-blowup/5.png" id="6_ygoni"]
+[ext_resource type="Texture2D" uid="uid://gaooppwd3fvb" path="res://assets/obstacles/bomb-blowup/6.png" id="7_81701"]
+[ext_resource type="Texture2D" uid="uid://dutg04gsrkr3a" path="res://assets/obstacles/bomb-blowup/7.png" id="8_ehb7f"]
+[ext_resource type="Texture2D" uid="uid://bv56wipktsuwt" path="res://assets/obstacles/bomb-blowup/8.png" id="9_0akpu"]
+[ext_resource type="Texture2D" uid="uid://t0ddxq5ui5pw" path="res://assets/obstacles/bomb-blowup/9.png" id="10_poenm"]
+[ext_resource type="Texture2D" uid="uid://bhobnsruiapyj" path="res://assets/obstacles/bomb-blowup/10.png" id="11_hpuig"]
+[ext_resource type="Texture2D" uid="uid://b7i6hmfavj37t" path="res://assets/obstacles/bomb-blowup/11.png" id="12_fjow7"]
+[ext_resource type="Texture2D" uid="uid://dpwf22wvtpdkh" path="res://assets/obstacles/bomb-blowup/12.png" id="13_e7pum"]
+[ext_resource type="Texture2D" uid="uid://bcu03h4pxueey" path="res://assets/obstacles/bomb-blowup/13.png" id="14_wqd40"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r03eu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gc0md")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gc0md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bsnj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b2xit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hdh4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ygoni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_81701")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ehb7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0akpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_poenm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hpuig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fjow7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e7pum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wqd40")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 15.0
+}]
 
 [node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
 script = ExtResource("1_o8xgl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1087512263]
-texture = ExtResource("2_gt7l3")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954247983]
+sprite_frames = SubResource("SpriteFrames_r03eu")
+frame_progress = 0.15555502
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2091618054]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1402928465]
 build_mode = 1
-polygon = PackedVector2Array(-539, -138, -571, -42, -555, 104, 103, 132, 747, 10, 337, -122, 97, -152, -433, -160, -521, -142)
+polygon = PackedVector2Array(-189, -656, -79, -471, 48, -221, 109, -49, 239, 434, 254, 572, 201, 621, 113, 644, 15, 642, -40, 510, -158, 35, -193, -146, -193, -456)
