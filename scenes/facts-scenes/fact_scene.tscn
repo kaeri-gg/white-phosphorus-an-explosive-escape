@@ -8,109 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_pqyst"]
 [ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_03iov"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_5m2np"]
-[ext_resource type="FontFile" uid="uid://bwefsygekyimg" path="res://assets/fonts/ShantellSans-Medium.ttf" id="8_m2ymw"]
-[ext_resource type="FontFile" uid="uid://cq20jyx8gbygk" path="res://assets/fonts/ShantellSans-SemiBold.ttf" id="9_d45f8"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2ymw"]
-bg_color = Color(0.9490196, 0.78431374, 0, 1)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8551988, 0.7264808, 0.08447724, 1)
-corner_detail = 15
-shadow_color = Color(0.78308636, 0.72419435, 0.4528293, 1)
-shadow_size = 1
-shadow_offset = Vector2(6, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d45f8"]
-bg_color = Color(1, 0.8980392, 0.12941177, 1)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8551988, 0.7264808, 0.08447724, 1)
-corner_detail = 15
-shadow_color = Color(0.78308636, 0.72419435, 0.4528293, 1)
-shadow_size = 1
-shadow_offset = Vector2(6, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppmml"]
-bg_color = Color(1, 0.8980392, 0.12941177, 1)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8551988, 0.7264808, 0.08447724, 1)
-corner_detail = 15
-shadow_color = Color(0.78308636, 0.72419435, 0.4528293, 1)
-shadow_size = 1
-shadow_offset = Vector2(6, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdiyy"]
-bg_color = Color(0.92941177, 0.7921569, 0.12941177, 1)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8551988, 0.7264808, 0.08447724, 1)
-corner_detail = 15
-shadow_color = Color(0.78308636, 0.72419435, 0.4528293, 1)
-shadow_size = 1
-shadow_offset = Vector2(6, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ir4n"]
-bg_color = Color(1, 0.8980392, 0.12941177, 1)
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8551988, 0.7264808, 0.08447724, 1)
-corner_detail = 15
-shadow_color = Color(0.78308636, 0.72419435, 0.4528293, 1)
-shadow_size = 1
-shadow_offset = Vector2(6, 8)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jygj3"]
-bg_color = Color(0.4657598, 0.49711144, 0.9848419, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o66tr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8pvg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5q1h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cnvc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6g15"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nj3f"]
-
-[sub_resource type="Theme" id="Theme_xtiec"]
-Button/colors/font_color = Color(0.34901962, 0.34117648, 0.31764707, 1)
-Button/colors/font_focus_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/font_hover_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/font_outline_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/font_pressed_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/icon_focus_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/icon_hover_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
-Button/colors/icon_hover_pressed_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/icon_normal_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/colors/icon_pressed_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
-Button/fonts/font = ExtResource("7_5m2np")
-Button/styles/disabled = SubResource("StyleBoxFlat_m2ymw")
-Button/styles/hover = SubResource("StyleBoxFlat_d45f8")
-Button/styles/hover_pressed = SubResource("StyleBoxFlat_ppmml")
-Button/styles/normal = SubResource("StyleBoxFlat_jdiyy")
-Button/styles/pressed = SubResource("StyleBoxFlat_7ir4n")
-Label/colors/font_color = Color(0.09998595, 0.09998601, 0.099985965, 1)
-Label/constants/line_spacing = 3
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("8_m2ymw")
-LinkButton/colors/font_color = Color(0.34901962, 0.34117648, 0.31764707, 1)
-LinkButton/colors/font_focus_color = Color(0.92941177, 0.07450981, 0.07450981, 1)
-LinkButton/colors/font_hover_color = Color(0.92941177, 0.07450981, 0.07450981, 1)
-LinkButton/colors/font_pressed_color = Color(0.92941177, 0.07450981, 0.07450981, 1)
-LinkButton/fonts/font = ExtResource("9_d45f8")
-LinkButton/styles/focus = SubResource("StyleBoxFlat_jygj3")
-OptionButton/styles/disabled = SubResource("StyleBoxFlat_o66tr")
-OptionButton/styles/focus = SubResource("StyleBoxFlat_d8pvg")
-OptionButton/styles/hover = SubResource("StyleBoxFlat_y5q1h")
-OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_3cnvc")
-OptionButton/styles/normal = SubResource("StyleBoxFlat_p6g15")
-OptionButton/styles/pressed = SubResource("StyleBoxFlat_6nj3f")
 
 [sub_resource type="Theme" id="Theme_fap61"]
 
@@ -150,12 +49,6 @@ grow_vertical = 1
 
 [node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("4_03iov")]
 layout_mode = 1
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
-offset_left = 0.0
-offset_right = 70.0
-grow_horizontal = 1
 
 [node name="HBoxContainer" type="GridContainer" parent="." unique_id=1453591924]
 layout_mode = 1
@@ -172,40 +65,11 @@ grow_vertical = 0
 theme_override_constants/h_separation = 20
 columns = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=655536415]
-layout_mode = 2
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=1168250652]
-layout_mode = 2
-
-[node name="Level_1_Pat" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=237858599 instance=ExtResource("5_pqyst")]
+[node name="Level_1_Anna" parent="HBoxContainer" unique_id=1054692064 instance=ExtResource("5_pqyst")]
 unique_name_in_owner = true
 layout_mode = 2
-custom_label_text = "Version 1: Level_1"
-
-[node name="Level_2_Pat" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1724391368 instance=ExtResource("5_pqyst")]
-unique_name_in_owner = true
-layout_mode = 2
-custom_label_text = "Version 1: Level_2"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=1338861022]
-layout_mode = 2
-theme = SubResource("Theme_xtiec")
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2" unique_id=1198394467]
-layout_mode = 2
-
-[node name="Level_1_Anna" parent="HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1054692064 instance=ExtResource("5_pqyst")]
-unique_name_in_owner = true
-layout_mode = 2
+size_flags_vertical = 8
 custom_label_text = "Version 2: Level_1"
-
-[node name="Level_2_Anna" parent="HBoxContainer/MarginContainer2/VBoxContainer" unique_id=372977787 instance=ExtResource("5_pqyst")]
-unique_name_in_owner = true
-layout_mode = 2
-custom_label_text = "Version 2: Level_2"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
 layout_mode = 1
@@ -254,7 +118,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Level_1_Pat" to="." method="_on_proceed_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Level_2_Pat" to="." method="_on_proceed_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainer/Level_1_Anna" to="." method="_on_proceed_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainer/Level_2_Anna" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Level_1_Anna" to="." method="_on_proceed_button_pressed"]
