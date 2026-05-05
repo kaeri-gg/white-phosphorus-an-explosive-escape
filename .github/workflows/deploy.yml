@@ -1,0 +1,119 @@
+name: Deploy to GitHub Pages
+
+# Builds the Godot web export and publishes it to GitHub Pages on every
+# push to main. Lets you keep release/ permanently gitignored — the build
+# output never touches the main branch's history.
+#
+# One-time setup needed in the GitHub repo:
+#   Settings → Pages → Source: "GitHub Actions"
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:    # also allow manual runs from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Don't queue parallel deploys; cancel in-flight if a newer push lands.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  GODOT_VERSION: "4.6"
+  GODOT_STATUS: "stable"
+  EXPORT_PRESET: "The Phosphorus Game"
+
+jobs:
+  build:
+    name: Build web export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Godot binary and templates
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/godot
+            ~/.local/share/godot/export_templates
+          key: godot-${{ env.GODOT_VERSION }}-${{ env.GODOT_STATUS }}
+
+      - name: Install Godot (cache miss only)
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          set -e
+          GODOT_FULL="${GODOT_VERSION}-${GODOT_STATUS}"
+          mkdir -p ~/godot
+
+          # Editor binary
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_FULL}/Godot_v${GODOT_FULL}_linux.x86_64.zip"
+          unzip -q "Godot_v${GODOT_FULL}_linux.x86_64.zip" -d ~/godot
+          mv ~/godot/Godot_v${GODOT_FULL}_linux.x86_64 ~/godot/godot
+          chmod +x ~/godot/godot
+          rm "Godot_v${GODOT_FULL}_linux.x86_64.zip"
+
+          # Export templates (Godot expects them under export_templates/<version>.<status>/)
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_FULL}/Godot_v${GODOT_FULL}_export_templates.tpz"
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}
+          unzip -q "Godot_v${GODOT_FULL}_export_templates.tpz"
+          mv templates/* ~/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}/
+          rm -rf templates "Godot_v${GODOT_FULL}_export_templates.tpz"
+
+      - name: Add Godot to PATH
+        run: echo "$HOME/godot" >> "$GITHUB_PATH"
+
+      - name: Import resources
+        # Headless import scans the project. The first pass usually errors
+        # out partway through; running twice gets a clean cache.
+        run: |
+          godot --headless --import 2>&1 | tail -20 || true
+          godot --headless --import 2>&1 | tail -20 || true
+
+      - name: Export web build
+        run: |
+          set -e
+          mkdir -p release
+          godot --headless --export-release "$EXPORT_PRESET" release/index.html
+          echo "--- export contents ---"
+          ls -lh release/
+          echo "--- total size ---"
+          du -sh release/
+
+      - name: Stage Pages artifact
+        # Mirror the existing deploy URL structure so the game stays at
+        # https://<user>.github.io/<repo>/release/. A tiny redirect at the
+        # root sends bare /<repo>/ visits into the game.
+        run: |
+          mkdir -p _site/release
+          cp -r release/* _site/release/
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>The Phosphorus Game</title>
+          <meta http-equiv="refresh" content="0; url=release/">
+          <link rel="canonical" href="release/">
+          <p>Loading… <a href="release/">click here</a> if nothing happens.</p>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
