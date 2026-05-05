@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bvkntfywgonmf"]
 
-[ext_resource type="Texture2D" uid="uid://dx4nuuqeujm8m" path="res://assets/platforms/new/Pipe insert cap 2.png" id="1_vvxl4"]
+[ext_resource type="Texture2D" uid="uid://dx4nuuqeujm8m" path="res://assets/platforms/Pipe insert cap 2.png" id="1_vvxl4"]
 
 [node name="PlatformRedPipeInsertCap" type="StaticBody2D" unique_id=1089872355]
+scale = Vector2(0.03531767, 0.038901262)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1760626352]
 texture = ExtResource("1_vvxl4")

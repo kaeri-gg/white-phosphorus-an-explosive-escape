@@ -6,6 +6,7 @@
 size = Vector2(728, 400)
 
 [node name="PlatformGrayInBetween" type="StaticBody2D" unique_id=1488933027]
+scale = Vector2(0.09533596, -0.086293325)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1271831090]
 texture = ExtResource("1_giobx")

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gt0isau6etsq" path="res://assets/platforms/Inbetween yellow.png" id="1_dmmiu"]
 
 [node name="PlatformYellowInBetweenSpring" type="StaticBody2D" unique_id=154952039]
+scale = Vector2(0.09533596, -0.086293325)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=586690935]
 texture = ExtResource("1_dmmiu")

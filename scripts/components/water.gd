@@ -24,10 +24,12 @@ class_name Water
 ## If false, the water starts at min_height instead of full.
 @export var starts_full: bool = true
 
-var max_height: float            # Computed from water_size.y at startup
-var _anchor_bottom_y: float      # World-y of the tank floor, stays constant
+var max_height: float
+var _anchor_bottom_y: float
 var _collision_shape: CollisionShape2D
 var _fill_tween: Tween
+# Guards against @tool re-firing _ready() on editor focus changes.
+var _initialized: bool = false
 
 signal fill_completed
 
@@ -38,23 +40,22 @@ var surface_line: Line2D
 var fill_polygon: Polygon2D
 
 @export_tool_button("Update Water") var update_water_button: Callable = func():
+	_initialized = false
 	_ready()
 	update_visuals()
 
 func _ready() -> void:
+	if _initialized:
+		return
+	_initialized = true
+
 	for i in get_children():
 		i.queue_free()
 
-	# Store max capacity from editor-configured water_size.y
 	max_height = water_size.y
-
 	initiate_water()
-
-	# Anchor = world position of the tank bottom. This never changes.
 	_anchor_bottom_y = global_position.y + surface_pos_y + water_size.y
 
-	# If this tank should start nearly empty, set it to min_height now.
-	# Guarded against @tool editor runs so water_size.y isn't overwritten on save.
 	if not starts_full and not Engine.is_editor_hint():
 		set_water_fill_height(min_height)
 	
@@ -195,37 +196,30 @@ func _on_body_exited(body: Node2D) -> void:
 			var vy := _get_body_velocity_y(body)
 			splash(body.global_position,  vy * player_splash_multiplier)
 
-## Instantly set the water to a specific fill height.
-## Updates visuals, collision shape, and node position so the tank bottom stays anchored.
+## Instantly set the water to a specific fill height. Keeps the tank bottom
+## anchored by repositioning the node.
 func set_water_fill_height(new_height: float) -> void:
 	var clamped: float = clamp(new_height, min_height, max_height)
 	water_size.y = clamped
-
-	# Move node so the tank bottom stays at _anchor_bottom_y
 	global_position.y = _anchor_bottom_y - surface_pos_y - clamped
 
-	# Update the collision shape to match the new water size
 	if _collision_shape:
 		_collision_shape.shape.size = water_size
 		_collision_shape.position = water_size / 2.0 + Vector2(0, surface_pos_y / 2.0)
 
-	# Restart processing so visuals update (the optimization in update_physics
-	# may have stopped processing when water was still)
+	# update_physics may have stopped processing when the water was still.
 	set_process(true)
 
 
-## Smoothly animate the water height from current to target over `duration` seconds.
+## Smoothly animate the water height to `target_height` over `duration` seconds.
 ## Emits `fill_completed` when done.
 func animate_fill(target_height: float, duration: float) -> void:
-	# Kill any in-progress animation
 	if _fill_tween and _fill_tween.is_running():
 		_fill_tween.kill()
 
 	var start_height: float = water_size.y
 	var clamped_target: float = clamp(target_height, min_height, max_height)
-	
-	# tween_method(callable, from_value, to_value, duration)
-	# tween_method calls set_water_fill_height every frame with an interpolated value
+
 	_fill_tween = create_tween()
 	_fill_tween.tween_method(set_water_fill_height, start_height, clamped_target, duration)
 	_fill_tween.finished.connect(func(): fill_completed.emit(), CONNECT_ONE_SHOT)

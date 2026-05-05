@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c337mop1l6jon" path="res://assets/platforms/Platform 4.png" id="1_n6siv"]
 
 [node name="PlatformGrayPipe" type="StaticBody2D" unique_id=1415318706]
+scale = Vector2(0.3366552, 0.3796088)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=489830136]
 scale = Vector2(0.37177783, 0.37177783)

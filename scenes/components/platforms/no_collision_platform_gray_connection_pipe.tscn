@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://df0pl5v61iab8" path="res://assets/platforms/No collision platform 2.png" id="1_gxcny"]
 
 [node name="NoCollisionGrayConnectionPipe" type="Node2D" unique_id=1019894451]
+scale = Vector2(0.118206255, 0.120278984)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=948481353]
 texture = ExtResource("1_gxcny")

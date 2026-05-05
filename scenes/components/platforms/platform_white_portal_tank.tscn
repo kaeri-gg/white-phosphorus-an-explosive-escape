@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://pai7nvn4hkcr" path="res://assets/platforms/Water tank 4.png" id="1_6kx18"]
 
 [node name="PlatformWhitePortalTank" type="StaticBody2D" unique_id=1227335199]
-position = Vector2(-1, -1)
+rotation = -3.1415927
+scale = Vector2(0.371954, -0.43274227)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=341283323]
 scale = Vector2(0.5112313, 0.5112313)

@@ -2,14 +2,6 @@
 extends Water
 class_name HealingWater
 
-# A variant of Water that gradually restores the Player's HP while the player
-# is inside it. All wave physics, splash, and enter/leave behavior are
-# inherited from Water — this script only adds a tick-based heal side-effect.
-#
-# The first heal happens `heal_interval` seconds after the player enters,
-# and continues every `heal_interval` seconds until the player either leaves
-# the water or reaches full HP.
-
 ## Seconds between each heal tick.
 @export var heal_interval: float = 1.5
 

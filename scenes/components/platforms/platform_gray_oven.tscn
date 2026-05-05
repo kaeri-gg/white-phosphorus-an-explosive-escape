@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://db1bpjitnkams"]
 
-[ext_resource type="Texture2D" uid="uid://cfrqjqel35ywv" path="res://assets/platforms/Vaccum oven_without glass.png" id="1_j73on"]
+[ext_resource type="Texture2D" uid="uid://21cn4p76li3x" path="res://assets/platforms/Vaccum oven.png" id="1_j73on"]
 
 [node name="PlatformGrayOven" type="StaticBody2D" unique_id=2138956466]
-scale = Vector2(0.99299026, 1)
+scale = Vector2(0.596, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236366085]
 scale = Vector2(0.90935105, 0.9108993)

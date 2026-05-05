@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://4b5o2n74t2nm" path="res://assets/platforms/Metall rope.png" id="1_hk8wk"]
 
 [node name="PlatformGrayMetalRope" type="Node2D" unique_id=393274938]
+scale = Vector2(0.3190985, 0.31427798)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987466163]
 position = Vector2(19, 363)
+rotation = 1.5707964
 texture = ExtResource("1_hk8wk")

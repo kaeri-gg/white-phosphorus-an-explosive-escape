@@ -48,21 +48,20 @@ func _on_body_exited(body: Node) -> void:
 		_pending_victim = null
 
 func _handle_fire(player: Player) -> void:
-	print("entered fire")
 	if _was_firework:
 		_start_kill_countdown(player)
-	else:
-		player.die()
+		return
+	_play_explode_if_present()
+	player.die()
 
 func _handle_firework(player: Player) -> void:
-	print("entered firework")
-	if player.current_state != Player.STATE.BURNING:
-		print("player is not burning, firework will not convert to fire")
-		return
-	print("should changed to fire")
-	type = TYPE.FIRE
-	_was_firework = true
-	_start_kill_countdown(player)
+	_play_explode_if_present()
+	player.die()
+
+func _play_explode_if_present() -> void:
+	var sprite := get_node_or_null("Sprite2D") as AnimatedSprite2D
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("explode"):
+		sprite.play("explode")
 
 func _handle_wood(player: Player) -> void:
 	print("touched wood, but its not working")

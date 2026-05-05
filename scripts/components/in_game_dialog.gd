@@ -1,14 +1,6 @@
 class_name InGameDialog
 extends Area2D
 
-# A world-space tutorial-dialog trigger.
-#
-# Place an InGameDialog in a level, size its CollisionShape2D to taste, and
-# set `dialog_text` in the inspector. When the Player enters the area, the
-# bubble appears and types the text out character-by-character. When the
-# Player leaves, the bubble hides; the next entry replays the typing
-# animation from the start.
-
 ## The text that will be typed out when the player enters this trigger.
 @export_multiline var dialog_text: String = "Press [space] to jump."
 

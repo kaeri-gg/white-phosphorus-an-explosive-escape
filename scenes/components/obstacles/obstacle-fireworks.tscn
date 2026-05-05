@@ -65,12 +65,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_o2wmb")
 }],
-"loop": true,
+"loop": false,
 "name": &"explode",
 "speed": 15.0
 }]
 
 [node name="ObstacleFireworks" type="Area2D" unique_id=90185703]
+scale = Vector2(0.093511365, 0.102127805)
 script = ExtResource("1_j2mxa")
 type = 1
 
@@ -78,7 +79,7 @@ type = 1
 position = Vector2(101.00001, 42.000004)
 scale = Vector2(0.8268519, 0.8268519)
 sprite_frames = SubResource("SpriteFrames_5a3ft")
-frame_progress = 0.86345136
+animation = &"explode"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=965514273]
 position = Vector2(131, 95.00001)

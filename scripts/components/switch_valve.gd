@@ -47,11 +47,7 @@ func _on_interact_area_body_exited(body: Node2D) -> void:
 		_clear_current_player()
 
 func _on_player_pressed_switch() -> void:
-	if current_player == null:
-		return
-
-	# Block interaction while water is moving
-	if is_transferring:
+	if current_player == null or is_transferring:
 		return
 
 	switch_sprite.play("interact")
@@ -59,32 +55,24 @@ func _on_player_pressed_switch() -> void:
 	_start_water_transfer()
 
 func _start_water_transfer() -> void:
-	# Safety check: we need at least a target
 	if target_water == null:
 		push_warning("%s: target_water is not set." % name)
 		return
 
 	is_transferring = true
 
-	# Optional: play a water-flow sound
-	# sound_manager.play("WaterFlow")
-
 	if not is_transferred:
-		# Forward: drain source (if any), fill target
+		# Forward: drain source (if any), fill target.
 		if source_water:
 			source_water.animate_fill(source_water.min_height, transfer_duration)
 		target_water.animate_fill(target_water.max_height, transfer_duration)
 	else:
-		# Reverse: fill source back (if any), drain target
+		# Reverse: refill source, drain target.
 		if source_water:
 			source_water.animate_fill(source_water.max_height, transfer_duration)
 		target_water.animate_fill(target_water.min_height, transfer_duration)
 
-	# Wait for the target animation to finish (source runs in parallel, same duration)
 	await target_water.fill_completed
-
-	# Optional: stop the water-flow sound
-	# sound_manager.stop("WaterFlow")
 
 	is_transferred = !is_transferred
 	is_transferring = false

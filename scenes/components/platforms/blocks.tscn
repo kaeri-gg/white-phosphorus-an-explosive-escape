@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://byrd76ev5iftj"]
+
+[ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="1_wlgsl"]
+
+[node name="blocks" type="TextureRect" unique_id=1899720952]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("1_wlgsl")

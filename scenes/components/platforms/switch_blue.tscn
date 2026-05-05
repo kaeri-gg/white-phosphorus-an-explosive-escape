@@ -32,6 +32,17 @@
 [ext_resource type="Texture2D" uid="uid://cloujfdictnw0" path="res://assets/platforms/blue switch/Switch_29.png" id="30_2prtt"]
 [ext_resource type="Texture2D" uid="uid://degj7mt24v0jn" path="res://assets/platforms/blue switch/Switch_30.png" id="31_6l1ec"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="32_sl2q8"]
+[ext_resource type="Shader" uid="uid://b7sumregr4g03" path="res://scripts/shaders/glow_outline.gdshader" id="33_glow"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glow"]
+shader = ExtResource("33_glow")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 28.0
+shader_parameter/intensity = 1.8
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_min = 0.4
+shader_parameter/pulse_max = 1.0
+shader_parameter/enabled = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_why7j"]
 animations = [{
@@ -153,10 +164,12 @@ Label/constants/shadow_outline_size = 5
 Label/fonts/font = ExtResource("32_sl2q8")
 
 [node name="SwitchBlue" type="StaticBody2D" unique_id=1596610064]
+scale = Vector2(0.14010037, 0.13523985)
 script = ExtResource("1_en8sg")
 
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_glow")
 position = Vector2(-1, 10)
 scale = Vector2(0.6763866, 0.6763866)
 sprite_frames = SubResource("SpriteFrames_why7j")
@@ -180,8 +193,10 @@ shape = SubResource("CircleShape2D_8n0am")
 [node name="PromptLabel" type="Label" parent="." unique_id=1918063184]
 unique_name_in_owner = true
 z_index = 100
-offset_right = 200.0
-offset_bottom = 40.0
+offset_left = -92.79061
+offset_top = -14.788544
+offset_right = 107.20939
+offset_bottom = 25.211456
 theme = SubResource("Theme_gxx5q")
 text = "[E] to interact"
 horizontal_alignment = 1

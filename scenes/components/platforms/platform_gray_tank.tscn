@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlhoum7k1oqpe" path="res://assets/platforms/Water tank 2.png" id="1_uep1a"]
 
 [node name="PlatformGrayTank" type="StaticBody2D" unique_id=1432242628]
+scale = Vector2(0.38349155, 0.40381145)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1649247852]
 scale = Vector2(0.56248206, 0.5615937)

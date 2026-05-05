@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl5fgrwokfl76"
-path="res://.godot/imported/8.png-56671dd24bb9147e23ec1a7aedd60dc7.ctex"
+uid="uid://bc33r1ettnwyi"
+path="res://.godot/imported/8.png-cc3fd12c8f00b17fd0e6fc971b1f04ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/burning/BURNING jump/8.png"
-dest_files=["res://.godot/imported/8.png-56671dd24bb9147e23ec1a7aedd60dc7.ctex"]
+source_file="res://assets/character/burning/burning jump/8.png"
+dest_files=["res://.godot/imported/8.png-cc3fd12c8f00b17fd0e6fc971b1f04ba.ctex"]
 
 [params]
 

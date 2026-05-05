@@ -6,6 +6,7 @@
 size = Vector2(1535, 233)
 
 [node name="PlatformRedPipe" type="StaticBody2D" unique_id=465465747]
+scale = Vector2(0.30987126, 0.4301092)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894501109]
 texture = ExtResource("1_t2amh")

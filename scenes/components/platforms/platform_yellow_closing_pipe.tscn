@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ifkcw646ugoa"]
 
-[ext_resource type="Texture2D" uid="uid://ckniey6y6oski" path="res://assets/platforms/new/Pipe closing cap 3.png" id="1_c0lpk"]
+[ext_resource type="Texture2D" uid="uid://ckniey6y6oski" path="res://assets/platforms/Pipe closing cap 3.png" id="1_c0lpk"]
 
 [node name="PlatformYellowClosingPipe" type="StaticBody2D" unique_id=818493941]
+scale = Vector2(0.036797598, 0.036797598)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428684931]
 texture = ExtResource("1_c0lpk")

@@ -3,6 +3,9 @@ extends Area2D
 
 @export_file("*.tscn") var next_scene_path: String = ""
 
+## Seconds to fade the screen to white before swapping scenes.
+@export var fade_duration: float = 0.6
+
 var is_transitioning: bool = false
 
 func _ready() -> void:
@@ -22,4 +25,5 @@ func _show_next_scene(body: Node) -> void:
 
 	is_transitioning = true
 	sound_manager.play("EnterGame")
-	get_tree().call_deferred("change_scene_to_file", resolved)
+	await utils.fade_to_white(get_tree().current_scene, fade_duration)
+	get_tree().change_scene_to_file(resolved)

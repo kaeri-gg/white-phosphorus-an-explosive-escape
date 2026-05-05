@@ -2,5 +2,14 @@
 .godot/
 /android/
 
+# Build output (Godot Web export). These are large binary artifacts that
+# should be re-built rather than tracked — anything in release/ is
+# regeneratable via Project → Export in the editor.
+release/
+
+# macOS Finder metadata
+.DS_Store
+
 *.md
 !README.md
+!PROJECT_ANALYSIS.md

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://r2ncuw0k51e6"]
 
-[ext_resource type="Texture2D" uid="uid://dxhb3qbxkrlod" path="res://assets/platforms/new/Inbetween 7.1_stopper.png" id="1_vqcrr"]
+[ext_resource type="Texture2D" uid="uid://dxhb3qbxkrlod" path="res://assets/platforms/Inbetween 7.1_stopper.png" id="1_vqcrr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3muhm"]
 
 [node name="SwitchValveStopper" type="StaticBody2D" unique_id=1340465770]
+scale = Vector2(0.14010037, 0.13523985)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=781370961]
 texture = ExtResource("1_vqcrr")

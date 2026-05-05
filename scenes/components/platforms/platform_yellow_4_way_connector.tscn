@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://p7607v0sss2w"]
 
-[ext_resource type="Texture2D" uid="uid://cv6cxs7oxmpin" path="res://assets/platforms/new/Inbetween 10.png" id="1_dvpw7"]
+[ext_resource type="Texture2D" uid="uid://cv6cxs7oxmpin" path="res://assets/platforms/Inbetween 10.png" id="1_dvpw7"]
 
 [node name="PlatformYellow4WayConnector" type="StaticBody2D" unique_id=574683061]
+scale = Vector2(0.118206255, 0.120278984)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=487872608]
 texture = ExtResource("1_dvpw7")

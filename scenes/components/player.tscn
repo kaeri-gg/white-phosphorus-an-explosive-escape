@@ -24,8 +24,10 @@ script = ExtResource("1_h3cwf")
 unique_name_in_owner = true
 position = Vector2(0, -289.99997)
 sprite_frames = ExtResource("2_h3cwf")
-animation = &"burning_moving"
+animation = &"burning_jump"
 autoplay = "stable"
+frame = 8
+frame_progress = 1.0
 script = ExtResource("3_sjsxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71121053]

@@ -39,6 +39,7 @@ animations = [{
 }]
 
 [node name="ObstaclePipeFire" type="Area2D" unique_id=1256502193]
+scale = Vector2(0.1311483, 0.1180949)
 script = ExtResource("1_bva6d")
 
 [node name="PipeFireSprite" type="AnimatedSprite2D" parent="." unique_id=867445764]

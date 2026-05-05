@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjyfyfevvppld"
-path="res://.godot/imported/1.png-4936e13605c226b3616961e22579ff55.ctex"
+uid="uid://digwlk4ddsmgs"
+path="res://.godot/imported/1.png-6f3f5e6d5a0fe8469ddb16d34c2a08d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/burning/BURNING idle/Starts burning/1.png"
-dest_files=["res://.godot/imported/1.png-4936e13605c226b3616961e22579ff55.ctex"]
+source_file="res://assets/character/burning/burning idle/Starts burning/1.png"
+dest_files=["res://.godot/imported/1.png-6f3f5e6d5a0fe8469ddb16d34c2a08d2.ctex"]
 
 [params]
 

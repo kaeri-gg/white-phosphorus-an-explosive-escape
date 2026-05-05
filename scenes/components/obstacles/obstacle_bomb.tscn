@@ -71,6 +71,7 @@ animations = [{
 }]
 
 [node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
+scale = Vector2(0.07943403, 0.07552)
 script = ExtResource("1_o8xgl")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954247983]

@@ -4,6 +4,7 @@
 
 [node name="PlatformWhiteTank" type="StaticBody2D" unique_id=1227335199]
 position = Vector2(-1, -1)
+scale = Vector2(0.39102107, 0.39102107)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=341283323]
 scale = Vector2(0.5112313, 0.5112313)

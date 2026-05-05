@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cmycy22tdnmwv" path="res://assets/interactables/switch/Switch_28.png" id="29_pm23e"]
 [ext_resource type="Texture2D" uid="uid://2jf6iqdmw10u" path="res://assets/interactables/switch/Switch_29.png" id="30_pm85d"]
 [ext_resource type="Texture2D" uid="uid://fympt7mtg3ic" path="res://assets/interactables/switch/Switch_30.png" id="31_cjsle"]
+[ext_resource type="Shader" path="res://scripts/shaders/glow_outline.gdshader" id="32_glow"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_why7j"]
 animations = [{
@@ -139,6 +140,16 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glow"]
+shader = ExtResource("32_glow")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 28.0
+shader_parameter/intensity = 1.8
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_min = 0.4
+shader_parameter/pulse_max = 1.0
+shader_parameter/enabled = true
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8n0am"]
 radius = 550.0
 
@@ -153,10 +164,12 @@ Label/constants/shadow_outline_size = 5
 Label/fonts/font = ExtResource("2_7r1kg")
 
 [node name="Switch" type="StaticBody2D" unique_id=1596610064]
+scale = Vector2(0.14010037, 0.13523985)
 script = ExtResource("1_fwh2d")
 
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_glow")
 position = Vector2(-1, 10)
 scale = Vector2(0.6763866, 0.6763866)
 sprite_frames = SubResource("SpriteFrames_why7j")

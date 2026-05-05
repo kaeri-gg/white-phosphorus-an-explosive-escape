@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dbbmphekxei3m" path="res://assets/platforms/Inbetween 3.png" id="1_hvn37"]
 
-[node name="PlatformRedInBetween2" type="StaticBody2D" unique_id=1892193927]
+[node name="PlatformRedConnectionPipe" type="StaticBody2D" unique_id=1892193927]
+scale = Vector2(0.46391442, 0.46391442)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1506521768]
 scale = Vector2(0.25306225, 0.2572802)
