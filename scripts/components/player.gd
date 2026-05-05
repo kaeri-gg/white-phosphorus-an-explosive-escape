@@ -60,7 +60,7 @@ const _ANIMATIONS := {
 		"jump": "vibrating_jump",
 	},
 	STATE.EVOLVED: {
-		"idle": "evolved",
+		"idle": "final_form",
 	},
 }
 
@@ -126,7 +126,7 @@ func change_state(new_state: STATE) -> void:
 func _physics_process(_delta: float) -> void:
 	_update_health_timer_label()
 
-	if current_state == STATE.DEAD:
+	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -237,6 +237,15 @@ func heal(amount: int) -> void:
 
 	current_health = mini(current_health + amount, PLAYER_HEALTH)
 	health_changed.emit(current_health, PLAYER_HEALTH)
+
+func transform_to_final_form() -> void:
+	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
+		return
+
+	_stop_timers()
+	velocity = Vector2.ZERO
+	change_state(STATE.EVOLVED)
+	await player_sprite.animation_finished
 
 func die() -> void:
 	if is_dying or current_state == STATE.DEAD:

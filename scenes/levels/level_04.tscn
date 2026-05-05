@@ -29,12 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://d2bif6823vygo" path="res://scenes/components/platforms/platform_yellow_in_between_spring.tscn" id="25_5q4vb"]
 [ext_resource type="PackedScene" uid="uid://ddocum5vf1g4u" path="res://scenes/components/obstacles/obstacle-fireworks.tscn" id="25_eqf4o"]
 [ext_resource type="PackedScene" uid="uid://besrmivwm4nx" path="res://scenes/components/obstacles/obstacle_bomb.tscn" id="26_eqf4o"]
-[ext_resource type="PackedScene" uid="uid://db1bpjitnkams" path="res://scenes/components/platforms/platform_gray_oven.tscn" id="27_47boq"]
+[ext_resource type="PackedScene" uid="uid://db1bpjitnkams" path="res://scenes/components/platforms/platform_final_platform.tscn" id="27_47boq"]
 [ext_resource type="PackedScene" uid="uid://bvkntfywgonmf" path="res://scenes/components/platforms/platform_red_pipe_insert_cap.tscn" id="28_8m3pt"]
 [ext_resource type="PackedScene" uid="uid://p7607v0sss2w" path="res://scenes/components/platforms/platform_yellow_4_way_connector.tscn" id="29_vwuh2"]
 [ext_resource type="PackedScene" uid="uid://dedns20av8iss" path="res://scenes/components/platforms/platform_red_connection_pipe.tscn" id="30_ec0pt"]
 [ext_resource type="PackedScene" uid="uid://4my5xlh4geah" path="res://scenes/components/platforms/platform_red_3_way_connector.tscn" id="32_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://c0urvyqmpye0w" path="res://scenes/components/platforms/platform_red_4_way_connector.tscn" id="34_lqu3g"]
+[ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="36_x5hhl"]
 
 [node name="Level_04" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -76,7 +77,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
-position = Vector2(171.00002, 200)
+position = Vector2(543, 1170.0001)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2700, 1440)
 
@@ -1063,9 +1064,15 @@ rotation = -3.1415927
 position = Vector2(1770, 1053.0001)
 rotation = -3.1415927
 
-[node name="PlatformGrayOven" parent="." unique_id=2138956466 instance=ExtResource("27_47boq")]
+[node name="PlatformFinalPlatform" parent="." unique_id=2138956466 instance=ExtResource("27_47boq")]
 position = Vector2(204.00002, 1256.0001)
 scale = Vector2(-0.40096107, 0.42573768)
+
+[node name="PortalArea" parent="PlatformFinalPlatform" unique_id=1878742614 instance=ExtResource("36_x5hhl")]
+position = Vector2(44.89218, 260.72363)
+rotation = 3.1415925
+scale = Vector2(3.900899, -2.28206)
+next_scene_path = "uid://iuq1gve72064"
 
 [node name="PlatformGray3WayConnector15" parent="." unique_id=654895447 instance=ExtResource("19_x1re1")]
 position = Vector2(609, 869.00006)

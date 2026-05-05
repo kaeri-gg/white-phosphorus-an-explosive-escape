@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://db1bpjitnkams"]
+[gd_scene load_steps=4 format=3 uid="uid://db1bpjitnkams"]
 
 [ext_resource type="Texture2D" uid="uid://21cn4p76li3x" path="res://assets/platforms/Vaccum oven.png" id="1_j73on"]
+[ext_resource type="Script" path="res://scripts/components/final_platform.gd" id="2_finalplatform"]
 
-[node name="PlatformGrayOven" type="StaticBody2D" unique_id=2138956466]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_detection"]
+size = Vector2(450, 380)
+
+[node name="PlatformFinalPlatform" type="StaticBody2D" unique_id=2138956466]
 scale = Vector2(0.596, 0.6)
+script = ExtResource("2_finalplatform")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236366085]
 scale = Vector2(0.90935105, 0.9108993)
@@ -12,3 +17,14 @@ texture = ExtResource("1_j73on")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1852751106]
 build_mode = 1
 polygon = PackedVector2Array(-365.5625, -224, -277.94833, -224, -277.94833, -206, -278.9554, 164, 175.2283, 166, 175.2283, -225, 215.51067, -226, 213.49655, -322, 228.60245, -356, 276.94128, -407, 362.54132, -446, 506.55078, -478, 691.8497, -491, 874.1274, -493, 875.13446, -397, 695.8779, -393, 519.6426, -377, 410.88016, -349, 375.6331, -330, 366.56955, -309, 366.56955, -229, 443.10605, -225, 446.12723, 417, -365.5625, 417)
+
+[node name="DetectionArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-50, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("RectangleShape2D_detection")
+
+[node name="StableTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

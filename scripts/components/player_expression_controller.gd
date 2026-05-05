@@ -32,20 +32,15 @@ func _ready() -> void:
 func on_player_state_change(new_state: int) -> void:
 	current_state = new_state
 
-	# Cancel any in-progress idle expression (blink/eyebrow) when leaving STABLE.
 	if current_state != Player.STATE.STABLE:
 		is_playing_expression = false
 
-	# Manage the shake tween for VIBRATING; player.gd owns frame-animation choice.
 	if current_state == Player.STATE.VIBRATING:
 		_start_shake_tween()
 	else:
 		_stop_shake_tween()
 
 func on_player_movement_change(_moving: bool) -> void:
-	# player.gd._refresh_locomotion_animation owns animation selection on
-	# movement transitions. This handler is intentionally a no-op so future
-	# listeners (sound, dust effects, etc.) have a place to hook in.
 	pass
 
 func _schedule_next_blink() -> void:
@@ -76,10 +71,6 @@ func _can_play_expression() -> bool:
 	return current_state == Player.STATE.STABLE and not is_playing_expression
 
 func _on_animation_finished() -> void:
-	# Jump-finish handling lives in player.gd via the animation_finished
-	# signal — it routes through _refresh_locomotion_animation so the
-	# follow-up anim respects was_moving. This handler only manages the
-	# idle-expression flag.
 	if animation != "stable_blink" and animation != "stable_eyebrow":
 		return
 

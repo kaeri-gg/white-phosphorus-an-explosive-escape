@@ -1,16 +1,6 @@
 class_name TutorialDialog
 extends Area2D
 
-# A world-space tutorial-bubble trigger.
-#
-# When the Player enters this Area2D, a Label appears above the player's head,
-# types the configured text out character-by-character, and disappears after
-# `display_seconds`. The bubble follows the player as they move, until the
-# hide timer fires.
-#
-# Re-entering the trigger while the bubble is still on screen restarts the
-# typing animation and resets the hide timer.
-
 ## The text typed into the bubble when the player enters the trigger.
 @export_multiline var dialog_text: String = "Watch out for the fire!"
 
@@ -45,7 +35,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if _current_player == null or not is_instance_valid(_current_player):
 		return
-	# Center the label above the player by subtracting half of its measured size.
 	var anchor: Vector2 = _current_player.global_position + bubble_offset
 	bubble_label.global_position = anchor - bubble_label.size * 0.5
 

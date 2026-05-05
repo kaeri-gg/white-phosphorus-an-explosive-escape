@@ -25,7 +25,5 @@ func _show_next_scene(body: Node) -> void:
 
 	is_transitioning = true
 	sound_manager.play("EnterGame")
-	# Parent the fade overlay to the current scene so it survives until we
-	# swap and is freed automatically on scene change.
 	await utils.fade_to_white(get_tree().current_scene, fade_duration)
 	get_tree().change_scene_to_file(resolved)

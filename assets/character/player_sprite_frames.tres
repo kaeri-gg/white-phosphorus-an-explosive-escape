@@ -278,9 +278,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_1igkn")
 }],
-"loop": true,
+"loop": false,
 "name": &"final_form",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 3.0,

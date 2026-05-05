@@ -6,12 +6,12 @@ class_name Water
 @export var surface_pos_y: float = 0.5
 @export_range(2, 512) var segment_count: int = 64
 
-@export var player_splash_multiplier: float = 0.12 #Base : 0.12
-@export_range(0.0, 1000.0) var water_physics_speed: float = 80.0 #Base : 80
-@export var water_restoring_force: float = 0.02 #Base : 0.02
-@export var wave_energy_loss: float = 0.04 #Base : 0.04
-@export var wave_strength: float = 0.25 #Base : 0.25
-@export_range(1, 64) var wave_spread_updates: int = 8 #Base : 8
+@export var player_splash_multiplier: float = 0.12
+@export_range(0.0, 1000.0) var water_physics_speed: float = 80.0
+@export var water_restoring_force: float = 0.02
+@export var wave_energy_loss: float = 0.04
+@export var wave_strength: float = 0.25
+@export_range(1, 64) var wave_spread_updates: int = 8
 
 @export var surface_line_thickness: float = 1.0
 @export var surface_color: Color = Color("c3fbf7a0")
@@ -19,16 +19,17 @@ class_name Water
 
 ## The maximum water depth (full tank). Set this to the same value as water_size.y in the editor.
 ## The code will use water_size.y you set in the inspector as the max capacity.
-@export var min_height: float 
+@export var min_height: float
 
 ## If false, the water starts at min_height instead of full.
 @export var starts_full: bool = true
+
+const _MAX_PHYSICS_DELTA: float = 0.05
 
 var max_height: float
 var _anchor_bottom_y: float
 var _collision_shape: CollisionShape2D
 var _fill_tween: Tween
-# Guards against @tool re-firing _ready() on editor focus changes.
 var _initialized: bool = false
 
 signal fill_completed
@@ -96,7 +97,7 @@ func initiate_water() -> void:
 	_collision_shape = new_collisionshape
 
 func _process(delta: float) -> void:
-	update_physics(delta)
+	update_physics(min(delta, _MAX_PHYSICS_DELTA))
 	update_visuals()
 
 	
@@ -207,7 +208,6 @@ func set_water_fill_height(new_height: float) -> void:
 		_collision_shape.shape.size = water_size
 		_collision_shape.position = water_size / 2.0 + Vector2(0, surface_pos_y / 2.0)
 
-	# update_physics may have stopped processing when the water was still.
 	set_process(true)
 
 
