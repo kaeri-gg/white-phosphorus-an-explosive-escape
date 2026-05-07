@@ -895,7 +895,7 @@ position = Vector2(2188, 974)
 rotation = 4.8817344
 
 [node name="ObstacleFireworks34" parent="." unique_id=699961334 instance=ExtResource("25_eqf4o")]
-position = Vector2(2184, 1017)
+position = Vector2(2182.9998, 929)
 rotation = 5.474766
 
 [node name="ObstacleFireworks35" parent="." unique_id=977306929 instance=ExtResource("25_eqf4o")]
