@@ -3,6 +3,8 @@ extends Control
 
 const GAME_MENU = preload("uid://4ht2ox1qqc7q")
 
+@export var fade_duration: float = 0.6
+
 @onready var settings: Control = %SettingsControl
 @onready var about_the_game: Control = %AboutTheGameControl
 
@@ -48,4 +50,5 @@ func close_modal() -> void:
 	
 func return_to_home() -> void:
 	close_modal()
+	await utils.fade_to_white(get_tree().current_scene, fade_duration)
 	get_tree().change_scene_to_packed(GAME_MENU)

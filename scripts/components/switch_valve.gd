@@ -13,8 +13,8 @@ signal transfer_denied(reason: String)
 @onready var prompt_label: Label = %PromptLabel
 @onready var switch_sprite: AnimatedSprite2D = %SwitchSprite
 
-var is_transferred: bool = false   # false = source is full, true = target is full
-var is_transferring: bool = false   # true while animation is playing (blocks input)
+var has_transferred: bool = false
+var is_transferring: bool = false
 
 var current_player: Player
 
@@ -43,14 +43,14 @@ func _on_interact_area_body_exited(body: Node2D) -> void:
 		_clear_current_player()
 
 func _on_player_pressed_switch() -> void:
-	if current_player == null or is_transferring:
+	if current_player == null or is_transferring or has_transferred:
 		return
 
 	if target_water == null:
 		push_warning("%s: target_water is not set." % name)
 		return
 
-	if not is_transferred and not _can_start_forward_transfer():
+	if not _can_start_transfer():
 		transfer_denied.emit("source_not_full")
 		return
 
@@ -61,26 +61,21 @@ func _on_player_pressed_switch() -> void:
 func _start_water_transfer() -> void:
 	is_transferring = true
 
-	if not is_transferred:
-		if source_water:
-			source_water.animate_fill(source_water.min_height, transfer_duration)
-		target_water.animate_fill(target_water.max_height, transfer_duration)
-	else:
-		if source_water:
-			source_water.animate_fill(source_water.max_height, transfer_duration)
-		target_water.animate_fill(target_water.min_height, transfer_duration)
+	if source_water:
+		source_water.animate_fill(source_water.min_height, transfer_duration)
+	target_water.animate_fill(target_water.max_height, transfer_duration)
 
 	await get_tree().create_timer(transfer_duration).timeout
 
-	is_transferred = !is_transferred
+	has_transferred = true
 	is_transferring = false
 
 
-func _can_start_forward_transfer() -> bool:
+func _can_start_transfer() -> bool:
 	if source_water == null or not requires_source_filled:
 		return true
 	return source_water.is_full()
-	
+
 func _set_current_player(player: Player) -> void:
 	if current_player == player:
 		return

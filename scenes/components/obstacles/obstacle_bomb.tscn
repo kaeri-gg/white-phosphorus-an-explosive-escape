@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bomb_area"]
-size = Vector2(490.97345, 1350.6356)
+size = Vector2(516.15155, 1337.394)
 
 [node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
 scale = Vector2(0.07943403, 0.07552)
@@ -83,7 +83,7 @@ sprite_frames = SubResource("SpriteFrames_r03eu")
 animation = &"explode"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402928465]
-position = Vector2(18.883596, -2.8413231e-05)
+position = Vector2(31.472645, -6.620787)
 shape = SubResource("RectangleShape2D_bomb_area")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1334948877]

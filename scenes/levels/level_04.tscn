@@ -233,7 +233,7 @@ surface_color = Color(0.23529412, 0.88235295, 0.09803922, 0.90588236)
 water_fill_color = Color(0.21568628, 0.6901961, 0.09803922, 0.54901963)
 
 [node name="HealingWater3" parent="." unique_id=1424932910 instance=ExtResource("9_i7p7m")]
-position = Vector2(1489, 1243)
+position = Vector2(1473, 1233)
 water_size = Vector2(180, 70)
 surface_color = Color(0.23529412, 0.88235295, 0.09803922, 0.90588236)
 water_fill_color = Color(0.21568628, 0.6901961, 0.09803922, 0.54901963)
