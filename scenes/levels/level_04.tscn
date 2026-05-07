@@ -78,14 +78,18 @@ metadata/_edit_lock_ = true
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_47boq")]
 
 [node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_4w8xk")]
-position = Vector2(301, 232.00002)
-scale = Vector2(2.9482932, 0.5065246)
+position = Vector2(185, 360.00003)
+scale = Vector2(1.1706868, 0.10054581)
 dialog_text = "We are very close! Please don't let me touch the bombs and fireworks."
+chars_per_second = 50.0
+display_seconds = 4.0
 
 [node name="InGameDialog2" parent="UILayer" unique_id=1355971235 instance=ExtResource("6_4w8xk")]
-position = Vector2(2383.0002, 1098)
-scale = Vector2(3.3955898, 0.6671265)
+position = Vector2(2480, 1265)
+scale = Vector2(1.184244, 0.12511742)
 dialog_text = "I can see the vacuum oven! Let's go!"
+chars_per_second = 50.0
+display_seconds = 5.0
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
@@ -1309,12 +1313,9 @@ position = Vector2(694.99994, 1205.0001)
 position = Vector2(1287.9999, 1203.0001)
 
 [node name="ObstaclePipeFire3" parent="." unique_id=532149899 instance=ExtResource("24_0te1q")]
-position = Vector2(2009, 1036)
+position = Vector2(2016.9999, 1036.0001)
 rotation = -1.5707964
-
-[node name="ObstaclePipeFire4" parent="." unique_id=1891503544 instance=ExtResource("24_0te1q")]
-position = Vector2(2009, 1036)
-rotation = -1.5707964
+scale = Vector2(0.10092087, 0.09703754)
 
 [node name="ObstaclePipeFire5" parent="." unique_id=225865280 instance=ExtResource("24_0te1q")]
 position = Vector2(2570, 1076)

@@ -66,14 +66,18 @@ metadata/_edit_lock_ = true
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("25_on0ou")]
 
 [node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("5_py8xv")]
-position = Vector2(221, 330)
-scale = Vector2(1.9423627, 0.8097399)
+position = Vector2(165, 322)
+scale = Vector2(1.2251183, 0.12405147)
 dialog_text = "These pipes look deadly..."
+chars_per_second = 50.0
+display_seconds = 5.0
 
 [node name="InGameDialog2" parent="UILayer" unique_id=96101853 instance=ExtResource("5_py8xv")]
-position = Vector2(735.99994, 371)
-scale = Vector2(3.101743, 0.9747892)
+position = Vector2(745.99994, 484)
+scale = Vector2(1.1661835, 0.117574036)
 dialog_text = "But the green Phosphoric acid helps me recover!"
+chars_per_second = 50.0
+display_seconds = 5.0
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true

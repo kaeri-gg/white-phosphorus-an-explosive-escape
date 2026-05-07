@@ -282,11 +282,11 @@ func _anims_for(state: STATE) -> Dictionary:
 
 func _is_animation_locked() -> bool:
 	var anim := player_sprite.animation
-	for state_anims in _ANIMATIONS.values():
-		if anim == state_anims.get("jump", ""):
-			return true
-		if anim == state_anims.get("intro", ""):
-			return true
+	var current_anims := _anims_for(current_state)
+	if anim == current_anims.get("jump", ""):
+		return true
+	if anim == current_anims.get("intro", ""):
+		return true
 	return false
 
 func _is_jump_animation(anim: StringName) -> bool:

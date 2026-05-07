@@ -61,14 +61,18 @@ player = NodePath("../../Player")
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_lky54")]
 
 [node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_6ms8u")]
-position = Vector2(181, 377)
-scale = Vector2(1.9553655, 0.85498255)
+position = Vector2(126, 524)
+scale = Vector2(1.1413616, 0.13308707)
 dialog_text = "Use blue switches to fill up the water tanks."
+chars_per_second = 50.0
+display_seconds = 4.0
 
 [node name="InGameDialog2" parent="." unique_id=1331165818 instance=ExtResource("6_6ms8u")]
-position = Vector2(638, 379)
-scale = Vector2(2.0721898, 0.8977666)
+position = Vector2(646, 525.00006)
+scale = Vector2(1.1811582, 0.10479398)
 dialog_text = "Be quick or I'll burn away!"
+chars_per_second = 50.0
+display_seconds = 5.0
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("6_kx1rr")]
 unique_name_in_owner = true
@@ -581,6 +585,10 @@ rotation = 1.5707964
 
 [node name="PlatformGrayClosingPipe5" parent="." unique_id=1214574528 instance=ExtResource("13_x7wv7")]
 position = Vector2(1977, 417)
+
+[node name="PlatformGrayClosingPipe6" parent="." unique_id=1501462506 instance=ExtResource("13_x7wv7")]
+position = Vector2(1871, 152)
+rotation = -3.1415927
 
 [node name="PlatformGrayConnectionPipe6" parent="." unique_id=1231351920 instance=ExtResource("14_7873c")]
 position = Vector2(289, 527)

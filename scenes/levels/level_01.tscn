@@ -53,10 +53,12 @@ player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
-[node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_svp4f")]
-position = Vector2(210, 375.00003)
-scale = Vector2(1.7727523, 0.96355134)
+[node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_svp4f")]
+position = Vector2(130, 442)
+scale = Vector2(0.99415773, 0.1215944)
 dialog_text = "Remember, I don't like being outside of water for too long. But I can run and jump!"
+chars_per_second = 50.0
+display_seconds = 8.0
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)
