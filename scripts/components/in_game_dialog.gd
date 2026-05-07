@@ -1,6 +1,8 @@
 class_name InGameDialog
 extends Area2D
 
+static var _active: InGameDialog = null
+
 @export_multiline var dialog_text: String = "Press [space] to jump."
 @export var chars_per_second: float = 10.0
 @export var display_seconds: float = 3.0
@@ -22,6 +24,11 @@ func _on_body_entered(body: Node) -> void:
 	if _has_shown or body is not Player:
 		return
 	_has_shown = true
+
+	if _active and is_instance_valid(_active) and _active != self:
+		_active._hide()
+	_active = self
+
 	_show_and_type()
 
 func _show_and_type() -> void:
@@ -36,7 +43,8 @@ func _show_and_type() -> void:
 		_typing_tween.tween_property(label, "visible_characters", total_chars, typing_duration)
 
 	await get_tree().create_timer(display_seconds).timeout
-	_hide()
+	if _active == self:
+		_hide()
 
 func _hide() -> void:
 	if _typing_tween:
@@ -44,3 +52,5 @@ func _hide() -> void:
 		_typing_tween = null
 	canvas_layer.visible = false
 	label.visible_characters = 0
+	if _active == self:
+		_active = null

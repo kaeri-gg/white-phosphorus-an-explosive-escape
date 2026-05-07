@@ -68,16 +68,21 @@ metadata/_edit_lock_ = true
 [node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("5_py8xv")]
 position = Vector2(165, 322)
 scale = Vector2(1.2251183, 0.12405147)
-dialog_text = "These pipes look deadly..."
+dialog_text = "These red pipes look deadly..."
 chars_per_second = 50.0
-display_seconds = 5.0
 
 [node name="InGameDialog2" parent="UILayer" unique_id=96101853 instance=ExtResource("5_py8xv")]
 position = Vector2(745.99994, 484)
 scale = Vector2(1.1661835, 0.117574036)
-dialog_text = "But the green Phosphoric acid helps me recover!"
+dialog_text = "...but the green phosphoric acid helps me recover!"
 chars_per_second = 50.0
 display_seconds = 5.0
+
+[node name="InGameDialog3" parent="UILayer" unique_id=1386542811 instance=ExtResource("5_py8xv")]
+position = Vector2(1856, 178)
+scale = Vector2(1.1661835, 0.117574036)
+dialog_text = "Be quick and careful!"
+chars_per_second = 50.0
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true
@@ -153,8 +158,8 @@ starts_full = false
 [node name="HealingWater" parent="." unique_id=629559690 instance=ExtResource("6_o0b03")]
 position = Vector2(1224, 493)
 water_size = Vector2(180, 100)
-surface_color = Color(0.39262712, 0.9157312, 0, 0.90588236)
-water_fill_color = Color(0.4298728, 0.7128237, 0.027708681, 0.54901963)
+surface_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
+water_fill_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("15_rqlq8")]
 position = Vector2(159, 345)
@@ -642,15 +647,9 @@ scale = Vector2(0.13172401, -0.11018159)
 metadata/_edit_group_ = true
 
 [node name="ObstaclePipeFire9" parent="." unique_id=106688262 instance=ExtResource("8_h25l4")]
-position = Vector2(1529.0001, 302)
+position = Vector2(1529, 309)
 rotation = 3.1415925
-scale = Vector2(0.13172401, -0.11018159)
-metadata/_edit_group_ = true
-
-[node name="ObstaclePipeFire10" parent="." unique_id=836371130 instance=ExtResource("8_h25l4")]
-position = Vector2(1529.0001, 302)
-rotation = 3.1415925
-scale = Vector2(0.13172401, -0.11018159)
+scale = Vector2(0.109749444, -0.088045895)
 metadata/_edit_group_ = true
 
 [node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("26_j1cpe")]

@@ -63,14 +63,20 @@ player = NodePath("../../Player")
 [node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_6ms8u")]
 position = Vector2(126, 524)
 scale = Vector2(1.1413616, 0.13308707)
-dialog_text = "Use blue switches to fill up the water tanks."
+dialog_text = "Oh no...The tanks are not filled with water! But I see blue valves!"
 chars_per_second = 50.0
-display_seconds = 4.0
+display_seconds = 5.0
 
 [node name="InGameDialog2" parent="." unique_id=1331165818 instance=ExtResource("6_6ms8u")]
-position = Vector2(646, 525.00006)
+position = Vector2(834, 167)
 scale = Vector2(1.1811582, 0.10479398)
 dialog_text = "Be quick or I'll burn away!"
+chars_per_second = 50.0
+
+[node name="InGameDialog3" parent="." unique_id=1291187992 instance=ExtResource("6_6ms8u")]
+position = Vector2(1427, 456)
+scale = Vector2(1.1811582, 0.10479398)
+dialog_text = "All the tanks must be filled, until the last one!"
 chars_per_second = 50.0
 display_seconds = 5.0
 

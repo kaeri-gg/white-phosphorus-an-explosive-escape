@@ -12,6 +12,7 @@ script = ExtResource("1_pdm6y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323847666]
 position = Vector2(-2, -13)
 shape = SubResource("RectangleShape2D_pdm6y")
+debug_color = Color(0.6482589, 0.34432566, 0.97689, 0.41960785)
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="." unique_id=142619689]
 unique_name_in_owner = true

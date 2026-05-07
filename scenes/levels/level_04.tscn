@@ -80,14 +80,20 @@ metadata/_edit_lock_ = true
 [node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_4w8xk")]
 position = Vector2(185, 360.00003)
 scale = Vector2(1.1706868, 0.10054581)
-dialog_text = "We are very close! Please don't let me touch the bombs and fireworks."
+dialog_text = "Oh no... there are bombs and fireworks everywhere..."
 chars_per_second = 50.0
-display_seconds = 4.0
 
 [node name="InGameDialog2" parent="UILayer" unique_id=1355971235 instance=ExtResource("6_4w8xk")]
-position = Vector2(2480, 1265)
+position = Vector2(389, 248)
 scale = Vector2(1.184244, 0.12511742)
-dialog_text = "I can see the vacuum oven! Let's go!"
+dialog_text = "Please don't let me touch them when I'm on fire!"
+chars_per_second = 50.0
+display_seconds = 5.0
+
+[node name="InGameDialog3" parent="UILayer" unique_id=1788686862 instance=ExtResource("6_4w8xk")]
+position = Vector2(2189, 305)
+scale = Vector2(0.74002254, 0.4374569)
+dialog_text = "I must recover before going down there..."
 chars_per_second = 50.0
 display_seconds = 5.0
 
@@ -227,20 +233,20 @@ scale = Vector2(0.29498744, 0.41389465)
 [node name="HealingWater" parent="." unique_id=1954191531 instance=ExtResource("9_i7p7m")]
 position = Vector2(1267, 155)
 water_size = Vector2(150, 70)
-surface_color = Color(0.23529412, 0.88235295, 0.09803922, 0.90588236)
-water_fill_color = Color(0.21568628, 0.6901961, 0.09803922, 0.54901963)
+surface_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
+water_fill_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
 
 [node name="HealingWater2" parent="." unique_id=560815328 instance=ExtResource("9_i7p7m")]
 position = Vector2(2446, 359)
 water_size = Vector2(150, 70)
-surface_color = Color(0.23529412, 0.88235295, 0.09803922, 0.90588236)
-water_fill_color = Color(0.21568628, 0.6901961, 0.09803922, 0.54901963)
+surface_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
+water_fill_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
 
 [node name="HealingWater3" parent="." unique_id=1424932910 instance=ExtResource("9_i7p7m")]
 position = Vector2(1473, 1233)
 water_size = Vector2(180, 70)
-surface_color = Color(0.23529412, 0.88235295, 0.09803922, 0.90588236)
-water_fill_color = Color(0.21568628, 0.6901961, 0.09803922, 0.54901963)
+surface_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
+water_fill_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
 
 [node name="PlatformRedPipe2" parent="." unique_id=2088219178 instance=ExtResource("8_uu5oa")]
 position = Vector2(2094.0002, 1174)

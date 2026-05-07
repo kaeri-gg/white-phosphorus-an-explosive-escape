@@ -3,7 +3,7 @@ extends Water
 class_name HealingWater
 
 ## Seconds between each heal tick.
-@export var heal_interval: float = 1.5
+@export var heal_interval: float = 0.5
 
 ## How much HP is restored on each tick.
 @export var heal_amount: int = 1
