@@ -70,10 +70,14 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2mxa"]
+size = Vector2(185.88611, 996.5419)
+
 [node name="ObstacleFireworks" type="Area2D" unique_id=90185703]
 scale = Vector2(0.093511365, 0.102127805)
 script = ExtResource("1_j2mxa")
 type = 1
+metadata/_edit_horizontal_guides_ = [-49.0]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=534281166]
 position = Vector2(101.00001, 42.000004)
@@ -81,7 +85,14 @@ scale = Vector2(0.8268519, 0.8268519)
 sprite_frames = SubResource("SpriteFrames_5a3ft")
 animation = &"explode"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=965514273]
-position = Vector2(131, 95.00001)
-rotation = -1.8147064
-polygon = PackedVector2Array(-426, -25, 206, -69, 469, -68, 549, -6, 457.47144, 45.835503, 207, 41, -433, 5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1446072756]
+position = Vector2(93.2074, 26.241425)
+rotation = -0.24174464
+scale = Vector2(1.0000004, 1)
+shape = SubResource("RectangleShape2D_j2mxa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1695879018]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1271429818]
+build_mode = 1
+polygon = PackedVector2Array(-42.77555, -323.12454, -32.081665, -421.04108, 0, -430.8327, 64.16333, -352.4995, 256.65332, 509.16595, 203.18387, 518.9576)

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://iuq1gve72064"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
-[ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 background.png" id="2_cywot"]
+[ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_cywot"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
-[ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/tutorial_dialog.tscn" id="5_vrcmr"]
 [ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_svp4f"]
+[ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
-[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="11_ijn0p"]
@@ -54,55 +53,65 @@ player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
-[node name="TutorialDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("5_vrcmr")]
-position = Vector2(305, 306)
-dialog_text = "hello, please test me!"
-
 [node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_svp4f")]
-position = Vector2(129, 365)
-scale = Vector2(0.41078806, 0.99373966)
-dialog_text = "Press [A, S, D, W] or arrow keys to move, [SPACE] to jump."
+position = Vector2(210, 375.00003)
+scale = Vector2(1.7727523, 0.96355134)
+dialog_text = "Remember, I don't like being outside of water for too long. But I can run and jump!"
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)
+
+[node name="NoCollisionPipe5" parent="." unique_id=1300504481 instance=ExtResource("15_gi8m4")]
+position = Vector2(2453, 398)
+rotation = -1.5707964
+scale = Vector2(0.2352386, 0.24287091)
+
+[node name="NoCollisionPipe6" parent="." unique_id=1254438858 instance=ExtResource("15_gi8m4")]
+position = Vector2(2600, 398)
+rotation = -1.5707964
+scale = Vector2(0.2352386, 0.24287091)
+
+[node name="NoCollisionPipe" parent="." unique_id=1767913473 instance=ExtResource("15_gi8m4")]
+position = Vector2(37.000004, 572)
+rotation = 1.5707964
+scale = Vector2(0.16488825, 0.24700435)
+
+[node name="NoCollisionPipe2" parent="." unique_id=1377580802 instance=ExtResource("15_gi8m4")]
+position = Vector2(193, 580)
+rotation = 1.5707964
+scale = Vector2(0.15424912, 0.25391445)
+
+[node name="NoCollisionPipe3" parent="." unique_id=486613232 instance=ExtResource("15_gi8m4")]
+position = Vector2(468, 534)
+rotation = 1.5707964
+scale = Vector2(0.2175145, 0.25068313)
+
+[node name="NoCollisionPipe4" parent="." unique_id=1762804945 instance=ExtResource("15_gi8m4")]
+position = Vector2(613, 530)
+rotation = 1.5707964
+scale = Vector2(0.2243206, 0.27741075)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
 position = Vector2(130, 333.00003)
 scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 2640, 720)
+camera_bounds = Rect2(0, 0, 2650, 720)
 
-[node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(34, 406)
-scale = Vector2(1.0599455, 1.0599455)
-script = ExtResource("9_kfebt")
-water_size = Vector2(170, 110)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water" parent="." unique_id=45670442 instance=ExtResource("8_vrcmr")]
+position = Vector2(38, 408)
+water_size = Vector2(170, 80)
 
-[node name="Water2" type="Node2D" parent="." unique_id=148608901]
-position = Vector2(464.00003, 266)
-scale = Vector2(1.0599455, 1.0599455)
-script = ExtResource("9_kfebt")
-water_size = Vector2(170, 110)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water2" parent="." unique_id=1977621841 instance=ExtResource("8_vrcmr")]
+position = Vector2(464.00003, 261)
+water_size = Vector2(170, 80)
 
-[node name="Water3" type="Node2D" parent="." unique_id=998084571]
-position = Vector2(1209.0001, 285)
-scale = Vector2(1.0599455, 1.0599455)
-script = ExtResource("9_kfebt")
-water_size = Vector2(170, 110)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water3" parent="." unique_id=312896041 instance=ExtResource("8_vrcmr")]
+position = Vector2(1206, 275)
+water_size = Vector2(170, 80)
 
-[node name="Water4" type="Node2D" parent="." unique_id=302691412]
-position = Vector2(2430, 127)
-scale = Vector2(1.0599455, 1.0599455)
-script = ExtResource("9_kfebt")
-water_size = Vector2(150, 100)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water4" parent="." unique_id=2083433477 instance=ExtResource("8_vrcmr")]
+position = Vector2(2436, 130)
+water_size = Vector2(150, 80)
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=1998232517]
 layout_mode = 0
@@ -139,26 +148,6 @@ offset_right = 2519.0
 offset_bottom = 1764.0
 scale = Vector2(0.03247055, 0.03247055)
 texture = ExtResource("8_w4kkx")
-
-[node name="NoCollisionPipe" parent="." unique_id=1300504481 instance=ExtResource("15_gi8m4")]
-position = Vector2(37.000004, 572)
-rotation = 1.5707964
-scale = Vector2(0.16488825, 0.24700435)
-
-[node name="NoCollisionPipe2" parent="." unique_id=1377580802 instance=ExtResource("15_gi8m4")]
-position = Vector2(193, 580)
-rotation = 1.5707964
-scale = Vector2(0.15424912, 0.25391445)
-
-[node name="NoCollisionPipe3" parent="." unique_id=486613232 instance=ExtResource("15_gi8m4")]
-position = Vector2(468, 534)
-rotation = 1.5707964
-scale = Vector2(0.2175145, 0.25068313)
-
-[node name="NoCollisionPipe4" parent="." unique_id=1762804945 instance=ExtResource("15_gi8m4")]
-position = Vector2(613, 530)
-rotation = 1.5707964
-scale = Vector2(0.2243206, 0.27741075)
 
 [node name="PlatformGrayPipe12" parent="." unique_id=79879112 instance=ExtResource("13_tyxjt")]
 position = Vector2(436, 489)
@@ -426,7 +415,7 @@ rotation = 3.1415927
 [node name="PortalArea" parent="PlatformWhitePortalTank" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(13.441879, 9.243414)
 scale = Vector2(1.9678702, 1.0553372)
-next_scene_path = "uid://cwsod8q72c6hw"
+next_scene_path = "uid://0txwnlwqetgm"
 
 [node name="PlatformGrayMetalRope5" parent="." unique_id=867876061 instance=ExtResource("23_qy4h0")]
 position = Vector2(2424, -71)
@@ -508,3 +497,246 @@ position = Vector2(1538, 420)
 
 [node name="PlatformGray4WayConnector5" parent="." unique_id=1933069376 instance=ExtResource("16_lswbx")]
 position = Vector2(1539, 135)
+
+[node name="TextureRect46" type="TextureRect" parent="." unique_id=1339199325]
+layout_mode = 0
+offset_left = 2385.0
+offset_top = 683.0
+offset_right = 4305.0
+offset_bottom = 1763.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect47" type="TextureRect" parent="." unique_id=1979621682]
+layout_mode = 0
+offset_left = 2436.0
+offset_top = 683.0
+offset_right = 4356.0
+offset_bottom = 1763.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect48" type="TextureRect" parent="." unique_id=1784868675]
+layout_mode = 0
+offset_left = 2487.0
+offset_top = 683.0
+offset_right = 4407.0
+offset_bottom = 1763.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect49" type="TextureRect" parent="." unique_id=1589035922]
+layout_mode = 0
+offset_left = 2538.0
+offset_top = 683.0
+offset_right = 4458.0
+offset_bottom = 1763.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect50" type="TextureRect" parent="." unique_id=1625649675]
+layout_mode = 0
+offset_left = 2589.0
+offset_top = 683.0
+offset_right = 4509.0
+offset_bottom = 1763.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect51" type="TextureRect" parent="." unique_id=1838457356]
+layout_mode = 0
+offset_left = 2409.0
+offset_top = 656.0
+offset_right = 4329.0
+offset_bottom = 1736.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect52" type="TextureRect" parent="." unique_id=743322626]
+layout_mode = 0
+offset_left = 2460.0
+offset_top = 656.0
+offset_right = 4380.0
+offset_bottom = 1736.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect53" type="TextureRect" parent="." unique_id=1912393986]
+layout_mode = 0
+offset_left = 2511.0
+offset_top = 656.0
+offset_right = 4431.0
+offset_bottom = 1736.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect54" type="TextureRect" parent="." unique_id=470061868]
+layout_mode = 0
+offset_left = 2562.0
+offset_top = 656.0
+offset_right = 4482.0
+offset_bottom = 1736.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect55" type="TextureRect" parent="." unique_id=1745646978]
+layout_mode = 0
+offset_left = 2387.0002
+offset_top = 629.00006
+offset_right = 4307.0
+offset_bottom = 1709.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect56" type="TextureRect" parent="." unique_id=512562109]
+layout_mode = 0
+offset_left = 2438.0002
+offset_top = 629.00006
+offset_right = 4358.0
+offset_bottom = 1709.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect57" type="TextureRect" parent="." unique_id=107731851]
+layout_mode = 0
+offset_left = 2489.0002
+offset_top = 629.00006
+offset_right = 4409.0
+offset_bottom = 1709.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect58" type="TextureRect" parent="." unique_id=1080605413]
+layout_mode = 0
+offset_left = 2540.0002
+offset_top = 629.00006
+offset_right = 4460.0
+offset_bottom = 1709.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect59" type="TextureRect" parent="." unique_id=833197346]
+layout_mode = 0
+offset_left = 2591.0002
+offset_top = 629.00006
+offset_right = 4511.0
+offset_bottom = 1709.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect64" type="TextureRect" parent="." unique_id=136441935]
+layout_mode = 0
+offset_left = 2389.0
+offset_top = 575.0
+offset_right = 4309.0
+offset_bottom = 1655.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect69" type="TextureRect" parent="." unique_id=1235825590]
+layout_mode = 0
+offset_left = 2391.0005
+offset_top = 602.0
+offset_right = 4311.0005
+offset_bottom = 1682.0
+scale = Vector2(0.014551407, 0.03180255)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect70" type="TextureRect" parent="." unique_id=206556556]
+layout_mode = 0
+offset_left = 2390.0
+offset_top = 656.0
+offset_right = 4310.0
+offset_bottom = 1736.0
+scale = Vector2(0.014551407, 0.03180255)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect65" type="TextureRect" parent="." unique_id=280522212]
+layout_mode = 0
+offset_left = 2440.0
+offset_top = 575.0
+offset_right = 4360.0
+offset_bottom = 1655.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect66" type="TextureRect" parent="." unique_id=1154354988]
+layout_mode = 0
+offset_left = 2491.0
+offset_top = 575.0
+offset_right = 4411.0
+offset_bottom = 1655.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect67" type="TextureRect" parent="." unique_id=517530701]
+layout_mode = 0
+offset_left = 2542.0
+offset_top = 575.0
+offset_right = 4462.0
+offset_bottom = 1655.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect68" type="TextureRect" parent="." unique_id=1639679736]
+layout_mode = 0
+offset_left = 2593.0
+offset_top = 575.0
+offset_right = 4513.0
+offset_bottom = 1655.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect60" type="TextureRect" parent="." unique_id=843771688]
+layout_mode = 0
+offset_left = 2411.0002
+offset_top = 602.00006
+offset_right = 4331.0
+offset_bottom = 1682.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect61" type="TextureRect" parent="." unique_id=715589275]
+layout_mode = 0
+offset_left = 2462.0002
+offset_top = 602.00006
+offset_right = 4382.0
+offset_bottom = 1682.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect62" type="TextureRect" parent="." unique_id=991080244]
+layout_mode = 0
+offset_left = 2513.0002
+offset_top = 602.00006
+offset_right = 4433.0
+offset_bottom = 1682.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect63" type="TextureRect" parent="." unique_id=935238831]
+layout_mode = 0
+offset_left = 2564.0002
+offset_top = 602.00006
+offset_right = 4484.0
+offset_bottom = 1682.0
+scale = Vector2(0.03247055, 0.03247055)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect71" type="TextureRect" parent="." unique_id=1453753272]
+layout_mode = 0
+offset_left = 2617.0
+offset_top = 602.0
+offset_right = 4537.0
+offset_bottom = 1682.0
+scale = Vector2(0.01840461, 0.03234725)
+texture = ExtResource("8_w4kkx")
+
+[node name="TextureRect72" type="TextureRect" parent="." unique_id=1919856093]
+layout_mode = 0
+offset_left = 2615.0
+offset_top = 656.0
+offset_right = 4535.0
+offset_bottom = 1736.0
+scale = Vector2(0.01840461, 0.03234725)
+texture = ExtResource("8_w4kkx")

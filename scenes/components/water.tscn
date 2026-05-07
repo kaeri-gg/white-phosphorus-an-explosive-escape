@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://w0nrlt3rayl3"]
+
+[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="1_goeht"]
+
+[node name="Water" type="Node2D" unique_id=45670442]
+scale = Vector2(1.0599455, 1.0599455)
+script = ExtResource("1_goeht")
+water_size = Vector2(170, 110)
+min_height = 10.0
+metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"

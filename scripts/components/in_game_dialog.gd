@@ -5,7 +5,7 @@ extends Area2D
 @export_multiline var dialog_text: String = "Press [space] to jump."
 
 ## How fast the text types out, in characters per second.
-@export var chars_per_second: float = 30.0
+@export var chars_per_second: float = 50.0
 
 @onready var canvas_layer: CanvasLayer = %DialogCanvasLayer
 @onready var label: Label = %DialogLabel

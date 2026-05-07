@@ -1,17 +1,13 @@
 extends StaticBody2D
 
 signal interacted(actor: Node2D)
+signal transfer_denied(reason: String)
 
 @export var prompt_offset: Vector2 = Vector2(-100, -120)
-## The water that drains when the switch is activated.
-## Leave empty for single-container mode (target just fills/drains on its own).
 @export var source_water: Water
-
-## The water that fills when the switch is activated. Required.
 @export var target_water: Water
-
-## How long the transfer animation takes (seconds).
 @export var transfer_duration: float = 3.0
+@export var requires_source_filled: bool = true
 
 @onready var interact_area: Area2D = %InteractArea
 @onready var prompt_label: Label = %PromptLabel
@@ -50,32 +46,40 @@ func _on_player_pressed_switch() -> void:
 	if current_player == null or is_transferring:
 		return
 
+	if target_water == null:
+		push_warning("%s: target_water is not set." % name)
+		return
+
+	if not is_transferred and not _can_start_forward_transfer():
+		transfer_denied.emit("source_not_full")
+		return
+
 	switch_sprite.play("interact")
 	interact(current_player)
 	_start_water_transfer()
 
 func _start_water_transfer() -> void:
-	if target_water == null:
-		push_warning("%s: target_water is not set." % name)
-		return
-
 	is_transferring = true
 
 	if not is_transferred:
-		# Forward: drain source (if any), fill target.
 		if source_water:
 			source_water.animate_fill(source_water.min_height, transfer_duration)
 		target_water.animate_fill(target_water.max_height, transfer_duration)
 	else:
-		# Reverse: refill source, drain target.
 		if source_water:
 			source_water.animate_fill(source_water.max_height, transfer_duration)
 		target_water.animate_fill(target_water.min_height, transfer_duration)
 
-	await target_water.fill_completed
+	await get_tree().create_timer(transfer_duration).timeout
 
 	is_transferred = !is_transferred
 	is_transferring = false
+
+
+func _can_start_forward_transfer() -> bool:
+	if source_water == null or not requires_source_filled:
+		return true
+	return source_water.is_full()
 	
 func _set_current_player(player: Player) -> void:
 	if current_player == player:

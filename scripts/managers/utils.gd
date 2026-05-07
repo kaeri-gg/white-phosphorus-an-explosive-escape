@@ -44,18 +44,41 @@ func fade(target : Object, scene : PackedScene) -> void:
 
 	get_tree().change_scene_to_packed(scene)
 
-## Fades the screen to a solid color over `duration` seconds by spawning a
-## full-screen ColorRect overlay inside a high-layer CanvasLayer parented
-## to `parent`. Awaitable — resolves once the fade is complete.
-##
-## The overlay node is left in place so the screen stays at full color
-## until the caller swaps scenes. When the parent scene is freed (e.g. via
-## `reload_current_scene` or `change_scene_to_file`), the overlay is freed
-## with it.
-func fade_to_color(parent: Node, color: Color, duration: float = 1.0) -> void:
+const _OVERLAY_NAME := "ScreenTransitionOverlay"
+
+func fade_to_color(_parent: Node, color: Color, duration: float = 1.0) -> void:
+	var canvas_layer := _ensure_overlay(color)
+	var fade_rect: ColorRect = canvas_layer.get_child(0)
+	fade_rect.color = color
+	var tween := create_tween()
+	tween.tween_property(fade_rect, "modulate:a", 1.0, duration).set_ease(Tween.EASE_IN)
+	await tween.finished
+
+func fade_to_black(parent: Node, duration: float = 1.0) -> void:
+	await fade_to_color(parent, Color.BLACK, duration)
+
+func fade_to_white(parent: Node, duration: float = 1.0) -> void:
+	await fade_to_color(parent, Color.WHITE, duration)
+
+func fade_from_overlay(duration: float = 0.6) -> void:
+	var canvas_layer := _find_overlay()
+	if canvas_layer == null:
+		return
+	var fade_rect: ColorRect = canvas_layer.get_child(0)
+	var tween := create_tween()
+	tween.tween_property(fade_rect, "modulate:a", 0.0, duration).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	if is_instance_valid(canvas_layer):
+		canvas_layer.queue_free()
+
+func _ensure_overlay(color: Color) -> CanvasLayer:
+	var existing := _find_overlay()
+	if existing:
+		return existing
+
 	var canvas_layer := CanvasLayer.new()
+	canvas_layer.name = _OVERLAY_NAME
 	canvas_layer.layer = 1000
-	parent.add_child(canvas_layer)
 
 	var fade_rect := ColorRect.new()
 	fade_rect.color = color
@@ -64,16 +87,8 @@ func fade_to_color(parent: Node, color: Color, duration: float = 1.0) -> void:
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	canvas_layer.add_child(fade_rect)
 
-	var tween := create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 1.0, duration).set_ease(Tween.EASE_IN)
-	await tween.finished
+	get_tree().root.add_child(canvas_layer)
+	return canvas_layer
 
-## Convenience wrapper — fades the screen to black. Used for death / game-over
-## transitions.
-func fade_to_black(parent: Node, duration: float = 1.0) -> void:
-	await fade_to_color(parent, Color.BLACK, duration)
-
-## Convenience wrapper — fades the screen to white. Used for portal /
-## level-progression transitions.
-func fade_to_white(parent: Node, duration: float = 1.0) -> void:
-	await fade_to_color(parent, Color.WHITE, duration)
+func _find_overlay() -> CanvasLayer:
+	return get_tree().root.get_node_or_null(_OVERLAY_NAME) as CanvasLayer

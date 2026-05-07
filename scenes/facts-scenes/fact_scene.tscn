@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_3rmp5"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="1_fap61"]
-[ext_resource type="Texture2D" uid="uid://rwyihd4c8chh" path="res://assets/backgrounds/tutorial-backgrounds/Screen 0.1_Tutorial light.png" id="2_3rmp5"]
+[ext_resource type="Texture2D" uid="uid://b5uhao4e70ix2" path="res://assets/backgrounds/tutorial-backgrounds/Begin comic 1.png" id="3_03iov"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="3_5m2np"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_03iov"]
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_pqyst"]
@@ -24,11 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3rmp5")
 script = ExtResource("1_fap61")
-next_scene_path = "uid://ckj7fgxtg1c"
-level_1_pat_scene = "uid://ckj7fgxtg1c"
-level_2_pat_scene = "uid://b5xrdjbarad25"
-level_1_anna_scene = "uid://iuq1gve72064"
-level_2_anna_scene = "uid://b7i2keg4pq27p"
+next_scene_path = "uid://iuq1gve72064"
 
 [node name="Background" type="TextureRect" parent="." unique_id=313513725]
 layout_mode = 1
@@ -38,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0p1u4")
-texture = ExtResource("2_3rmp5")
+texture = ExtResource("3_03iov")
 expand_mode = 5
 
 [node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("3_5m2np")]
@@ -50,28 +46,28 @@ grow_vertical = 1
 [node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("4_03iov")]
 layout_mode = 1
 
-[node name="HBoxContainer" type="GridContainer" parent="." unique_id=1453591924]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=824271023]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -210.0
+offset_left = -200.0
 offset_top = -110.0
-offset_right = 210.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/h_separation = 20
-columns = 2
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
 
-[node name="Level_1_Anna" parent="HBoxContainer" unique_id=1054692064 instance=ExtResource("5_pqyst")]
+[node name="Start" parent="MarginContainer" unique_id=1054692064 instance=ExtResource("5_pqyst")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 8
-custom_label_text = "Version 2: Level_1"
+size_flags_vertical = 4
+custom_label_text = "Start"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -118,4 +114,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="HBoxContainer/Level_1_Anna" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Start" to="." method="_on_proceed_button_pressed"]

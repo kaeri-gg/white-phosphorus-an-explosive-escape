@@ -21,7 +21,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_gc0md")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -70,14 +70,25 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bomb_area"]
+size = Vector2(490.97345, 1350.6356)
+
 [node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
 scale = Vector2(0.07943403, 0.07552)
 script = ExtResource("1_o8xgl")
+type = 1
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954247983]
 sprite_frames = SubResource("SpriteFrames_r03eu")
 animation = &"explode"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1402928465]
-build_mode = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402928465]
+position = Vector2(18.883596, -2.8413231e-05)
+shape = SubResource("RectangleShape2D_bomb_area")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1334948877]
+scale = Vector2(0.95, 0.95)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1471514986]
+scale = Vector2(1.0526316, 1.0526315)
 polygon = PackedVector2Array(-189, -656, -79, -471, 48, -221, 109, -49, 239, 434, 254, 572, 201, 621, 113, 644, 15, 642, -40, 510, -158, 35, -193, -146, -193, -456)

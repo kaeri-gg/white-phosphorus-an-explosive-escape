@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bjwbq34lkj56d" path="res://assets/backgrounds/level-backgrounds/Level 2 Background.png" id="2_lky54"]
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_kxbgd"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
+[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_6ms8u"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="6_kx1rr"]
-[ext_resource type="Script" uid="uid://c0qkqhr5w3jjr" path="res://scripts/components/water.gd" id="7_gus8w"]
-[ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/healing_water.tscn" id="7_lky54"]
+[ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="7_kx1rr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_xwa1x"]
 [ext_resource type="PackedScene" uid="uid://n58h4ax3xvsn" path="res://scenes/components/platforms/no_collision_pipe.tscn" id="9_6ms8u"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="10_r2xis"]
@@ -39,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v5pqk")
 metadata/_edit_horizontal_guides_ = [716.0, 578.0]
-metadata/_edit_vertical_guides_ = [2615.0]
+metadata/_edit_vertical_guides_ = [2615.0, 2406.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=49017652]
 layer = -10
@@ -60,62 +60,55 @@ player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_lky54")]
 
+[node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_6ms8u")]
+position = Vector2(181, 377)
+scale = Vector2(1.9553655, 0.85498255)
+dialog_text = "Use blue switches to fill up the water tanks."
+
+[node name="InGameDialog2" parent="." unique_id=1331165818 instance=ExtResource("6_6ms8u")]
+position = Vector2(638, 379)
+scale = Vector2(2.0721898, 0.8977666)
+dialog_text = "Be quick or I'll burn away!"
+
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("6_kx1rr")]
 unique_name_in_owner = true
 position = Vector2(126.00012, 333)
 scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 2615, 720)
+camera_bounds = Rect2(0, 0, 2400, 720)
 
-[node name="Water" type="Node2D" parent="." unique_id=1444035852]
-position = Vector2(34, 480)
-scale = Vector2(1.0804203, 1.0599455)
-script = ExtResource("7_gus8w")
-water_size = Vector2(170, 80)
-min_height = 10.0
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+[node name="Water" parent="." unique_id=45670442 instance=ExtResource("7_kx1rr")]
+position = Vector2(34, 482)
+water_size = Vector2(170, 70)
 
-[node name="Water2" type="Node2D" parent="." unique_id=148608901]
-position = Vector2(554, 501)
-scale = Vector2(1.1152785, 0.9207218)
-script = ExtResource("7_gus8w")
-water_size = Vector2(170, 80)
-starts_full = false
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
-
-[node name="Water3" parent="." unique_id=285385396 instance=ExtResource("7_lky54")]
-position = Vector2(734.00006, 142)
-scale = Vector2(0.5363602, 0.46177936)
-water_size = Vector2(350, 130)
-surface_color = Color(0.7647059, 0.9843137, 0.96862745, 0.627451)
-water_fill_color = Color(0.34117648, 0.81960785, 0.9098039, 0.41960785)
+[node name="Water2" parent="." unique_id=1695868829 instance=ExtResource("7_kx1rr")]
+position = Vector2(552, 496)
+water_size = Vector2(170, 70)
+min_height = 0.0
 starts_full = false
 
-[node name="Water4" type="Node2D" parent="." unique_id=302691412]
-position = Vector2(1329, 431.99997)
-scale = Vector2(0.95321316, 0.8385779)
-script = ExtResource("7_gus8w")
-water_size = Vector2(200, 80)
-min_height = 10.0
+[node name="Water3" parent="." unique_id=448496151 instance=ExtResource("7_kx1rr")]
+position = Vector2(740, 143.00002)
+water_size = Vector2(170, 70)
+min_height = 0.0
 starts_full = false
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
-[node name="Water5" type="Node2D" parent="." unique_id=1230110508]
-position = Vector2(1851.0001, 539)
-scale = Vector2(0.95321316, 0.8385779)
-script = ExtResource("7_gus8w")
-water_size = Vector2(200, 80)
-min_height = 10.0
+[node name="Water4" parent="." unique_id=1706063123 instance=ExtResource("7_kx1rr")]
+position = Vector2(1334.0001, 431.00003)
+water_size = Vector2(170, 70)
+min_height = 0.0
 starts_full = false
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
 
-[node name="Water6" type="Node2D" parent="." unique_id=1565329379]
-position = Vector2(2097, 233)
-scale = Vector2(0.95321316, 0.8385779)
-script = ExtResource("7_gus8w")
-water_size = Vector2(180, 100)
-min_height = 10.0
+[node name="Water5" parent="." unique_id=2089649244 instance=ExtResource("7_kx1rr")]
+position = Vector2(1848.0001, 538)
+water_size = Vector2(170, 70)
+min_height = 0.0
 starts_full = false
-metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"
+
+[node name="Water6" parent="." unique_id=2032898030 instance=ExtResource("7_kx1rr")]
+position = Vector2(2090, 230)
+water_size = Vector2(170, 70)
+min_height = 0.0
+starts_full = false
 
 [node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
 material = SubResource("ShaderMaterial_kx1rr")

@@ -2,18 +2,12 @@ class_name FactScene
 extends Control
 
 @export_file("*.tscn") var next_scene_path: String = ""
-@export_file("*.tscn") var level_1_pat_scene: String = "res://scenes/levels/level_01.tscn"
-@export_file("*.tscn") var level_2_pat_scene: String = "res://scenes/levels/level_02.tscn"
-@export_file("*.tscn") var level_1_anna_scene: String = "res://scenes/levels/level_01_v2.tscn"
-@export_file("*.tscn") var level_2_anna_scene: String = "res://scenes/levels/level_02_v2.tscn"
+@export var fade_duration: float = 0.6
 
 func _ready() -> void:
 	sound_manager.play("EnterGame")
+	utils.fade_from_overlay(fade_duration)
 	_wire_button("ProceedButton", next_scene_path)
-	_wire_button("Level_1_Pat", level_1_pat_scene)
-	_wire_button("Level_2_Pat", level_2_pat_scene)
-	_wire_button("Level_1_Anna", level_1_anna_scene)
-	_wire_button("Level_2_Anna", level_2_anna_scene)
 
 func _wire_button(unique_name: String, scene_path: String) -> void:
 	var button: ActionButton = get_node_or_null("%" + unique_name)
@@ -37,4 +31,5 @@ func _change_scene(path: String) -> void:
 		return
 
 	sound_manager.play("EnterGame")
+	await utils.fade_to_white(self, fade_duration)
 	get_tree().change_scene_to_file(resolved_scene_path)

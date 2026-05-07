@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_eqf4o"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_47boq"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_8m3pt"]
+[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_4w8xk"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="6_vwuh2"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="8_uu5oa"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/healing_water.tscn" id="9_i7p7m"]
+[ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="9_uxfkd"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="10_afct4"]
+[ext_resource type="PackedScene" uid="uid://4swmix1i2jar" path="res://scenes/components/platforms/switch_blue.tscn" id="10_uxfkd"]
 [ext_resource type="PackedScene" uid="uid://4wkkvjaygiqp" path="res://scenes/components/platforms/platform_gray_closing_pipe.tscn" id="12_1a7k5"]
 [ext_resource type="PackedScene" uid="uid://x7kfgq6mseag" path="res://scenes/components/platforms/platform_gray_pipe_insert_cap.tscn" id="13_x5hhl"]
 [ext_resource type="PackedScene" uid="uid://dpf3sk7ywyfkh" path="res://scenes/components/platforms/platform_gray_connection_pipe.tscn" id="14_4w8xk"]
@@ -21,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="21_fy4m5"]
 [ext_resource type="PackedScene" uid="uid://cxy5c76pw0sy2" path="res://scenes/components/platforms/platform_yellow_connection_pipe.tscn" id="22_axo1c"]
 [ext_resource type="PackedScene" uid="uid://b0lh0fde8veiu" path="res://scenes/components/platforms/platform_gray_in_between_spring.tscn" id="22_ckay5"]
-[ext_resource type="PackedScene" uid="uid://iblv3dg4o762" path="res://scenes/components/platforms/switch_valve.tscn" id="23_axo1c"]
 [ext_resource type="PackedScene" uid="uid://b1pimif3nkdvn" path="res://scenes/components/obstacles/obstacle-pipe-fire.tscn" id="24_0te1q"]
 [ext_resource type="PackedScene" uid="uid://bm4ep4v6dstvw" path="res://scenes/components/platforms/platform_gray_tank.tscn" id="24_5q4vb"]
 [ext_resource type="PackedScene" uid="uid://dwmjprt58e4bh" path="res://scenes/components/platforms/platform_gray_metal_rope.tscn" id="24_eqf4o"]
@@ -75,6 +77,16 @@ metadata/_edit_lock_ = true
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_47boq")]
 
+[node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_4w8xk")]
+position = Vector2(301, 232.00002)
+scale = Vector2(2.9482932, 0.5065246)
+dialog_text = "We are very close! Please don't let me touch the bombs and fireworks."
+
+[node name="InGameDialog2" parent="UILayer" unique_id=1355971235 instance=ExtResource("6_4w8xk")]
+position = Vector2(2383.0002, 1098)
+scale = Vector2(3.3955898, 0.6671265)
+dialog_text = "I can see the vacuum oven! Let's go!"
+
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
 position = Vector2(178, 144)
@@ -84,46 +96,83 @@ camera_bounds = Rect2(0, 0, 2700, 1440)
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("6_vwuh2")]
 position = Vector2(1355, 1517)
 
-[node name="Water" parent="." unique_id=285385396 instance=ExtResource("9_i7p7m")]
-position = Vector2(82, 331)
-water_size = Vector2(200, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water" parent="." unique_id=45670442 instance=ExtResource("9_uxfkd")]
+position = Vector2(87, 331)
+water_size = Vector2(180, 90)
 
-[node name="Water2" parent="." unique_id=1514111506 instance=ExtResource("9_i7p7m")]
-position = Vector2(688, 499)
-water_size = Vector2(200, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water2" parent="." unique_id=1174626134 instance=ExtResource("9_uxfkd")]
+position = Vector2(691, 497)
+water_size = Vector2(180, 90)
+min_height = 0.0
 starts_full = false
 
-[node name="Water3" parent="." unique_id=932613465 instance=ExtResource("9_i7p7m")]
-position = Vector2(1263, 496)
-water_size = Vector2(200, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water3" parent="." unique_id=1595737242 instance=ExtResource("9_uxfkd")]
+position = Vector2(1266, 492)
+water_size = Vector2(180, 90)
+min_height = 0.0
 starts_full = false
 
-[node name="Water4" parent="." unique_id=2073870016 instance=ExtResource("9_i7p7m")]
-position = Vector2(1932, 495)
-water_size = Vector2(200, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water4" parent="." unique_id=385005833 instance=ExtResource("9_uxfkd")]
+position = Vector2(1936.0001, 490.00003)
+water_size = Vector2(180, 90)
+min_height = 0.0
 starts_full = false
 
-[node name="Water5" parent="." unique_id=1184486468 instance=ExtResource("9_i7p7m")]
-position = Vector2(1867, 1119)
-water_size = Vector2(200, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water5" parent="." unique_id=1329346739 instance=ExtResource("9_uxfkd")]
+position = Vector2(2383.0002, 1226)
+water_size = Vector2(180, 90)
+min_height = 0.0
+
+[node name="Water6" parent="." unique_id=528565360 instance=ExtResource("9_uxfkd")]
+position = Vector2(1871, 1110)
+water_size = Vector2(180, 90)
+min_height = 0.0
 starts_full = false
 
-[node name="Water6" parent="." unique_id=640515224 instance=ExtResource("9_i7p7m")]
-position = Vector2(381, 806)
-water_size = Vector2(180, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
+[node name="Water7" parent="." unique_id=72533442 instance=ExtResource("9_uxfkd")]
+position = Vector2(377, 792)
+water_size = Vector2(170, 70)
+min_height = 0.0
 starts_full = false
 
-[node name="Water7" parent="." unique_id=669693629 instance=ExtResource("9_i7p7m")]
-position = Vector2(2388, 1230)
-water_size = Vector2(180, 80)
-surface_color = Color(0.23529412, 0.88235295, 0.85490197, 0.3882353)
-starts_full = false
+[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+position = Vector2(645.00006, 501.00003)
+scale = Vector2(0.13776115, 0.14470759)
+source_water = NodePath("../Water")
+target_water = NodePath("../Water2")
+transfer_duration = 1.5
+
+[node name="SwitchBlue2" parent="." unique_id=1925220030 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+position = Vector2(1586.9999, 575.00006)
+rotation = 1.5707964
+scale = Vector2(0.1352299, 0.13772121)
+source_water = NodePath("../Water2")
+target_water = NodePath("../Water3")
+transfer_duration = 1.5
+
+[node name="SwitchBlue3" parent="." unique_id=1143288073 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+position = Vector2(1815, 570)
+rotation = 1.5707964
+scale = Vector2(0.1352299, 0.13772121)
+source_water = NodePath("../Water3")
+target_water = NodePath("../Water4")
+transfer_duration = 1.5
+
+[node name="SwitchBlue4" parent="." unique_id=1796876314 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+position = Vector2(1799.0002, 1190.0001)
+rotation = 1.5707964
+scale = Vector2(0.1352299, 0.13772121)
+source_water = NodePath("../Water4")
+target_water = NodePath("../Water6")
+transfer_duration = 1.5
+
+[node name="SwitchBlue5" parent="." unique_id=1881701169 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+position = Vector2(974.99994, 941.99994)
+rotation = 1.5707964
+scale = Vector2(0.1352299, 0.13772121)
+source_water = NodePath("../Water6")
+target_water = NodePath("../Water7")
+transfer_duration = 1.5
 
 [node name="PlatformGrayMetalRope" parent="." unique_id=393274938 instance=ExtResource("24_eqf4o")]
 position = Vector2(75, -88)
@@ -170,35 +219,6 @@ scale = Vector2(0.29498744, 0.41389465)
 [node name="PlatformGrayMetalRope12" parent="." unique_id=622943411 instance=ExtResource("24_eqf4o")]
 position = Vector2(550, 249)
 scale = Vector2(0.29498744, 0.41389465)
-
-[node name="Switch" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("23_axo1c")]
-position = Vector2(645, 501.99997)
-source_water = NodePath("../Water")
-target_water = NodePath("../Water2")
-
-[node name="Switch4" parent="." unique_id=1826989197 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("23_axo1c")]
-position = Vector2(975, 941)
-rotation = 1.5707964
-source_water = NodePath("../Water")
-target_water = NodePath("../Water2")
-
-[node name="Switch5" parent="." unique_id=1654771227 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("23_axo1c")]
-position = Vector2(1800, 1191)
-rotation = 1.5707964
-source_water = NodePath("../Water")
-target_water = NodePath("../Water2")
-
-[node name="Switch2" parent="." unique_id=519292289 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("23_axo1c")]
-position = Vector2(1586.9999, 576)
-rotation = 1.5707964
-source_water = NodePath("../Water2")
-target_water = NodePath("../Water3")
-
-[node name="Switch3" parent="." unique_id=443677531 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("23_axo1c")]
-position = Vector2(1815.9999, 570)
-rotation = 1.5707964
-source_water = NodePath("../Water3")
-target_water = NodePath("../Water4")
 
 [node name="HealingWater" parent="." unique_id=1954191531 instance=ExtResource("9_i7p7m")]
 position = Vector2(1267, 155)
@@ -296,10 +316,12 @@ scale = Vector2(0.2216706, 0.55745846)
 [node name="PlatformGray3WayConnector" parent="." unique_id=1965242814 instance=ExtResource("19_x1re1")]
 position = Vector2(26.999996, 410)
 rotation = 1.5707964
+scale = Vector2(0.11070349, 0.108449936)
 
 [node name="PlatformGray3WayConnector14" parent="." unique_id=1176904481 instance=ExtResource("19_x1re1")]
 position = Vector2(24.999998, 818)
 rotation = 1.5707964
+scale = Vector2(0.109778054, 0.10947398)
 
 [node name="PlatformWhitePortalTank" parent="." unique_id=1784516220 instance=ExtResource("20_sibhc")]
 position = Vector2(2526, 390)
@@ -650,8 +672,9 @@ position = Vector2(634, 572.99994)
 rotation = 1.5707964
 
 [node name="PlatformGray3WayConnector3" parent="." unique_id=1281320783 instance=ExtResource("19_x1re1")]
-position = Vector2(647, 196.99998)
+position = Vector2(646.99994, 195.99998)
 rotation = 3.1415927
+scale = Vector2(0.11186981, 0.113819644)
 
 [node name="PlatformGrayClosingPipe2" parent="." unique_id=619490654 instance=ExtResource("12_1a7k5")]
 position = Vector2(600, 209)
@@ -796,7 +819,8 @@ position = Vector2(1535, 240)
 rotation = 1.5707964
 
 [node name="PlatformGrayConnectionPipe12" parent="." unique_id=1657661144 instance=ExtResource("14_4w8xk")]
-position = Vector2(2424.0002, 644)
+position = Vector2(2425.0002, 643)
+scale = Vector2(0.10878156, 0.10890067)
 
 [node name="PlatformGrayTank" parent="." unique_id=1432242628 instance=ExtResource("24_5q4vb")]
 position = Vector2(1333, 219.00002)
@@ -875,7 +899,7 @@ position = Vector2(2184, 1017)
 rotation = 5.474766
 
 [node name="ObstacleFireworks35" parent="." unique_id=977306929 instance=ExtResource("25_eqf4o")]
-position = Vector2(2250, 1123.0001)
+position = Vector2(2241.0002, 1131.0001)
 rotation = 3.9070675
 
 [node name="ObstacleFireworks36" parent="." unique_id=1703535657 instance=ExtResource("25_eqf4o")]
@@ -894,21 +918,9 @@ rotation = -0.8264549
 position = Vector2(621, 594.00006)
 rotation = 0.37902474
 
-[node name="ObstacleBomb10" parent="." unique_id=1780289970 instance=ExtResource("26_eqf4o")]
-position = Vector2(621, 594.00006)
-rotation = 0.37902474
-
-[node name="ObstacleBomb4" parent="." unique_id=904071235 instance=ExtResource("26_eqf4o")]
-position = Vector2(991.9999, 204)
-rotation = -0.08705759
-
-[node name="ObstacleBomb5" parent="." unique_id=41855288 instance=ExtResource("26_eqf4o")]
-position = Vector2(1026, 212.00003)
-rotation = -0.52930915
-
 [node name="ObstacleBomb6" parent="." unique_id=1443880650 instance=ExtResource("26_eqf4o")]
-position = Vector2(1065.0001, 217)
-rotation = -0.7158148
+position = Vector2(1156, 218.99997)
+rotation = 1.2207332
 
 [node name="ObstacleBomb11" parent="." unique_id=57498742 instance=ExtResource("26_eqf4o")]
 position = Vector2(370, 1313)
@@ -918,17 +930,9 @@ rotation = -0.08705759
 position = Vector2(404.00012, 1321)
 rotation = -0.52930915
 
-[node name="ObstacleBomb13" parent="." unique_id=2089485849 instance=ExtResource("26_eqf4o")]
-position = Vector2(443.00024, 1326)
-rotation = -0.7158148
-
 [node name="ObstacleBomb14" parent="." unique_id=610180522 instance=ExtResource("26_eqf4o")]
 position = Vector2(1751, 1128)
 rotation = 0.098392844
-
-[node name="ObstacleBomb9" parent="." unique_id=975988808 instance=ExtResource("26_eqf4o")]
-position = Vector2(1463.0001, 429)
-rotation = -1.3041484
 
 [node name="ObstacleBomb7" parent="." unique_id=534234155 instance=ExtResource("26_eqf4o")]
 position = Vector2(1229, 206.00005)
@@ -1008,6 +1012,7 @@ rotation = 0.72752786
 [node name="PlatformGrayConnectionPipe" parent="." unique_id=464077310 instance=ExtResource("14_4w8xk")]
 position = Vector2(85, 830)
 rotation = 3.1415927
+scale = Vector2(0.10582009, 0.11039177)
 
 [node name="PlatformGrayConnectionPipe25" parent="." unique_id=524077536 instance=ExtResource("14_4w8xk")]
 position = Vector2(262, 982.99994)
@@ -1016,6 +1021,7 @@ rotation = 3.1415927
 [node name="PlatformGrayConnectionPipe32" parent="." unique_id=164956514 instance=ExtResource("14_4w8xk")]
 position = Vector2(1615, 950)
 rotation = 3.1415927
+scale = Vector2(0.11228553, 0.11305755)
 
 [node name="PlatformGrayConnectionPipe23" parent="." unique_id=811041526 instance=ExtResource("14_4w8xk")]
 position = Vector2(138.99998, 887.99994)
@@ -1088,6 +1094,7 @@ scale = Vector2(0.113117576, 0.109541774)
 
 [node name="PlatformGray3WayConnector18" parent="." unique_id=297349736 instance=ExtResource("19_x1re1")]
 position = Vector2(1883, 768.00006)
+scale = Vector2(0.11107996, 0.110354446)
 
 [node name="PlatformGrayClosingPipe" parent="." unique_id=745660397 instance=ExtResource("12_1a7k5")]
 position = Vector2(597, 822.00006)
@@ -1144,6 +1151,7 @@ rotation = -1.5707964
 
 [node name="PlatformGrayConnectionPipe33" parent="." unique_id=399094572 instance=ExtResource("14_4w8xk")]
 position = Vector2(1669, 1181)
+scale = Vector2(0.10582009, 0.111236304)
 
 [node name="PlatformGrayConnectionPipe34" parent="." unique_id=683390800 instance=ExtResource("14_4w8xk")]
 position = Vector2(1595, 1417)

@@ -1,10 +1,13 @@
 class_name Level
 extends Control
 
+@export var fade_duration: float = 0.6
+
 @onready var player: Player = $Player
 @onready var timer_label: Label = find_child("TimerLabel", true, false) as Label
 
 func _ready() -> void:
+	utils.fade_from_overlay(fade_duration)
 	player.health_timer_value.connect(_on_health_timer_updated)
 	player.died.connect(_on_player_died)
 	_on_health_timer_updated(player.time_until_next_damage())

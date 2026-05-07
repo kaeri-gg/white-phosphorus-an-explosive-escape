@@ -17,11 +17,7 @@ class_name Water
 @export var surface_color: Color = Color("c3fbf7a0")
 @export var water_fill_color: Color = Color("57d1e86b")
 
-## The maximum water depth (full tank). Set this to the same value as water_size.y in the editor.
-## The code will use water_size.y you set in the inspector as the max capacity.
 @export var min_height: float
-
-## If false, the water starts at min_height instead of full.
 @export var starts_full: bool = true
 
 const _MAX_PHYSICS_DELTA: float = 0.05
@@ -92,7 +88,7 @@ func initiate_water() -> void:
 	var new_shape: RectangleShape2D = RectangleShape2D.new()
 	new_shape.size = water_size
 	new_collisionshape.shape = new_shape
-	new_collisionshape.position = water_size / 2.0 + Vector2(0, surface_pos_y / 2.0)
+	new_collisionshape.position = water_size / 2.0 + Vector2(0, surface_pos_y)
 	new_area.add_child(new_collisionshape)
 	_collision_shape = new_collisionshape
 
@@ -138,7 +134,7 @@ func update_physics(delta: float) -> void:
 	if !recently_splashed:
 		var is_still: bool = true
 		for i in surface_line.points:
-			if abs(abs(i.y) - abs(surface_pos_y)) > 0.001:
+			if abs(i.y - surface_pos_y) > 0.001:
 				is_still = false
 				break
 		set_process(!is_still)
@@ -151,20 +147,12 @@ func update_visuals() -> void:
 	for i in range(segment_count):
 		points.append(Vector2(i * segment_width, segment_data[i]["height"]))
 
-	var left_static_point: Vector2 = Vector2(points[0].x, surface_pos_y)
-	var right_static_point: Vector2 = Vector2(points[points.size() - 1].x, surface_pos_y)
-
-	var final_points: Array[Vector2] = []
-	final_points.append(left_static_point)
-	final_points += points
-	final_points.append(right_static_point)
-
-	surface_line.points = final_points
+	surface_line.points = points
 
 	var bottom_y: float = surface_pos_y + water_size.y
-	final_points.append(Vector2(water_size.x, bottom_y))
-	final_points.append(Vector2(0, bottom_y))
-	fill_polygon.polygon = final_points
+	points.append(Vector2(water_size.x, bottom_y))
+	points.append(Vector2(0, bottom_y))
+	fill_polygon.polygon = points
 
 func splash(splash_pos: Vector2, splash_velocity: float) -> void:
 	var local_x_pos: float = to_local(splash_pos).x
@@ -187,7 +175,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.enter_water()
 
 			var vy := _get_body_velocity_y(body)
-			splash(body.global_position, -vy * player_splash_multiplier)
+			splash(body.global_position, vy * player_splash_multiplier)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("can_interact_with_water"):
@@ -197,8 +185,6 @@ func _on_body_exited(body: Node2D) -> void:
 			var vy := _get_body_velocity_y(body)
 			splash(body.global_position,  vy * player_splash_multiplier)
 
-## Instantly set the water to a specific fill height. Keeps the tank bottom
-## anchored by repositioning the node.
 func set_water_fill_height(new_height: float) -> void:
 	var clamped: float = clamp(new_height, min_height, max_height)
 	water_size.y = clamped
@@ -206,13 +192,11 @@ func set_water_fill_height(new_height: float) -> void:
 
 	if _collision_shape:
 		_collision_shape.shape.size = water_size
-		_collision_shape.position = water_size / 2.0 + Vector2(0, surface_pos_y / 2.0)
+		_collision_shape.position = water_size / 2.0 + Vector2(0, surface_pos_y)
 
 	set_process(true)
 
 
-## Smoothly animate the water height to `target_height` over `duration` seconds.
-## Emits `fill_completed` when done.
 func animate_fill(target_height: float, duration: float) -> void:
 	if _fill_tween and _fill_tween.is_running():
 		_fill_tween.kill()
@@ -225,6 +209,13 @@ func animate_fill(target_height: float, duration: float) -> void:
 	_fill_tween.finished.connect(func(): fill_completed.emit(), CONNECT_ONE_SHOT)
 
 
-## Returns true if a fill/drain animation is currently playing.
 func is_animating() -> bool:
 	return _fill_tween != null and _fill_tween.is_running()
+
+
+func is_full() -> bool:
+	return not is_animating() and water_size.y >= max_height - 0.01
+
+
+func is_empty() -> bool:
+	return not is_animating() and water_size.y <= min_height + 0.01
