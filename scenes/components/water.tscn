@@ -6,5 +6,7 @@
 scale = Vector2(1.0599455, 1.0599455)
 script = ExtResource("1_goeht")
 water_size = Vector2(170, 110)
+surface_color = Color(0.7647059, 0.9843137, 0.96862745, 0.47058824)
+water_fill_color = Color(0.7647059, 0.9843137, 0.96862745, 0.39215687)
 min_height = 10.0
 metadata/_custom_type_script = "uid://c0qkqhr5w3jjr"

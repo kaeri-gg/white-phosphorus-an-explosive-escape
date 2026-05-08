@@ -1,7 +1,7 @@
-class_name PlayerDialog
+class_name TutorialDialog
 extends Area2D
 
-static var _active: PlayerDialog = null
+static var _active: TutorialDialog = null
 
 @export_multiline var dialog_text: String = "Watch out for the fire!"
 @export var chars_per_second: float = 50.0
@@ -16,13 +16,10 @@ static var _active: PlayerDialog = null
 var _typing_tween: Tween
 var _current_player: Player
 var _has_shown: bool = false
-var _in_canvas_layer: bool = false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	hide_timer.timeout.connect(_hide)
-
-	_in_canvas_layer = _detect_canvas_layer_parent()
 
 	bubble_anchor.top_level = true
 	bubble_anchor.visible = false
@@ -34,20 +31,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if _current_player == null or not is_instance_valid(_current_player):
 		return
-	var world_target: Vector2 = _current_player.global_position + bubble_offset
-	if _in_canvas_layer:
-		bubble_anchor.global_position = get_viewport().get_canvas_transform() * world_target
-	else:
-		bubble_anchor.global_position = world_target
+	bubble_anchor.global_position = _current_player.global_position + bubble_offset
 	bubble_root.position = -bubble_root.size * 0.5
-
-func _detect_canvas_layer_parent() -> bool:
-	var n: Node = get_parent()
-	while n != null:
-		if n is CanvasLayer:
-			return true
-		n = n.get_parent()
-	return false
 
 func _on_body_entered(body: Node) -> void:
 	if _has_shown or body is not Player:

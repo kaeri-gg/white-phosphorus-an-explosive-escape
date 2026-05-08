@@ -20,20 +20,22 @@ debug_color = Color(0.43453017, 0.47055852, 0.9635897, 0.41960785)
 unique_name_in_owner = true
 one_shot = true
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1619776927]
+[node name="BubbleAnchor" type="Node2D" parent="." unique_id=1838755088]
+
+[node name="PanelContainer" type="PanelContainer" parent="BubbleAnchor" unique_id=1619776927]
 custom_minimum_size = Vector2(200, 100)
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("2_fyx41")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=626202499]
+[node name="MarginContainer" type="MarginContainer" parent="BubbleAnchor/PanelContainer" unique_id=626202499]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BubbleLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=1139992313]
+[node name="BubbleLabel" type="Label" parent="BubbleAnchor/PanelContainer/MarginContainer" unique_id=1139992313]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_theme")

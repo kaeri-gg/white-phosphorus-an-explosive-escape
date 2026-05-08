@@ -4,11 +4,22 @@ extends Area2D
 enum TYPE { FIRE, FIREWORK }
 
 @export var type: TYPE
+@export var damage_amount: int = 0
+@export var damage_interval: float = 1.5
 
 var _detonated: bool = false
+var _damage_timer: Timer
+var _victim: Player
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+	_damage_timer = Timer.new()
+	_damage_timer.one_shot = false
+	_damage_timer.wait_time = damage_interval
+	_damage_timer.timeout.connect(_on_damage_tick)
+	add_child(_damage_timer)
 
 	if type == TYPE.FIRE:
 		var sprite := get_node_or_null("%PipeFireSprite") as AnimatedSprite2D
@@ -34,16 +45,46 @@ func _on_body_entered(body: Node) -> void:
 			if player.current_state == Player.STATE.BURNING:
 				_detonate(player)
 
+func _on_body_exited(body: Node) -> void:
+	if body == _victim:
+		_stop_damage_cycle()
+
 func _handle_fire(player: Player) -> void:
+	if damage_amount > 0:
+		_start_damage_cycle(player)
+		return
 	_play_explode_if_present()
 	player.die()
+
+func _start_damage_cycle(player: Player) -> void:
+	if player.current_state == Player.STATE.DEAD:
+		return
+	_victim = player
+	if player.current_state != Player.STATE.BURNING:
+		player.change_state(Player.STATE.BURNING)
+	player.take_damage(damage_amount)
+	_damage_timer.wait_time = damage_interval
+	_damage_timer.start()
+
+func _stop_damage_cycle() -> void:
+	_damage_timer.stop()
+	if _victim and is_instance_valid(_victim):
+		if _victim.current_state == Player.STATE.BURNING and _victim.damage_timer.is_stopped():
+			_victim.damage_timer.start()
+	_victim = null
+
+func _on_damage_tick() -> void:
+	if _victim == null or not is_instance_valid(_victim) or _victim.current_state == Player.STATE.DEAD:
+		_stop_damage_cycle()
+		return
+	_victim.take_damage(damage_amount)
 
 func _detonate(player: Player) -> void:
 	if _detonated:
 		return
 	_detonated = true
 	_play_explode_if_present()
-	player.die()
+	player.take_damage(2)
 
 func _play_explode_if_present() -> void:
 	var sprite := get_node_or_null("Sprite2D") as AnimatedSprite2D
