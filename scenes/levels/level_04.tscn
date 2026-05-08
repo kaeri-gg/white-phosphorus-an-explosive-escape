@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_eqf4o"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_47boq"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_8m3pt"]
-[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_4w8xk"]
+[ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="6_1f6xj"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="6_vwuh2"]
+[ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/components/factory_leak.tscn" id="7_maafn"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="8_uu5oa"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/components/healing_water.tscn" id="9_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="9_uxfkd"]
@@ -77,25 +78,82 @@ metadata/_edit_lock_ = true
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_47boq")]
 
-[node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_4w8xk")]
-position = Vector2(185, 360.00003)
-scale = Vector2(1.1706868, 0.10054581)
+[node name="PlayerDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("6_1f6xj")]
+position = Vector2(21, 162)
 dialog_text = "Oh no... there are bombs and fireworks everywhere..."
-chars_per_second = 50.0
+display_seconds = 3.0
 
-[node name="InGameDialog2" parent="UILayer" unique_id=1355971235 instance=ExtResource("6_4w8xk")]
-position = Vector2(389, 248)
-scale = Vector2(1.184244, 0.12511742)
+[node name="PlayerDialog2" parent="UILayer" unique_id=972273700 instance=ExtResource("6_1f6xj")]
+position = Vector2(256, 138)
 dialog_text = "Please don't let me touch them when I'm on fire!"
-chars_per_second = 50.0
-display_seconds = 5.0
 
-[node name="InGameDialog3" parent="UILayer" unique_id=1788686862 instance=ExtResource("6_4w8xk")]
-position = Vector2(2189, 305)
-scale = Vector2(0.74002254, 0.4374569)
+[node name="PlayerDialog3" parent="UILayer" unique_id=1185602510 instance=ExtResource("6_1f6xj")]
+position = Vector2(2077, 232)
 dialog_text = "I must recover before going down there..."
-chars_per_second = 50.0
-display_seconds = 5.0
+
+[node name="FactoryLeak" parent="." unique_id=531473869 instance=ExtResource("7_maafn")]
+position = Vector2(76, 46)
+
+[node name="FactoryLeak2" parent="." unique_id=665440191 instance=ExtResource("7_maafn")]
+position = Vector2(603, 224)
+amount = 12
+
+[node name="FactoryLeak3" parent="." unique_id=1586856444 instance=ExtResource("7_maafn")]
+position = Vector2(889, 50)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak4" parent="." unique_id=295869935 instance=ExtResource("7_maafn")]
+position = Vector2(973, 390)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak5" parent="." unique_id=660863597 instance=ExtResource("7_maafn")]
+position = Vector2(1575, 50)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak6" parent="." unique_id=1931618496 instance=ExtResource("7_maafn")]
+position = Vector2(1854, 54)
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak7" parent="." unique_id=1067342049 instance=ExtResource("7_maafn")]
+position = Vector2(2605, 30)
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak8" parent="." unique_id=2109941651 instance=ExtResource("7_maafn")]
+position = Vector2(2484, 679)
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak9" parent="." unique_id=1360822291 instance=ExtResource("7_maafn")]
+position = Vector2(1846, 769)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak10" parent="." unique_id=1926683178 instance=ExtResource("7_maafn")]
+position = Vector2(1590, 969)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak11" parent="." unique_id=1977164760 instance=ExtResource("7_maafn")]
+position = Vector2(659, 617)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak12" parent="." unique_id=774064960 instance=ExtResource("7_maafn")]
+position = Vector2(336, 1073)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak13" parent="." unique_id=549592271 instance=ExtResource("7_maafn")]
+position = Vector2(336, 1073)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
+
+[node name="FactoryLeak14" parent="." unique_id=860742157 instance=ExtResource("7_maafn")]
+position = Vector2(336, 1073)
+amount = 12
+emission_rect_extents = Vector2(10, 20)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true

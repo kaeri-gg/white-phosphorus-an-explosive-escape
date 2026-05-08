@@ -17,7 +17,11 @@ class_name Water
 @export var surface_color: Color = Color("c3fbf7a0")
 @export var water_fill_color: Color = Color("57d1e86b")
 
+## The maximum water depth (full tank). Set this to the same value as water_size.y in the editor.
+## The code will use water_size.y you set in the inspector as the max capacity.
 @export var min_height: float
+
+## If false, the water starts at min_height instead of full.
 @export var starts_full: bool = true
 
 const _MAX_PHYSICS_DELTA: float = 0.05
@@ -185,6 +189,8 @@ func _on_body_exited(body: Node2D) -> void:
 			var vy := _get_body_velocity_y(body)
 			splash(body.global_position,  vy * player_splash_multiplier)
 
+## Instantly set the water to a specific fill height. Keeps the tank bottom
+## anchored by repositioning the node.
 func set_water_fill_height(new_height: float) -> void:
 	var clamped: float = clamp(new_height, min_height, max_height)
 	water_size.y = clamped
@@ -197,6 +203,8 @@ func set_water_fill_height(new_height: float) -> void:
 	set_process(true)
 
 
+## Smoothly animate the water height to `target_height` over `duration` seconds.
+## Emits `fill_completed` when done.
 func animate_fill(target_height: float, duration: float) -> void:
 	if _fill_tween and _fill_tween.is_running():
 		_fill_tween.kill()
@@ -209,6 +217,7 @@ func animate_fill(target_height: float, duration: float) -> void:
 	_fill_tween.finished.connect(func(): fill_completed.emit(), CONNECT_ONE_SHOT)
 
 
+## Returns true if a fill/drain animation is currently playing.
 func is_animating() -> bool:
 	return _fill_tween != null and _fill_tween.is_running()
 

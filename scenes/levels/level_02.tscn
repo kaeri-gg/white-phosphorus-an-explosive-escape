@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjwbq34lkj56d" path="res://assets/backgrounds/level-backgrounds/Level 2 Background.png" id="2_lky54"]
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_kxbgd"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
-[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_6ms8u"]
+[ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="5_gus8w"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="6_kx1rr"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="7_kx1rr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_xwa1x"]
@@ -60,29 +60,22 @@ player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_lky54")]
 
-[node name="InGameDialog" parent="." unique_id=1528114602 instance=ExtResource("6_6ms8u")]
-position = Vector2(126, 524)
-scale = Vector2(1.1413616, 0.13308707)
+[node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_gus8w")]
+position = Vector2(154, 321)
 dialog_text = "Oh no...The tanks are not filled with water! But I see blue valves!"
-chars_per_second = 50.0
-display_seconds = 5.0
 
-[node name="InGameDialog2" parent="." unique_id=1331165818 instance=ExtResource("6_6ms8u")]
-position = Vector2(834, 167)
-scale = Vector2(1.1811582, 0.10479398)
+[node name="PlayerDialog2" parent="." unique_id=64724381 instance=ExtResource("5_gus8w")]
+position = Vector2(727, 16)
 dialog_text = "Be quick or I'll burn away!"
-chars_per_second = 50.0
+display_seconds = 3.0
 
-[node name="InGameDialog3" parent="." unique_id=1291187992 instance=ExtResource("6_6ms8u")]
-position = Vector2(1427, 456)
-scale = Vector2(1.1811582, 0.10479398)
+[node name="PlayerDialog3" parent="." unique_id=1683558616 instance=ExtResource("5_gus8w")]
+position = Vector2(1323, 306)
 dialog_text = "All the tanks must be filled, until the last one!"
-chars_per_second = 50.0
-display_seconds = 5.0
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("6_kx1rr")]
 unique_name_in_owner = true
-position = Vector2(126.00012, 333)
+position = Vector2(74, 337)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2400, 720)
 

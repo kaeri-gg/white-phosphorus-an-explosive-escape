@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bqkoavunp5sgc"]
+
+[ext_resource type="Script" uid="uid://rn086ojdfyb7" path="res://scripts/components/player_dialog.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://bxkxus0otjpjn" path="res://theme/dialog-bubble.tres" id="2_fyx41"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="2_theme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(219, 127.39514)
+
+[node name="PlayerDialog" type="Area2D" unique_id=44206821]
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543134037]
+position = Vector2(99.5, 104.856674)
+scale = Vector2(1, 1.8076565)
+shape = SubResource("RectangleShape2D_trigger")
+debug_color = Color(0.43453017, 0.47055852, 0.9635897, 0.41960785)
+
+[node name="HideTimer" type="Timer" parent="." unique_id=1631413221]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1619776927]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_fyx41")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=626202499]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BubbleLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=1139992313]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_theme")
+theme_override_colors/font_color = Color(0.27569968, 0.27569968, 0.27569965, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 14
+text = "Watch out for the fire!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
