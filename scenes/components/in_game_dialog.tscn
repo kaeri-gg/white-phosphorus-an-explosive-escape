@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw8wh8h711eih"]
 
 [ext_resource type="Script" uid="uid://bo1akwu1pcnv" path="res://scripts/components/in_game_dialog.gd" id="1_pdm6y"]
-[ext_resource type="Theme" uid="uid://bgddj2twi4roa" path="res://theme/panel_bg.tres" id="2_panel"]
+[ext_resource type="Theme" uid="uid://btntp57yl2wlh" path="res://theme/dialog-ingame.tres" id="2_bfkmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdm6y"]
 size = Vector2(170, 738)
@@ -18,6 +18,7 @@ debug_color = Color(0.6482589, 0.34432566, 0.97689, 0.41960785)
 unique_name_in_owner = true
 
 [node name="DialogPanel" type="PanelContainer" parent="DialogCanvasLayer" unique_id=2090922074]
+custom_minimum_size = Vector2(500, 50)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -29,7 +30,7 @@ offset_right = 274.5
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_panel")
+theme = ExtResource("2_bfkmn")
 
 [node name="DialogMargin" type="MarginContainer" parent="DialogCanvasLayer/DialogPanel" unique_id=355252163]
 layout_mode = 2

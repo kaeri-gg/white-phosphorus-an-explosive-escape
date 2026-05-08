@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
 [ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_cywot"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
-[ext_resource type="PackedScene" uid="uid://bw8wh8h711eih" path="res://scenes/components/in_game_dialog.tscn" id="6_svp4f"]
+[ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="5_w4kkx"]
+[ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/components/factory_leak.tscn" id="6_1b0o8"]
+[ext_resource type="PackedScene" path="res://scenes/components/dust_motes.tscn" id="7_1b0o8"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
@@ -53,12 +55,20 @@ player = NodePath("../../Player")
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
-[node name="InGameDialog" parent="UILayer" unique_id=1528114602 instance=ExtResource("6_svp4f")]
-position = Vector2(130, 442)
-scale = Vector2(0.99415773, 0.1215944)
+[node name="PlayerDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("5_w4kkx")]
+position = Vector2(144, 258)
 dialog_text = "Remember, I don't like being outside of water for too long. But I can run and jump!"
-chars_per_second = 50.0
-display_seconds = 8.0
+
+[node name="FactoryLeak" parent="." unique_id=335144092 instance=ExtResource("6_1b0o8")]
+position = Vector2(1502, 136)
+amount = 12
+
+[node name="DustMotes" parent="." unique_id=1840192079 instance=ExtResource("7_1b0o8")]
+position = Vector2(1009, 559)
+
+[node name="DustMotes2" parent="." unique_id=1195095540 instance=ExtResource("7_1b0o8")]
+position = Vector2(1129, 155)
+amount = 30
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("10_ijn0p")]
 position = Vector2(908, 771)
@@ -95,7 +105,7 @@ scale = Vector2(0.2243206, 0.27741075)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
-position = Vector2(130, 333.00003)
+position = Vector2(89, 321)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2650, 720)
 
