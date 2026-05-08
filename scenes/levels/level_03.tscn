@@ -66,19 +66,25 @@ metadata/_edit_lock_ = true
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("25_on0ou")]
 
-[node name="PlayerDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("5_an42a")]
-position = Vector2(198, 126)
+[node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_an42a")]
+position = Vector2(136, 169)
 dialog_text = "These red pipes look deadly..."
 display_seconds = 3.0
 
-[node name="PlayerDialog2" parent="UILayer" unique_id=170377400 instance=ExtResource("5_an42a")]
+[node name="PlayerDialog2" parent="." unique_id=170377400 instance=ExtResource("5_an42a")]
 position = Vector2(646, 323)
 dialog_text = "...but the green phosphoric acid helps me recover!"
 
-[node name="PlayerDialog3" parent="UILayer" unique_id=1949857627 instance=ExtResource("5_an42a")]
+[node name="PlayerDialog3" parent="." unique_id=1949857627 instance=ExtResource("5_an42a")]
 position = Vector2(1754, 20)
 dialog_text = "Be quick and careful!"
 display_seconds = 3.0
+
+[node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
+unique_name_in_owner = true
+position = Vector2(166.00002, 216.00002)
+scale = Vector2(0.08075058, 0.08075058)
+camera_bounds = Rect2(0, 0, 2750, 720)
 
 [node name="FactoryLeak" parent="." unique_id=319302397 instance=ExtResource("6_d10hc")]
 position = Vector2(425, 174)
@@ -114,12 +120,6 @@ emission_rect_extents = Vector2(5, 3)
 position = Vector2(2045, 546)
 amount = 3
 emission_rect_extents = Vector2(5, 3)
-
-[node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
-unique_name_in_owner = true
-position = Vector2(123, 106.000015)
-scale = Vector2(0.08075058, 0.08075058)
-camera_bounds = Rect2(0, 0, 2750, 720)
 
 [node name="Killzone" parent="." unique_id=385787738 instance=ExtResource("7_12k85")]
 position = Vector2(1028, 783)
@@ -189,8 +189,8 @@ starts_full = false
 [node name="HealingWater" parent="." unique_id=629559690 instance=ExtResource("6_o0b03")]
 position = Vector2(1224, 493)
 water_size = Vector2(180, 100)
-surface_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
-water_fill_color = Color(0.39215687, 0.91764706, 0, 0.46666667)
+surface_color = Color(0, 1, 1, 0.54901963)
+water_fill_color = Color(0, 1, 1, 0.54901963)
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("15_rqlq8")]
 position = Vector2(159, 345)
@@ -683,29 +683,25 @@ rotation = 3.1415925
 scale = Vector2(0.109749444, -0.088045895)
 metadata/_edit_group_ = true
 
-[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("26_j1cpe")]
+[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("target_water") instance=ExtResource("26_j1cpe")]
 position = Vector2(254, 520)
-source_water = NodePath("../Water")
 target_water = NodePath("../Water2")
 transfer_duration = 1.5
 
-[node name="SwitchBlue2" parent="." unique_id=1333624087 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("26_j1cpe")]
+[node name="SwitchBlue2" parent="." unique_id=1333624087 node_paths=PackedStringArray("target_water") instance=ExtResource("26_j1cpe")]
 position = Vector2(1683, 318)
-source_water = NodePath("../Water2")
 target_water = NodePath("../Water3")
 transfer_duration = 1.5
 
-[node name="SwitchBlue3" parent="." unique_id=1695772803 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("26_j1cpe")]
+[node name="SwitchBlue3" parent="." unique_id=1695772803 node_paths=PackedStringArray("target_water") instance=ExtResource("26_j1cpe")]
 position = Vector2(1855.9999, 409.00003)
 rotation = 1.5707964
-source_water = NodePath("../Water3")
 target_water = NodePath("../Water4")
 transfer_duration = 1.5
 
-[node name="SwitchBlue4" parent="." unique_id=898244797 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("26_j1cpe")]
+[node name="SwitchBlue4" parent="." unique_id=898244797 node_paths=PackedStringArray("target_water") instance=ExtResource("26_j1cpe")]
 position = Vector2(2428, 416)
 rotation = 6.2831855
-source_water = NodePath("../Water4")
 target_water = NodePath("../Water5")
 transfer_duration = 1.5
 

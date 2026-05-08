@@ -78,16 +78,16 @@ metadata/_edit_lock_ = true
 
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_47boq")]
 
-[node name="PlayerDialog" parent="UILayer" unique_id=44206821 instance=ExtResource("6_1f6xj")]
+[node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("6_1f6xj")]
 position = Vector2(21, 162)
 dialog_text = "Oh no... there are bombs and fireworks everywhere..."
 display_seconds = 3.0
 
-[node name="PlayerDialog2" parent="UILayer" unique_id=972273700 instance=ExtResource("6_1f6xj")]
+[node name="PlayerDialog2" parent="." unique_id=972273700 instance=ExtResource("6_1f6xj")]
 position = Vector2(256, 138)
 dialog_text = "Please don't let me touch them when I'm on fire!"
 
-[node name="PlayerDialog3" parent="UILayer" unique_id=1185602510 instance=ExtResource("6_1f6xj")]
+[node name="PlayerDialog3" parent="." unique_id=1185602510 instance=ExtResource("6_1f6xj")]
 position = Vector2(2077, 232)
 dialog_text = "I must recover before going down there..."
 
@@ -203,42 +203,37 @@ water_size = Vector2(170, 70)
 min_height = 0.0
 starts_full = false
 
-[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("target_water") instance=ExtResource("10_uxfkd")]
 position = Vector2(645.00006, 501.00003)
 scale = Vector2(0.13776115, 0.14470759)
-source_water = NodePath("../Water")
 target_water = NodePath("../Water2")
 transfer_duration = 1.5
 
-[node name="SwitchBlue2" parent="." unique_id=1925220030 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+[node name="SwitchBlue2" parent="." unique_id=1925220030 node_paths=PackedStringArray("target_water") instance=ExtResource("10_uxfkd")]
 position = Vector2(1586.9999, 575.00006)
 rotation = 1.5707964
 scale = Vector2(0.1352299, 0.13772121)
-source_water = NodePath("../Water2")
 target_water = NodePath("../Water3")
 transfer_duration = 1.5
 
-[node name="SwitchBlue3" parent="." unique_id=1143288073 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+[node name="SwitchBlue3" parent="." unique_id=1143288073 node_paths=PackedStringArray("target_water") instance=ExtResource("10_uxfkd")]
 position = Vector2(1815, 570)
 rotation = 1.5707964
 scale = Vector2(0.1352299, 0.13772121)
-source_water = NodePath("../Water3")
 target_water = NodePath("../Water4")
 transfer_duration = 1.5
 
-[node name="SwitchBlue4" parent="." unique_id=1796876314 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+[node name="SwitchBlue4" parent="." unique_id=1796876314 node_paths=PackedStringArray("target_water") instance=ExtResource("10_uxfkd")]
 position = Vector2(1799.0002, 1190.0001)
 rotation = 1.5707964
 scale = Vector2(0.1352299, 0.13772121)
-source_water = NodePath("../Water4")
 target_water = NodePath("../Water6")
 transfer_duration = 1.5
 
-[node name="SwitchBlue5" parent="." unique_id=1881701169 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("10_uxfkd")]
+[node name="SwitchBlue5" parent="." unique_id=1881701169 node_paths=PackedStringArray("target_water") instance=ExtResource("10_uxfkd")]
 position = Vector2(974.99994, 941.99994)
 rotation = 1.5707964
 scale = Vector2(0.1352299, 0.13772121)
-source_water = NodePath("../Water6")
 target_water = NodePath("../Water7")
 transfer_duration = 1.5
 

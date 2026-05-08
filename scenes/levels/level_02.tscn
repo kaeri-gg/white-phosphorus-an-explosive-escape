@@ -113,38 +113,33 @@ water_size = Vector2(170, 70)
 min_height = 0.0
 starts_full = false
 
-[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
+[node name="SwitchBlue" parent="." unique_id=1596610064 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 material = SubResource("ShaderMaterial_kx1rr")
 position = Vector2(378, 460.00006)
 rotation = 1.5707964
-source_water = NodePath("../Water")
 target_water = NodePath("../Water2")
 transfer_duration = 2.0
 
-[node name="SwitchBlue2" parent="." unique_id=2000692890 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
+[node name="SwitchBlue2" parent="." unique_id=2000692890 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 position = Vector2(581, 309)
 rotation = 1.5707964
-source_water = NodePath("../Water2")
 target_water = NodePath("../Water3")
 transfer_duration = 2.0
 
-[node name="SwitchBlue3" parent="." unique_id=1203702185 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
+[node name="SwitchBlue3" parent="." unique_id=1203702185 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 position = Vector2(929, 557)
-source_water = NodePath("../Water3")
 target_water = NodePath("../Water4")
 transfer_duration = 2.0
 
-[node name="SwitchBlue4" parent="." unique_id=39913262 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
+[node name="SwitchBlue4" parent="." unique_id=39913262 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 position = Vector2(1659.9999, 674)
 rotation = 1.5707964
-source_water = NodePath("../Water4")
 target_water = NodePath("../Water5")
 transfer_duration = 2.0
 
-[node name="SwitchBlue5" parent="." unique_id=544044507 node_paths=PackedStringArray("source_water", "target_water") instance=ExtResource("13_v5pqk")]
+[node name="SwitchBlue5" parent="." unique_id=544044507 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 position = Vector2(2242, 699)
 rotation = 1.5707964
-source_water = NodePath("../Water5")
 target_water = NodePath("../Water6")
 transfer_duration = 2.0
 

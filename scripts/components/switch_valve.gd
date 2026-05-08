@@ -1,13 +1,11 @@
 extends StaticBody2D
 
 signal interacted(actor: Node2D)
-signal transfer_denied(reason: String)
 
 @export var prompt_offset: Vector2 = Vector2(-100, -120)
 @export var source_water: Water
 @export var target_water: Water
 @export var transfer_duration: float = 3.0
-@export var requires_source_filled: bool = true
 
 @onready var interact_area: Area2D = %InteractArea
 @onready var prompt_label: Label = %PromptLabel
@@ -50,10 +48,6 @@ func _on_player_pressed_switch() -> void:
 		push_warning("%s: target_water is not set." % name)
 		return
 
-	if not _can_start_transfer():
-		transfer_denied.emit("source_not_full")
-		return
-
 	switch_sprite.play("interact")
 	interact(current_player)
 	_start_water_transfer()
@@ -69,12 +63,6 @@ func _start_water_transfer() -> void:
 
 	has_transferred = true
 	is_transferring = false
-
-
-func _can_start_transfer() -> bool:
-	if source_water == null or not requires_source_filled:
-		return true
-	return source_water.is_full()
 
 func _set_current_player(player: Player) -> void:
 	if current_player == player:
