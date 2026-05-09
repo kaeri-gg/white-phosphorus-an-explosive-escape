@@ -55,7 +55,7 @@ player = NodePath("../../Player")
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_w4kkx")]
-position = Vector2(144, 258)
+position = Vector2(171, 250)
 dialog_text = "Remember, I don't like being outside of water for too long. But I can run and jump!"
 display_seconds = 4.0
 
@@ -98,7 +98,7 @@ scale = Vector2(0.2243206, 0.27741075)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
-position = Vector2(89, 321)
+position = Vector2(127, 321)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2650, 720)
 
@@ -745,3 +745,13 @@ offset_right = 4535.0
 offset_bottom = 1736.0
 scale = Vector2(0.01840461, 0.03234725)
 texture = ExtResource("8_w4kkx")
+
+[node name="PlatformGrayPipe28" parent="." unique_id=1984753985 instance=ExtResource("13_tyxjt")]
+position = Vector2(-5, 535)
+rotation = 4.712389
+scale = Vector2(0.63128144, 0.5011331)
+
+[node name="PlatformGrayPipe29" parent="." unique_id=48487539 instance=ExtResource("13_tyxjt")]
+position = Vector2(-5, 176.00002)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)

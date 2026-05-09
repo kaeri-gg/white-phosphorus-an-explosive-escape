@@ -61,13 +61,14 @@ player = NodePath("../../Player")
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_lky54")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_gus8w")]
-position = Vector2(154, 321)
+position = Vector2(27, 321)
 dialog_text = "Oh no...The tanks are not filled with water! But I see blue valves!"
 
 [node name="PlayerDialog2" parent="." unique_id=64724381 instance=ExtResource("5_gus8w")]
-position = Vector2(727, 16)
+position = Vector2(739, 35)
 dialog_text = "Be quick or I'll burn away!"
 display_seconds = 3.0
+metadata/_edit_group_ = true
 
 [node name="PlayerDialog3" parent="." unique_id=1683558616 instance=ExtResource("5_gus8w")]
 position = Vector2(1323, 306)
@@ -75,35 +76,35 @@ dialog_text = "All the tanks must be filled, until the last one!"
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("6_kx1rr")]
 unique_name_in_owner = true
-position = Vector2(74, 337)
+position = Vector2(130, 262)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2400, 720)
 
 [node name="Water" parent="." unique_id=45670442 instance=ExtResource("7_kx1rr")]
-position = Vector2(34, 482)
-water_size = Vector2(170, 70)
+position = Vector2(31, 476)
+water_size = Vector2(180, 70)
 
 [node name="Water2" parent="." unique_id=1695868829 instance=ExtResource("7_kx1rr")]
-position = Vector2(552, 496)
-water_size = Vector2(170, 70)
+position = Vector2(547, 493)
+water_size = Vector2(180, 70)
 min_height = 0.0
 starts_full = false
 
 [node name="Water3" parent="." unique_id=448496151 instance=ExtResource("7_kx1rr")]
-position = Vector2(740, 143.00002)
-water_size = Vector2(170, 70)
+position = Vector2(743, 160)
+water_size = Vector2(180, 70)
 min_height = 0.0
 starts_full = false
 
 [node name="Water4" parent="." unique_id=1706063123 instance=ExtResource("7_kx1rr")]
-position = Vector2(1334.0001, 431.00003)
-water_size = Vector2(170, 70)
+position = Vector2(1329, 425)
+water_size = Vector2(180, 70)
 min_height = 0.0
 starts_full = false
 
 [node name="Water5" parent="." unique_id=2089649244 instance=ExtResource("7_kx1rr")]
-position = Vector2(1848.0001, 538)
-water_size = Vector2(170, 70)
+position = Vector2(1844, 534)
+water_size = Vector2(180, 70)
 min_height = 0.0
 starts_full = false
 
@@ -121,10 +122,11 @@ target_water = NodePath("../Water2")
 transfer_duration = 2.0
 
 [node name="SwitchBlue2" parent="." unique_id=2000692890 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
-position = Vector2(581, 309)
+position = Vector2(590, 242)
 rotation = 1.5707964
 target_water = NodePath("../Water3")
 transfer_duration = 2.0
+metadata/_edit_group_ = true
 
 [node name="SwitchBlue3" parent="." unique_id=1203702185 node_paths=PackedStringArray("target_water") instance=ExtResource("13_v5pqk")]
 position = Vector2(929, 557)
@@ -273,22 +275,24 @@ rotation = 1.5707964
 scale = Vector2(0.10790594, 0.2375902)
 
 [node name="PlatformGrayPipe6" parent="." unique_id=2133992950 instance=ExtResource("10_r2xis")]
-position = Vector2(801.9999, 441.99997)
+position = Vector2(802, 454)
 rotation = 1.5707964
-scale = Vector2(0.31528413, 0.4995363)
+scale = Vector2(0.26746872, 0.4983005)
 
 [node name="PlatformGrayPipe7" parent="." unique_id=1415318706 instance=ExtResource("10_r2xis")]
-position = Vector2(913.00006, 441.99997)
+position = Vector2(913.0002, 454)
 rotation = 1.5707964
-scale = Vector2(0.31528413, 0.4995363)
+scale = Vector2(0.26746872, 0.4983005)
 
 [node name="PlatformGrayPipe12" parent="." unique_id=79879112 instance=ExtResource("10_r2xis")]
-position = Vector2(688.00006, 323.00003)
-scale = Vector2(-0.28177026, 0.4696398)
+position = Vector2(659.99994, 350.00003)
+scale = Vector2(-0.37924996, 0.4698565)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipe15" parent="." unique_id=297164177 instance=ExtResource("10_r2xis")]
-position = Vector2(609.9999, 232.00003)
-scale = Vector2(-0.28637615, 0.47064957)
+position = Vector2(666, 258)
+scale = Vector2(-0.16515973, 0.48079658)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipe17" parent="." unique_id=388524600 instance=ExtResource("10_r2xis")]
 position = Vector2(1085.9999, 619.00006)
@@ -349,9 +353,10 @@ rotation = 1.5707964
 scale = Vector2(0.11955447, 0.1141848)
 
 [node name="PlatformGrayConnectionPipe9" parent="." unique_id=887033633 instance=ExtResource("14_7873c")]
-position = Vector2(939, 333)
+position = Vector2(940, 360)
 rotation = 1.5707964
 scale = Vector2(0.10394294, 0.11490692)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayConnectionPipe25" parent="." unique_id=634809642 instance=ExtResource("14_7873c")]
 position = Vector2(1204, 533.00006)
@@ -359,9 +364,10 @@ rotation = 1.5707964
 scale = Vector2(0.10394294, 0.11490692)
 
 [node name="PlatformGrayConnectionPipe24" parent="." unique_id=781483911 instance=ExtResource("14_7873c")]
-position = Vector2(505, 248)
+position = Vector2(522, 273)
 rotation = 1.5707964
 scale = Vector2(0.11955447, 0.1141848)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayConnectionPipe7" parent="." unique_id=287651455 instance=ExtResource("14_7873c")]
 position = Vector2(429.00003, 469.99997)
@@ -369,9 +375,10 @@ rotation = 3.1415927
 scale = Vector2(0.11955447, 0.1141848)
 
 [node name="PlatformGrayConnectionPipe15" parent="." unique_id=1883421349 instance=ExtResource("14_7873c")]
-position = Vector2(788, 319)
+position = Vector2(789, 346)
 rotation = 3.1415927
 scale = Vector2(0.11955447, 0.1141848)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayConnectionPipe26" parent="." unique_id=1762324692 instance=ExtResource("14_7873c")]
 position = Vector2(1553.0002, 518)
@@ -417,13 +424,15 @@ rotation = -1.5707964
 scale = Vector2(-0.11373034, 0.121356964)
 
 [node name="PlatformGrayConnectionPipe13" parent="." unique_id=1670412670 instance=ExtResource("14_7873c")]
-position = Vector2(525, 298)
+position = Vector2(542, 323)
 scale = Vector2(0.11955447, 0.1141848)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayConnectionPipe12" parent="." unique_id=1686785159 instance=ExtResource("14_7873c")]
-position = Vector2(981, 225.99997)
+position = Vector2(981.99994, 252.99997)
 rotation = 3.1415925
 scale = Vector2(0.114259325, 0.12092999)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipeInsertCap2" parent="." unique_id=2097634613 instance=ExtResource("15_ymej5")]
 position = Vector2(244, 558.00006)
@@ -441,14 +450,16 @@ rotation = -1.5707964
 scale = Vector2(0.030080415, 0.050289582)
 
 [node name="PlatformGrayPipeInsertCap11" parent="." unique_id=1008697180 instance=ExtResource("15_ymej5")]
-position = Vector2(708, 216)
+position = Vector2(722, 242)
 rotation = -1.5707964
-scale = Vector2(0.030080415, 0.050289582)
+scale = Vector2(0.028222786, 0.039474163)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipeInsertCap14" parent="." unique_id=1089872355 instance=ExtResource("15_ymej5")]
-position = Vector2(949, 215.00003)
+position = Vector2(954.00006, 242.99998)
 rotation = 1.5707964
-scale = Vector2(0.030080415, 0.050289582)
+scale = Vector2(0.03187107, 0.035327528)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipeInsertCap5" parent="." unique_id=690388784 instance=ExtResource("15_ymej5")]
 position = Vector2(2059, 616)
@@ -558,7 +569,8 @@ position = Vector2(121, 535)
 position = Vector2(639, 551)
 
 [node name="PlatformWhiteTank3" parent="." unique_id=2014500481 instance=ExtResource("20_m2te4")]
-position = Vector2(824.9999, 192)
+position = Vector2(834, 220)
+metadata/_edit_group_ = true
 
 [node name="PlatformWhiteTank4" parent="." unique_id=1759351332 instance=ExtResource("20_m2te4")]
 position = Vector2(1420, 483.00003)
@@ -590,9 +602,10 @@ rotation = -1.5707964
 scale = Vector2(0.11955447, 0.1141848)
 
 [node name="PlatformGrayConnectionPipe8" parent="." unique_id=1093868959 instance=ExtResource("14_7873c")]
-position = Vector2(1000, 277.00003)
+position = Vector2(1001.00006, 304.00003)
 rotation = -1.5707964
 scale = Vector2(0.11264948, 0.108483665)
+metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipeInsertCap13" parent="." unique_id=87939917 instance=ExtResource("15_ymej5")]
 position = Vector2(763.00006, 575)
@@ -680,3 +693,13 @@ metadata/_edit_group_ = true
 position = Vector2(1866.9999, 374)
 rotation = -1.5707964
 metadata/_edit_group_ = true
+
+[node name="PlatformGrayPipe28" parent="." unique_id=1422546584 instance=ExtResource("10_r2xis")]
+position = Vector2(-25, 535)
+rotation = 4.712389
+scale = Vector2(0.63128144, 0.5011331)
+
+[node name="PlatformGrayPipe29" parent="." unique_id=2130130159 instance=ExtResource("10_r2xis")]
+position = Vector2(-24.999998, 176)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)

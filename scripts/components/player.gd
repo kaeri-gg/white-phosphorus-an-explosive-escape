@@ -158,7 +158,19 @@ func _physics_process(_delta: float) -> void:
 		movement_change.emit(was_moving)
 
 	move_and_slide()
+	_clamp_horizontal_to_bounds()
 	_flip_on_move()
+
+func _clamp_horizontal_to_bounds() -> void:
+	var bounds := camera_bounds.abs()
+	if global_position.x < bounds.position.x:
+		global_position.x = bounds.position.x
+		if velocity.x < 0:
+			velocity.x = 0
+	elif global_position.x > bounds.end.x:
+		global_position.x = bounds.end.x
+		if velocity.x > 0:
+			velocity.x = 0
 
 func detect_environment() -> void:
 	if current_state == STATE.DEAD:
