@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/boogie-pecan-pie-main-version-41135-02-14.mp3
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

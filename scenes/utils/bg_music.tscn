@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://c8u3k5twu3slh" path="res://assets/audio/boogie-pecan-pie-main-version-41135-02-14.mp3" id="1_f6gl3"]
 
-[node name="BgMusic" type="AudioStreamPlayer2D" unique_id=781534772]
+[node name="BgMusic" type="AudioStreamPlayer" unique_id=781534772]
 stream = ExtResource("1_f6gl3")
 autoplay = true
 bus = &"Music"
