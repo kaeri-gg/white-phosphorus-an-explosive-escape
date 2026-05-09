@@ -67,13 +67,13 @@ metadata/_edit_lock_ = true
 [node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("25_on0ou")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_an42a")]
-position = Vector2(136, 169)
+position = Vector2(203, 179)
 dialog_text = "These red pipes look deadly..."
 display_seconds = 3.0
 
 [node name="PlayerDialog2" parent="." unique_id=170377400 instance=ExtResource("5_an42a")]
 position = Vector2(646, 323)
-dialog_text = "...but the green phosphoric acid helps me recover!"
+dialog_text = "...but the glowing blue phosphoric acid helps me recover!"
 
 [node name="PlayerDialog3" parent="." unique_id=1949857627 instance=ExtResource("5_an42a")]
 position = Vector2(1754, 20)
@@ -189,8 +189,6 @@ starts_full = false
 [node name="HealingWater" parent="." unique_id=629559690 instance=ExtResource("6_o0b03")]
 position = Vector2(1224, 493)
 water_size = Vector2(180, 100)
-surface_color = Color(0, 1, 1, 0.54901963)
-water_fill_color = Color(0, 1, 1, 0.54901963)
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("15_rqlq8")]
 position = Vector2(159, 345)
@@ -458,8 +456,9 @@ position = Vector2(353.99997, 614.0001)
 rotation = 3.1415927
 
 [node name="PlatformRedClosingPipe3" parent="." unique_id=1657086690 instance=ExtResource("10_cwa4x")]
-position = Vector2(1485.9999, 372.0001)
+position = Vector2(1457.9999, 371)
 rotation = 6.2831855
+scale = Vector2(0.03654482, 0.03587487)
 
 [node name="PlatformGrayMetalRope2" parent="." unique_id=742565620 instance=ExtResource("11_8o2w1")]
 position = Vector2(178, 486)
@@ -842,3 +841,19 @@ rotation = 3.1415927
 
 [node name="PlatformGrayClosingPipe" parent="." unique_id=1715450833 instance=ExtResource("22_jclrk")]
 position = Vector2(46, 369.00003)
+
+[node name="PlatformGrayPipe28" parent="." unique_id=318751477 instance=ExtResource("33_mj800")]
+position = Vector2(-5, 535)
+rotation = 4.712389
+scale = Vector2(0.63128144, 0.5011331)
+
+[node name="PlatformGrayPipe29" parent="." unique_id=985990572 instance=ExtResource("33_mj800")]
+position = Vector2(-5, 176.00002)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)
+
+[node name="PlatformRedPipe14" parent="." unique_id=1329931041 instance=ExtResource("16_seqs6")]
+position = Vector2(1480.0001, 369)
+rotation = 3.1428962
+scale = Vector2(0.019037522, 0.12492583)
+metadata/_edit_group_ = true
