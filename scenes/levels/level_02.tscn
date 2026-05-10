@@ -695,11 +695,16 @@ rotation = -1.5707964
 metadata/_edit_group_ = true
 
 [node name="PlatformGrayPipe28" parent="." unique_id=1422546584 instance=ExtResource("10_r2xis")]
-position = Vector2(-25, 535)
+position = Vector2(-25.999998, 687)
 rotation = 4.712389
 scale = Vector2(0.63128144, 0.5011331)
 
 [node name="PlatformGrayPipe29" parent="." unique_id=2130130159 instance=ExtResource("10_r2xis")]
-position = Vector2(-24.999998, 176)
+position = Vector2(-25.999996, 328)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)
+
+[node name="PlatformGrayPipe30" parent="." unique_id=1016431081 instance=ExtResource("10_r2xis")]
+position = Vector2(-26, -41)
 rotation = 4.712389
 scale = Vector2(0.6668284, 0.48139516)

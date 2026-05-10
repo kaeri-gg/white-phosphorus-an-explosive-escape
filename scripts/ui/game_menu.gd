@@ -2,14 +2,14 @@ class_name GameMenu
 extends Control
 
 const FACT_SCENE = preload("uid://d2xguvgncyliw")
-@onready var start_game_button: ActionButton = %StartGameButton
+@onready var next_button: ActionButton = %NextScreen
 
 @export var fade_duration: float = 0.6
 
 func _ready() -> void:
 	sound_manager.play("EnterGame")
 	utils.fade_from_overlay(fade_duration)
-	start_game_button.pressed.connect(start_game)
+	next_button.pressed.connect(start_game)
 
 func start_game() -> void:
 	sound_manager.play("EnterGame")

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_pqyst"]
 [ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_03iov"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_5m2np"]
+[ext_resource type="Texture2D" uid="uid://ci0s07f0eebii" path="res://assets/ui/buttons/Next button.png" id="7_pqyst"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
 
@@ -46,28 +47,34 @@ grow_vertical = 1
 [node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("4_03iov")]
 layout_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=824271023]
+[node name="Button" type="MarginContainer" parent="." unique_id=824271023]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -110.0
+offset_left = -132.0
+offset_top = -130.0
+offset_right = 68.0
+offset_bottom = 60.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.5869658, 0.5869658)
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 50
 
-[node name="Start" parent="MarginContainer" unique_id=1054692064 instance=ExtResource("5_pqyst")]
+[node name="NextScreen" parent="Button" unique_id=1054692064 instance=ExtResource("5_pqyst")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_vertical = 4
+texture_normal = ExtResource("7_pqyst")
+ignore_texture_size = true
+stretch_mode = 4
 custom_label_text = "Start"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,4 +121,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="MarginContainer/Start" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="Button/NextScreen" to="." method="_on_proceed_button_pressed"]

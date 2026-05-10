@@ -54,7 +54,7 @@ func _handle_fire(player: Player) -> void:
 		_start_damage_cycle(player)
 		return
 	_play_explode_if_present()
-	player.die()
+	player.take_damage(2)
 
 func _start_damage_cycle(player: Player) -> void:
 	if player.current_state == Player.STATE.DEAD:
@@ -84,7 +84,7 @@ func _detonate(player: Player) -> void:
 		return
 	_detonated = true
 	_play_explode_if_present()
-	player.take_damage(2)
+	player.die()
 
 func _play_explode_if_present() -> void:
 	var sprite := get_node_or_null("Sprite2D") as AnimatedSprite2D

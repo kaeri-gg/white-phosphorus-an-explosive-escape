@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dg2qg7kh4yw2b"]
 
 [ext_resource type="Script" uid="uid://ducycaaldp103" path="res://scripts/components/home_button.gd" id="1_piodm"]
-[ext_resource type="Texture2D" uid="uid://dttcynr6evbvg" path="res://assets/icons/home-smile-svgrepo-com-01.svg" id="2_piodm"]
-[ext_resource type="Texture2D" uid="uid://bddalpqh7603j" path="res://assets/icons/home-smile-svgrepo-com-03.svg" id="3_10yk2"]
-[ext_resource type="Texture2D" uid="uid://iuapo11sud1v" path="res://assets/icons/home-smile-svgrepo-com-02.svg" id="4_qjehx"]
+[ext_resource type="Texture2D" uid="uid://b4fdilo0lltpd" path="res://assets/ui/buttons/Home icon.png" id="2_ck4yf"]
 
 [node name="HomeButton" type="Control" unique_id=445205108]
 layout_mode = 3
@@ -14,19 +12,16 @@ script = ExtResource("1_piodm")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
 layout_mode = 1
-offset_right = 90.0
-offset_bottom = 90.0
+offset_right = 60.0
+offset_bottom = 60.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 
 [node name="HomeButton" type="TextureButton" parent="MarginContainer" unique_id=1509285366]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture_normal = ExtResource("2_piodm")
-texture_pressed = ExtResource("2_piodm")
-texture_hover = ExtResource("3_10yk2")
-texture_disabled = ExtResource("4_qjehx")
-texture_focused = ExtResource("4_qjehx")
+texture_normal = ExtResource("2_ck4yf")
 ignore_texture_size = true
 stretch_mode = 5

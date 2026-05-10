@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
 [ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_cywot"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
+[ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_lswbx"]
+[ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="5_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="5_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/components/factory_leak.tscn" id="6_1b0o8"]
+[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="6_lswbx"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
@@ -22,6 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://b0lh0fde8veiu" path="res://scenes/components/platforms/platform_gray_in_between_spring.tscn" id="24_e5bmj"]
 [ext_resource type="PackedScene" uid="uid://dq2413ipicfl8" path="res://scenes/components/platforms/portal_area.tscn" id="24_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="26_lswbx"]
+
+[sub_resource type="Theme" id="Theme_uujh0"]
+
+[sub_resource type="Theme" id="Theme_3t34l"]
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -52,7 +59,66 @@ expand_mode = 5
 scale = Vector2(0.9995828, 1)
 player = NodePath("../../Player")
 
-[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("26_lswbx")]
+[node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=311807283]
+custom_minimum_size = Vector2(150, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="HomeButton" parent="UILayer/ButtonsContainer" unique_id=445205108 instance=ExtResource("26_lswbx")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=648855077 instance=ExtResource("5_lswbx")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer" unique_id=1994801465]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -194.0
+offset_right = 349.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_mhiu8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UILayer/PanelContainer" unique_id=66071496]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PanelContainer/MarginContainer2" unique_id=364916625]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="UILayer/PanelContainer/MarginContainer2/VBoxContainer" unique_id=329367266]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = SubResource("Theme_uujh0")
+theme_override_fonts/font = ExtResource("6_lswbx")
+theme_override_font_sizes/font_size = 23
+text = "Hello! Here's a little facts about me:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text" type="Label" parent="UILayer/PanelContainer/MarginContainer2/VBoxContainer" unique_id=148419370]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+theme = SubResource("Theme_3t34l")
+text = "My name is \"Phos\",  and I am white phosphorus! I am minced from Phosphate rock.
+
+Although they said my name means \"light-bringer\", I am often stored under water for everyone's safety, because I  can ignite when I am exposed to air, and I'm uncontrollable!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_w4kkx")]
 position = Vector2(171, 250)
@@ -746,12 +812,17 @@ offset_bottom = 1736.0
 scale = Vector2(0.01840461, 0.03234725)
 texture = ExtResource("8_w4kkx")
 
-[node name="PlatformGrayPipe28" parent="." unique_id=1984753985 instance=ExtResource("13_tyxjt")]
-position = Vector2(-5, 535)
+[node name="PlatformGrayPipe28" parent="." unique_id=2077190515 instance=ExtResource("13_tyxjt")]
+position = Vector2(-5.999998, 684)
 rotation = 4.712389
 scale = Vector2(0.63128144, 0.5011331)
 
-[node name="PlatformGrayPipe29" parent="." unique_id=48487539 instance=ExtResource("13_tyxjt")]
-position = Vector2(-5, 176.00002)
+[node name="PlatformGrayPipe29" parent="." unique_id=1373533165 instance=ExtResource("13_tyxjt")]
+position = Vector2(-5.999998, 325)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)
+
+[node name="PlatformGrayPipe30" parent="." unique_id=1722297851 instance=ExtResource("13_tyxjt")]
+position = Vector2(-6.000002, -44)
 rotation = 4.712389
 scale = Vector2(0.6668284, 0.48139516)

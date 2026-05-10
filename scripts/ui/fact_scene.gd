@@ -7,7 +7,7 @@ extends Control
 func _ready() -> void:
 	sound_manager.play("EnterGame")
 	utils.fade_from_overlay(fade_duration)
-	_wire_button("ProceedButton", next_scene_path)
+	_wire_button("NextScreen", next_scene_path)
 
 func _wire_button(unique_name: String, scene_path: String) -> void:
 	var button: ActionButton = get_node_or_null("%" + unique_name)

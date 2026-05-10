@@ -842,18 +842,23 @@ rotation = 3.1415927
 [node name="PlatformGrayClosingPipe" parent="." unique_id=1715450833 instance=ExtResource("22_jclrk")]
 position = Vector2(46, 369.00003)
 
-[node name="PlatformGrayPipe28" parent="." unique_id=318751477 instance=ExtResource("33_mj800")]
-position = Vector2(-5, 535)
-rotation = 4.712389
-scale = Vector2(0.63128144, 0.5011331)
-
-[node name="PlatformGrayPipe29" parent="." unique_id=985990572 instance=ExtResource("33_mj800")]
-position = Vector2(-5, 176.00002)
-rotation = 4.712389
-scale = Vector2(0.6668284, 0.48139516)
-
 [node name="PlatformRedPipe14" parent="." unique_id=1329931041 instance=ExtResource("16_seqs6")]
 position = Vector2(1480.0001, 369)
 rotation = 3.1428962
 scale = Vector2(0.019037522, 0.12492583)
 metadata/_edit_group_ = true
+
+[node name="PlatformGrayPipe28" parent="." unique_id=22267336 instance=ExtResource("33_mj800")]
+position = Vector2(-5.999996, 726)
+rotation = 4.712389
+scale = Vector2(0.63128144, 0.5011331)
+
+[node name="PlatformGrayPipe29" parent="." unique_id=2147321462 instance=ExtResource("33_mj800")]
+position = Vector2(-5.999996, 367)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)
+
+[node name="PlatformGrayPipe30" parent="." unique_id=1483195859 instance=ExtResource("33_mj800")]
+position = Vector2(-6, -2)
+rotation = 4.712389
+scale = Vector2(0.6668284, 0.48139516)

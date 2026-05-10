@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://k1luxrbn2fxc"]
 
 [ext_resource type="Script" uid="uid://dxy1vhja1rsn" path="res://scripts/components/settings_button.gd" id="1_v0qcp"]
-[ext_resource type="Texture2D" uid="uid://c22rff7knodb3" path="res://assets/icons/settings-svgrepo-com-01.svg" id="2_6jogs"]
-[ext_resource type="Texture2D" uid="uid://b6rrqblllj1qs" path="res://assets/icons/settings-svgrepo-com-02.svg" id="3_noq0u"]
-[ext_resource type="Texture2D" uid="uid://cifko0n11fc3i" path="res://assets/icons/settings-svgrepo-com-03.svg" id="4_expto"]
+[ext_resource type="Texture2D" uid="uid://lxpteoge3nff" path="res://assets/ui/buttons/Settings icon.png" id="2_n54ui"]
 
 [node name="SettingsButton" type="Control" unique_id=445205108]
 layout_mode = 3
@@ -16,8 +14,8 @@ script = ExtResource("1_v0qcp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
 layout_mode = 1
-offset_right = 70.0
-offset_bottom = 70.0
+offset_right = 60.0
+offset_bottom = 60.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
@@ -25,10 +23,6 @@ theme_override_constants/margin_top = 20
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture_normal = ExtResource("2_6jogs")
-texture_pressed = ExtResource("2_6jogs")
-texture_hover = ExtResource("3_noq0u")
-texture_disabled = ExtResource("4_expto")
-texture_focused = ExtResource("4_expto")
+texture_normal = ExtResource("2_n54ui")
 ignore_texture_size = true
 stretch_mode = 5
