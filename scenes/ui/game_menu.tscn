@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_ah5xx"]
 [ext_resource type="Theme" uid="uid://bgddj2twi4roa" path="res://theme/panel_bg.tres" id="5_bpafv"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="6_nrj1f"]
+[ext_resource type="Texture2D" uid="uid://bpt4w7e45hl3h" path="res://assets/ui/buttons/Play button.png" id="7_1djrs"]
+[ext_resource type="Texture2D" uid="uid://ctngc10j6my42" path="res://assets/ui/buttons/About the game button.png" id="9_yyry6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdnys"]
 bg_color = Color(0.8557774, 0.85455686, 0.9922696, 1)
@@ -84,9 +86,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="StartGameButton" parent="ContentsContainer" unique_id=1077547119 instance=ExtResource("5_ah5xx")]
-unique_name_in_owner = true
+[node name="Button" type="MarginContainer" parent="ContentsContainer" unique_id=842525263]
 layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="NextScreen" parent="ContentsContainer/Button" unique_id=1077547119 instance=ExtResource("5_ah5xx")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+texture_normal = ExtResource("7_1djrs")
+ignore_texture_size = true
+stretch_mode = 5
 custom_label_text = "Enter game"
 
 [node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("6_nrj1f")]
@@ -109,11 +119,13 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 40
 
-[node name="AboutLinkButton" type="LinkButton" parent="LinksContainer" unique_id=2005270340]
+[node name="AboutLinkButton" type="TextureButton" parent="LinksContainer" unique_id=631991966]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "About the game"
-underline = 1
+texture_normal = ExtResource("9_yyry6")
+ignore_texture_size = true
+stretch_mode = 5
 
 [connection signal="pressed" from="LinksContainer/AboutLinkButton" to="." method="show_about_us"]

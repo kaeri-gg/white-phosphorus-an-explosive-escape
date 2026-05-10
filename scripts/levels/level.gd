@@ -12,10 +12,6 @@ func _ready() -> void:
 	player.died.connect(_on_player_died)
 	_on_health_timer_updated(player.time_until_next_damage())
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if (event as InputEventKey).keycode == KEY_R:
-			get_tree().reload_current_scene()
 
 func _on_health_timer_updated(time_left: float) -> void:
 	if timer_label != null:
