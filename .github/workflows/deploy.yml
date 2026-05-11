@@ -145,7 +145,7 @@ jobs:
         with:
           butler_key: ${{ secrets.ITCH_IO_API_KEY }}
           itch_user: ${{ secrets.ITCH_IO_USERNAME }}
-          itch_game: ${{ env.ITCH_IO_GAME_SLUG }}
-          channel: ${{ env.ITCH_IO_CHANNEL }}
+          itch_game: ${{ env.ITCH_IO_GAME_SLUG }}:${{ env.ITCH_IO_CHANNEL }}
+          auto_channel: false
           version: ${{ github.ref_name }}
-          package: release/
+          files: release/
