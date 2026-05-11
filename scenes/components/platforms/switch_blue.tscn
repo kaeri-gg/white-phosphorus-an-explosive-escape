@@ -22,15 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://vw4024aawq3e" path="res://assets/platforms/blue switch/Switch_19.png" id="20_o8ljm"]
 [ext_resource type="Texture2D" uid="uid://1tuc3f4fmtfe" path="res://assets/platforms/blue switch/Switch_20.png" id="21_qh186"]
 [ext_resource type="Texture2D" uid="uid://dr680n7fxc6pa" path="res://assets/platforms/blue switch/Switch_21.png" id="22_d8t8f"]
-[ext_resource type="Texture2D" uid="uid://vw8ehan5ifx3" path="res://assets/platforms/blue switch/Switch_22.png" id="23_thg3f"]
-[ext_resource type="Texture2D" uid="uid://cfrtxwcdkmcx0" path="res://assets/platforms/blue switch/Switch_23.png" id="24_ew3nj"]
-[ext_resource type="Texture2D" uid="uid://t4mpxvp33kkn" path="res://assets/platforms/blue switch/Switch_24.png" id="25_mf3tt"]
-[ext_resource type="Texture2D" uid="uid://bodb0nlk18nfu" path="res://assets/platforms/blue switch/Switch_25.png" id="26_1yiqy"]
-[ext_resource type="Texture2D" uid="uid://lmwc14g7s7ee" path="res://assets/platforms/blue switch/Switch_26.png" id="27_tleir"]
-[ext_resource type="Texture2D" uid="uid://ffsb7q8pcno0" path="res://assets/platforms/blue switch/Switch_27.png" id="28_w4kja"]
-[ext_resource type="Texture2D" uid="uid://wx558ck8v3ly" path="res://assets/platforms/blue switch/Switch_28.png" id="29_pet07"]
-[ext_resource type="Texture2D" uid="uid://cloujfdictnw0" path="res://assets/platforms/blue switch/Switch_29.png" id="30_2prtt"]
-[ext_resource type="Texture2D" uid="uid://degj7mt24v0jn" path="res://assets/platforms/blue switch/Switch_30.png" id="31_6l1ec"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="32_sl2q8"]
 [ext_resource type="Shader" uid="uid://b7sumregr4g03" path="res://scripts/shaders/glow_outline.gdshader" id="33_glow"]
 
@@ -117,33 +108,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_d8t8f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_thg3f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_ew3nj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_mf3tt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_1yiqy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_tleir")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_w4kja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_pet07")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_2prtt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_6l1ec")
 }],
 "loop": false,
 "name": &"interact",

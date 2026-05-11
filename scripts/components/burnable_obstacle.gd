@@ -1,7 +1,7 @@
 class_name BurnableObstacle
 extends Area2D
 
-enum TYPE { FIRE, FIREWORK }
+enum TYPE { FIRE, FIREWORK, BOMB }
 
 @export var type: TYPE
 @export var damage_amount: int = 0
@@ -27,7 +27,7 @@ func _ready() -> void:
 			sprite.play("big_fire")
 
 func _physics_process(_delta: float) -> void:
-	if type != TYPE.FIREWORK or _detonated:
+	if (type != TYPE.FIREWORK and type != TYPE.BOMB) or _detonated:
 		return
 	for body in get_overlapping_bodies():
 		if body is Player and (body as Player).current_state == Player.STATE.BURNING:
@@ -41,7 +41,7 @@ func _on_body_entered(body: Node) -> void:
 	match type:
 		TYPE.FIRE:
 			_handle_fire(player)
-		TYPE.FIREWORK:
+		TYPE.FIREWORK, TYPE.BOMB:
 			if player.current_state == Player.STATE.BURNING:
 				_detonate(player)
 
@@ -50,6 +50,7 @@ func _on_body_exited(body: Node) -> void:
 		_stop_damage_cycle()
 
 func _handle_fire(player: Player) -> void:
+	sound_manager.play("Fire")
 	if damage_amount > 0:
 		_start_damage_cycle(player)
 		return
@@ -84,6 +85,10 @@ func _detonate(player: Player) -> void:
 		return
 	_detonated = true
 	_play_explode_if_present()
+	if type == TYPE.BOMB:
+		sound_manager.play("Bomb")
+	else:
+		sound_manager.play("Fireworks")
 	player.die()
 
 func _play_explode_if_present() -> void:

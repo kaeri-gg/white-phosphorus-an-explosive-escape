@@ -26,6 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	super._on_body_entered(body)
 	if body is Player and _heal_timer:
 		_current_healing_player = body
+		sound_manager.play("Heal")
 		_heal_timer.wait_time = heal_interval
 		_heal_timer.start()
 

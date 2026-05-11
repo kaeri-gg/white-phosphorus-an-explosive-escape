@@ -75,6 +75,7 @@ stretch_mode = 4
 custom_label_text = "Start"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

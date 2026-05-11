@@ -76,7 +76,7 @@ size = Vector2(516.15155, 1337.394)
 [node name="ObstacleBomb" type="Area2D" unique_id=1256502193]
 scale = Vector2(0.07943403, 0.07552)
 script = ExtResource("1_o8xgl")
-type = 1
+type = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954247983]
 sprite_frames = SubResource("SpriteFrames_r03eu")

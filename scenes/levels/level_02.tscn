@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_kxbgd"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="5_gus8w"]
+[ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_xwa1x"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="6_kx1rr"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="7_kx1rr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_xwa1x"]
@@ -58,7 +59,19 @@ expand_mode = 5
 [node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_kxbgd")]
 player = NodePath("../../Player")
 
-[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_lky54")]
+[node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=1137366785]
+custom_minimum_size = Vector2(150, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="HomeButton" parent="UILayer/ButtonsContainer" unique_id=445205108 instance=ExtResource("4_lky54")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=1493711662 instance=ExtResource("5_xwa1x")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_gus8w")]
 position = Vector2(27, 321)
