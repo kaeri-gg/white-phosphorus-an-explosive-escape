@@ -123,3 +123,4 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="Button/NextScreen" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="Button/NextScreen" to="." method="_on_proceed_button_pressed"]
