@@ -26,8 +26,8 @@ concurrency:
 env:
   GODOT_VERSION: "4.6"
   GODOT_STATUS: "stable"
-  EXPORT_PRESET: "The Phosphorus Game"
-  ITCH_IO_GAME_SLUG: "the-phosphorus-game"
+  EXPORT_PRESET: "White Phosphorus: An Explosive Escape"
+  ITCH_IO_GAME_SLUG: "white-phosphorus-an-explosive-escape"
   ITCH_IO_CHANNEL: "html5"
 
 jobs:
@@ -105,7 +105,7 @@ jobs:
           cat > _site/index.html <<'EOF'
           <!doctype html>
           <meta charset="utf-8">
-          <title>The Phosphorus Game</title>
+          <title>White Phosphorus: An Explosive Escape</title>
           <meta http-equiv="refresh" content="0; url=release/">
           <link rel="canonical" href="release/">
           <p>Loading… <a href="release/">click here</a> if nothing happens.</p>
