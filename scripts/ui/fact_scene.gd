@@ -13,12 +13,8 @@ func _wire_button(unique_name: String, scene_path: String) -> void:
 	var button: ActionButton = get_node_or_null("%" + unique_name)
 	if not button:
 		return
-	for connection in button.pressed.get_connections():
-		button.pressed.disconnect(connection.callable)
-	button.pressed.connect(_change_scene.bind(scene_path))
-
-func _on_proceed_button_pressed() -> void:
-	_change_scene(next_scene_path)
+	if not button.pressed.is_connected(_change_scene.bind(scene_path)):
+		button.pressed.connect(_change_scene.bind(scene_path))
 
 func _change_scene(path: String) -> void:
 	if path.is_empty():
