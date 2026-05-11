@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://ijw6ubii34sy"]
+
+[ext_resource type="Theme" uid="uid://dbd7sj28jdmjd" path="res://theme/modal_theme.tres" id="1_582tx"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_bmajt"]
+[ext_resource type="Script" uid="uid://dd8b2soj8keq5" path="res://scripts/managers/modal_manager.gd" id="2_suqfr"]
+[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="2_v65hy"]
+[ext_resource type="Script" uid="uid://wiwu7rye4fmx" path="res://scripts/managers/settings_control.gd" id="3_qtb06"]
+[ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
+bg_color = Color(0.8729885, 0.8593587, 0.83212805, 1)
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.34509805)
+shadow_size = 1
+shadow_offset = Vector2(8, 10)
+
+[sub_resource type="Theme" id="Theme_4j485"]
+
+[node name="ModalManager" type="Control" unique_id=1387123506]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bmajt")
+script = ExtResource("2_suqfr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1106073495]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=547187334]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -275.0
+offset_right = 250.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
+layout_mode = 2
+theme = ExtResource("1_582tx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
+
+[node name="SettingsControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=156718134]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_qtb06")
+
+[node name="Container" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl" unique_id=589389467]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -173.0
+offset_right = 167.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings" type="GridContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=703205411]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings" unique_id=1187720455]
+layout_mode = 2
+
+[node name="SettingsLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/LabelsContainer" unique_id=281525092]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v65hy")
+theme_override_font_sizes/font_size = 20
+text = "Adjust Settings:"
+
+[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings" unique_id=82743246]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails" unique_id=1522614584]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="UIScaleLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1203257930]
+layout_mode = 2
+text = "UI Scale:"
+
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1606071323]
+layout_mode = 2
+text = "Music Volume:"
+
+[node name="SoundFXLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1998582555]
+layout_mode = 2
+text = "SoundFX Volume:"
+
+[node name="AdjustmentContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails" unique_id=1588678649]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="UIScaleOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=146620165]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 4
+popup/item_0/text = "90%"
+popup/item_0/id = 0
+popup/item_1/text = "100%"
+popup/item_1/id = 1
+popup/item_2/text = "115%"
+popup/item_2/id = 2
+popup/item_3/text = "125%"
+popup/item_3/id = 3
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=673056205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+value = 50.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=786689803]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+value = 70.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=460857372]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Controls" type="GridContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=634716336]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/v_separation = 10
+
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls" unique_id=1721298874]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="ControlsLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/LabelsContainer" unique_id=1999210947]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v65hy")
+theme_override_font_sizes/font_size = 20
+text = "Controls:"
+
+[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls" unique_id=305075655]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails" unique_id=1618545250]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Movement" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=604143838]
+layout_mode = 2
+text = "Movement:"
+
+[node name="Jump" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1815229768]
+layout_mode = 2
+text = "Jump:"
+
+[node name="Interact" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1959060997]
+layout_mode = 2
+text = "Interact:"
+
+[node name="RestartLevel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1470750563]
+layout_mode = 2
+text = "Restart:"
+
+[node name="ReturnHome" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1697258619]
+layout_mode = 2
+text = "Return Home:"
+
+[node name="Settings" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=345114588]
+layout_mode = 2
+text = "Settings:"
+
+[node name="KeysContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails" unique_id=956387502]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Movement" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2080122226]
+layout_mode = 2
+text = "[A], [D] or [<], [>]"
+
+[node name="Jump" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2029938215]
+layout_mode = 2
+text = "[Space], [W], arrow up"
+
+[node name="Interact" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=157710534]
+layout_mode = 2
+text = "[E]"
+
+[node name="RestartLevel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=64652160]
+layout_mode = 2
+text = "[R]"
+
+[node name="ReturnHome" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=1181529399]
+layout_mode = 2
+text = "[B]"
+
+[node name="Settings" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=939327787]
+layout_mode = 2
+text = "[esc]"
+
+[node name="HomeContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl" unique_id=974557886]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.5
+offset_top = -23.0
+offset_right = 64.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 20
+
+[node name="ReturnToHomeLink" type="LinkButton" parent="MarginContainer/PanelContainer/SettingsControl/HomeContainer" unique_id=1849991901]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_4j485")
+text = "Return to home"
+underline = 1
+
+[node name="AboutTheGameControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=190346835]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="About" type="GridContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl" unique_id=221004420]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -112.5
+offset_right = 175.0
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl/About" unique_id=558617517]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="AboutLabel" type="Label" parent="MarginContainer/PanelContainer/AboutTheGameControl/About/LabelsContainer" unique_id=1599243744]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v65hy")
+theme_override_font_sizes/font_size = 23
+text = "About the game"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl/About" unique_id=1683192745]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Description" type="Label" parent="MarginContainer/PanelContainer/AboutTheGameControl/About/LabelContainer" unique_id=1588838205]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "This game was created as a safe and enjoyable way for students and players to learn about phosphorus. Through a light and interactive experience, we aim that this game encourages curiosity and understanding in a way that feels both educational and fun."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" parent="MarginContainer" unique_id=2059083527 instance=ExtResource("3_suqfr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
