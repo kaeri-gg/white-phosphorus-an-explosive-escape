@@ -147,4 +147,5 @@ jobs:
           itch_user: ${{ secrets.ITCH_IO_USERNAME }}
           itch_game: ${{ env.ITCH_IO_GAME_SLUG }}
           version: ${{ github.ref_name }}
-          files: ${{ env.ITCH_IO_CHANNEL }}/
+          files: |
+            ${{ env.ITCH_IO_CHANNEL }} ${{ env.ITCH_IO_CHANNEL }}/
