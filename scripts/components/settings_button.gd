@@ -41,6 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if key_event.keycode != KEY_ESCAPE:
 		return
 
+	sound_manager.play("Click")
 	ui_manager.toggle_settings_modal()
 	get_viewport().set_input_as_handled()
 
