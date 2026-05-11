@@ -10,6 +10,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    tags: ['v*']       # v1.0.0, v1.2.3, etc. trigger itch.io publish
   workflow_dispatch:    # also allow manual runs from the Actions tab
 
 permissions:
@@ -26,6 +27,8 @@ env:
   GODOT_VERSION: "4.6"
   GODOT_STATUS: "stable"
   EXPORT_PRESET: "The Phosphorus Game"
+  ITCH_IO_GAME_SLUG: "the-phosphorus-game"
+  ITCH_IO_CHANNEL: "html5"
 
 jobs:
   build:
@@ -85,6 +88,13 @@ jobs:
           echo "--- total size ---"
           du -sh release/
 
+      - name: Upload web export artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-export
+          path: release/
+          retention-days: 1
+
       - name: Stage Pages artifact
         # Mirror the existing deploy URL structure so the game stays at
         # https://<user>.github.io/<repo>/release/. A tiny redirect at the
@@ -117,3 +127,25 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  itch-publish:
+    name: Publish to itch.io
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag'
+    steps:
+      - name: Download web export
+        uses: actions/download-artifact@v4
+        with:
+          name: web-export
+          path: release/
+
+      - name: Push to itch.io
+        uses: Ayowel/butler-to-itch@v1.3.0
+        with:
+          butler_key: ${{ secrets.ITCH_IO_API_KEY }}
+          itch_user: ${{ secrets.ITCH_IO_USERNAME }}
+          itch_game: ${{ env.ITCH_IO_GAME_SLUG }}
+          channel: ${{ env.ITCH_IO_CHANNEL }}
+          version: ${{ github.ref_name }}
+          package: release/
