@@ -138,14 +138,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: web-export
-          path: release/
+          path: ${{ env.ITCH_IO_CHANNEL }}
 
       - name: Push to itch.io
         uses: Ayowel/butler-to-itch@v1.3.0
         with:
           butler_key: ${{ secrets.ITCH_IO_API_KEY }}
           itch_user: ${{ secrets.ITCH_IO_USERNAME }}
-          itch_game: ${{ env.ITCH_IO_GAME_SLUG }}:${{ env.ITCH_IO_CHANNEL }}
-          auto_channel: false
+          itch_game: ${{ env.ITCH_IO_GAME_SLUG }}
           version: ${{ github.ref_name }}
-          files: release/
+          files: ${{ env.ITCH_IO_CHANNEL }}/
