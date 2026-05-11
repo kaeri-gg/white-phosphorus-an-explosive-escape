@@ -74,6 +74,9 @@ var env_state: ENV = ENV.AIR
 var was_moving: bool = false
 var is_dying: bool = false
 var just_left_water: bool = false
+var _was_on_floor: bool = false
+var _landed_sound_played: bool = false
+var _air_frames: int = 0
 
 func _ready() -> void:
 	current_health = PLAYER_HEALTH
@@ -160,6 +163,19 @@ func _physics_process(_delta: float) -> void:
 		movement_change.emit(was_moving)
 
 	move_and_slide()
+
+	var on_floor_now := is_on_floor()
+	if not on_floor_now:
+		_air_frames += 1
+		if _air_frames >= 4:
+			_landed_sound_played = false
+	else:
+		_air_frames = 0
+		if not _was_on_floor and env_state == ENV.AIR and not _landed_sound_played:
+			sound_manager.play("MetalJump")
+			_landed_sound_played = true
+	_was_on_floor = on_floor_now
+
 	_clamp_horizontal_to_bounds()
 	_flip_on_move()
 
@@ -205,6 +221,7 @@ func _stop_timers() -> void:
 func enter_water() -> void:
 	just_left_water = false
 	update_environment(ENV.WATER)
+	sound_manager.play("EnterWater")
 	detect_environment()
 
 func leave_water() -> void:

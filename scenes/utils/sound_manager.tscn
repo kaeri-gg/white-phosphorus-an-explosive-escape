@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dbwe2yebdw4yc" path="res://assets/audio/samararaine__on-fire.wav" id="13_stfo2"]
 [ext_resource type="AudioStream" uid="uid://bxg7mcmsxurix" path="res://assets/audio/rutgermuller__metal-jump3.wav" id="14_ck3uw"]
 [ext_resource type="AudioStream" uid="uid://b7thjeajvashq" path="res://assets/audio/kagateni__reach-the-goal.wav" id="15_l71x8"]
+[ext_resource type="AudioStream" uid="uid://b8s04iweao7v2" path="res://assets/audio/danhelbling__enter-water.wav" id="15_umb60"]
 [ext_resource type="AudioStream" uid="uid://ypooy1dw2gfv" path="res://assets/audio/abloemarts242029__buring.wav" id="16_umb60"]
 [ext_resource type="AudioStream" uid="uid://0jo61es1fjy2" path="res://assets/audio/plasterbrain__jump.wav" id="17_0b1e3"]
 
@@ -72,4 +73,8 @@ bus = &"SFX"
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1103134359]
 stream = ExtResource("17_0b1e3")
 volume_db = 0.8
+bus = &"SFX"
+
+[node name="EnterWater" type="AudioStreamPlayer" parent="." unique_id=216198925]
+stream = ExtResource("15_umb60")
 bus = &"SFX"
