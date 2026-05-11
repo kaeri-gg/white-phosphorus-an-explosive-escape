@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_47boq"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_8m3pt"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="6_1f6xj"]
+[ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="6_6m61h"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="6_vwuh2"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/components/factory_leak.tscn" id="7_maafn"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="8_uu5oa"]
@@ -77,7 +78,19 @@ metadata/_edit_lock_ = true
 player = NodePath("../../Player")
 metadata/_edit_lock_ = true
 
-[node name="HomeButton" parent="UILayer" unique_id=445205108 instance=ExtResource("4_47boq")]
+[node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=569981032]
+custom_minimum_size = Vector2(150, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="HomeButton" parent="UILayer/ButtonsContainer" unique_id=445205108 instance=ExtResource("4_47boq")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=507602936 instance=ExtResource("6_6m61h")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("6_1f6xj")]
 position = Vector2(20, 174)

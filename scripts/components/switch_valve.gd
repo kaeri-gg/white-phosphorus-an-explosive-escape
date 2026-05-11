@@ -47,6 +47,7 @@ func _on_player_pressed_switch() -> void:
 	if target_water == null:
 		push_warning("%s: target_water is not set." % name)
 		return
+	sound_manager.play("OpeningValve")
 
 	switch_sprite.play("interact")
 	interact(current_player)

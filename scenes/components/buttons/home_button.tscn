@@ -25,3 +25,5 @@ layout_mode = 2
 texture_normal = ExtResource("2_ck4yf")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/HomeButton" to="." method="return_home"]

@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/components/player_dialog.tscn" id="5_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/components/factory_leak.tscn" id="6_1b0o8"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="6_lswbx"]
+[ext_resource type="Script" uid="uid://ducycaaldp103" path="res://scripts/components/home_button.gd" id="6_uujh0"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/components/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
+[ext_resource type="FontFile" uid="uid://cq20jyx8gbygk" path="res://assets/fonts/ShantellSans-SemiBold.ttf" id="9_uujh0"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/components/killzone.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="10_jmes4"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="11_ijn0p"]
@@ -29,6 +31,7 @@
 [sub_resource type="Theme" id="Theme_uujh0"]
 
 [sub_resource type="Theme" id="Theme_3t34l"]
+Label/fonts/font = ExtResource("9_uujh0")
 
 [node name="Level_01" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -104,7 +107,7 @@ layout_mode = 2
 theme = SubResource("Theme_uujh0")
 theme_override_fonts/font = ExtResource("6_lswbx")
 theme_override_font_sizes/font_size = 23
-text = "Hello! Here's a little facts about me:"
+text = "How to play:"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -113,9 +116,7 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(450, 150)
 layout_mode = 2
 theme = SubResource("Theme_3t34l")
-text = "My name is \"Phos\",  and I am white phosphorus! I am minced from Phosphate rock.
-
-Although they said my name means \"light-bringer\", I am often stored under water for everyone's safety, because I  can ignite when I am exposed to air, and I'm uncontrollable!"
+text = "Press <A>, <W>, <S>, and <D> for movement."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

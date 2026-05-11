@@ -119,6 +119,7 @@ func change_state(new_state: STATE) -> void:
 		STATE.STABLE:
 			stabilized.emit()
 		STATE.BURNING:
+			sound_manager.play("Burning")
 			burned.emit()
 		STATE.VIBRATING:
 			shook.emit()
@@ -143,6 +144,7 @@ func _physics_process(_delta: float) -> void:
 			player_sprite.stop()
 			player_sprite.play(jump_anim)
 		jump_count += 1
+		sound_manager.play("Jump")
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("move_left", "move_right")
@@ -234,7 +236,10 @@ func _on_damage_tick() -> void:
 func take_damage(amount: int) -> void:
 	if current_state == STATE.DEAD:
 		return
+	if amount <= 0:
+		return
 
+	sound_manager.play("Damage")
 	current_health -= amount
 	health_changed.emit(current_health, PLAYER_HEALTH)
 

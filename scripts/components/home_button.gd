@@ -6,7 +6,8 @@ extends Control
 @export var fade_duration: float = 0.6
 
 func _ready() -> void:
-	home_button.pressed.connect(return_home)
+	if home_button and not home_button.pressed.is_connected(return_home):
+		home_button.pressed.connect(return_home)
 
 func return_home() -> void:
 	sound_manager.play("Click")

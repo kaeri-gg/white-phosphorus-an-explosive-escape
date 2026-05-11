@@ -4,7 +4,8 @@ extends Control
 @onready var restart_button: TextureButton = %RestartButton
 
 func _ready() -> void:
-	restart_button.pressed.connect(restart_level)
+	if restart_button and not restart_button.pressed.is_connected(restart_level):
+		restart_button.pressed.connect(restart_level)
 func _unhandled_input(event: InputEvent) -> void:
 	if !(event is InputEventKey):
 		return

@@ -36,6 +36,6 @@ func _try_advance(player: Player) -> void:
 		return
 
 	is_transitioning = true
-	sound_manager.play("EnterGame")
+	sound_manager.play("ReachPortal")
 	await utils.fade_to_white(get_tree().current_scene, fade_duration)
 	get_tree().change_scene_to_file(resolved)
