@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="2_v65hy"]
 [ext_resource type="Script" uid="uid://wiwu7rye4fmx" path="res://scripts/managers/settings_control.gd" id="3_qtb06"]
 [ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
+[ext_resource type="Script" uid="uid://dphgyew6ubpqt" path="res://scripts/components/tutorial_slider.gd" id="4_tsldr"]
+[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/move-left-right.tres" id="5_gif0"]
+[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/move-jump.tres" id="6_gif1"]
+[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/interact.tres" id="7_gif2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
 bg_color = Color(0.8729885, 0.8593587, 0.83212805, 1)
@@ -22,6 +26,7 @@ shadow_offset = Vector2(8, 10)
 [sub_resource type="Theme" id="Theme_4j485"]
 
 [node name="ModalManager" type="Control" unique_id=1387123506]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,14 +62,15 @@ grow_vertical = 2
 
 [node name="Settings" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
+script = ExtResource("3_qtb06")
 
 [node name="SettingsControl" type="Control" parent="MarginContainer/Settings" unique_id=156718134]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("3_qtb06")
 
 [node name="Container" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl" unique_id=589389467]
 layout_mode = 1
@@ -125,6 +131,7 @@ theme_override_constants/separation = 15
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 alignment = 1
 selected = 1
 item_count = 4
@@ -141,6 +148,7 @@ popup/item_3/id = 3
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 value = 50.0
 rounded = true
 tick_count = 10
@@ -151,6 +159,7 @@ ticks_position = 3
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 value = 70.0
 rounded = true
 tick_count = 10
@@ -206,6 +215,10 @@ text = "Restart:"
 layout_mode = 2
 text = "Return Home:"
 
+[node name="Help" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=717057546]
+layout_mode = 2
+text = "Help:"
+
 [node name="Settings" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=345114588]
 layout_mode = 2
 text = "Settings:"
@@ -233,6 +246,10 @@ text = "[R]"
 [node name="ReturnHome" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=1181529399]
 layout_mode = 2
 text = "[B]"
+
+[node name="Help" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=239210789]
+layout_mode = 2
+text = "[H]"
 
 [node name="Settings" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=939327787]
 layout_mode = 2
@@ -264,13 +281,12 @@ underline = 1
 
 [node name="AboutTheGame" type="PanelContainer" parent="MarginContainer" unique_id=475833745]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
 
 [node name="AboutTheGameControl" type="Control" parent="MarginContainer/AboutTheGame" unique_id=1530432824]
-unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="About" type="GridContainer" parent="MarginContainer/AboutTheGame/AboutTheGameControl" unique_id=1584218335]
@@ -322,7 +338,141 @@ theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
 
 [node name="TutorialContainer" type="Control" parent="MarginContainer/Tutorial" unique_id=430936643]
+unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("4_tsldr")
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/Tutorial/TutorialContainer" unique_id=100200001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1030957234]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Title" unique_id=100200002]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_v65hy")
+theme_override_font_sizes/font_size = 20
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="SliderRow" type="HBoxContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=100200003]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200004]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 35
+text = "‹"
+
+[node name="GIFContainer" type="Control" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200005]
+custom_minimum_size = Vector2(270, 152)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GIF_0" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200006]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_gif0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="GIF_1" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200007]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_gif1")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="GIF_2" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200008]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_gif2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NextButton" type="Button" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200009]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 35
+text = "›"
+
+[node name="Dots" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1386200616]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="DotsRow" type="HBoxContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Dots" unique_id=100200010]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Dot0" type="ColorRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Dots/DotsRow" unique_id=100200011]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.881693, 0, 0.2557429, 1)
+
+[node name="Dot1" type="ColorRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Dots/DotsRow" unique_id=100200012]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.881693, 0, 0.2557429, 1)
+
+[node name="Dot2" type="ColorRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Dots/DotsRow" unique_id=100200013]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.881693, 0, 0.2557429, 1)
+
+[node name="Description" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1279876685]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="InstructionLabel" type="Label" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Description" unique_id=100200014]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="CloseButton" parent="MarginContainer" unique_id=2059083527 instance=ExtResource("3_suqfr")]
 unique_name_in_owner = true

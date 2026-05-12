@@ -1,7 +1,7 @@
 extends Control
 
 @export var player: Player
-@export var flash_color: Color = Color(0.584, 0.090, 0.102, 1.0)
+@export var flash_color: Color = Color(0.976, 0.0, 0.239)
 @onready var damage_flash: ColorRect = %DamageFlash
 @onready var health_bar: TextureRect = %HealthBar
 

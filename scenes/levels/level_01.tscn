@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/ui/factory_leak.tscn" id="6_1b0o8"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="6_lswbx"]
+[ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="6_uujh0"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="FontFile" uid="uid://cq20jyx8gbygk" path="res://assets/fonts/ShantellSans-SemiBold.ttf" id="9_uujh0"]
@@ -40,6 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t0hvh")
+show_tutorial_on_start = true
 metadata/_edit_horizontal_guides_ = [716.0, 578.0, 518.0]
 metadata/_edit_vertical_guides_ = [2615.0]
 
@@ -57,20 +59,28 @@ expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]
 
-[node name="HealthUI" parent="UILayer" unique_id=1134340404 instance=ExtResource("3_lswbx")]
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_lswbx")]
+player = NodePath("../../Player")
+flash_color = Color(0.9764706, 0, 0.23921569, 1)
 
 [node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=311807283]
 custom_minimum_size = Vector2(150, 80)
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 2
+offset_right = 198.0
+offset_bottom = 80.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
 
 [node name="HomeButton" parent="UILayer/ButtonsContainer" unique_id=445205108 instance=ExtResource("26_lswbx")]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 
 [node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=648855077 instance=ExtResource("5_lswbx")]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(55, 60)
+layout_mode = 2
+
+[node name="HelpButton" parent="UILayer/ButtonsContainer" unique_id=1066859236 instance=ExtResource("6_uujh0")]
+custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="UILayer" unique_id=1994801465]
@@ -162,7 +172,7 @@ scale = Vector2(0.2243206, 0.27741075)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("3_2djvx")]
 unique_name_in_owner = true
-position = Vector2(127, 321)
+position = Vector2(122.00001, 441)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2650, 720)
 

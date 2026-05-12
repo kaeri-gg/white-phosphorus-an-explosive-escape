@@ -3,6 +3,10 @@ extends Control
 
 signal on_click
 
+const HOVER_MODULATE := Color(1.15, 1.15, 1.15)
+const PRESS_MODULATE := Color(0.85, 0.85, 0.85)
+const NORMAL_MODULATE := Color(1.0, 1.0, 1.0)
+
 @onready var settings_button: TextureButton = %SettingsButton
 var hovered = false
 
@@ -15,20 +19,20 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	hovered = true
-	modulate.a = 0.8
+	modulate = HOVER_MODULATE
 
 func _on_mouse_exited() -> void:
 	hovered = false
-	modulate.a = 1.0
+	modulate = NORMAL_MODULATE
 
 func _on_button_down() -> void:
-	modulate.a = 0.5
+	modulate = PRESS_MODULATE
 
 func _on_button_up() -> void:
 	if hovered:
-		modulate.a = 0.8
+		modulate = HOVER_MODULATE
 	else:
-		modulate.a = 1.0
+		modulate = NORMAL_MODULATE
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !(event is InputEventKey):

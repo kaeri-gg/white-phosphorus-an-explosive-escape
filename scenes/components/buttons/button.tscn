@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cciu348l6oihd" path="res://scripts/components/button.gd" id="2_xafwk"]
 
 [node name="Button" type="TextureButton" unique_id=200293444]
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_gpd8i")
 script = ExtResource("2_xafwk")
 
@@ -14,3 +15,4 @@ theme = ExtResource("1_gpd8i")
 [node name="Button" type="TextureButton" parent="MarginContainer" unique_id=1772587905]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_default_cursor_shape = 2
