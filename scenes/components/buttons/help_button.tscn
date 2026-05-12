@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://87opharrxjhj"]
+
+[ext_resource type="Script" path="res://scripts/components/help_button.gd" id="1_helpscr"]
+[ext_resource type="Texture2D" uid="uid://bpsejw3rij53l" path="res://assets/ui/buttons/Help icon.png" id="1_iahjj"]
+
+[node name="HelpButton" type="Control" unique_id=445205108]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 60.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_helpscr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 60.0
+theme_override_constants/margin_top = 20
+
+[node name="HelpButton" type="TextureButton" parent="MarginContainer" unique_id=1509285366]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_iahjj")
+ignore_texture_size = true
+stretch_mode = 5

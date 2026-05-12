@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="6_6m61h"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/ui/killzone.tscn" id="6_vwuh2"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/ui/factory_leak.tscn" id="7_maafn"]
+[ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="7_rfj36"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="8_uu5oa"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/ui/healing_water.tscn" id="9_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="9_uxfkd"]
@@ -74,20 +75,27 @@ metadata/_edit_lock_ = true
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=229300876]
 
-[node name="HealthUI" parent="UILayer" unique_id=1134340404 instance=ExtResource("4_6m61h")]
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("4_6m61h")]
+player = NodePath("../../Player")
 
-[node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=569981032]
+[node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=2085833800]
 custom_minimum_size = Vector2(150, 80)
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 2
+offset_right = 198.0
+offset_bottom = 80.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
 
 [node name="HomeButton" parent="UILayer/ButtonsContainer" unique_id=445205108 instance=ExtResource("4_47boq")]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 
-[node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=507602936 instance=ExtResource("6_6m61h")]
-custom_minimum_size = Vector2(70, 70)
+[node name="RestartButton" parent="UILayer/ButtonsContainer" unique_id=612669929 instance=ExtResource("6_6m61h")]
+custom_minimum_size = Vector2(55, 60)
+layout_mode = 2
+
+[node name="HelpButton" parent="UILayer/ButtonsContainer" unique_id=1660615535 instance=ExtResource("7_rfj36")]
+custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("6_1f6xj")]

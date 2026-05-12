@@ -7,8 +7,10 @@ signal pressed
 @export var theme_variation: String = ""
 @export var enable_space_shortcut: bool = true
 @export var texture: Texture2D
-@export_range(0.1, 1.0) var pressed_opacity: float = 0.5
-@export_range(0.1, 1.0) var hover_opacity: float = 0.8
+
+const HOVER_MODULATE := Color(1.15, 1.15, 1.15)
+const PRESS_MODULATE := Color(0.85, 0.85, 0.85)
+const NORMAL_MODULATE := Color(1.0, 1.0, 1.0)
 
 @onready var button: TextureButton = %Button
 var hovered = false
@@ -20,6 +22,7 @@ func _ready() -> void:
 		button.theme_type_variation = theme_variation
 	if texture:
 		button.texture_normal = texture
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 	if enable_space_shortcut:
 		var shortcut := Shortcut.new()
@@ -37,23 +40,23 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
 	hovered = true
 	if not _pressed:
-		modulate.a = hover_opacity
+		modulate = HOVER_MODULATE
 
 func _on_mouse_exited() -> void:
 	hovered = false
 	if not _pressed:
-		modulate.a = 1.0
+		modulate = NORMAL_MODULATE
 
 func _on_button_down() -> void:
 	_pressed = true
-	modulate.a = pressed_opacity
+	modulate = PRESS_MODULATE
 
 func _on_button_up() -> void:
 	_pressed = false
 	if hovered:
-		modulate.a = hover_opacity
+		modulate = HOVER_MODULATE
 	else:
-		modulate.a = 1.0
+		modulate = NORMAL_MODULATE
 
 func _on_button_pressed() -> void:
 	pressed.emit()

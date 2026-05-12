@@ -135,6 +135,12 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		return
 
+	var _modal := ui_manager.modal_manager
+	if _modal != null and is_instance_valid(_modal) and _modal.is_open():
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * _delta
 
@@ -395,5 +401,8 @@ func _flip_on_move() -> void:
 		player_sprite.flip_h = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	var _modal := ui_manager.modal_manager
+	if _modal != null and is_instance_valid(_modal) and _modal.is_open():
+		return
 	if event.is_action_pressed("press_e_to_interact") and not event.is_echo():
 		switch_pressed.emit()

@@ -3,11 +3,12 @@ extends Control
 
 signal clicked
 
-@onready var close_button: TextureButton = %CloseButton
+@onready var close_button: TextureButton = $MarginContainer/CloseButton
 var hovered = false
 
 func _ready() -> void:
 	close_button.pressed.connect(close_self)
+	close_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	close_button.mouse_entered.connect(_on_mouse_entered)
 	close_button.mouse_exited.connect(_on_mouse_exited)
 	close_button.button_down.connect(_on_button_down)
