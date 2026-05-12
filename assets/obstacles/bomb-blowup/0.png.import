@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boalst5ila8jd"
-path="res://.godot/imported/wood-1.png-6fda8cde2fc7b6ee38609016564f0b13.ctex"
+uid="uid://1qmixgm46hfj"
+path="res://.godot/imported/0.png-d5994e0e432617c7e05d71ae35125d61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obstacles/wood-1.png"
-dest_files=["res://.godot/imported/wood-1.png-6fda8cde2fc7b6ee38609016564f0b13.ctex"]
+source_file="res://assets/obstacles/bomb-blowup/0.png"
+dest_files=["res://.godot/imported/0.png-d5994e0e432617c7e05d71ae35125d61.ctex"]
 
 [params]
 
