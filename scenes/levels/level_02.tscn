@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_v5pqk"]
 [ext_resource type="Texture2D" uid="uid://bjwbq34lkj56d" path="res://assets/backgrounds/level-backgrounds/Level 2 Background.png" id="2_lky54"]
-[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/utils/health_ui.tscn" id="3_kxbgd"]
+[ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_gus8w"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_gus8w"]
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_xwa1x"]
@@ -56,8 +56,7 @@ expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]
 
-[node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("3_kxbgd")]
-player = NodePath("../../Player")
+[node name="HealthUI" parent="UILayer" unique_id=1134340404 instance=ExtResource("3_gus8w")]
 
 [node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=1137366785]
 custom_minimum_size = Vector2(150, 80)

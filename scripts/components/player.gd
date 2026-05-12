@@ -172,7 +172,13 @@ func _physics_process(_delta: float) -> void:
 	else:
 		_air_frames = 0
 		if not _was_on_floor and env_state == ENV.AIR and not _landed_sound_played:
-			sound_manager.play("MetalJump")
+			var on_obstacle := false
+			for i in get_slide_collision_count():
+				if get_slide_collision(i).get_collider().get_parent() is BurnableObstacle:
+					on_obstacle = true
+					break
+			if not on_obstacle:
+				sound_manager.play("MetalJump")
 			_landed_sound_played = true
 	_was_on_floor = on_floor_now
 

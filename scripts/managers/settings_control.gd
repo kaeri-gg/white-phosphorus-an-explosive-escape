@@ -5,7 +5,7 @@ extends Control
 @onready var sfx_volume_slider: HSlider = %SFXVolumeSlider
 @onready var ui_scale_option: OptionButton = %UIScaleOptionButton
 
-const UI_SCALES := [0.9, 1.0, 1.15, 1.25]
+const UI_SCALES := [0.9, 1.0, 1.15]
 
 func _ready() -> void:
 	bind_ui_settings()
