@@ -23,15 +23,16 @@
 [ext_resource type="Texture2D" uid="uid://1tuc3f4fmtfe" path="res://assets/platforms/blue switch/Switch_20.png" id="21_qh186"]
 [ext_resource type="Texture2D" uid="uid://dr680n7fxc6pa" path="res://assets/platforms/blue switch/Switch_21.png" id="22_d8t8f"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="32_sl2q8"]
-[ext_resource type="Shader" uid="uid://b7sumregr4g03" path="res://scripts/shaders/glow_outline.gdshader" id="33_glow"]
+[ext_resource type="Shader" uid="uid://xlkn7okevwpn" path="res://scripts/shaders/healing_aura.gdshader" id="33_aura"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_glow"]
-shader = ExtResource("33_glow")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_width = 28.0
-shader_parameter/intensity = 1.8
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aura"]
+shader = ExtResource("33_aura")
+shader_parameter/aura_color = Color(0, 1, 1, 1)
+shader_parameter/aura_radius = 100.0
+shader_parameter/spread = 1.8
+shader_parameter/brightness = 0.65
 shader_parameter/pulse_speed = 2.0
-shader_parameter/pulse_min = 0.4
+shader_parameter/pulse_min = 0.25
 shader_parameter/pulse_max = 1.0
 shader_parameter/enabled = true
 
@@ -133,7 +134,7 @@ script = ExtResource("1_en8sg")
 
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="." unique_id=157563623]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_glow")
+material = SubResource("ShaderMaterial_aura")
 position = Vector2(-1, 10)
 scale = Vector2(0.6763866, 0.6763866)
 sprite_frames = SubResource("SpriteFrames_why7j")

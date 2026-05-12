@@ -299,14 +299,17 @@ scale = Vector2(0.29498744, 0.41389465)
 
 [node name="HealingWater" parent="." unique_id=1954191531 instance=ExtResource("9_i7p7m")]
 position = Vector2(1267, 155)
+player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(150, 70)
 
 [node name="HealingWater2" parent="." unique_id=560815328 instance=ExtResource("9_i7p7m")]
 position = Vector2(2446, 359)
+player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(150, 70)
 
 [node name="HealingWater3" parent="." unique_id=1424932910 instance=ExtResource("9_i7p7m")]
 position = Vector2(421, 770)
+player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(190, 70)
 
 [node name="PlatformRedPipe2" parent="." unique_id=2088219178 instance=ExtResource("8_uu5oa")]

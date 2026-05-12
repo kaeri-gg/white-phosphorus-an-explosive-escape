@@ -4,5 +4,7 @@
 
 [node name="HealingWater" type="Node2D" unique_id=285385396]
 script = ExtResource("1_goeht")
-surface_color = Color(0, 1, 1, 0.54901963)
-water_fill_color = Color(0, 1, 1, 0.54901963)
+surface_glow_color = Color(0.67615175, 0.93464357, 0.99999994, 1)
+player_aura_color = Color(1, 1, 1, 1)
+surface_color = Color(0.45490196, 1, 0.8392157, 0.7058824)
+water_fill_color = Color(0.45490196, 1, 0.8392157, 0.7058824)

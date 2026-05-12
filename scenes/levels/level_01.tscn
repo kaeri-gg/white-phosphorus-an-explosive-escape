@@ -60,6 +60,7 @@ expand_mode = 5
 [node name="HealthUI" parent="UILayer" unique_id=1134340404 node_paths=PackedStringArray("player") instance=ExtResource("10_jmes4")]
 scale = Vector2(0.9995828, 1)
 player = NodePath("../../Player")
+flash_color = Color(0.95484644, 0.17466179, 0.27213234, 1)
 
 [node name="ButtonsContainer" type="GridContainer" parent="UILayer" unique_id=311807283]
 custom_minimum_size = Vector2(150, 80)
