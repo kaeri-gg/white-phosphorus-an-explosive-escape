@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://besrmivwm4nx"]
 
 [ext_resource type="Script" uid="uid://cq7fxfvxsdi06" path="res://scripts/components/burnable_obstacle.gd" id="1_o8xgl"]
+[ext_resource type="Texture2D" uid="uid://1qmixgm46hfj" path="res://assets/obstacles/bomb-blowup/0.png" id="2_bsnj2"]
 [ext_resource type="Texture2D" uid="uid://dac38iavkw81d" path="res://assets/obstacles/bomb-blowup/1.png" id="2_gc0md"]
 [ext_resource type="Texture2D" uid="uid://bw042pv4oga60" path="res://assets/obstacles/bomb-blowup/2.png" id="3_bsnj2"]
 [ext_resource type="Texture2D" uid="uid://dql0qvg58ir2a" path="res://assets/obstacles/bomb-blowup/3.png" id="4_b2xit"]
@@ -19,13 +20,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gc0md")
+"texture": ExtResource("2_bsnj2")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bsnj2")
+}, {
 "duration": 1.0,
 "texture": ExtResource("2_gc0md")
 }, {

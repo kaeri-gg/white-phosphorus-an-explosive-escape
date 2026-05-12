@@ -38,7 +38,7 @@ texture = ExtResource("3_1djrs")
 expand_mode = 5
 
 [node name="ContentsContainer" type="VBoxContainer" parent="." unique_id=46252598]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(650, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +56,6 @@ alignment = 1
 
 [node name="LogoContainer" type="MarginContainer" parent="ContentsContainer" unique_id=587593467]
 layout_mode = 2
-size_flags_vertical = 4
 
 [node name="GodotLogo" type="TextureRect" parent="ContentsContainer/LogoContainer" unique_id=1414926119]
 unique_name_in_owner = true
@@ -86,19 +85,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Button" type="MarginContainer" parent="ContentsContainer" unique_id=842525263]
-layout_mode = 2
-theme_override_constants/margin_top = 30
-
-[node name="NextScreen" parent="ContentsContainer/Button" unique_id=1077547119 instance=ExtResource("5_ah5xx")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-texture_normal = ExtResource("7_1djrs")
-ignore_texture_size = true
-stretch_mode = 5
-custom_label_text = "Enter game"
-
 [node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("6_nrj1f")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -119,7 +105,23 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 40
 
-[node name="AboutLinkButton" type="TextureButton" parent="LinksContainer" unique_id=631991966]
+[node name="VBoxContainer" type="VBoxContainer" parent="LinksContainer" unique_id=1619000487]
+layout_mode = 2
+
+[node name="Button" type="MarginContainer" parent="LinksContainer/VBoxContainer" unique_id=842525263]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="NextScreen" parent="LinksContainer/VBoxContainer/Button" unique_id=1077547119 instance=ExtResource("5_ah5xx")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+texture_normal = ExtResource("7_1djrs")
+ignore_texture_size = true
+stretch_mode = 5
+custom_label_text = "Enter game"
+
+[node name="AboutLinkButton" type="TextureButton" parent="LinksContainer/VBoxContainer" unique_id=631991966]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -128,4 +130,4 @@ texture_normal = ExtResource("9_yyry6")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="LinksContainer/AboutLinkButton" to="." method="show_about_us"]
+[connection signal="pressed" from="LinksContainer/VBoxContainer/AboutLinkButton" to="." method="show_about_us"]

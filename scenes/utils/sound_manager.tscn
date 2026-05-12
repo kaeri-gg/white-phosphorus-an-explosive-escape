@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://chkyuswi06ng" path="res://scripts/managers/sound_manager.gd" id="1_mpi5b"]
 [ext_resource type="AudioStream" uid="uid://ds57loqx46qmq" path="res://assets/audio/tick-sound.mp3" id="5_k1d7a"]
 [ext_resource type="AudioStream" uid="uid://t2qf0pv6n5ro" path="res://assets/audio/enter-game.mp3" id="6_gb18h"]
+[ext_resource type="AudioStream" uid="uid://wtur1i8po688" path="res://assets/audio/843947__freekit__fireworks-1 - fireworks blowing (2).wav" id="7_l71x8"]
 [ext_resource type="AudioStream" uid="uid://yypeefqlnlog" path="res://assets/audio/bogenseeberg__take-a-damage.wav" id="8_fcrsd"]
 [ext_resource type="AudioStream" uid="uid://ci3vnuo4bdt1k" path="res://assets/audio/brunoboselli__rusty-valve.wav" id="9_33vq4"]
-[ext_resource type="AudioStream" uid="uid://dmuw72yfmidbq" path="res://assets/audio/crosbychris__fireworks.wav" id="10_33vq4"]
 [ext_resource type="AudioStream" uid="uid://ch7leipiri81l" path="res://assets/audio/zeltbolt_heal.wav" id="11_iuqck"]
 [ext_resource type="AudioStream" uid="uid://b8f0fsxl7lbp2" path="res://assets/audio/robinhood76__bomb.wav" id="12_fvikr"]
 [ext_resource type="AudioStream" uid="uid://dbwe2yebdw4yc" path="res://assets/audio/samararaine__on-fire.wav" id="13_stfo2"]
@@ -40,7 +40,7 @@ stream = ExtResource("9_33vq4")
 bus = &"SFX"
 
 [node name="Fireworks" type="AudioStreamPlayer" parent="." unique_id=252147774]
-stream = ExtResource("10_33vq4")
+stream = ExtResource("7_l71x8")
 volume_db = 2.0
 bus = &"SFX"
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wtur1i8po688"
+path="res://.godot/imported/843947__freekit__fireworks-1 - fireworks blowing (2).wav-de7ace3dfab35cec64dcbedd96f6fa08.sample"
+
+[deps]
+
+source_file="res://assets/audio/843947__freekit__fireworks-1 - fireworks blowing (2).wav"
+dest_files=["res://.godot/imported/843947__freekit__fireworks-1 - fireworks blowing (2).wav-de7ace3dfab35cec64dcbedd96f6fa08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
