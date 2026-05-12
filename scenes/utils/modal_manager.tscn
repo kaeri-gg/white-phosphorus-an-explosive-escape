@@ -55,17 +55,18 @@ offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
+[node name="Settings" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
 
-[node name="SettingsControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=156718134]
+[node name="SettingsControl" type="Control" parent="MarginContainer/Settings" unique_id=156718134]
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("3_qtb06")
 
-[node name="Container" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl" unique_id=589389467]
+[node name="Container" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl" unique_id=589389467]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,48 +80,48 @@ offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Settings" type="GridContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=703205411]
+[node name="Settings" type="GridContainer" parent="MarginContainer/Settings/SettingsControl/Container" unique_id=703205411]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 
-[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings" unique_id=1187720455]
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/Settings/SettingsControl/Container/Settings" unique_id=1187720455]
 layout_mode = 2
 
-[node name="SettingsLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/LabelsContainer" unique_id=281525092]
+[node name="SettingsLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/LabelsContainer" unique_id=281525092]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_v65hy")
 theme_override_font_sizes/font_size = 20
 text = "Adjust Settings:"
 
-[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings" unique_id=82743246]
+[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Settings" unique_id=82743246]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails" unique_id=1522614584]
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails" unique_id=1522614584]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="UIScaleLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1203257930]
+[node name="UIScaleLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1203257930]
 layout_mode = 2
 text = "UI Scale:"
 
-[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1606071323]
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1606071323]
 layout_mode = 2
 text = "Music Volume:"
 
-[node name="SoundFXLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1998582555]
+[node name="SoundFXLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1998582555]
 layout_mode = 2
 text = "SoundFX Volume:"
 
-[node name="AdjustmentContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails" unique_id=1588678649]
+[node name="AdjustmentContainer" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails" unique_id=1588678649]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="UIScaleOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=146620165]
+[node name="UIScaleOptionButton" type="OptionButton" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=146620165]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
@@ -136,7 +137,7 @@ popup/item_2/id = 2
 popup/item_3/text = "125%"
 popup/item_3/id = 3
 
-[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=673056205]
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=673056205]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -146,7 +147,7 @@ tick_count = 10
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=786689803]
+[node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=786689803]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -156,88 +157,88 @@ tick_count = 10
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=460857372]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Settings/SettingsControl/Container" unique_id=460857372]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Controls" type="GridContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container" unique_id=634716336]
+[node name="Controls" type="GridContainer" parent="MarginContainer/Settings/SettingsControl/Container" unique_id=634716336]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
-[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls" unique_id=1721298874]
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/Settings/SettingsControl/Container/Controls" unique_id=1721298874]
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="ControlsLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/LabelsContainer" unique_id=1999210947]
+[node name="ControlsLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/LabelsContainer" unique_id=1999210947]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_v65hy")
 theme_override_font_sizes/font_size = 20
 text = "Controls:"
 
-[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls" unique_id=305075655]
+[node name="SettingsDetails" type="HBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Controls" unique_id=305075655]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails" unique_id=1618545250]
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails" unique_id=1618545250]
 layout_mode = 2
 theme_override_constants/separation = 7
 
-[node name="Movement" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=604143838]
+[node name="Movement" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=604143838]
 layout_mode = 2
 text = "Movement:"
 
-[node name="Jump" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1815229768]
+[node name="Jump" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1815229768]
 layout_mode = 2
 text = "Jump:"
 
-[node name="Interact" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1959060997]
+[node name="Interact" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1959060997]
 layout_mode = 2
 text = "Interact:"
 
-[node name="RestartLevel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1470750563]
+[node name="RestartLevel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1470750563]
 layout_mode = 2
 text = "Restart:"
 
-[node name="ReturnHome" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1697258619]
+[node name="ReturnHome" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=1697258619]
 layout_mode = 2
 text = "Return Home:"
 
-[node name="Settings" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=345114588]
+[node name="Settings" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/LabelContainer" unique_id=345114588]
 layout_mode = 2
 text = "Settings:"
 
-[node name="KeysContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails" unique_id=956387502]
+[node name="KeysContainer" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails" unique_id=956387502]
 layout_mode = 2
 theme_override_constants/separation = 7
 
-[node name="Movement" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2080122226]
+[node name="Movement" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2080122226]
 layout_mode = 2
 text = "[A], [D] or [<], [>]"
 
-[node name="Jump" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2029938215]
+[node name="Jump" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=2029938215]
 layout_mode = 2
 text = "[Space], [W], arrow up"
 
-[node name="Interact" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=157710534]
+[node name="Interact" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=157710534]
 layout_mode = 2
 text = "[E]"
 
-[node name="RestartLevel" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=64652160]
+[node name="RestartLevel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=64652160]
 layout_mode = 2
 text = "[R]"
 
-[node name="ReturnHome" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=1181529399]
+[node name="ReturnHome" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=1181529399]
 layout_mode = 2
 text = "[B]"
 
-[node name="Settings" type="Label" parent="MarginContainer/PanelContainer/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=939327787]
+[node name="Settings" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Controls/SettingsDetails/KeysContainer" unique_id=939327787]
 layout_mode = 2
 text = "[esc]"
 
-[node name="HomeContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsControl" unique_id=974557886]
+[node name="HomeContainer" type="MarginContainer" parent="MarginContainer/Settings/SettingsControl" unique_id=974557886]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -253,7 +254,7 @@ grow_vertical = 0
 size_flags_vertical = 8
 theme_override_constants/margin_bottom = 20
 
-[node name="ReturnToHomeLink" type="LinkButton" parent="MarginContainer/PanelContainer/SettingsControl/HomeContainer" unique_id=1849991901]
+[node name="ReturnToHomeLink" type="LinkButton" parent="MarginContainer/Settings/SettingsControl/HomeContainer" unique_id=1849991901]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -261,12 +262,18 @@ theme = SubResource("Theme_4j485")
 text = "Return to home"
 underline = 1
 
-[node name="AboutTheGameControl" type="Control" parent="MarginContainer/PanelContainer" unique_id=190346835]
+[node name="AboutTheGame" type="PanelContainer" parent="MarginContainer" unique_id=475833745]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_582tx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
+
+[node name="AboutTheGameControl" type="Control" parent="MarginContainer/AboutTheGame" unique_id=1530432824]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="About" type="GridContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl" unique_id=221004420]
+[node name="About" type="GridContainer" parent="MarginContainer/AboutTheGame/AboutTheGameControl" unique_id=1584218335]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -284,11 +291,11 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 
-[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl/About" unique_id=558617517]
+[node name="LabelsContainer" type="MarginContainer" parent="MarginContainer/AboutTheGame/AboutTheGameControl/About" unique_id=339547094]
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="AboutLabel" type="Label" parent="MarginContainer/PanelContainer/AboutTheGameControl/About/LabelsContainer" unique_id=1599243744]
+[node name="AboutLabel" type="Label" parent="MarginContainer/AboutTheGame/AboutTheGameControl/About/LabelsContainer" unique_id=966039698]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_v65hy")
@@ -297,16 +304,25 @@ text = "About the game"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/AboutTheGameControl/About" unique_id=1683192745]
+[node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/AboutTheGame/AboutTheGameControl/About" unique_id=1576735865]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Description" type="Label" parent="MarginContainer/PanelContainer/AboutTheGameControl/About/LabelContainer" unique_id=1588838205]
+[node name="Description" type="Label" parent="MarginContainer/AboutTheGame/AboutTheGameControl/About/LabelContainer" unique_id=356683017]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "This game was created as a safe and enjoyable way for students and players to learn about phosphorus. Through a light and interactive experience, we aim that this game encourages curiosity and understanding in a way that feels both educational and fun."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Tutorial" type="PanelContainer" parent="MarginContainer" unique_id=1454227463]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_582tx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
+
+[node name="TutorialContainer" type="Control" parent="MarginContainer/Tutorial" unique_id=430936643]
+layout_mode = 2
 
 [node name="CloseButton" parent="MarginContainer" unique_id=2059083527 instance=ExtResource("3_suqfr")]
 unique_name_in_owner = true
