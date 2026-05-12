@@ -36,13 +36,12 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not is_visible_in_tree():
 		return
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_LEFT:
-			_on_prev()
-			get_viewport().set_input_as_handled()
-		elif event.keycode == KEY_RIGHT:
-			_on_next()
-			get_viewport().set_input_as_handled()
+	if event.is_action_pressed("ui_left"):
+		_on_prev()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("ui_right"):
+		_on_next()
+		get_viewport().set_input_as_handled()
 
 func reset() -> void:
 	_index = 0

@@ -6,7 +6,7 @@ const GAME_MENU = preload("uid://4ht2ox1qqc7q")
 @export var fade_in_time: float = 1.5
 @export var hold_time: float = 0.5
 @export var fade_out_time: float = 1.5
-@export var scene_fade_duration: float = 0.6
+@export var scene_fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
 
 @onready var logo_container: MarginContainer = %Logo
 @onready var godot_teeth: TextureRect = %GodotTeeth

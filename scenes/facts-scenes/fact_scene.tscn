@@ -46,6 +46,8 @@ grow_vertical = 1
 
 [node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("4_03iov")]
 layout_mode = 1
+target_scene_path = null
+fade_duration = null
 
 [node name="Button" type="MarginContainer" parent="." unique_id=824271023]
 layout_mode = 1

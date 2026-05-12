@@ -401,6 +401,8 @@ func _flip_on_move() -> void:
 		player_sprite.flip_h = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
+		return
 	var _modal := ui_manager.modal_manager
 	if _modal != null and is_instance_valid(_modal) and _modal.is_open():
 		return
