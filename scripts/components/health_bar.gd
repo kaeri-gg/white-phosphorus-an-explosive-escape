@@ -1,6 +1,7 @@
 extends Control
 
-@export var player: Player 
+@export var player: Player
+@export var flash_color: Color = Color(0.584, 0.090, 0.102, 1.0)
 @onready var damage_flash: ColorRect = %DamageFlash
 @onready var health_bar: TextureRect = %HealthBar
 
@@ -16,8 +17,14 @@ func _ready() -> void:
 			health_textures.append(load(path))
 		else:
 			health_textures.append(null)
-	
+
 	health_bar.texture = health_textures[7]
+
+	var shader := load("res://scripts/shaders/vignette_flash.gdshader") as Shader
+	var mat := ShaderMaterial.new()
+	mat.shader = shader
+	mat.set_shader_parameter("flash_color", flash_color)
+	damage_flash.material = mat
 
 	if player != null:
 		previous_health = player.PLAYER_HEALTH
@@ -41,10 +48,12 @@ func trigger_negative_feedback() -> void:
 	shake_camera()
 
 func flash_screen() -> void:
+	var mat := damage_flash.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("flash_color", flash_color)
+
 	var tween = get_tree().create_tween()
-	
-	damage_flash.modulate.a = 0.7 
-	
+	damage_flash.modulate.a = 0.7
 	tween.tween_property(damage_flash, "modulate:a", 0.0, 0.4)
 
 func shake_camera() -> void:
