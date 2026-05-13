@@ -1,49 +1,41 @@
 class_name FinalPlatform
 extends StaticBody2D
 
-@export_file("*.tscn") var next_scene_path: String = ""
-@export var stable_delay: float = 2.0
-@export var fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
+## Seconds the player stays on the platform in EVOLVED form before the
+## child PortalArea is triggered to advance to the next scene.
+@export var hold_duration: float = 2.0
 
 @onready var detection_area: Area2D = %DetectionArea
-@onready var stable_timer: Timer = %StableTimer
+@onready var hold_timer: Timer = %StableTimer
 
 var current_player: Player
 var has_triggered: bool = false
 
 func _ready() -> void:
 	detection_area.body_entered.connect(_on_body_entered)
-	detection_area.body_exited.connect(_on_body_exited)
-	stable_timer.wait_time = stable_delay
-	stable_timer.one_shot = true
-	stable_timer.timeout.connect(_on_stable_timeout)
+	hold_timer.wait_time = hold_duration
+	hold_timer.one_shot = true
+	hold_timer.timeout.connect(_on_hold_timeout)
 
 func _on_body_entered(body: Node) -> void:
 	if has_triggered or body is not Player:
 		return
-	current_player = body
-	body.enter_water()
-	stable_timer.start()
-
-func _on_body_exited(body: Node) -> void:
-	if has_triggered or body != current_player:
-		return
-	if is_instance_valid(current_player):
-		current_player.leave_water()
-	current_player = null
-	stable_timer.stop()
-
-func _on_stable_timeout() -> void:
-	if current_player == null or not is_instance_valid(current_player):
-		return
 	has_triggered = true
-	await current_player.transform_to_final_form()
+	current_player = body
+	current_player.transform_to_final_form()
+	hold_timer.start()
 
-	if next_scene_path.is_empty():
+func _on_hold_timeout() -> void:
+	if not is_instance_valid(current_player):
 		return
-	var resolved := ResourceUID.ensure_path(next_scene_path)
-	if resolved.is_empty():
-		push_warning("FinalPlatform could not resolve scene: %s" % next_scene_path)
+	var portal := _find_portal_area()
+	if portal == null:
+		push_warning("FinalPlatform has no PortalArea child to trigger.")
 		return
-	await utils.fade_to_white(get_tree().current_scene, fade_duration)
-	get_tree().change_scene_to_file(resolved)
+	portal.advance()
+
+func _find_portal_area() -> Area2D:
+	for child in get_children():
+		if child is Area2D and child.has_method("advance"):
+			return child
+	return null

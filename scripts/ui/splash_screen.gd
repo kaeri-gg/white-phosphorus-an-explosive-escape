@@ -1,7 +1,7 @@
 class_name SplashScreen
 extends Control
 
-const GAME_MENU = preload("uid://4ht2ox1qqc7q")
+const GAME_MENU_PATH := "uid://4ht2ox1qqc7q"
 
 @export var fade_in_time: float = 1.5
 @export var hold_time: float = 0.5
@@ -11,10 +11,25 @@ const GAME_MENU = preload("uid://4ht2ox1qqc7q")
 @onready var logo_container: MarginContainer = %Logo
 @onready var godot_teeth: TextureRect = %GodotTeeth
 @onready var logo: TextureRect = %GodotLogo
+@onready var progress_bar: ProgressBar = $Logo/ProgressBar/ProgressBar
+
+var _progress: Array = []
 
 func _ready() -> void:
+	progress_bar.min_value = 0.0
+	progress_bar.max_value = 100.0
+	progress_bar.value = 0.0
+	ResourceLoader.load_threaded_request(GAME_MENU_PATH)
 	yoyo()
 	_play_intro()
+
+func _process(_delta: float) -> void:
+	var status := ResourceLoader.load_threaded_get_status(GAME_MENU_PATH, _progress)
+	if _progress.size() > 0:
+		progress_bar.value = float(_progress[0]) * 100.0
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		progress_bar.value = 100.0
+		set_process(false)
 
 func _play_intro() -> void:
 	logo_container.modulate.a = 0.0
@@ -23,8 +38,11 @@ func _play_intro() -> void:
 	tween.tween_interval(hold_time)
 	tween.tween_property(logo_container, "modulate:a", 0.0, fade_out_time)
 	await tween.finished
+	while ResourceLoader.load_threaded_get_status(GAME_MENU_PATH) != ResourceLoader.THREAD_LOAD_LOADED:
+		await get_tree().process_frame
+	var scene: PackedScene = ResourceLoader.load_threaded_get(GAME_MENU_PATH)
 	await utils.fade_to_white(self, scene_fade_duration)
-	get_tree().change_scene_to_packed(GAME_MENU)
+	get_tree().change_scene_to_packed(scene)
 
 func yoyo() -> void:
 	var speed := 0.1

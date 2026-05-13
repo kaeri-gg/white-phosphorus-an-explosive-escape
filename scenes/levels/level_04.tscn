@@ -111,6 +111,11 @@ dialog_text = "Please don't let me touch them when I'm on fire!"
 position = Vector2(2077, 232)
 dialog_text = "I must recover before going down there..."
 
+[node name="PlayerDialog4" parent="." unique_id=1936774150 instance=ExtResource("6_1f6xj")]
+position = Vector2(118, 1331)
+dialog_text = "We did it!"
+bubble_offset = Vector2(0, -65)
+
 [node name="FactoryLeak" parent="." unique_id=531473869 instance=ExtResource("7_maafn")]
 position = Vector2(76, 46)
 
@@ -177,7 +182,7 @@ emission_rect_extents = Vector2(10, 20)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
-position = Vector2(178, 144)
+position = Vector2(189.00002, 102)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2700, 1440)
 
@@ -1149,12 +1154,14 @@ rotation = -3.1415927
 [node name="PlatformFinalPlatform" parent="." unique_id=2138956466 instance=ExtResource("27_47boq")]
 position = Vector2(192.00002, 1240)
 scale = Vector2(0.42979056, 0.42014077)
+hold_duration = 4.0
 
 [node name="PortalArea" parent="PlatformFinalPlatform" unique_id=1878742614 instance=ExtResource("36_x5hhl")]
 position = Vector2(44.89218, 260.72363)
 rotation = 3.1415925
 scale = Vector2(3.900899, -2.28206)
 next_scene_path = "uid://iuq1gve72064"
+fade_duration = 6.0
 
 [node name="PlatformGray3WayConnector15" parent="." unique_id=654895447 instance=ExtResource("19_x1re1")]
 position = Vector2(663, 849)
