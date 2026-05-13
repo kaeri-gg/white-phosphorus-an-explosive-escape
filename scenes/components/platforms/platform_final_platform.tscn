@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ct2sk488col3o" path="res://scripts/components/final_platform.gd" id="2_finalplatform"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_detection"]
-size = Vector2(461.2416, 380)
+size = Vector2(461.2416, 220.83336)
 
 [node name="PlatformFinalPlatform" type="StaticBody2D" unique_id=2138956466]
 scale = Vector2(0.596, 0.6)
@@ -17,15 +17,15 @@ texture = ExtResource("1_j73on")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=145471013]
 scale = Vector2(1, 0.99999994)
 build_mode = 1
-polygon = PackedVector2Array(-867.44965, -434.99997, -619.1275, -441.66663, -456.37582, -416.66663, -328.85904, -379.99997, -246.64429, -323.3333, -216.44295, -281.66663, -214.76509, -171.66666, -172.81879, -168.33331, -172.81879, -149.99998, 281.87918, -151.66666, 283.55704, -168.33331, 364.09393, -168.33331, 367.44965, 471.66663, -442.953, 469.99997, -439.5973, -168.33331, -359.0604, -173.33331, -362.41608, -261.66666, -431.20804, -299.99997, -691.27515, -331.66663, -872.48315, -326.66663)
+polygon = PackedVector2Array(-867.44965, -434.99997, -619.1275, -441.66663, -456.37582, -416.66663, -328.85904, -379.99997, -246.64429, -323.3333, -216.44295, -281.66663, -214.76509, -171.66666, -172.8188, -171.66669, -174.49664, 220.00003, 283.55707, 218.33336, 283.55704, -168.33331, 364.09393, -168.33331, 367.44965, 471.66663, -442.953, 469.99997, -439.5973, -168.33331, -359.0604, -173.33331, -362.41608, -261.66666, -431.20804, -299.99997, -691.27515, -331.66663, -872.48315, -326.66663)
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=183210542]
 unique_name_in_owner = true
 position = Vector2(-50, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1532893692]
-position = Vector2(103.691284, 31.666668)
-scale = Vector2(1, 0.99999994)
+position = Vector2(100.33557, 347.0833)
+scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_detection")
 
 [node name="StableTimer" type="Timer" parent="." unique_id=1117517763]

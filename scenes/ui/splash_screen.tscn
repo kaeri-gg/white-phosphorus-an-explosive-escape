@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4dek45kyjmyb" path="res://assets/images/godot_monochrome_light_2.svg" id="4_it15u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mj2l"]
-bg_color = Color(0.8084888, 0.55785996, 0.2739025, 1)
+bg_color = Color(1, 1, 1, 0.18039216)
 border_width_right = 1
 border_width_bottom = 1
 corner_radius_top_left = 5
@@ -28,11 +28,11 @@ bg_color = Color(0.5795962, 0.5657938, 0.8264051, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ndlxt")
 
 [sub_resource type="Gradient" id="Gradient_wh6tg"]
-colors = PackedColorArray(0.9098039, 0.65882355, 0.35686275, 1, 0.92941177, 0.7921569, 0.12941177, 1)
+colors = PackedColorArray(0.44452256, 0.7847578, 0.7649144, 1, 0.9750282, 0.80363995, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_usb1j"]
 gradient = SubResource("Gradient_wh6tg")
-fill_from = Vector2(0.7094017, 0.6111111)
+fill_from = Vector2(0.32478634, 0.71581197)
 fill_to = Vector2(0.9230769, 0.102564104)
 
 [node name="SplashScreen" type="Control" unique_id=1606166660]
