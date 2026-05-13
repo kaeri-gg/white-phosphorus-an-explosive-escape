@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg76nnje13peu"
-path="res://.godot/imported/interact.png-c6359c30de91a2eef73a62823d9b57c5.ctex"
+uid="uid://kuqnqksnvaaj"
+path="res://.godot/imported/Back-button_0006_Layer-1.png-4fa9eb36af25727233043c8c903dcca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial-gifs/sheets/interact.png"
-dest_files=["res://.godot/imported/interact.png-c6359c30de91a2eef73a62823d9b57c5.ctex"]
+source_file="res://assets/ui/buttons/hover/Back-button_0006_Layer-1.png"
+dest_files=["res://.godot/imported/Back-button_0006_Layer-1.png-4fa9eb36af25727233043c8c903dcca2.ctex"]
 
 [params]
 

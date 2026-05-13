@@ -5,9 +5,7 @@ extends HoverableButton
 @export var theme_variation: String = ""
 @export var enable_space_shortcut: bool = true
 @export var texture: Texture2D
-
-func _resolve_inner_button() -> BaseButton:
-	return get_node_or_null("%Button") as BaseButton
+@export var tooltip: String = ""
 
 func _setup() -> void:
 	var button := _inner_button as TextureButton
@@ -23,3 +21,6 @@ func _setup() -> void:
 		event.physical_keycode = KEY_SPACE
 		shortcut.events = [event]
 		button.shortcut = shortcut
+		button.shortcut_in_tooltip = false
+	if not tooltip.is_empty():
+		button.tooltip_text = tooltip

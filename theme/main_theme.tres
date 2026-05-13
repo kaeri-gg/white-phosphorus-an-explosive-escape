@@ -97,3 +97,6 @@ OptionButton/styles/hover = SubResource("StyleBoxFlat_dut6s")
 OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_dut6s")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_dut6s")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_adhqp")
+TooltipLabel/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+TooltipLabel/font_sizes/font_size = 13
+TooltipLabel/fonts/font = ExtResource("2_os614")
