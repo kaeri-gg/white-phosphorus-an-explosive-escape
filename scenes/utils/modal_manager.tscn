@@ -7,9 +7,11 @@
 [ext_resource type="Script" uid="uid://wiwu7rye4fmx" path="res://scripts/managers/settings_control.gd" id="3_qtb06"]
 [ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
 [ext_resource type="Script" uid="uid://dphgyew6ubpqt" path="res://scripts/components/tutorial_slider.gd" id="4_tsldr"]
-[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/move-left-right.tres" id="5_gif0"]
-[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/move-jump.tres" id="6_gif1"]
-[ext_resource type="AnimatedTexture" path="res://assets/tutorial-gifs/interact.tres" id="7_gif2"]
+[ext_resource type="PackedScene" uid="uid://cso36dcmklv64" path="res://scenes/components/buttons/next_button.tscn" id="7_gshic"]
+[ext_resource type="VideoStream" uid="uid://c64lt4hq7ci48" path="res://assets/tutorial-gifs/move.ogv" id="7_v55si"]
+[ext_resource type="VideoStream" uid="uid://d0k3rcw4vq3qh" path="res://assets/tutorial-gifs/jump.ogv" id="8_djhx4"]
+[ext_resource type="VideoStream" uid="uid://crulq10wmtyer" path="res://assets/tutorial-gifs/interact.ogv" id="9_gnpw1"]
+[ext_resource type="PackedScene" uid="uid://bdlenntj6uj4v" path="res://scenes/components/buttons/prev_button.tscn" id="10_prevb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
 bg_color = Color(0.8729885, 0.8593587, 0.83212805, 1)
@@ -370,21 +372,17 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="PrevButton" type="Button" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200004]
+[node name="PrevButton" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=1031016774 instance=ExtResource("10_prevb")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 35
-text = "‹"
 
 [node name="GIFContainer" type="Control" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200005]
-custom_minimum_size = Vector2(270, 152)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="GIF_0" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200006]
+[node name="GIF_0" type="VideoStreamPlayer" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=1180788459]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -392,11 +390,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_gif0")
-expand_mode = 1
-stretch_mode = 6
+audio_track = 1
+stream = ExtResource("7_v55si")
+autoplay = true
+expand = true
+loop = true
 
-[node name="GIF_1" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200007]
+[node name="GIF_1" type="VideoStreamPlayer" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=165908504]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -405,11 +405,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_gif1")
-expand_mode = 1
-stretch_mode = 6
+stream = ExtResource("8_djhx4")
+autoplay = true
+expand = true
+loop = true
 
-[node name="GIF_2" type="TextureRect" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=100200008]
+[node name="GIF_2" type="VideoStreamPlayer" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow/GIFContainer" unique_id=1308903387]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -418,18 +419,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_gif2")
-expand_mode = 1
-stretch_mode = 6
+stream = ExtResource("9_gnpw1")
+autoplay = true
+expand = true
+loop = true
 
-[node name="NextButton" type="Button" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=100200009]
+[node name="NextButton" parent="MarginContainer/Tutorial/TutorialContainer/VBox/SliderRow" unique_id=2123409423 instance=ExtResource("7_gshic")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 35
-text = "›"
 
 [node name="Dots" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1386200616]
 layout_mode = 2

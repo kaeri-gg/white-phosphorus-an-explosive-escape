@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_505f6"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="2_6t5lx"]
-[ext_resource type="Texture2D" uid="uid://c3y55mgs85lh1" path="res://assets/backgrounds/level-backgrounds/Screen 3_End.png" id="3_fmqm8"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/level-backgrounds/Screen 3_End.png" id="3_fmqm8"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="4_2x571"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="5_80aif"]
-[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="6_j1jiw"]
+[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/game_enter_button.tscn" id="6_j1jiw"]
 [ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_4ajdv"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_nvv2u"]
 

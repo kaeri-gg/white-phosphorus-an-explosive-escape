@@ -122,7 +122,6 @@ func change_state(new_state: STATE) -> void:
 		STATE.STABLE:
 			stabilized.emit()
 		STATE.BURNING:
-			sound_manager.play("Burning")
 			burned.emit()
 		STATE.VIBRATING:
 			shook.emit()
@@ -268,7 +267,6 @@ func take_damage(amount: int) -> void:
 	if amount <= 0:
 		return
 
-	sound_manager.play("Damage")
 	current_health -= amount
 	health_changed.emit(current_health, PLAYER_HEALTH)
 
@@ -401,6 +399,8 @@ func _flip_on_move() -> void:
 		player_sprite.flip_h = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
+		return
 	var _modal := ui_manager.modal_manager
 	if _modal != null and is_instance_valid(_modal) and _modal.is_open():
 		return

@@ -1,7 +1,7 @@
 class_name Level
 extends Control
 
-@export var fade_duration: float = 0.6
+@export var fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
 @export var show_tutorial_on_start: bool = false
 
 @onready var player: Player = $Player
@@ -16,13 +16,7 @@ func _ready() -> void:
 		ui_manager.open_tutorial_modal_once()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not (event is InputEventKey) or not event.pressed or event.echo:
-		return
-	if event.keycode == KEY_ESCAPE:
-		sound_manager.play("Click")
-		ui_manager.toggle_settings_modal()
-		get_viewport().set_input_as_handled()
-	elif event.keycode == KEY_H:
+	if event.is_action_pressed("ui_help"):
 		sound_manager.play("Click")
 		ui_manager.toggle_tutorial_modal()
 		get_viewport().set_input_as_handled()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rwyihd4c8chh" path="res://assets/backgrounds/tutorial-backgrounds/Screen 0.1_Tutorial light.png" id="2_kwkug"]
 [ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="3_qyelm"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_s3kcw"]
-[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="5_6qmkq"]
+[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/game_enter_button.tscn" id="5_6qmkq"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
 

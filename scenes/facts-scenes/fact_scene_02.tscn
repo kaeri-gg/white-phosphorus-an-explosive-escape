@@ -3,12 +3,11 @@
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_def8c"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="2_7oowi"]
 [ext_resource type="Texture2D" uid="uid://dede5rudrhgjk" path="res://assets/backgrounds/tutorial-backgrounds/Begin comic 2.png" id="3_bdxta"]
-[ext_resource type="PackedScene" uid="uid://k1luxrbn2fxc" path="res://scenes/components/buttons/settings_button.tscn" id="4_jpguu"]
+[ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="5_bdxta"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="5_dx6pe"]
-[ext_resource type="PackedScene" uid="uid://d1pv2we0ls36c" path="res://scenes/components/buttons/button.tscn" id="6_pde0m"]
 [ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_bdxta"]
-[ext_resource type="Texture2D" uid="uid://ci0s07f0eebii" path="res://assets/ui/buttons/Next button.png" id="7_hwoty"]
 [ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_rlmc2"]
+[ext_resource type="PackedScene" uid="uid://ba31gs3gihcwd" path="res://scenes/components/buttons/next_screen_button.tscn" id="8_hwoty"]
 
 [sub_resource type="Theme" id="Theme_0p1u4"]
 
@@ -38,14 +37,22 @@ theme = SubResource("Theme_0p1u4")
 texture = ExtResource("3_bdxta")
 expand_mode = 5
 
-[node name="SettingsButton" parent="." unique_id=445205108 instance=ExtResource("4_jpguu")]
-visible = false
+[node name="ButtonsContainer" type="GridContainer" parent="." unique_id=875422812]
+custom_minimum_size = Vector2(150, 80)
 layout_mode = 0
-grow_horizontal = 1
-grow_vertical = 1
+offset_right = 198.0
+offset_bottom = 80.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
 
-[node name="HomeButton" parent="." unique_id=236392027 instance=ExtResource("5_dx6pe")]
-layout_mode = 1
+[node name="HomeButton" parent="ButtonsContainer" unique_id=445205108 instance=ExtResource("5_dx6pe")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="HelpButton" parent="ButtonsContainer" unique_id=1678844866 instance=ExtResource("5_bdxta")]
+custom_minimum_size = Vector2(50, 60)
+layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
 visible = false
@@ -95,7 +102,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="MarginContainer" parent="." unique_id=2051438241]
+[node name="Button" type="MarginContainer" parent="." unique_id=1319452534]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -112,12 +119,7 @@ scale = Vector2(0.5869658, 0.5869658)
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 50
 
-[node name="NextScreen" parent="Button" unique_id=200293444 instance=ExtResource("6_pde0m")]
+[node name="NextScreen" parent="Button" unique_id=1914277223 instance=ExtResource("8_hwoty")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("7_hwoty")
-ignore_texture_size = true
-stretch_mode = 4
-custom_label_text = "Start"
+tooltip = "Next (Space)"
