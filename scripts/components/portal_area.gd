@@ -25,6 +25,11 @@ func _try_advance(player: Player) -> void:
 		return
 	if player.current_state != Player.STATE.STABLE:
 		return
+	advance()
+
+func advance() -> void:
+	if is_transitioning:
+		return
 
 	if next_scene_path.is_empty():
 		push_warning("%s is missing a Next Scene." % get_parent().name)
