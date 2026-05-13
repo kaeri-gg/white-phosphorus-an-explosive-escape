@@ -461,7 +461,7 @@ color = Color(0.881693, 0, 0.2557429, 1)
 [node name="Description" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1279876685]
 layout_mode = 2
 theme_override_constants/margin_left = 60
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = 60
 
 [node name="InstructionLabel" type="Label" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Description" unique_id=100200014]
 unique_name_in_owner = true
