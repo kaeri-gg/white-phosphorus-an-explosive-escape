@@ -122,7 +122,6 @@ func change_state(new_state: STATE) -> void:
 		STATE.STABLE:
 			stabilized.emit()
 		STATE.BURNING:
-			sound_manager.play("Burning")
 			burned.emit()
 		STATE.VIBRATING:
 			shook.emit()
@@ -268,7 +267,6 @@ func take_damage(amount: int) -> void:
 	if amount <= 0:
 		return
 
-	sound_manager.play("Damage")
 	current_health -= amount
 	health_changed.emit(current_health, PLAYER_HEALTH)
 
