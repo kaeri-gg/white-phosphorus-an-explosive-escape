@@ -14,12 +14,19 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(1, 1, 1, 0.9)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="Theme" id="Theme_vbcv6"]
-ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_color = Color(0.51520795, 0.515208, 0.5152091, 1)
 ProgressBar/font_sizes/font_size = 16
 ProgressBar/fonts/font = ExtResource("1_wh6tg")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_3mj2l")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_3mj2l")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fill")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndlxt"]
 bg_color = Color(0.5795962, 0.5657938, 0.8264051, 1)

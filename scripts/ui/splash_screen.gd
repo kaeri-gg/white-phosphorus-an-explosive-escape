@@ -13,23 +13,18 @@ const GAME_MENU_PATH := "uid://4ht2ox1qqc7q"
 @onready var logo: TextureRect = %GodotLogo
 @onready var progress_bar: ProgressBar = $Logo/ProgressBar/ProgressBar
 
-var _progress: Array = []
-
 func _ready() -> void:
 	progress_bar.min_value = 0.0
 	progress_bar.max_value = 100.0
 	progress_bar.value = 0.0
 	ResourceLoader.load_threaded_request(GAME_MENU_PATH)
 	yoyo()
+	_animate_progress()
 	_play_intro()
 
-func _process(_delta: float) -> void:
-	var status := ResourceLoader.load_threaded_get_status(GAME_MENU_PATH, _progress)
-	if _progress.size() > 0:
-		progress_bar.value = float(_progress[0]) * 100.0
-	if status == ResourceLoader.THREAD_LOAD_LOADED:
-		progress_bar.value = 100.0
-		set_process(false)
+func _animate_progress() -> void:
+	var tween := create_tween()
+	tween.tween_property(progress_bar, "value", 100.0, fade_in_time + hold_time)
 
 func _play_intro() -> void:
 	logo_container.modulate.a = 0.0
