@@ -23,7 +23,7 @@ one_shot = true
 [node name="BubbleAnchor" type="Node2D" parent="." unique_id=1838755088]
 
 [node name="PanelContainer" type="PanelContainer" parent="BubbleAnchor" unique_id=1619776927]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(200, 50)
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("2_fyx41")

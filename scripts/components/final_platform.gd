@@ -3,7 +3,7 @@ extends StaticBody2D
 
 @export_file("*.tscn") var next_scene_path: String = ""
 @export var stable_delay: float = 2.0
-@export var fade_duration: float = 0.6
+@export var fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
 
 @onready var detection_area: Area2D = %DetectionArea
 @onready var stable_timer: Timer = %StableTimer

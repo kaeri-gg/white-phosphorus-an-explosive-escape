@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://87opharrxjhj"]
 
-[ext_resource type="Script" path="res://scripts/components/help_button.gd" id="1_helpscr"]
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="4_theme"]
+[ext_resource type="Script" uid="uid://bxsohsefcajgi" path="res://scripts/components/help_button.gd" id="1_helpscr"]
 [ext_resource type="Texture2D" uid="uid://bpsejw3rij53l" path="res://assets/ui/buttons/Help icon.png" id="1_iahjj"]
+[ext_resource type="Texture2D" uid="uid://bk3bppcjoeq8c" path="res://assets/ui/buttons/hover/Back-button_0004_Help-icon.png" id="3_83ohv"]
 
 [node name="HelpButton" type="Control" unique_id=445205108]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchors_preset = 0
 offset_right = 50.0
 offset_bottom = 60.0
 mouse_default_cursor_shape = 2
+theme = ExtResource("4_theme")
 script = ExtResource("1_helpscr")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
@@ -21,6 +24,10 @@ theme_override_constants/margin_top = 20
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+tooltip_text = "Help (H)"
 texture_normal = ExtResource("1_iahjj")
+texture_pressed = ExtResource("3_83ohv")
+texture_hover = ExtResource("3_83ohv")
+texture_focused = ExtResource("3_83ohv")
 ignore_texture_size = true
 stretch_mode = 5

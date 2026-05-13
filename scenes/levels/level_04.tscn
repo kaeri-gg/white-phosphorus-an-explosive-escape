@@ -1147,8 +1147,8 @@ position = Vector2(1770, 1053.0001)
 rotation = -3.1415927
 
 [node name="PlatformFinalPlatform" parent="." unique_id=2138956466 instance=ExtResource("27_47boq")]
-position = Vector2(204.00002, 1256.0001)
-scale = Vector2(-0.40096107, 0.42573768)
+position = Vector2(192.00002, 1240)
+scale = Vector2(0.42979056, 0.42014077)
 
 [node name="PortalArea" parent="PlatformFinalPlatform" unique_id=1878742614 instance=ExtResource("36_x5hhl")]
 position = Vector2(44.89218, 260.72363)

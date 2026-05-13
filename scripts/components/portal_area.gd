@@ -1,7 +1,7 @@
 extends Area2D
 
 @export_file("*.tscn") var next_scene_path: String = ""
-@export var fade_duration: float = 0.6
+@export var fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
 
 var is_transitioning: bool = false
 

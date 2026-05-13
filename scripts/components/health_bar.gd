@@ -10,15 +10,18 @@ var health_textures: Array[Texture2D] = []
 var previous_health: int = -1
 
 func _ready() -> void:
-	for i in range(8):
+	var max_hp: int = player.PLAYER_HEALTH if player != null else 7
+
+	for i in range(max_hp + 1):
 		var path = "res://assets/ui/Healthbar_" + str(i) + "HP.png"
 
 		if ResourceLoader.exists(path):
 			health_textures.append(load(path))
 		else:
+			push_warning("HealthBar: missing texture %s" % path)
 			health_textures.append(null)
 
-	health_bar.texture = health_textures[7]
+	health_bar.texture = health_textures[max_hp]
 
 	var shader := load("res://scripts/shaders/vignette_flash.gdshader") as Shader
 	var mat := ShaderMaterial.new()
@@ -27,7 +30,7 @@ func _ready() -> void:
 	damage_flash.material = mat
 
 	if player != null:
-		previous_health = player.PLAYER_HEALTH
+		previous_health = max_hp
 		player.health_changed.connect(update_health_display)
 
 func update_health_display(current: int, _max_hp: int) -> void:

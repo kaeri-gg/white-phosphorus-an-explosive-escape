@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://db1bpjitnkams"]
+[gd_scene format=3 uid="uid://db1bpjitnkams"]
 
 [ext_resource type="Texture2D" uid="uid://21cn4p76li3x" path="res://assets/platforms/Vaccum oven.png" id="1_j73on"]
-[ext_resource type="Script" path="res://scripts/components/final_platform.gd" id="2_finalplatform"]
+[ext_resource type="Script" uid="uid://ct2sk488col3o" path="res://scripts/components/final_platform.gd" id="2_finalplatform"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_detection"]
-size = Vector2(450, 380)
+size = Vector2(461.2416, 380)
 
 [node name="PlatformFinalPlatform" type="StaticBody2D" unique_id=2138956466]
 scale = Vector2(0.596, 0.6)
@@ -14,17 +14,20 @@ script = ExtResource("2_finalplatform")
 scale = Vector2(0.90935105, 0.9108993)
 texture = ExtResource("1_j73on")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1852751106]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=145471013]
+scale = Vector2(1, 0.99999994)
 build_mode = 1
-polygon = PackedVector2Array(-365.5625, -224, -277.94833, -224, -277.94833, -206, -278.9554, 164, 175.2283, 166, 175.2283, -225, 215.51067, -226, 213.49655, -322, 228.60245, -356, 276.94128, -407, 362.54132, -446, 506.55078, -478, 691.8497, -491, 874.1274, -493, 875.13446, -397, 695.8779, -393, 519.6426, -377, 410.88016, -349, 375.6331, -330, 366.56955, -309, 366.56955, -229, 443.10605, -225, 446.12723, 417, -365.5625, 417)
+polygon = PackedVector2Array(-867.44965, -434.99997, -619.1275, -441.66663, -456.37582, -416.66663, -328.85904, -379.99997, -246.64429, -323.3333, -216.44295, -281.66663, -214.76509, -171.66666, -172.81879, -168.33331, -172.81879, -149.99998, 281.87918, -151.66666, 283.55704, -168.33331, 364.09393, -168.33331, 367.44965, 471.66663, -442.953, 469.99997, -439.5973, -168.33331, -359.0604, -173.33331, -362.41608, -261.66666, -431.20804, -299.99997, -691.27515, -331.66663, -872.48315, -326.66663)
 
-[node name="DetectionArea" type="Area2D" parent="."]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=183210542]
 unique_name_in_owner = true
 position = Vector2(-50, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1532893692]
+position = Vector2(103.691284, 31.666668)
+scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_detection")
 
-[node name="StableTimer" type="Timer" parent="."]
+[node name="StableTimer" type="Timer" parent="." unique_id=1117517763]
 unique_name_in_owner = true
 one_shot = true

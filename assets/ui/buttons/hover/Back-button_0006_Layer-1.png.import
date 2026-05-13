@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2m0vxa28gbv"
-path="res://.godot/imported/move-left-right.png-77b107be8b9ca00f95c2c0f45833362a.ctex"
+uid="uid://kuqnqksnvaaj"
+path="res://.godot/imported/Back-button_0006_Layer-1.png-4fa9eb36af25727233043c8c903dcca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial-gifs/sheets/move-left-right.png"
-dest_files=["res://.godot/imported/move-left-right.png-77b107be8b9ca00f95c2c0f45833362a.ctex"]
+source_file="res://assets/ui/buttons/hover/Back-button_0006_Layer-1.png"
+dest_files=["res://.godot/imported/Back-button_0006_Layer-1.png-4fa9eb36af25727233043c8c903dcca2.ctex"]
 
 [params]
 

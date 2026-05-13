@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy5lotlrl3ffr"
-path="res://.godot/imported/move-jump.png-378d2626d55f7170981e17b3e7ef13fa.ctex"
+uid="uid://bk3bppcjoeq8c"
+path="res://.godot/imported/Back-button_0004_Help-icon.png-a82c014bea86451f0e6620ca32019ddb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial-gifs/move-jump.png"
-dest_files=["res://.godot/imported/move-jump.png-378d2626d55f7170981e17b3e7ef13fa.ctex"]
+source_file="res://assets/ui/buttons/hover/Back-button_0004_Help-icon.png"
+dest_files=["res://.godot/imported/Back-button_0004_Help-icon.png-a82c014bea86451f0e6620ca32019ddb.ctex"]
 
 [params]
 

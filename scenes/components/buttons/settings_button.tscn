@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://k1luxrbn2fxc"]
 
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="4_theme"]
 [ext_resource type="Script" uid="uid://dxy1vhja1rsn" path="res://scripts/components/settings_button.gd" id="1_v0qcp"]
 [ext_resource type="Texture2D" uid="uid://lxpteoge3nff" path="res://assets/ui/buttons/Settings icon.png" id="2_n54ui"]
+[ext_resource type="Texture2D" uid="uid://d1p4eabfhlv3g" path="res://assets/ui/buttons/hover/Back-button_0000_Settings-icon.png" id="3_hbffq"]
 
 [node name="SettingsButton" type="Control" unique_id=445205108]
 layout_mode = 3
@@ -10,6 +12,7 @@ offset_right = 70.0
 offset_bottom = 70.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("4_theme")
 script = ExtResource("1_v0qcp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=996151238]
@@ -23,6 +26,10 @@ theme_override_constants/margin_top = 20
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+tooltip_text = "Settings (Esc)"
 texture_normal = ExtResource("2_n54ui")
+texture_pressed = ExtResource("3_hbffq")
+texture_hover = ExtResource("3_hbffq")
+texture_focused = ExtResource("3_hbffq")
 ignore_texture_size = true
 stretch_mode = 5

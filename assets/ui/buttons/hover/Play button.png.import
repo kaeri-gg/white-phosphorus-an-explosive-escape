@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duguwddxhu1t7"
-path="res://.godot/imported/move-jump.png-a4219a1443f4a3d063bcc70316688712.ctex"
+uid="uid://8i76088tvfvb"
+path="res://.godot/imported/Play button.png-6eb385286f064d7dde9afa44ba6f0fa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial-gifs/sheets/move-jump.png"
-dest_files=["res://.godot/imported/move-jump.png-a4219a1443f4a3d063bcc70316688712.ctex"]
+source_file="res://assets/ui/buttons/hover/Play button.png"
+dest_files=["res://.godot/imported/Play button.png-6eb385286f064d7dde9afa44ba6f0fa6.ctex"]
 
 [params]
 

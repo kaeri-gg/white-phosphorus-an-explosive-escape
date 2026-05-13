@@ -3,10 +3,14 @@ extends Node
 
 const MODAL_MANAGER_SCENE := preload("uid://ijw6ubii34sy")
 
+# Note on lifecycle: `modal_manager` is recreated per scene (attached to the
+# current scene's tree), while `tutorial_shown` is persistent across scenes
+# (this UiManager is an autoload). Reloading a level re-instantiates the modal
+# but keeps `tutorial_shown` so the tutorial doesn't re-pop after a death.
 var modal_manager: ModalManager
 var tutorial_shown: bool = false
 
-func initiate_modal_and() -> ModalManager:
+func _get_or_create_modal_manager() -> ModalManager:
 	if modal_manager != null and is_instance_valid(modal_manager):
 		return modal_manager
 
@@ -27,10 +31,10 @@ func initiate_modal_and() -> ModalManager:
 	return modal_manager
 
 func open_settings_modal() -> void:
-	initiate_modal_and().show_settings()
+	_get_or_create_modal_manager().show_settings()
 
 func toggle_settings_modal() -> void:
-	var manager := initiate_modal_and()
+	var manager := _get_or_create_modal_manager()
 
 	if manager.is_open():
 		manager.close_modal()
@@ -39,14 +43,14 @@ func toggle_settings_modal() -> void:
 	manager.show_settings()
 
 func open_about_us_modal() -> void:
-	initiate_modal_and().show_about_us()
+	_get_or_create_modal_manager().show_about_us()
 
 func open_tutorial_modal() -> void:
 	tutorial_shown = true
-	initiate_modal_and().show_tutorial()
+	_get_or_create_modal_manager().show_tutorial()
 
 func toggle_tutorial_modal() -> void:
-	var manager := initiate_modal_and()
+	var manager := _get_or_create_modal_manager()
 	if manager.is_open():
 		manager.close_modal()
 		return

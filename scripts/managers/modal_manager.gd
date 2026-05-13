@@ -3,7 +3,7 @@ extends Control
 
 const GAME_MENU = preload("uid://4ht2ox1qqc7q")
 
-@export var fade_duration: float = 0.6
+@export var fade_duration: float = UiConstants.DEFAULT_FADE_DURATION
 
 @onready var settings_panel: PanelContainer = %Settings
 @onready var about_panel: PanelContainer = %AboutTheGame
@@ -23,13 +23,13 @@ func _ready() -> void:
 	}
 	hide()
 
-	close_button.clicked.connect(close_modal)
+	close_button.pressed.connect(close_modal)
 	return_to_home_link.pressed.connect(return_to_home)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
-	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.pressed and not event.echo:
+	if event.is_action_pressed("ui_cancel"):
 		sound_manager.play("Click")
 		close_modal()
 		get_viewport().set_input_as_handled()
