@@ -354,7 +354,7 @@ alignment = 1
 
 [node name="Title" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1030957234]
 layout_mode = 2
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 20
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Title" unique_id=100200002]
 layout_mode = 2
@@ -429,7 +429,7 @@ size_flags_vertical = 4
 
 [node name="Dots" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1386200616]
 layout_mode = 2
-theme_override_constants/margin_top = 50
+theme_override_constants/margin_top = 30
 
 [node name="DotsRow" type="HBoxContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Dots" unique_id=100200010]
 layout_mode = 2
@@ -460,12 +460,12 @@ color = Color(0.881693, 0, 0.2557429, 1)
 
 [node name="Description" type="MarginContainer" parent="MarginContainer/Tutorial/TutorialContainer/VBox" unique_id=1279876685]
 layout_mode = 2
-theme_override_constants/margin_left = 50
+theme_override_constants/margin_left = 60
 theme_override_constants/margin_right = 50
 
 [node name="InstructionLabel" type="Label" parent="MarginContainer/Tutorial/TutorialContainer/VBox/Description" unique_id=100200014]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 horizontal_alignment = 1
 autowrap_mode = 2

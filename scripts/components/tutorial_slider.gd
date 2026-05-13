@@ -3,8 +3,8 @@ extends Control
 
 const INSTRUCTIONS: Array[String] = [
 	"Use [A] / [D] or the arrow keys to move left and right.",
-	"Press [Space], [W], or the up arrow to jump.",
-	"Press [E] near an object to interact with it.",
+	"Press [Space], [W], or the up arrow to jump. Press 2x for double-jump!",
+	"Press [E] near water valve to interact with it.",
 ]
 
 const DOT_ACTIVE := Color(0.27, 0.45, 0.85, 1.0)
