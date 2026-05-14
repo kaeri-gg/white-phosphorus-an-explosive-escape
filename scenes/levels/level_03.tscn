@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7i2keg4pq27p"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_6y2y3"]
-[ext_resource type="Texture2D" uid="uid://836w26kd7mb" path="res://assets/backgrounds/level-backgrounds/Level 3 Background.png" id="2_gpenj"]
+[ext_resource type="Texture2D" uid="uid://bsb5s5rks1k6s" path="res://assets/backgrounds/level-backgrounds/Background 3 copy.png" id="2_8bbnc"]
 [ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_an42a"]
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_8bbnc"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_an42a"]
@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gpenj")
+texture = ExtResource("2_8bbnc")
 expand_mode = 5
 metadata/_edit_lock_ = true
 

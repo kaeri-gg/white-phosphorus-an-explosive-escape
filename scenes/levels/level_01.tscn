@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iuq1gve72064"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
-[ext_resource type="Texture2D" uid="uid://bf8cmweygluea" path="res://assets/backgrounds/level-backgrounds/Level 1 Background.png" id="2_cywot"]
+[ext_resource type="Texture2D" uid="uid://opf1cma7bwrq" path="res://assets/backgrounds/level-backgrounds/Background 1.png" id="2_uujh0"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
 [ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_lswbx"]
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_lswbx"]
@@ -54,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cywot")
+texture = ExtResource("2_uujh0")
 expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]
@@ -494,7 +494,7 @@ rotation = 3.1415927
 [node name="PortalArea" parent="PlatformWhitePortalTank" unique_id=1878742614 instance=ExtResource("24_mhiu8")]
 position = Vector2(13.441879, 9.243414)
 scale = Vector2(1.9678702, 1.0553372)
-next_scene_path = "uid://0txwnlwqetgm"
+next_scene_path = "uid://cwsod8q72c6hw"
 
 [node name="PlatformGrayMetalRope5" parent="." unique_id=867876061 instance=ExtResource("23_qy4h0")]
 position = Vector2(2424, -71)

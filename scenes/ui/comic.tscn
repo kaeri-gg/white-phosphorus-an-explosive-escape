@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b3s7wv26kgkre"]
+
+[ext_resource type="Texture2D" uid="uid://dy78hjgsoo5du" path="res://assets/comics/Comic_begin 1/1.png" id="1_baov8"]
+[ext_resource type="Script" path="res://scripts/ui/comic.gd" id="2_comic"]
+
+[sub_resource type="Theme" id="Theme_0p1u4"]
+
+[node name="Comic" type="TextureRect" unique_id=749506257]
+script = ExtResource("2_comic")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0p1u4")
+texture = ExtResource("1_baov8")
+expand_mode = 5
