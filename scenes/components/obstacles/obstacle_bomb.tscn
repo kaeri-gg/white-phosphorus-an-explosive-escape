@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b7i6hmfavj37t" path="res://assets/obstacles/bomb-blowup/11.png" id="12_fjow7"]
 [ext_resource type="Texture2D" uid="uid://dpwf22wvtpdkh" path="res://assets/obstacles/bomb-blowup/12.png" id="13_e7pum"]
 [ext_resource type="Texture2D" uid="uid://bcu03h4pxueey" path="res://assets/obstacles/bomb-blowup/13.png" id="14_wqd40"]
+[ext_resource type="Texture2D" uid="uid://blpxcc6mmb8mw" path="res://assets/obstacles/bomb-blowup/14.png" id="16_b2xit"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r03eu"]
 animations = [{
@@ -68,6 +69,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_wqd40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b2xit")
 }],
 "loop": false,
 "name": &"explode",
@@ -84,7 +88,7 @@ type = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954247983]
 sprite_frames = SubResource("SpriteFrames_r03eu")
-animation = &"explode"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402928465]
 position = Vector2(31.472645, -6.620787)

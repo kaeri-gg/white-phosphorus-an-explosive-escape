@@ -6,11 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_detection"]
 size = Vector2(461.2416, 220.83336)
 
-[node name="PlatformFinalPlatform" type="StaticBody2D" unique_id=2138956466]
+[node name="PlatformFinal" type="StaticBody2D" unique_id=2138956466]
 scale = Vector2(0.596, 0.6)
 script = ExtResource("2_finalplatform")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236366085]
+[node name="Oven" type="Sprite2D" parent="." unique_id=1236366085]
+unique_name_in_owner = true
 scale = Vector2(0.90935105, 0.9108993)
 texture = ExtResource("1_j73on")
 
@@ -29,5 +30,9 @@ scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_detection")
 
 [node name="StableTimer" type="Timer" parent="." unique_id=1117517763]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="AuraTimer" type="Timer" parent="." unique_id=1117517764]
 unique_name_in_owner = true
 one_shot = true

@@ -21,3 +21,25 @@ func stop(by_name: String) -> void:
 		push_warning("SoundManager: sound '%s' not found." % by_name)
 		return
 	sound.stop()
+
+func play_looped(by_name: String) -> void:
+	var sound: AudioStreamPlayer = _players.get(by_name)
+	if sound == null:
+		push_warning("SoundManager: sound '%s' not found." % by_name)
+		return
+	if not sound.finished.is_connected(_on_loop_finished.bind(by_name)):
+		sound.finished.connect(_on_loop_finished.bind(by_name))
+	sound.play()
+
+func stop_looped(by_name: String) -> void:
+	var sound: AudioStreamPlayer = _players.get(by_name)
+	if sound == null:
+		return
+	if sound.finished.is_connected(_on_loop_finished.bind(by_name)):
+		sound.finished.disconnect(_on_loop_finished.bind(by_name))
+	sound.stop()
+
+func _on_loop_finished(by_name: String) -> void:
+	var sound: AudioStreamPlayer = _players.get(by_name)
+	if sound:
+		sound.play()
