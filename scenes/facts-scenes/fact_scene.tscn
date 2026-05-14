@@ -25,6 +25,7 @@ next_scene_path = "uid://0txwnlwqetgm"
 [node name="Comic" parent="." unique_id=749506257 instance=ExtResource("3_m2ymw")]
 visible = false
 layout_mode = 1
+expand_mode = 3
 sequence = 1
 duration = 0.5
 
