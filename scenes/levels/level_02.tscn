@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwsod8q72c6hw"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_v5pqk"]
-[ext_resource type="Texture2D" uid="uid://bjwbq34lkj56d" path="res://assets/backgrounds/level-backgrounds/Level 2 Background.png" id="2_lky54"]
+[ext_resource type="Texture2D" uid="uid://dt25dvc4p2gcf" path="res://assets/backgrounds/level-backgrounds/Background 2.png" id="2_xwa1x"]
 [ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_gus8w"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_gus8w"]
@@ -52,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_lky54")
+texture = ExtResource("2_xwa1x")
 expand_mode = 5
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=876825066]

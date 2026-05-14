@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjwbq34lkj56d"
-path="res://.godot/imported/Level 2 Background.png-24dc790bbc89dbce3aba10bcc2f83560.ctex"
+uid="uid://bholpm7uwba20"
+path="res://.godot/imported/1.png-a7df0daaa2cf3329de2af3b965884aa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/level-backgrounds/Level 2 Background.png"
-dest_files=["res://.godot/imported/Level 2 Background.png-24dc790bbc89dbce3aba10bcc2f83560.ctex"]
+source_file="res://assets/comics/Comic_begin 2/1.png"
+dest_files=["res://.godot/imported/1.png-a7df0daaa2cf3329de2af3b965884aa5.ctex"]
 
 [params]
 

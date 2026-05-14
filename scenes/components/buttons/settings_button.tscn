@@ -26,6 +26,7 @@ theme_override_constants/margin_top = 20
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+focus_mode = 0
 tooltip_text = "Settings (Esc)"
 texture_normal = ExtResource("2_n54ui")
 texture_pressed = ExtResource("3_hbffq")

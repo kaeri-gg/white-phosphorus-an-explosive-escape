@@ -60,6 +60,8 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if has_triggered or body is not Player:
 		return
+		
+	sound_manager.play("ReachPortal")
 	has_triggered = true
 	current_player = body
 	current_player.enter_final_aura()

@@ -2,18 +2,15 @@
 
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_def8c"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="2_7oowi"]
-[ext_resource type="Texture2D" uid="uid://dede5rudrhgjk" path="res://assets/backgrounds/tutorial-backgrounds/Begin comic 2.png" id="3_bdxta"]
+[ext_resource type="Texture2D" uid="uid://bholpm7uwba20" path="res://assets/comics/Comic_begin 2/1.png" id="4_hwoty"]
 [ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="5_bdxta"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="5_dx6pe"]
-[ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_bdxta"]
-[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_rlmc2"]
+[ext_resource type="Texture2D" uid="uid://cu15w8r2sbl3o" path="res://assets/comics/Comic_begin 2/2.png" id="5_yk4rj"]
+[ext_resource type="Texture2D" uid="uid://ppq7x1qfxo8b" path="res://assets/comics/Comic_begin 2/3.png" id="6_7i5yk"]
+[ext_resource type="Texture2D" uid="uid://1n6jel7px6ag" path="res://assets/comics/Comic_begin 2/4.png" id="7_7i5yk"]
+[ext_resource type="PackedScene" uid="uid://b3s7wv26kgkre" path="res://scenes/ui/comic.tscn" id="8_bdxta"]
+[ext_resource type="Texture2D" uid="uid://b7aav0r8haxgm" path="res://assets/comics/Comic_begin 2/5.png" id="8_enhyq"]
 [ext_resource type="PackedScene" uid="uid://ba31gs3gihcwd" path="res://scenes/components/buttons/next_screen_button.tscn" id="8_hwoty"]
-
-[sub_resource type="Theme" id="Theme_0p1u4"]
-
-[sub_resource type="Theme" id="Theme_fap61"]
-
-[sub_resource type="Theme" id="Theme_5m2np"]
 
 [node name="FactScene_02" type="Control" unique_id=524710273]
 layout_mode = 3
@@ -24,18 +21,73 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_def8c")
 script = ExtResource("2_7oowi")
-next_scene_path = "uid://cwsod8q72c6hw"
+next_scene_path = "uid://iuq1gve72064"
 
-[node name="Background" type="TextureRect" parent="." unique_id=313513725]
+[node name="Comic" parent="." unique_id=749506257 instance=ExtResource("8_bdxta")]
+visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_0p1u4")
-texture = ExtResource("3_bdxta")
-expand_mode = 5
+texture = ExtResource("4_hwoty")
+sequence = 1
+duration = 0.5
+
+[node name="Comic2" parent="." unique_id=900935415 instance=ExtResource("8_bdxta")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 333.0
+offset_top = 493.0
+offset_right = 703.0935
+offset_bottom = 693.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_yk4rj")
+expand_mode = 3
+stretch_mode = 5
+sequence = 2
+duration = 2.0
+
+[node name="Comic4" parent="." unique_id=120967484 instance=ExtResource("8_bdxta")]
+visible = false
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+offset_left = -570.0
+grow_horizontal = 0
+texture = ExtResource("7_7i5yk")
+expand_mode = 3
+sequence = 5
+duration = 7.0
+
+[node name="Comic5" parent="." unique_id=472068134 instance=ExtResource("8_bdxta")]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -570.0
+offset_top = -405.20407
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_enhyq")
+sequence = 5
+duration = 9.0
+
+[node name="Comic3" parent="." unique_id=178287678 instance=ExtResource("8_bdxta")]
+visible = false
+layout_mode = 1
+offset_left = 313.0
+offset_top = 54.0
+offset_right = -492.69073
+offset_bottom = -66.0
+texture = ExtResource("6_7i5yk")
+expand_mode = 3
+stretch_mode = 5
+sequence = 3
+duration = 4.5
 
 [node name="ButtonsContainer" type="GridContainer" parent="." unique_id=875422812]
 custom_minimum_size = Vector2(150, 80)
@@ -53,54 +105,6 @@ layout_mode = 2
 [node name="HelpButton" parent="ButtonsContainer" unique_id=1678844866 instance=ExtResource("5_bdxta")]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -340.5
-offset_top = -150.0
-offset_right = 340.5
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("7_bdxta")
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer" unique_id=92191970]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2" unique_id=1516481599]
-layout_mode = 2
-
-[node name="Header" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1852119583]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = SubResource("Theme_fap61")
-theme_override_fonts/font = ExtResource("7_rlmc2")
-theme_override_font_sizes/font_size = 23
-text = "Did you know how special I am?"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Text" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1456016261]
-custom_minimum_size = Vector2(450, 150)
-layout_mode = 2
-theme = SubResource("Theme_5m2np")
-text = "I don't want to brag but, I am essential for DNA, bones, and teeth, even plants needs me to grow! I am being used as a fertilizers too! Because I help build cell membranes in all living things! How's that?
-
-I am dangerously essential !"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="Button" type="MarginContainer" parent="." unique_id=1319452534]
 layout_mode = 1
