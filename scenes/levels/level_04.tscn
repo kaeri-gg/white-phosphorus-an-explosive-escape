@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cnrmitikulwno"]
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_mf6hd"]
-[ext_resource type="Texture2D" uid="uid://x61wfrsmpw7j" path="res://assets/backgrounds/level-backgrounds/Level 4 pt1 background.png" id="2_mf6hd"]
-[ext_resource type="Texture2D" uid="uid://br6shl7533d70" path="res://assets/backgrounds/level-backgrounds/Level 4 pt2 background.png" id="3_axo1c"]
+[ext_resource type="Texture2D" uid="uid://dm1muq18cpqgo" path="res://assets/backgrounds/level-backgrounds/Background 4 pt1.png" id="2_6m61h"]
+[ext_resource type="Texture2D" uid="uid://d2oglbitgw4o" path="res://assets/backgrounds/level-backgrounds/Background 4 pt2.png" id="3_6m61h"]
 [ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="4_6m61h"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_47boq"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_8m3pt"]
@@ -59,7 +59,7 @@ layer = -10
 [node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=513751204]
 offset_right = 2560.0
 size_flags_horizontal = 0
-texture = ExtResource("2_mf6hd")
+texture = ExtResource("2_6m61h")
 expand_mode = 5
 metadata/_edit_lock_ = true
 
@@ -68,7 +68,7 @@ offset_top = 720.0
 offset_right = 2560.0
 offset_bottom = 1440.0
 size_flags_horizontal = 0
-texture = ExtResource("3_axo1c")
+texture = ExtResource("3_6m61h")
 expand_mode = 5
 metadata/_edit_lock_ = true
 
@@ -181,7 +181,7 @@ emission_rect_extents = Vector2(10, 20)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
-position = Vector2(163.00002, 119)
+position = Vector2(329, 1111)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2700, 1440)
 
@@ -1153,7 +1153,7 @@ rotation = -3.1415927
 [node name="PlatformFinal" parent="." unique_id=2138956466 instance=ExtResource("27_47boq")]
 position = Vector2(192.00002, 1240)
 scale = Vector2(0.42979056, 0.42014077)
-next_scene_path = "uid://iuq1gve72064"
+next_scene_path = "uid://dnqa1o5up7mbo"
 aura_duration = 11.0
 
 [node name="PlatformGray3WayConnector15" parent="." unique_id=654895447 instance=ExtResource("19_x1re1")]

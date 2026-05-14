@@ -2,18 +2,15 @@
 
 [ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_3rmp5"]
 [ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="1_fap61"]
-[ext_resource type="Texture2D" uid="uid://b5uhao4e70ix2" path="res://assets/backgrounds/tutorial-backgrounds/Begin comic 1.png" id="3_03iov"]
+[ext_resource type="PackedScene" uid="uid://b3s7wv26kgkre" path="res://scenes/ui/comic.tscn" id="3_m2ymw"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_03iov"]
+[ext_resource type="Texture2D" uid="uid://cv81fnn2dr5u0" path="res://assets/comics/Comic_begin 1/2.png" id="4_jdiyy"]
 [ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="5_03iov"]
+[ext_resource type="Texture2D" uid="uid://y7s0co0qi061" path="res://assets/comics/Comic_begin 1/3.png" id="5_7ir4n"]
 [ext_resource type="PackedScene" uid="uid://ba31gs3gihcwd" path="res://scenes/components/buttons/next_screen_button.tscn" id="6_03iov"]
-[ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="7_03iov"]
-[ext_resource type="FontFile" uid="uid://cnqvv2fq4nkmg" path="res://assets/fonts/ShantellSans-ExtraBold.ttf" id="7_5m2np"]
-
-[sub_resource type="Theme" id="Theme_0p1u4"]
-
-[sub_resource type="Theme" id="Theme_fap61"]
-
-[sub_resource type="Theme" id="Theme_5m2np"]
+[ext_resource type="Texture2D" uid="uid://ckox0cuag5or2" path="res://assets/comics/Comic_begin 1/4.png" id="6_jygj3"]
+[ext_resource type="Texture2D" uid="uid://cpcnxgoqhl12a" path="res://assets/comics/Comic_begin 1/5.png" id="7_o66tr"]
+[ext_resource type="Texture2D" uid="uid://dq427dfhhpgil" path="res://assets/comics/Comic_begin 1/6.png" id="8_d8pvg"]
 
 [node name="FactScene" type="Control" unique_id=524710273]
 layout_mode = 3
@@ -24,18 +21,98 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3rmp5")
 script = ExtResource("1_fap61")
-next_scene_path = "uid://iuq1gve72064"
+next_scene_path = "uid://0txwnlwqetgm"
 
-[node name="Background" type="TextureRect" parent="." unique_id=313513725]
+[node name="Comic" parent="." unique_id=749506257 instance=ExtResource("3_m2ymw")]
+visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_0p1u4")
-texture = ExtResource("3_03iov")
-expand_mode = 5
+sequence = 1
+duration = 0.5
+
+[node name="Comic2" parent="." unique_id=1818992608 instance=ExtResource("3_m2ymw")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 386.0
+offset_top = 47.0
+offset_right = 786.0
+offset_bottom = 207.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_jdiyy")
+expand_mode = 3
+stretch_mode = 5
+sequence = 2
+duration = 2.0
+
+[node name="Comic3" parent="." unique_id=772796178 instance=ExtResource("3_m2ymw")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 319.0
+offset_top = 265.0
+offset_right = 719.0
+offset_bottom = 445.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_7ir4n")
+expand_mode = 3
+stretch_mode = 5
+sequence = 3
+duration = 4.0
+
+[node name="Comic4" parent="." unique_id=1591473502 instance=ExtResource("3_m2ymw")]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 325.0
+offset_top = 521.0
+offset_right = 725.0
+offset_bottom = 671.64935
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_jygj3")
+stretch_mode = 5
+sequence = 4
+duration = 6.0
+
+[node name="Comic5" parent="." unique_id=659977932 instance=ExtResource("3_m2ymw")]
+visible = false
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+grow_horizontal = 0
+texture = ExtResource("7_o66tr")
+expand_mode = 3
+sequence = 5
+duration = 8.0
+
+[node name="Comic6" parent="." unique_id=1022793623 instance=ExtResource("3_m2ymw")]
+visible = false
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 630.0
+offset_top = 279.0
+offset_right = 1062.161
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("8_d8pvg")
+expand_mode = 3
+stretch_mode = 5
+sequence = 6
+duration = 10.0
 
 [node name="ButtonsContainer" type="GridContainer" parent="." unique_id=1094651971]
 custom_minimum_size = Vector2(150, 80)
@@ -75,51 +152,3 @@ theme_override_constants/margin_bottom = 50
 unique_name_in_owner = true
 layout_mode = 2
 tooltip = "Next (Space)"
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1002689759]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -340.5
-offset_top = -150.0
-offset_right = 340.5
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("7_03iov")
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer" unique_id=92191970]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2" unique_id=1516481599]
-layout_mode = 2
-
-[node name="Header" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1852119583]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = SubResource("Theme_fap61")
-theme_override_fonts/font = ExtResource("7_5m2np")
-theme_override_font_sizes/font_size = 23
-text = "Hello! Here's a little facts about me:"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Text" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer" unique_id=1456016261]
-custom_minimum_size = Vector2(450, 150)
-layout_mode = 2
-theme = SubResource("Theme_5m2np")
-text = "My name is \"Phos\",  and I am white phosphorus! I am minced from Phosphate rock.
-
-Although they said my name means \"light-bringer\", I am often stored under water for everyone's safety, because I  can ignite when I am exposed to air, and I'm uncontrollable!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2

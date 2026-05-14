@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dnqa1o5up7mbo"]
+
+[ext_resource type="Theme" uid="uid://deao4c1ege2ao" path="res://theme/main_theme.tres" id="1_mbsa0"]
+[ext_resource type="Script" uid="uid://bp8ut8finouf5" path="res://scripts/ui/fact_scene.gd" id="2_a63nk"]
+[ext_resource type="PackedScene" uid="uid://b3s7wv26kgkre" path="res://scenes/ui/comic.tscn" id="3_mng5n"]
+[ext_resource type="Texture2D" uid="uid://didkaex87jtjd" path="res://assets/comics/Comic end/1.png" id="4_jqqjc"]
+[ext_resource type="Texture2D" uid="uid://c5hmi2nwe0lg3" path="res://assets/comics/Comic end/2.png" id="5_ipmq3"]
+[ext_resource type="Texture2D" uid="uid://dk2ggkil4a2e2" path="res://assets/comics/Comic end/3.png" id="6_8ylhg"]
+[ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="9_p3lk3"]
+[ext_resource type="PackedScene" uid="uid://ba31gs3gihcwd" path="res://scenes/components/buttons/next_screen_button.tscn" id="13_rrr6o"]
+
+[node name="FactScene_Ending" type="Control" unique_id=524710273]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mbsa0")
+script = ExtResource("2_a63nk")
+next_scene_path = "uid://4ht2ox1qqc7q"
+
+[node name="Comic" parent="." unique_id=749506257 instance=ExtResource("3_mng5n")]
+layout_mode = 1
+texture = ExtResource("4_jqqjc")
+sequence = 1
+duration = 0.5
+
+[node name="Comic2" parent="." unique_id=900935415 instance=ExtResource("3_mng5n")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 33.0
+offset_top = 211.0
+offset_right = 533.0
+offset_bottom = 611.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_ipmq3")
+expand_mode = 2
+stretch_mode = 5
+sequence = 2
+duration = 3.0
+
+[node name="Comic3" parent="." unique_id=178287678 instance=ExtResource("3_mng5n")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -197.0
+offset_right = -60.0
+offset_bottom = 203.0
+grow_horizontal = 0
+texture = ExtResource("6_8ylhg")
+expand_mode = 2
+stretch_mode = 5
+sequence = 3
+duration = 5.0
+
+[node name="ButtonsContainer" type="GridContainer" parent="." unique_id=875422812]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 80.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="HomeButton" parent="ButtonsContainer" unique_id=445205108 instance=ExtResource("9_p3lk3")]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="Button" type="MarginContainer" parent="." unique_id=1319452534]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -190.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5869658, 0.5869658)
+theme_override_constants/margin_bottom = 0
+
+[node name="NextScreen" parent="Button" unique_id=1914277223 instance=ExtResource("13_rrr6o")]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip = "Next (Space)"
