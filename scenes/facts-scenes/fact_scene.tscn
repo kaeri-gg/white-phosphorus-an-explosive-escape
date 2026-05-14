@@ -127,10 +127,6 @@ columns = 3
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 
-[node name="HelpButton" parent="ButtonsContainer" unique_id=44680578 instance=ExtResource("5_03iov")]
-custom_minimum_size = Vector2(50, 60)
-layout_mode = 2
-
 [node name="Button" type="MarginContainer" parent="." unique_id=824271023]
 layout_mode = 1
 anchors_preset = 3
