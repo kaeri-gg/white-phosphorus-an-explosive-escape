@@ -19,14 +19,19 @@ grow_vertical = 2
 theme = ExtResource("1_mbsa0")
 script = ExtResource("2_a63nk")
 next_scene_path = "uid://4ht2ox1qqc7q"
+fade_duration = 1.0
+return_to_home = true
+return_to_home_delay = 8.0
 
 [node name="Comic" parent="." unique_id=749506257 instance=ExtResource("3_mng5n")]
+visible = false
 layout_mode = 1
 texture = ExtResource("4_jqqjc")
 sequence = 1
 duration = 0.5
 
 [node name="Comic2" parent="." unique_id=900935415 instance=ExtResource("3_mng5n")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -41,9 +46,10 @@ texture = ExtResource("5_ipmq3")
 expand_mode = 2
 stretch_mode = 5
 sequence = 2
-duration = 3.0
+duration = 2.0
 
 [node name="Comic3" parent="." unique_id=178287678 instance=ExtResource("3_mng5n")]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -58,7 +64,7 @@ texture = ExtResource("6_8ylhg")
 expand_mode = 2
 stretch_mode = 5
 sequence = 3
-duration = 5.0
+duration = 4.0
 
 [node name="ButtonsContainer" type="GridContainer" parent="." unique_id=875422812]
 custom_minimum_size = Vector2(150, 80)

@@ -29,7 +29,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_close"):
 		sound_manager.play("Click")
 		close_modal()
 		get_viewport().set_input_as_handled()

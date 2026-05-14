@@ -40,7 +40,6 @@ offset_right = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v5pqk")
-show_tutorial_on_start = true
 metadata/_edit_horizontal_guides_ = [716.0, 578.0]
 metadata/_edit_vertical_guides_ = [2615.0, 2406.0]
 

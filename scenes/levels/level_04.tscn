@@ -111,6 +111,7 @@ position = Vector2(2077, 232)
 dialog_text = "I must recover before going down there..."
 
 [node name="PlayerDialog4" parent="." unique_id=1936774150 instance=ExtResource("6_1f6xj")]
+visible = false
 position = Vector2(118, 1331)
 dialog_text = "We did it!"
 bubble_offset = Vector2(0, -65)
@@ -181,7 +182,7 @@ emission_rect_extents = Vector2(10, 20)
 
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
-position = Vector2(329, 1111)
+position = Vector2(179, 93.00003)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2700, 1440)
 
@@ -1154,7 +1155,9 @@ rotation = -3.1415927
 position = Vector2(192.00002, 1240)
 scale = Vector2(0.42979056, 0.42014077)
 next_scene_path = "uid://dnqa1o5up7mbo"
-aura_duration = 11.0
+hold_duration = 7.0
+aura_duration = 7.0
+final_form_delay = 2.0
 
 [node name="PlatformGray3WayConnector15" parent="." unique_id=654895447 instance=ExtResource("19_x1re1")]
 position = Vector2(663, 849)
