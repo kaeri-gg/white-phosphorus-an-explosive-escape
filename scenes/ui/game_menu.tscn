@@ -55,6 +55,7 @@ alignment = 1
 
 [node name="LogoContainer" type="MarginContainer" parent="ContentsContainer" unique_id=587593467]
 layout_mode = 2
+theme_override_constants/margin_bottom = 50
 
 [node name="GodotLogo" type="TextureRect" parent="ContentsContainer/LogoContainer" unique_id=1414926119]
 unique_name_in_owner = true
@@ -79,7 +80,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -250.0
-offset_top = -23.0
+offset_top = -134.0
 offset_right = 250.0
 grow_horizontal = 2
 grow_vertical = 0

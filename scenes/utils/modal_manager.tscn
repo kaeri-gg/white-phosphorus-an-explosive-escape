@@ -58,13 +58,12 @@ anchor_bottom = 0.5
 offset_left = -250.0
 offset_top = -275.0
 offset_right = 250.0
-offset_bottom = 275.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Settings" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
@@ -111,7 +110,7 @@ alignment = 2
 
 [node name="LabelContainer" type="VBoxContainer" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails" unique_id=1522614584]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="UIScaleLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1203257930]
 visible = false
@@ -335,6 +334,7 @@ autowrap_mode = 2
 
 [node name="Tutorial" type="PanelContainer" parent="MarginContainer" unique_id=1454227463]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
