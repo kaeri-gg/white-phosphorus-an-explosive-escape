@@ -1,6 +1,8 @@
 # White Phosphorus: An Explosive Escape
 
-> A web-based small 2D platformer about a phosphorus character who survives in water, burns in air, and uncovers strange facts about phosphorus along the way.
+A web-based small 2D platformer about a phosphorus character who survives in water, burns in air, and uncovers strange facts about phosphorus along the way.
+
+<img width="1400" height="825" alt="Screenshot at May 15 04-11-30" src="https://github.com/user-attachments/assets/122d5d17-56ca-4a81-954c-d09b078ef0ef" />
 
 Built with [Godot 4.6](https://godotengine.org/) using GDScript.
 
