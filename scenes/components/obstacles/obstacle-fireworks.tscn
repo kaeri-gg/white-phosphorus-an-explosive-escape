@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c6edehpgdptbs" path="res://assets/obstacles/firework-blowup/11.png" id="12_xlemi"]
 [ext_resource type="Texture2D" uid="uid://c40duat4ehakm" path="res://assets/obstacles/firework-blowup/12.png" id="13_hny5v"]
 [ext_resource type="Texture2D" uid="uid://qxpu0cgy40i7" path="res://assets/obstacles/firework-blowup/13.png" id="14_o2wmb"]
+[ext_resource type="Texture2D" uid="uid://c85jgk0u1mfgr" path="res://assets/obstacles/firework-blowup/14.png" id="16_50y2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5a3ft"]
 animations = [{
@@ -86,6 +87,9 @@ animations = [{
 }, {
 "duration": 1.5,
 "texture": ExtResource("14_o2wmb")
+}, {
+"duration": 1.5,
+"texture": ExtResource("16_50y2g")
 }],
 "loop": false,
 "name": &"explode",
@@ -105,6 +109,7 @@ metadata/_edit_horizontal_guides_ = [-49.0]
 position = Vector2(101.00001, 42.000004)
 scale = Vector2(0.8268519, 0.8268519)
 sprite_frames = SubResource("SpriteFrames_5a3ft")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1446072756]
 position = Vector2(80.86173, -41.395462)

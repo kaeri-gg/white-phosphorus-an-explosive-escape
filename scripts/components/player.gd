@@ -74,6 +74,7 @@ var env_state: ENV = ENV.AIR
 var was_moving: bool = false
 var is_dying: bool = false
 var just_left_water: bool = false
+var horizontal_movement_only: bool = false
 var _was_on_floor: bool = false
 var _landed_sound_played: bool = false
 var _air_frames: int = 0
@@ -112,17 +113,22 @@ func change_state(new_state: STATE) -> void:
 	if current_state == new_state:
 		return
 
+	var prev_state := current_state
 	current_state = new_state
 	state_change.emit(current_state)
 
 	if new_state != STATE.DEAD:
 		update_visual_state()
 
+	if prev_state == STATE.BURNING and new_state != STATE.BURNING:
+		sound_manager.stop_looped("Fire")
+
 	match new_state:
 		STATE.STABLE:
 			stabilized.emit()
 		STATE.BURNING:
 			burned.emit()
+			sound_manager.play_looped("Fire")
 		STATE.VIBRATING:
 			shook.emit()
 
@@ -146,7 +152,7 @@ func _physics_process(_delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 
-	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMP:
+	if not horizontal_movement_only and Input.is_action_just_pressed("jump") and jump_count < MAX_JUMP:
 		var jump_anim: String = _anims_for(current_state).get("jump", "")
 		if not jump_anim.is_empty():
 			player_sprite.stop()
@@ -282,11 +288,21 @@ func heal(amount: int) -> void:
 	current_health = mini(current_health + amount, PLAYER_HEALTH)
 	health_changed.emit(current_health, PLAYER_HEALTH)
 
+func enter_final_aura() -> void:
+	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
+		return
+
+	_stop_timers()
+	just_left_water = false
+	change_state(STATE.STABLE)
+	horizontal_movement_only = true
+
 func transform_to_final_form() -> void:
 	if current_state == STATE.DEAD or current_state == STATE.EVOLVED:
 		return
 
 	_stop_timers()
+	horizontal_movement_only = false
 	velocity = Vector2.ZERO
 	change_state(STATE.EVOLVED)
 	await player_sprite.animation_finished
@@ -299,6 +315,9 @@ func die() -> void:
 
 	is_dying = true
 	_stop_timers()
+
+	if state_before_death == STATE.BURNING:
+		sound_manager.stop_looped("Fire")
 
 	current_state = STATE.DEAD
 	state_change.emit(current_state)
