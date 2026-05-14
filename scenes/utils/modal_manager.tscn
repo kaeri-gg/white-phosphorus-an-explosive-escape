@@ -114,6 +114,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="UIScaleLabel" type="Label" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/LabelContainer" unique_id=1203257930]
+visible = false
 layout_mode = 2
 text = "UI Scale:"
 
@@ -131,6 +132,7 @@ theme_override_constants/separation = 15
 
 [node name="UIScaleOptionButton" type="OptionButton" parent="MarginContainer/Settings/SettingsControl/Container/Settings/SettingsDetails/AdjustmentContainer" unique_id=146620165]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 mouse_default_cursor_shape = 2

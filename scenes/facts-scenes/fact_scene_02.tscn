@@ -30,24 +30,6 @@ texture = ExtResource("4_hwoty")
 sequence = 1
 duration = 0.5
 
-[node name="Comic2" parent="." unique_id=900935415 instance=ExtResource("8_bdxta")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 333.0
-offset_top = 493.0
-offset_right = 703.0935
-offset_bottom = 693.0
-grow_horizontal = 1
-grow_vertical = 1
-texture = ExtResource("5_yk4rj")
-expand_mode = 3
-stretch_mode = 5
-sequence = 2
-duration = 2.0
-
 [node name="Comic4" parent="." unique_id=120967484 instance=ExtResource("8_bdxta")]
 visible = false
 custom_minimum_size = Vector2(0, 720)
@@ -68,13 +50,32 @@ layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
-offset_left = -570.0
+offset_left = -666.2139
 offset_top = -405.20407
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("8_enhyq")
+expand_mode = 3
 sequence = 5
 duration = 9.0
+
+[node name="Comic2" parent="." unique_id=900935415 instance=ExtResource("8_bdxta")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 333.0
+offset_top = 493.0
+offset_right = 703.0935
+offset_bottom = 693.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_yk4rj")
+expand_mode = 3
+stretch_mode = 5
+sequence = 2
+duration = 2.0
 
 [node name="Comic3" parent="." unique_id=178287678 instance=ExtResource("8_bdxta")]
 visible = false
