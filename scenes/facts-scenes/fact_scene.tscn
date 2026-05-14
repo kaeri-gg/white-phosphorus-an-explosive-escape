@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b3s7wv26kgkre" path="res://scenes/ui/comic.tscn" id="3_m2ymw"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_03iov"]
 [ext_resource type="Texture2D" uid="uid://cv81fnn2dr5u0" path="res://assets/comics/Comic_begin 1/2.png" id="4_jdiyy"]
-[ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="5_03iov"]
 [ext_resource type="Texture2D" uid="uid://y7s0co0qi061" path="res://assets/comics/Comic_begin 1/3.png" id="5_7ir4n"]
 [ext_resource type="PackedScene" uid="uid://ba31gs3gihcwd" path="res://scenes/components/buttons/next_screen_button.tscn" id="6_03iov"]
 [ext_resource type="Texture2D" uid="uid://ckox0cuag5or2" path="res://assets/comics/Comic_begin 1/4.png" id="6_jygj3"]
@@ -125,10 +124,6 @@ columns = 3
 
 [node name="HomeButton" parent="ButtonsContainer" unique_id=445205108 instance=ExtResource("4_03iov")]
 custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-
-[node name="HelpButton" parent="ButtonsContainer" unique_id=44680578 instance=ExtResource("5_03iov")]
-custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
 
 [node name="Button" type="MarginContainer" parent="." unique_id=824271023]
