@@ -61,7 +61,7 @@ func _on_body_entered(body: Node) -> void:
 	if has_triggered or body is not Player:
 		return
 		
-	sound_manager.play("ReachPortal")
+	sound_manager.play("Winning")
 	has_triggered = true
 	current_player = body
 	current_player.enter_final_aura()
@@ -96,7 +96,6 @@ func advance() -> void:
 		return
 
 	is_transitioning = true
-	sound_manager.play("ReachPortal")
 	await utils.fade_to_white(get_tree().current_scene, fade_duration)
 	get_tree().change_scene_to_file(resolved)
 

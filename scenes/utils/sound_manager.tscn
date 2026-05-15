@@ -2,19 +2,20 @@
 
 [ext_resource type="AudioStream" uid="uid://cp2pvh7oa32i" path="res://assets/audio/click.mp3" id="1_gbdfy"]
 [ext_resource type="Script" uid="uid://chkyuswi06ng" path="res://scripts/managers/sound_manager.gd" id="1_mpi5b"]
-[ext_resource type="AudioStream" uid="uid://ds57loqx46qmq" path="res://assets/audio/tick-sound.mp3" id="5_k1d7a"]
+[ext_resource type="AudioStream" uid="uid://bhlvbetpoacj0" path="res://assets/audio/SFX/damage.mp3" id="5_0b1e3"]
 [ext_resource type="AudioStream" uid="uid://t2qf0pv6n5ro" path="res://assets/audio/enter-game.mp3" id="6_gb18h"]
 [ext_resource type="AudioStream" uid="uid://wtur1i8po688" path="res://assets/audio/843947__freekit__fireworks-1 - fireworks blowing (2).wav" id="7_l71x8"]
-[ext_resource type="AudioStream" uid="uid://yypeefqlnlog" path="res://assets/audio/bogenseeberg__take-a-damage.wav" id="8_fcrsd"]
 [ext_resource type="AudioStream" uid="uid://ci3vnuo4bdt1k" path="res://assets/audio/brunoboselli__rusty-valve.wav" id="9_33vq4"]
 [ext_resource type="AudioStream" uid="uid://ch7leipiri81l" path="res://assets/audio/zeltbolt_heal.wav" id="11_iuqck"]
 [ext_resource type="AudioStream" uid="uid://b8f0fsxl7lbp2" path="res://assets/audio/robinhood76__bomb.wav" id="12_fvikr"]
+[ext_resource type="AudioStream" uid="uid://gbe1ibkb2al7" path="res://assets/audio/SFX/portal-sound.mp3" id="12_umb60"]
 [ext_resource type="AudioStream" uid="uid://dbwe2yebdw4yc" path="res://assets/audio/samararaine__on-fire.wav" id="13_stfo2"]
 [ext_resource type="AudioStream" uid="uid://bxg7mcmsxurix" path="res://assets/audio/rutgermuller__metal-jump3.wav" id="14_ck3uw"]
-[ext_resource type="AudioStream" uid="uid://b7thjeajvashq" path="res://assets/audio/kagateni__reach-the-goal.wav" id="15_l71x8"]
-[ext_resource type="AudioStream" uid="uid://b8s04iweao7v2" path="res://assets/audio/danhelbling__enter-water.wav" id="15_umb60"]
-[ext_resource type="AudioStream" uid="uid://ypooy1dw2gfv" path="res://assets/audio/abloemarts242029__buring.wav" id="16_umb60"]
+[ext_resource type="AudioStream" uid="uid://dc152fny2bpf8" path="res://assets/audio/SFX/enter-water.mp3" id="15_umb60"]
+[ext_resource type="AudioStream" uid="uid://dx7vcgtsqgfei" path="res://assets/audio/SFX/dead.mp3" id="16_0b1e3"]
 [ext_resource type="AudioStream" uid="uid://0jo61es1fjy2" path="res://assets/audio/plasterbrain__jump.wav" id="17_0b1e3"]
+[ext_resource type="AudioStream" uid="uid://6unyue3evr3k" path="res://assets/audio/SFX/show-dialog.mp3" id="17_d4jln"]
+[ext_resource type="AudioStream" uid="uid://difwj1cgmla4p" path="res://assets/audio/SFX/game-win.mp3" id="18_d4jln"]
 
 [node name="SoundManager" type="Node" unique_id=2116437054]
 script = ExtResource("1_mpi5b")
@@ -23,16 +24,13 @@ script = ExtResource("1_mpi5b")
 stream = ExtResource("1_gbdfy")
 bus = &"SFX"
 
-[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=90270882]
-stream = ExtResource("5_k1d7a")
-bus = &"SFX"
 
 [node name="EnterGame" type="AudioStreamPlayer" parent="." unique_id=831615878]
 stream = ExtResource("6_gb18h")
 bus = &"SFX"
 
 [node name="Damage" type="AudioStreamPlayer" parent="." unique_id=822116400]
-stream = ExtResource("8_fcrsd")
+stream = ExtResource("5_0b1e3")
 bus = &"SFX"
 
 [node name="OpeningValve" type="AudioStreamPlayer" parent="." unique_id=1673061789]
@@ -41,7 +39,7 @@ bus = &"SFX"
 
 [node name="Fireworks" type="AudioStreamPlayer" parent="." unique_id=252147774]
 stream = ExtResource("7_l71x8")
-volume_db = 2.0
+volume_db = 4.0
 bus = &"SFX"
 
 [node name="Heal" type="AudioStreamPlayer" parent="." unique_id=1813560947]
@@ -59,22 +57,33 @@ bus = &"SFX"
 
 [node name="MetalJump" type="AudioStreamPlayer" parent="." unique_id=278529468]
 stream = ExtResource("14_ck3uw")
-volume_db = 1.0
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ReachPortal" type="AudioStreamPlayer" parent="." unique_id=133003290]
-stream = ExtResource("15_l71x8")
+stream = ExtResource("12_umb60")
 bus = &"SFX"
 
-[node name="Burning" type="AudioStreamPlayer" parent="." unique_id=2136607875]
-stream = ExtResource("16_umb60")
-bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1103134359]
 stream = ExtResource("17_0b1e3")
-volume_db = 0.8
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="EnterWater" type="AudioStreamPlayer" parent="." unique_id=216198925]
 stream = ExtResource("15_umb60")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Dead" type="AudioStreamPlayer" parent="." unique_id=1521356002]
+stream = ExtResource("16_0b1e3")
+bus = &"SFX"
+
+[node name="ShowDialog" type="AudioStreamPlayer" parent="." unique_id=1563955648]
+stream = ExtResource("17_d4jln")
+bus = &"SFX"
+
+[node name="Winning" type="AudioStreamPlayer" parent="." unique_id=1836260321]
+stream = ExtResource("18_d4jln")
+volume_db = 5.0
 bus = &"SFX"

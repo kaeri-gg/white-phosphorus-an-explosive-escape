@@ -319,6 +319,7 @@ func die() -> void:
 	if state_before_death == STATE.BURNING:
 		sound_manager.stop_looped("Fire")
 
+	sound_manager.play("Dead")
 	current_state = STATE.DEAD
 	state_change.emit(current_state)
 
