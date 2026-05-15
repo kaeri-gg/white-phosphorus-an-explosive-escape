@@ -68,6 +68,7 @@ func _show_and_type() -> void:
 	bubble_label.text = dialog_text
 	bubble_label.visible_characters = 0
 	bubble_anchor.visible = true
+	sound_manager.play("ShowDialog")
 	set_process(true)
 
 	var total_chars: int = dialog_text.length()

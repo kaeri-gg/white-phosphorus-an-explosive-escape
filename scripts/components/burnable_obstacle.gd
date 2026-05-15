@@ -51,6 +51,7 @@ func _on_body_exited(body: Node) -> void:
 
 func _handle_fire(player: Player) -> void:
 	sound_manager.play("Fire")
+	sound_manager.play("Damage")
 	if damage_amount > 0:
 		_start_damage_cycle(player)
 		return
@@ -78,6 +79,7 @@ func _on_damage_tick() -> void:
 	if _victim == null or not is_instance_valid(_victim) or _victim.current_state == Player.STATE.DEAD:
 		_stop_damage_cycle()
 		return
+	sound_manager.play("Damage")
 	_victim.take_damage(damage_amount)
 
 func _detonate(player: Player) -> void:
@@ -85,6 +87,7 @@ func _detonate(player: Player) -> void:
 		return
 	_detonated = true
 	_play_explode_if_present()
+	sound_manager.play("Damage")
 	if type == TYPE.BOMB:
 		sound_manager.play("Bomb")
 	else:

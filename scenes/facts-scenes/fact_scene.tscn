@@ -28,6 +28,7 @@ layout_mode = 1
 expand_mode = 3
 sequence = 1
 duration = 0.5
+transition = 3
 
 [node name="Comic2" parent="." unique_id=1818992608 instance=ExtResource("3_m2ymw")]
 visible = false
@@ -98,6 +99,7 @@ texture = ExtResource("7_o66tr")
 expand_mode = 3
 sequence = 5
 duration = 8.0
+play_sound = false
 
 [node name="Comic6" parent="." unique_id=1022793623 instance=ExtResource("3_m2ymw")]
 visible = false
