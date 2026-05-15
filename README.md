@@ -146,32 +146,42 @@ This project is licensed under the **MIT License**.
 
 ## Credits
 
-### Game Design
+### Game Designers
 
-- **Game Designers**: Anna Arsenina, Ai Dinh, Kathleen Povadora, Liu Qianying
-- **Level Design**: Anna Arsenina, Liu Qianying
-- **Narrative**: Liu Qianying, Anna Arsenina
-- **Producer**: Ai Dinh
+- Anna Arsenina, Ai Dinh, Liu Qianying, Kathleen Povadora
 
 ### Game Art
 
 - **Lead Artist**: Anna Arsenina
 - **UI/UX**: Kathleen Povadora
 
+### Level Design
+
+- **Lead Designer**: Anna Arsenina
+- **Contributor**: Liu Qianying
+
 ### Game Development
 
 - **Lead Developer**: Kathleen Povadora
-- **Contributors**: Ai Dinh
+- **Contributor**: Ai Dinh
 
+### Sounds Management
 
-### Instructors
+- **Lead Manager**: Kathleen Povadora
+- **Contributors**: Anna Arsenina, Liu Qianying
 
-- Mikhail Fiadotau
-- Leonardo Sorrentino
+### Narrative
+
+- **Lead**: Liu Qianying
+- **Contributor**: Anna Arsenina
+
+### Producer
+
+- Ai Dinh
 
 ### Special Thanks
 
-A heartfelt thank you to all our classmates and friends who generously gave their free time to playtest the game and share their feedback. Your input helped shape and improve it greatly.
+A heartfelt thank you to all our classmates and friends who generously gave their free time to play test the game and share their feedback. Your input helped shape and improve it greatly. This game is supervised by Mikhail Fiadotau and Leonardo Sorrentino.
 
 ### Background Music
 
