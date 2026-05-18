@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://4my5xlh4geah" path="res://scenes/components/platforms/platform_red_3_way_connector.tscn" id="32_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://c0urvyqmpye0w" path="res://scenes/components/platforms/platform_red_4_way_connector.tscn" id="34_lqu3g"]
 [ext_resource type="PackedScene" uid="uid://bfmwwmfs6owv2" path="res://scenes/components/platforms/platform_red_closing_pipe.tscn" id="40_1f6xj"]
+[ext_resource type="PackedScene" uid="uid://7nujl3prlruh" path="res://scenes/components/respawn_point.tscn" id="42_rfj36"]
 
 [node name="Level_04" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -108,13 +109,7 @@ dialog_text = "Please don't let me touch them when I'm on fire!"
 
 [node name="PlayerDialog3" parent="." unique_id=1185602510 instance=ExtResource("6_1f6xj")]
 position = Vector2(2077, 232)
-dialog_text = "I must recover before going down there..."
-
-[node name="PlayerDialog4" parent="." unique_id=1936774150 instance=ExtResource("6_1f6xj")]
-visible = false
-position = Vector2(118, 1331)
-dialog_text = "We did it!"
-bubble_offset = Vector2(0, -65)
+dialog_text = "I should recover over there before going down..."
 
 [node name="FactoryLeak" parent="." unique_id=531473869 instance=ExtResource("7_maafn")]
 position = Vector2(76, 46)
@@ -1398,3 +1393,7 @@ rotation = -1.5707964
 
 [node name="PlatformRedClosingPipe" parent="." unique_id=838309135 instance=ExtResource("40_1f6xj")]
 position = Vector2(2466, 796.00006)
+
+[node name="RespawnPoint" parent="." unique_id=853133550 instance=ExtResource("42_rfj36")]
+position = Vector2(2480, 1242)
+scale = Vector2(0.966282, 1.2423862)

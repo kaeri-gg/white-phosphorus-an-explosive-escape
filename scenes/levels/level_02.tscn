@@ -91,6 +91,7 @@ display_seconds = 3.0
 metadata/_edit_group_ = true
 
 [node name="PlayerDialog3" parent="." unique_id=1683558616 instance=ExtResource("5_gus8w")]
+visible = false
 position = Vector2(1323, 306)
 dialog_text = "All the tanks must be filled, until the last one!"
 
