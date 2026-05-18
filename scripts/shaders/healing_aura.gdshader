@@ -16,32 +16,37 @@ uniform float pulse_min : hint_range(0.0, 1.0) = 0.25;
 uniform float pulse_max : hint_range(0.0, 1.0) = 1.0;
 uniform bool enabled = true;
 
-const int RING_COUNT = 12;
-const int TAP_COUNT = 16;
-const float ALPHA_THRESHOLD = 0.1;
+// Vogel disk (golden-angle spiral): samples are spread continuously across
+// the disk area with no discrete ring boundaries, so there are no banding
+// artifacts regardless of sample count.
+const int SAMPLE_COUNT = 48;
+const float GOLDEN_ANGLE = 2.399963228; // radians ≈ 137.5°
 
 void fragment() {
 	vec4 base = texture(TEXTURE, UV);
 
 	if (enabled) {
-		// Find the normalized distance to the nearest opaque texel.
-		// ring_t = 0 means right at the sprite edge; 1.0 = at the aura boundary.
-		float min_dist = 1.0;
-		for (int r = 1; r <= RING_COUNT; r++) {
-			float ring_t = float(r) / float(RING_COUNT);
-			vec2 step_uv = ring_t * aura_radius * TEXTURE_PIXEL_SIZE;
-			for (int i = 0; i < TAP_COUNT; i++) {
-				float angle = float(i) * TAU / float(TAP_COUNT);
-				vec2 offset = vec2(cos(angle), sin(angle)) * step_uv;
-				if (texture(TEXTURE, UV + offset).a > ALPHA_THRESHOLD) {
-					min_dist = min(min_dist, ring_t);
-				}
-			}
+		float glow = 0.0;
+		float weight_sum = 0.0;
+
+		for (int i = 0; i < SAMPLE_COUNT; i++) {
+			// t in (0,1], r = sqrt(t) gives uniform area density across the disk.
+			float t = (float(i) + 0.5) / float(SAMPLE_COUNT);
+			float r = sqrt(t);
+			float angle = float(i) * GOLDEN_ANGLE;
+
+			vec2 offset = vec2(cos(angle), sin(angle)) * r * aura_radius * TEXTURE_PIXEL_SIZE;
+
+			// Use the raw alpha value — bilinear filtering gives sub-pixel
+			// smoothness at the sprite edge without any binary threshold.
+			float sample_a = texture(TEXTURE, UV + offset).a;
+
+			float w = pow(1.0 - r, spread);
+			glow += sample_a * w;
+			weight_sum += w;
 		}
 
-		// Polynomial falloff: bright near sprite, fades to nothing at aura_radius.
-		// pow curve avoids the hard clamp that causes sharp-edge artifacts.
-		float glow = pow(1.0 - min_dist, spread) * brightness;
+		glow = (glow / max(weight_sum, 0.001)) * brightness;
 
 		// Suppress glow inside the opaque sprite pixels.
 		glow *= (1.0 - base.a);
