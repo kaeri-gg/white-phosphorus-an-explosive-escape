@@ -10,13 +10,12 @@ uniform float intensity : hint_range(0.0, 10.0) = 9.0;
 uniform float pulse_speed : hint_range(0.0, 10.0) = 2.5;
 uniform float pulse_min : hint_range(0.0, 1.0) = 0.7;
 uniform float pulse_max : hint_range(0.0, 1.0) = 1.0;
+// Higher FALLOFF = tighter halo; lower = lingers further out.
+uniform float falloff : hint_range(0.5, 10.0) = 3.0;
 uniform bool enabled = true;
 
-const int RING_COUNT = 8;
-const int TAP_COUNT = 16;
-// Higher FALLOFF = tighter halo; lower = lingers further out.
-const float FALLOFF = 3.0;
-const float ALPHA_THRESHOLD = 0.1;
+const int SAMPLE_COUNT = 48;
+const float GOLDEN_ANGLE = 2.399963228;
 
 void fragment() {
 	vec4 base = texture(TEXTURE, UV);
@@ -24,27 +23,23 @@ void fragment() {
 	if (!enabled) {
 		COLOR = base;
 	} else {
-		// Approximate distance to the nearest opaque pixel via ring sampling,
-		// then apply exponential falloff for a smooth glow.
-		float min_dist = 1.5;
+		float glow = 0.0;
+		float weight_sum = 0.0;
 
-		for (int r = 1; r <= RING_COUNT; r++) {
-			float ring_t = float(r) / float(RING_COUNT);
-			float ring_radius = ring_t * outline_width;
+		for (int i = 0; i < SAMPLE_COUNT; i++) {
+			float t = (float(i) + 0.5) / float(SAMPLE_COUNT);
+			float r = sqrt(t);
+			float angle = float(i) * GOLDEN_ANGLE;
 
-			for (int i = 0; i < TAP_COUNT; i++) {
-				float angle = float(i) * TAU / float(TAP_COUNT);
-				vec2 offset = vec2(cos(angle), sin(angle))
-					* ring_radius * TEXTURE_PIXEL_SIZE;
-				float sample_a = texture(TEXTURE, UV + offset).a;
-				if (sample_a > ALPHA_THRESHOLD) {
-					min_dist = min(min_dist, ring_t);
-				}
-			}
+			vec2 offset = vec2(cos(angle), sin(angle)) * r * outline_width * TEXTURE_PIXEL_SIZE;
+			float sample_a = texture(TEXTURE, UV + offset).a;
+
+			float w = exp(-falloff * r);
+			glow += sample_a * w;
+			weight_sum += w;
 		}
 
-		float glow = exp(-FALLOFF * min_dist);
-		glow = clamp(glow * intensity, 0.0, 1.0);
+		glow = clamp((glow / max(weight_sum, 0.001)) * intensity, 0.0, 1.0);
 
 		float pulse = mix(pulse_min, pulse_max,
 			0.5 + 0.5 * sin(TIME * pulse_speed));

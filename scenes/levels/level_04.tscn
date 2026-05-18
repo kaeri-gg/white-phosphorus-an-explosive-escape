@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/ui/healing_water.tscn" id="9_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="9_uxfkd"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="10_afct4"]
+[ext_resource type="PackedScene" uid="uid://dc735i8cdheva" path="res://scenes/ui/glow.tscn" id="10_rfj36"]
 [ext_resource type="PackedScene" uid="uid://4swmix1i2jar" path="res://scenes/components/platforms/switch_blue.tscn" id="10_uxfkd"]
 [ext_resource type="PackedScene" uid="uid://4wkkvjaygiqp" path="res://scenes/components/platforms/platform_gray_closing_pipe.tscn" id="12_1a7k5"]
 [ext_resource type="PackedScene" uid="uid://x7kfgq6mseag" path="res://scenes/components/platforms/platform_gray_pipe_insert_cap.tscn" id="13_x5hhl"]
@@ -175,6 +176,41 @@ position = Vector2(336, 1073)
 amount = 12
 emission_rect_extents = Vector2(10, 20)
 
+[node name="Glow" parent="." unique_id=1602197464 instance=ExtResource("10_rfj36")]
+visibility_layer = 8
+layout_mode = 0
+offset_left = 1272.5956
+offset_top = 223.0
+offset_right = 1541.4088
+offset_bottom = 319.42242
+
+[node name="Glow2" parent="." unique_id=447225468 instance=ExtResource("10_rfj36")]
+visibility_layer = 8
+layout_mode = 0
+offset_left = 2436.0
+offset_top = 423.00003
+offset_right = 2704.8132
+offset_bottom = 519.42236
+scale = Vector2(0.60629857, 1.7994332)
+
+[node name="Glow3" parent="." unique_id=406614207 instance=ExtResource("10_rfj36")]
+visibility_layer = 8
+layout_mode = 0
+offset_left = 415.0
+offset_top = 843.0
+offset_right = 683.81323
+offset_bottom = 939.42236
+scale = Vector2(0.57677215, 2.067148)
+
+[node name="Glow4" parent="." unique_id=1486605171 instance=ExtResource("10_rfj36")]
+visibility_layer = 8
+layout_mode = 0
+offset_left = 2378.0
+offset_top = 1305.0001
+offset_right = 2646.8132
+offset_bottom = 1401.4225
+scale = Vector2(0.57677215, 2.067148)
+
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_8m3pt")]
 unique_name_in_owner = true
 position = Vector2(189, 102)
@@ -305,17 +341,14 @@ scale = Vector2(0.29498744, 0.41389465)
 
 [node name="HealingWater" parent="." unique_id=1954191531 instance=ExtResource("9_i7p7m")]
 position = Vector2(1267, 155)
-player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(150, 70)
 
 [node name="HealingWater2" parent="." unique_id=560815328 instance=ExtResource("9_i7p7m")]
 position = Vector2(2446, 359)
-player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(150, 70)
 
 [node name="HealingWater3" parent="." unique_id=1424932910 instance=ExtResource("9_i7p7m")]
 position = Vector2(421, 770)
-player_aura_color = Color(0.72, 0.911, 1, 1)
 water_size = Vector2(190, 70)
 
 [node name="PlatformRedPipe2" parent="." unique_id=2088219178 instance=ExtResource("8_uu5oa")]

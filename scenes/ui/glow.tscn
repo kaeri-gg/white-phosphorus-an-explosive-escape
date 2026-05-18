@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dc735i8cdheva"]
+
+[ext_resource type="Script" uid="uid://cv8j2qxntrdme" path="res://scripts/components/glow.gd" id="1_glow"]
+
+[sub_resource type="Gradient" id="Gradient_8bbnc"]
+colors = PackedColorArray(0.45490196, 1, 0.8392157, 0.7058824, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uhxcu"]
+gradient = SubResource("Gradient_8bbnc")
+
+[node name="WaterGlow" type="TextureRect" unique_id=1602197464]
+offset_left = -91.99988
+offset_top = 72.00006
+offset_right = 164.00012
+offset_bottom = 198.00006
+rotation = -1.5707964
+scale = Vector2(0.5962503, 1.456879)
+texture = SubResource("GradientTexture1D_uhxcu")
+script = ExtResource("1_glow")
