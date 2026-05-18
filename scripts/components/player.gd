@@ -13,7 +13,7 @@ extends CharacterBody2D
 @export var PLAYER_HEALTH: int = 7
 
 ## Seconds between each -1 HP tick while the player is BURNING.
-@export var DAMAGE_INTERVAL: float = 1.5
+@export var DAMAGE_INTERVAL: float = 1.8
 
 @export_group("Camera")
 @export var camera_bounds: Rect2 = Rect2(0, 0, 1280, 720)
@@ -325,6 +325,19 @@ func die() -> void:
 
 	await _play_death_animation(state_before_death)
 	died.emit()
+
+func respawn() -> void:
+	is_dying = false
+	current_state = STATE.STABLE
+	env_state = ENV.AIR
+	current_health = PLAYER_HEALTH
+	visible = true
+	jump_count = 0
+	velocity = Vector2.ZERO
+	_stop_timers()
+	health_changed.emit(current_health, PLAYER_HEALTH)
+	state_change.emit(current_state)
+	_refresh_locomotion_animation(true)
 
 func _play_death_animation(prev_state: STATE) -> void:
 	
