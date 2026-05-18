@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="10_j1cpe"]
 [ext_resource type="PackedScene" uid="uid://dsq06ou0cfyhp" path="res://scenes/components/platforms/platform_white_metal_rope.tscn" id="11_8o2w1"]
 [ext_resource type="PackedScene" uid="uid://806n17y3wtct" path="res://scenes/components/platforms/platform_red_in_between_spring.tscn" id="11_sui0o"]
+[ext_resource type="PackedScene" uid="uid://dc735i8cdheva" path="res://scenes/ui/glow.tscn" id="14_uhxcu"]
 [ext_resource type="PackedScene" uid="uid://cx7l01ab2no5a" path="res://scenes/components/platforms/platform_white_tank.tscn" id="15_rqlq8"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="16_seqs6"]
 [ext_resource type="PackedScene" uid="uid://c0urvyqmpye0w" path="res://scenes/components/platforms/platform_red_4_way_connector.tscn" id="17_c3646"]
@@ -99,11 +100,26 @@ position = Vector2(1754, 20)
 dialog_text = "Be quick!"
 display_seconds = 3.0
 
+[node name="Glow" parent="." unique_id=1602197464 instance=ExtResource("14_uhxcu")]
+visibility_layer = 8
+layout_mode = 0
+offset_left = 1231.9703
+offset_top = 575.3916
+offset_right = 1500.7836
+offset_bottom = 690.0613
+
 [node name="Player" parent="." unique_id=1778542087 instance=ExtResource("5_bi505")]
 unique_name_in_owner = true
 position = Vector2(166.00002, 216.00002)
 scale = Vector2(0.08075058, 0.08075058)
 camera_bounds = Rect2(0, 0, 2750, 720)
+
+[node name="HealingWater" parent="." unique_id=629559690 instance=ExtResource("6_o0b03")]
+position = Vector2(1224, 493)
+player_aura_color = Color(0.8803339, 0.92246246, 0.31041858, 1)
+player_aura_width = 150.0
+player_aura_brightness = 3.0
+water_size = Vector2(180, 100)
 
 [node name="FactoryLeak" parent="." unique_id=319302397 instance=ExtResource("6_d10hc")]
 position = Vector2(425, 174)
@@ -204,10 +220,6 @@ position = Vector2(2501, 262)
 water_size = Vector2(150, 80)
 min_height = 0.0
 starts_full = false
-
-[node name="HealingWater" parent="." unique_id=629559690 instance=ExtResource("6_o0b03")]
-position = Vector2(1224, 493)
-water_size = Vector2(180, 100)
 
 [node name="PlatformWhiteTank" parent="." unique_id=1227335199 instance=ExtResource("15_rqlq8")]
 position = Vector2(159, 345)

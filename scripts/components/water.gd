@@ -73,6 +73,7 @@ func initiate_water() -> void:
 	var new_line: Line2D = Line2D.new()
 	new_line.width = surface_line_thickness
 	new_line.default_color = surface_color
+	new_line.antialiased = true
 	add_child(new_line)
 	surface_line = new_line
 
