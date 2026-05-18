@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://7nujl3prlruh"]
+[gd_scene format=3 uid="uid://ctbqbupl3rjjr"]
 
 [ext_resource type="Script" uid="uid://cf40kxf6qqxwu" path="res://scripts/components/respawn_point.gd" id="1_rsp01"]
+[ext_resource type="Theme" uid="uid://btntp57yl2wlh" path="res://theme/dialog-ingame.tres" id="2_theme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsp01"]
 size = Vector2(207, 44.5)
@@ -11,3 +12,33 @@ script = ExtResource("1_rsp01")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33939774]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_rsp01")
+
+[node name="ToastLayer" type="CanvasLayer" parent="." unique_id=100000001]
+
+[node name="ToastPanel" type="PanelContainer" parent="ToastLayer" unique_id=100000002]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_theme")
+
+[node name="MarginContainer" type="MarginContainer" parent="ToastLayer/ToastPanel" unique_id=100000003]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="ToastLayer/ToastPanel/MarginContainer" unique_id=100000004]
+layout_mode = 2
+text = "Checkpoint reached."
+horizontal_alignment = 1
+vertical_alignment = 1

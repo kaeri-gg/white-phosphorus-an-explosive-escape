@@ -42,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://4my5xlh4geah" path="res://scenes/components/platforms/platform_red_3_way_connector.tscn" id="32_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://c0urvyqmpye0w" path="res://scenes/components/platforms/platform_red_4_way_connector.tscn" id="34_lqu3g"]
 [ext_resource type="PackedScene" uid="uid://bfmwwmfs6owv2" path="res://scenes/components/platforms/platform_red_closing_pipe.tscn" id="40_1f6xj"]
-[ext_resource type="PackedScene" uid="uid://7nujl3prlruh" path="res://scenes/components/respawn_point.tscn" id="42_rfj36"]
+[ext_resource type="PackedScene" uid="uid://ctbqbupl3rjjr" path="res://scenes/components/respawn_point.tscn" id="42_rfj36"]
 
 [node name="Level_04" type="Control" unique_id=627543149]
 layout_mode = 3
@@ -341,14 +341,23 @@ scale = Vector2(0.29498744, 0.41389465)
 
 [node name="HealingWater" parent="." unique_id=1954191531 instance=ExtResource("9_i7p7m")]
 position = Vector2(1267, 155)
+player_aura_color = Color(0.8784314, 0.92156863, 0.30980393, 1)
+player_aura_width = 150.0
+player_aura_brightness = 3.0
 water_size = Vector2(150, 70)
 
 [node name="HealingWater2" parent="." unique_id=560815328 instance=ExtResource("9_i7p7m")]
 position = Vector2(2446, 359)
+player_aura_color = Color(0.8784314, 0.92156863, 0.30980393, 1)
+player_aura_width = 150.0
+player_aura_brightness = 3.0
 water_size = Vector2(150, 70)
 
 [node name="HealingWater3" parent="." unique_id=1424932910 instance=ExtResource("9_i7p7m")]
 position = Vector2(421, 770)
+player_aura_color = Color(0.8784314, 0.92156863, 0.30980393, 1)
+player_aura_width = 150.0
+player_aura_brightness = 3.0
 water_size = Vector2(190, 70)
 
 [node name="PlatformRedPipe2" parent="." unique_id=2088219178 instance=ExtResource("8_uu5oa")]
