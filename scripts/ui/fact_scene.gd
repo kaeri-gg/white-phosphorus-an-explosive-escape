@@ -6,17 +6,30 @@ extends Control
 @export var return_to_home: bool = false
 @export var return_to_home_delay: float = 5.0
 
+const DESIGN_SIZE := Vector2(1280.0, 720.0)
+
 var _comics: Array[Comic] = []
 var _next_screen: ActionButton
 var _auto_redirect_started: bool = false
 
 func _ready() -> void:
+	set_anchors_preset(Control.PRESET_TOP_LEFT)
+	size = DESIGN_SIZE
+	_fit_canvas()
+	get_viewport().size_changed.connect(_fit_canvas)
+
 	utils.fade_from_overlay(fade_duration)
 	_wire_button("NextScreen", next_scene_path)
 	_next_screen = get_node_or_null("%NextScreen")
 	if _next_screen:
 		_next_screen.visible = false
 	_start_comic_sequence()
+
+func _fit_canvas() -> void:
+	var vp := get_viewport_rect().size
+	var s := minf(vp.x / DESIGN_SIZE.x, vp.y / DESIGN_SIZE.y)
+	scale = Vector2(s, s)
+	position = (vp - DESIGN_SIZE * s) / 2.0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):

@@ -28,7 +28,6 @@ layout_mode = 1
 expand_mode = 3
 sequence = 1
 duration = 0.5
-transition = 3
 
 [node name="Comic2" parent="." unique_id=1818992608 instance=ExtResource("3_m2ymw")]
 visible = false
