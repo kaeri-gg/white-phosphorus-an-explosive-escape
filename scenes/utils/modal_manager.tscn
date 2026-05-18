@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/components/buttons/close_button.tscn" id="3_suqfr"]
 [ext_resource type="Script" uid="uid://dphgyew6ubpqt" path="res://scripts/components/tutorial_slider.gd" id="4_tsldr"]
 [ext_resource type="PackedScene" uid="uid://cso36dcmklv64" path="res://scenes/components/buttons/next_button.tscn" id="7_gshic"]
-[ext_resource type="VideoStream" uid="uid://c64lt4hq7ci48" path="res://assets/tutorial-gifs/move.ogv" id="7_v55si"]
-[ext_resource type="VideoStream" uid="uid://d0k3rcw4vq3qh" path="res://assets/tutorial-gifs/jump.ogv" id="8_djhx4"]
-[ext_resource type="VideoStream" uid="uid://crulq10wmtyer" path="res://assets/tutorial-gifs/interact.ogv" id="9_gnpw1"]
+[ext_resource type="VideoStream" path="res://assets/tutorial/move.ogv" id="8_p7f57"]
+[ext_resource type="VideoStream" path="res://assets/tutorial/jump.ogv" id="9_p7f57"]
+[ext_resource type="VideoStream" path="res://assets/tutorial/interact.ogv" id="10_p7f57"]
 [ext_resource type="PackedScene" uid="uid://bdlenntj6uj4v" path="res://scenes/components/buttons/prev_button.tscn" id="10_prevb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtb06"]
@@ -64,6 +64,7 @@ grow_vertical = 2
 
 [node name="Settings" type="PanelContainer" parent="MarginContainer" unique_id=2042132751]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
@@ -334,7 +335,6 @@ autowrap_mode = 2
 
 [node name="Tutorial" type="PanelContainer" parent="MarginContainer" unique_id=1454227463]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme = ExtResource("1_582tx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qtb06")
@@ -391,7 +391,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 audio_track = 1
-stream = ExtResource("7_v55si")
+stream = ExtResource("8_p7f57")
 autoplay = true
 expand = true
 loop = true
@@ -405,7 +405,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("8_djhx4")
+stream = ExtResource("9_p7f57")
 autoplay = true
 expand = true
 loop = true
@@ -419,7 +419,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("9_gnpw1")
+stream = ExtResource("10_p7f57")
 autoplay = true
 expand = true
 loop = true
