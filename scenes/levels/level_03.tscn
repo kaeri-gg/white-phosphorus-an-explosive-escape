@@ -97,7 +97,7 @@ dialog_text = "...but the glowing blue phosphoric acid helps me recover!"
 
 [node name="PlayerDialog3" parent="." unique_id=1949857627 instance=ExtResource("5_an42a")]
 position = Vector2(1754, 20)
-dialog_text = "Be quick and careful!"
+dialog_text = "Be quick!"
 display_seconds = 3.0
 
 [node name="Glow" parent="." unique_id=1602197464 instance=ExtResource("14_uhxcu")]
