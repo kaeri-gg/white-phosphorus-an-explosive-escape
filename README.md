@@ -167,8 +167,8 @@ This project is licensed under the **MIT License**.
 
 ### Sounds Management
 
-- **Lead Manager**: Kathleen Povadora
-- **Contributors**: Anna Arsenina, Liu Qianying
+- **Lead Manager**: Liu Qianying, Kathleen Povadora
+- **Contributors**: Anna Arsenina
 
 ### Narrative
 
