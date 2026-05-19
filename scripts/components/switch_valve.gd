@@ -37,6 +37,7 @@ const _SWITCH_GROUP := "switch_valve"
 
 var has_transferred: bool = false
 var is_transferring: bool = false
+var _transfer_generation: int = 0
 
 var current_player: Player
 
@@ -101,6 +102,7 @@ func _on_player_pressed_switch() -> void:
 
 func _start_water_transfer() -> void:
 	is_transferring = true
+	var gen := _transfer_generation
 
 	if source_water:
 		source_water.animate_fill(source_water.min_height, transfer_duration)
@@ -108,8 +110,19 @@ func _start_water_transfer() -> void:
 
 	await get_tree().create_timer(transfer_duration).timeout
 
+	if gen != _transfer_generation:
+		return
 	has_transferred = true
 	is_transferring = false
+
+func reset() -> void:
+	_transfer_generation += 1
+	has_transferred = false
+	is_transferring = false
+	switch_sprite.play("idle")
+	if current_player != null:
+		_set_prompt_visible(true)
+		_update_prompt_position()
 
 func _set_current_player(player: Player) -> void:
 	if current_player == player:

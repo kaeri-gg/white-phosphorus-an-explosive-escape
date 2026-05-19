@@ -42,5 +42,15 @@ func _on_player_died() -> void:
 	await get_tree().create_timer(0.3).timeout
 	await utils.fade_to_black(self, 1.0)
 	player.global_position = _respawn_position
+	_reset_obstacles()
 	player.respawn()
 	utils.fade_from_overlay(fade_duration)
+
+func _reset_obstacles() -> void:
+	for obstacle in get_tree().get_nodes_in_group("burnable_obstacles"):
+		if obstacle is BurnableObstacle:
+			obstacle.reset()
+	for valve in get_tree().get_nodes_in_group("switch_valve"):
+		valve.reset()
+	for water in get_tree().get_nodes_in_group("water_nodes"):
+		water.reset()
