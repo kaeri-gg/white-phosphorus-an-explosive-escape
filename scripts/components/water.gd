@@ -57,8 +57,10 @@ func _ready() -> void:
 	initiate_water()
 	_anchor_bottom_y = global_position.y + surface_pos_y + water_size.y
 
-	if not starts_full and not Engine.is_editor_hint():
-		set_water_fill_height(min_height)
+	if not Engine.is_editor_hint():
+		add_to_group("water_nodes")
+		if not starts_full:
+			set_water_fill_height(min_height)
 	
 func initiate_water() -> void:
 	segment_data.clear()
@@ -229,3 +231,8 @@ func is_full() -> bool:
 
 func is_empty() -> bool:
 	return not is_animating() and water_size.y <= min_height + 0.01
+
+func reset() -> void:
+	if _fill_tween and _fill_tween.is_running():
+		_fill_tween.kill()
+	set_water_fill_height(max_height if starts_full else min_height)

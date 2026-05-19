@@ -12,6 +12,7 @@ var _damage_timer: Timer
 var _victim: Player
 
 func _ready() -> void:
+	add_to_group("burnable_obstacles")
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
@@ -98,3 +99,10 @@ func _play_explode_if_present() -> void:
 	var sprite := get_node_or_null("Sprite2D") as AnimatedSprite2D
 	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("explode"):
 		sprite.play("explode")
+
+func reset() -> void:
+	_detonated = false
+	_stop_damage_cycle()
+	var sprite := get_node_or_null("Sprite2D") as AnimatedSprite2D
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("default"):
+		sprite.play("default")
