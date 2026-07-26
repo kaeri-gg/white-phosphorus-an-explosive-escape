@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_t0hvh"]
 [ext_resource type="Texture2D" uid="uid://opf1cma7bwrq" path="res://assets/backgrounds/level-backgrounds/Background 1.png" id="2_uujh0"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="3_2djvx"]
-[ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_lswbx"]
+[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/ui/health_ui.tscn" id="3_lswbx"]
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_lswbx"]
 [ext_resource type="Theme" uid="uid://cy8ugc4yhgvxv" path="res://theme/facts_panel_bg.tres" id="5_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_w4kkx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="8_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_w4kkx"]
 [ext_resource type="FontFile" uid="uid://cq20jyx8gbygk" path="res://assets/fonts/ShantellSans-SemiBold.ttf" id="9_uujh0"]
+[ext_resource type="PackedScene" uid="uid://dpbsrkykqe4eb" path="res://scenes/ui/mobile_controls.tscn" id="10_3t34l"]
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/ui/killzone.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://bucepi4j07dk3" path="res://scenes/components/platforms/platform_blue_tank.tscn" id="11_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://u0rg4oghphj4" path="res://scenes/components/platforms/platform_gray_pipe.tscn" id="13_tyxjt"]
@@ -127,6 +128,8 @@ text = "Press <A>, <W>, <S>, and <D> for movement."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="MobileControls" parent="UILayer" unique_id=422772719 instance=ExtResource("10_3t34l")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_w4kkx")]
 position = Vector2(171, 250)
