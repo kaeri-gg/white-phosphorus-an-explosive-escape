@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpbsrkykqe4eb"]
 
 [ext_resource type="Script" uid="uid://c2b1nhst2klt3" path="res://scripts/ui/virtual_joystick.gd" id="1_vjoys"]
+[ext_resource type="Script" path="res://scripts/ui/mobile_controls.gd" id="2_mctrl"]
 [ext_resource type="Texture2D" uid="uid://br6us17n7igcn" path="res://assets/ui/buttons/icons_jump idle.png" id="1_wj250"]
 [ext_resource type="Texture2D" uid="uid://tgq8cat7cv6j" path="res://assets/ui/buttons/icons_jump active.png" id="2_n4yal"]
 [ext_resource type="Texture2D" uid="uid://cdmss3l0x3t8n" path="res://assets/ui/buttons/icons_interact idle.png" id="3_0epx4"]
@@ -19,6 +20,7 @@ size = Vector2(140, 140)
 
 [node name="MobileControls" type="CanvasLayer" unique_id=422772719]
 layer = 10
+script = ExtResource("2_mctrl")
 
 [node name="GridContainer" type="HBoxContainer" parent="." unique_id=473923551]
 anchors_preset = 15
@@ -55,8 +57,21 @@ size_flags_vertical = 8
 theme_override_constants/h_separation = 80
 columns = 2
 
+[node name="InteractContainer" type="MarginContainer" parent="GridContainer/VBoxContainer" unique_id=1115587786]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Interact" type="TouchScreenButton" parent="GridContainer/VBoxContainer/InteractContainer" unique_id=1742220626]
+texture_normal = ExtResource("3_0epx4")
+texture_pressed = ExtResource("4_0ogjs")
+shape = SubResource("RectangleShape2D_6mp5l")
+action = "press_e_to_interact"
+visibility_mode = 1
+
 [node name="JumpContainer" type="MarginContainer" parent="GridContainer/VBoxContainer" unique_id=1488926377]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -66,20 +81,6 @@ texture_normal = ExtResource("1_wj250")
 texture_pressed = ExtResource("2_n4yal")
 shape = SubResource("RectangleShape2D_6mp5l")
 action = "jump"
-visibility_mode = 1
-
-[node name="InteractContainer" type="MarginContainer" parent="GridContainer/VBoxContainer" unique_id=1115587786]
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-
-[node name="Interact" type="TouchScreenButton" parent="GridContainer/VBoxContainer/InteractContainer" unique_id=1742220626]
-position = Vector2(0, -4)
-texture_normal = ExtResource("3_0epx4")
-texture_pressed = ExtResource("4_0ogjs")
-shape = SubResource("RectangleShape2D_6mp5l")
-action = "press_e_to_interact"
 visibility_mode = 1
 
 [node name="Joystick" type="Control" parent="." unique_id=764277612]
