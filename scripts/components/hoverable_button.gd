@@ -27,8 +27,7 @@ func _ready() -> void:
 	_setup()
 
 static func _is_touch_device() -> bool:
-	return DisplayServer.is_touchscreen_available() \
-		or OS.has_feature("mobile") \
+	return OS.has_feature("mobile") \
 		or OS.has_feature("web_android") \
 		or OS.has_feature("web_ios")
 
