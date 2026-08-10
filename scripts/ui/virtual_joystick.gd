@@ -1,8 +1,9 @@
 extends Control
 
-## Dynamic virtual joystick.
-## Spawns at the first touch inside its active zone, tracks that single
-## finger, and drives Input actions with analog strength so
+## Floating virtual joystick.
+## Shows a dim resting hint at the bottom-left, then teleports its base
+## to the first touch inside the active zone, tracks that single finger,
+## and drives Input actions with analog strength so
 ## `Input.get_axis(negative_action, positive_action)` returns [-1, 1].
 
 enum ActiveSide { LEFT, RIGHT, ANY }
@@ -16,17 +17,30 @@ enum ActiveSide { LEFT, RIGHT, ANY }
 ## Pixels from the top of the screen where joystick touches are ignored,
 ## so top-anchored UI (Home/Restart/Help) stays clickable.
 @export var top_exclusion_height: float = 180.0
+## Distance from the bottom-left corner where the resting hint sits.
+@export var rest_padding: Vector2 = Vector2(140.0, 140.0)
+## Alpha multiplier applied to base/knob colors when idle, so the hint
+## reads as a suggestion rather than an active control.
+@export_range(0.0, 1.0) var rest_alpha: float = 0.55
 @export var base_color: Color = Color(1, 1, 1, 0.20)
 @export var knob_color: Color = Color(1, 1, 1, 0.70)
 
 var _touch_index: int = -1
 var _base_pos: Vector2 = Vector2.ZERO
 var _knob_pos: Vector2 = Vector2.ZERO
+var _rest_pos: Vector2 = Vector2.ZERO
 var _active: bool = false
 
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	resized.connect(_update_rest_pos)
+	_update_rest_pos()
+
+
+func _update_rest_pos() -> void:
+	_rest_pos = Vector2(rest_padding.x, size.y - rest_padding.y)
+	queue_redraw()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -99,8 +113,14 @@ func _in_active_zone(local_pos: Vector2) -> bool:
 
 
 func _draw() -> void:
-	if not _active:
-		return
-	draw_circle(_base_pos, base_radius, base_color)
-	draw_arc(_base_pos, base_radius, 0.0, TAU, 48, Color(knob_color, 0.5), 2.0, true)
-	draw_circle(_knob_pos, knob_radius, knob_color)
+	if _active:
+		draw_circle(_base_pos, base_radius, base_color)
+		draw_arc(_base_pos, base_radius, 0.0, TAU, 48, Color(knob_color, 0.5), 2.0, true)
+		draw_circle(_knob_pos, knob_radius, knob_color)
+	else:
+		var hint_base := Color(base_color, base_color.a * rest_alpha)
+		var hint_ring := Color(knob_color, knob_color.a * rest_alpha * 0.6)
+		var hint_nub := Color(knob_color, knob_color.a * rest_alpha)
+		draw_circle(_rest_pos, base_radius, hint_base)
+		draw_arc(_rest_pos, base_radius, 0.0, TAU, 48, hint_ring, 2.0, true)
+		draw_circle(_rest_pos, knob_radius * 0.6, hint_nub)
