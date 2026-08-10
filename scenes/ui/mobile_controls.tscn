@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dpbsrkykqe4eb"]
+[gd_scene load_steps=4 format=3 uid="uid://dpbsrkykqe4eb"]
+
+[ext_resource type="Script" path="res://scripts/ui/virtual_joystick.gd" id="1_vjoys"]
 
 [sub_resource type="Gradient" id="Gradient_6mp5l"]
 colors = PackedColorArray(0.15487596, 0.154876, 0.1548759, 0.85490197, 1, 1, 1, 0.96862745)
@@ -24,6 +26,8 @@ theme_override_constants/separation = 4
 alignment = 1
 
 [node name="Left" type="TouchScreenButton" parent="GridContainer" unique_id=784609648]
+process_mode = 4
+visible = false
 position = Vector2(1005, 586)
 texture_normal = SubResource("GradientTexture2D_50iic")
 shape = SubResource("RectangleShape2D_6mp5l")
@@ -31,6 +35,8 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="GridContainer" unique_id=826661659]
+process_mode = 4
+visible = false
 position = Vector2(1147, 586)
 texture_normal = SubResource("GradientTexture2D_50iic")
 shape = SubResource("RectangleShape2D_6mp5l")
@@ -50,3 +56,12 @@ texture_normal = SubResource("GradientTexture2D_50iic")
 shape = SubResource("RectangleShape2D_6mp5l")
 action = "press_e_to_interact"
 visibility_mode = 1
+
+[node name="Joystick" type="Control" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vjoys")
