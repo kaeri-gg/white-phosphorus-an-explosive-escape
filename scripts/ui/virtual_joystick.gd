@@ -13,6 +13,9 @@ enum ActiveSide { LEFT, RIGHT, ANY }
 @export_range(20.0, 300.0) var base_radius: float = 90.0
 @export_range(10.0, 200.0) var knob_radius: float = 45.0
 @export_range(0.0, 0.9) var deadzone: float = 0.15
+## Pixels from the top of the screen where joystick touches are ignored,
+## so top-anchored UI (Home/Restart/Help) stays clickable.
+@export var top_exclusion_height: float = 180.0
 @export var base_color: Color = Color(1, 1, 1, 0.20)
 @export var knob_color: Color = Color(1, 1, 1, 0.70)
 
@@ -84,6 +87,8 @@ func _release() -> void:
 
 
 func _in_active_zone(local_pos: Vector2) -> bool:
+	if local_pos.y < top_exclusion_height:
+		return false
 	match active_side:
 		ActiveSide.LEFT:
 			return local_pos.x < size.x * 0.5
