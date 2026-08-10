@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_mf6hd"]
 [ext_resource type="Texture2D" uid="uid://dm1muq18cpqgo" path="res://assets/backgrounds/level-backgrounds/Background 4 pt1.png" id="2_6m61h"]
 [ext_resource type="Texture2D" uid="uid://d2oglbitgw4o" path="res://assets/backgrounds/level-backgrounds/Background 4 pt2.png" id="3_6m61h"]
-[ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="4_6m61h"]
+[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/ui/health_ui.tscn" id="4_6m61h"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_47boq"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="5_8m3pt"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="6_1f6xj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dddcusc6ftupx" path="res://scenes/ui/killzone.tscn" id="6_vwuh2"]
 [ext_resource type="PackedScene" uid="uid://cgu7hy70ikxv3" path="res://scenes/ui/factory_leak.tscn" id="7_maafn"]
 [ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="7_rfj36"]
+[ext_resource type="PackedScene" uid="uid://dpbsrkykqe4eb" path="res://scenes/ui/mobile_controls.tscn" id="8_b03hd"]
 [ext_resource type="PackedScene" uid="uid://da5nksoow0a2v" path="res://scenes/components/platforms/platform_red_pipe.tscn" id="8_uu5oa"]
 [ext_resource type="PackedScene" uid="uid://cid873k1mkag8" path="res://scenes/ui/healing_water.tscn" id="9_i7p7m"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="9_uxfkd"]
@@ -98,6 +99,8 @@ layout_mode = 2
 [node name="HelpButton" parent="UILayer/ButtonsContainer" unique_id=1660615535 instance=ExtResource("7_rfj36")]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+
+[node name="MobileControls" parent="UILayer" unique_id=422772719 instance=ExtResource("8_b03hd")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("6_1f6xj")]
 position = Vector2(20, 174)

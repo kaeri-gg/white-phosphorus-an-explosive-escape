@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dud4qwwwegxob" path="res://scripts/levels/level.gd" id="1_v5pqk"]
 [ext_resource type="Texture2D" uid="uid://dt25dvc4p2gcf" path="res://assets/backgrounds/level-backgrounds/Background 2.png" id="2_xwa1x"]
-[ext_resource type="PackedScene" path="res://scenes/ui/health_ui.tscn" id="3_gus8w"]
+[ext_resource type="PackedScene" uid="uid://bh4bd54l0sml0" path="res://scenes/ui/health_ui.tscn" id="3_gus8w"]
 [ext_resource type="PackedScene" uid="uid://dg2qg7kh4yw2b" path="res://scenes/components/buttons/home_button.tscn" id="4_lky54"]
 [ext_resource type="PackedScene" uid="uid://bqkoavunp5sgc" path="res://scenes/ui/player_dialog.tscn" id="5_gus8w"]
 [ext_resource type="PackedScene" uid="uid://csniui1kkt7wx" path="res://scenes/components/buttons/restart_button.tscn" id="5_xwa1x"]
 [ext_resource type="PackedScene" uid="uid://dpq0ey7mrjroo" path="res://scenes/components/player.tscn" id="6_kx1rr"]
 [ext_resource type="PackedScene" uid="uid://87opharrxjhj" path="res://scenes/components/buttons/help_button.tscn" id="6_xwa1x"]
+[ext_resource type="PackedScene" uid="uid://dpbsrkykqe4eb" path="res://scenes/ui/mobile_controls.tscn" id="7_6ms8u"]
 [ext_resource type="PackedScene" uid="uid://w0nrlt3rayl3" path="res://scenes/ui/water.tscn" id="7_kx1rr"]
 [ext_resource type="Texture2D" uid="uid://7ody5gnpejla" path="res://assets/platforms/Concrete floor.png" id="8_xwa1x"]
 [ext_resource type="PackedScene" uid="uid://n58h4ax3xvsn" path="res://scenes/components/platforms/no_collision_pipe.tscn" id="9_6ms8u"]
@@ -79,6 +80,8 @@ layout_mode = 2
 [node name="HelpButton" parent="UILayer/ButtonsContainer" unique_id=1573107538 instance=ExtResource("6_xwa1x")]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 2
+
+[node name="MobileControls" parent="UILayer" unique_id=422772719 instance=ExtResource("7_6ms8u")]
 
 [node name="PlayerDialog" parent="." unique_id=44206821 instance=ExtResource("5_gus8w")]
 position = Vector2(27, 321)
