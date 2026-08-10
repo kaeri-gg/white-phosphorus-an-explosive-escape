@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpbsrkykqe4eb"]
+[gd_scene format=3 uid="uid://dpbsrkykqe4eb"]
 
-[ext_resource type="Script" path="res://scripts/ui/virtual_joystick.gd" id="1_vjoys"]
+[ext_resource type="Script" uid="uid://c2b1nhst2klt3" path="res://scripts/ui/virtual_joystick.gd" id="1_vjoys"]
+[ext_resource type="Texture2D" uid="uid://br6us17n7igcn" path="res://assets/ui/buttons/icons_jump idle.png" id="1_wj250"]
+[ext_resource type="Texture2D" uid="uid://tgq8cat7cv6j" path="res://assets/ui/buttons/icons_jump active.png" id="2_n4yal"]
+[ext_resource type="Texture2D" uid="uid://cdmss3l0x3t8n" path="res://assets/ui/buttons/icons_interact idle.png" id="3_0epx4"]
+[ext_resource type="Texture2D" uid="uid://cnrcc87rl1hen" path="res://assets/ui/buttons/icons_interact active.png" id="4_0ogjs"]
 
 [sub_resource type="Gradient" id="Gradient_6mp5l"]
 colors = PackedColorArray(0.15487596, 0.154876, 0.1548759, 0.85490197, 1, 1, 1, 0.96862745)
@@ -43,21 +47,43 @@ shape = SubResource("RectangleShape2D_6mp5l")
 action = "move_right"
 visibility_mode = 1
 
-[node name="Jump" type="TouchScreenButton" parent="GridContainer" unique_id=1678011329]
-position = Vector2(1077, 483)
-texture_normal = SubResource("GradientTexture2D_50iic")
+[node name="VBoxContainer" type="GridContainer" parent="GridContainer" unique_id=1911792458]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_constants/h_separation = 80
+columns = 2
+
+[node name="JumpContainer" type="MarginContainer" parent="GridContainer/VBoxContainer" unique_id=1488926377]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Jump" type="TouchScreenButton" parent="GridContainer/VBoxContainer/JumpContainer" unique_id=1678011329]
+texture_normal = ExtResource("1_wj250")
+texture_pressed = ExtResource("2_n4yal")
 shape = SubResource("RectangleShape2D_6mp5l")
 action = "jump"
 visibility_mode = 1
 
-[node name="Interact" type="TouchScreenButton" parent="GridContainer" unique_id=1742220626]
-position = Vector2(79, 582)
-texture_normal = SubResource("GradientTexture2D_50iic")
+[node name="InteractContainer" type="MarginContainer" parent="GridContainer/VBoxContainer" unique_id=1115587786]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Interact" type="TouchScreenButton" parent="GridContainer/VBoxContainer/InteractContainer" unique_id=1742220626]
+position = Vector2(0, -4)
+texture_normal = ExtResource("3_0epx4")
+texture_pressed = ExtResource("4_0ogjs")
 shape = SubResource("RectangleShape2D_6mp5l")
 action = "press_e_to_interact"
 visibility_mode = 1
 
-[node name="Joystick" type="Control" parent="."]
+[node name="Joystick" type="Control" parent="." unique_id=764277612]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
