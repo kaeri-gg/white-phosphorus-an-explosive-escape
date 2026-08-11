@@ -39,6 +39,8 @@ func _expand_inner_margin_to_fill() -> void:
 	margin.anchor_bottom = 1.0
 	margin.offset_right = 0.0
 	margin.offset_bottom = 0.0
+	margin.add_theme_constant_override("margin_left", 0)
+	margin.add_theme_constant_override("margin_right", 0)
 
 ## Override to do extra setup after the inner button is wired.
 func _setup() -> void:
