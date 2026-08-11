@@ -43,11 +43,12 @@ func _update_rest_pos() -> void:
 	queue_redraw()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		_handle_touch(event)
 	elif event is InputEventScreenDrag and event.index == _touch_index:
 		_update_knob((event.position - global_position))
+		get_viewport().set_input_as_handled()
 
 
 func _handle_touch(event: InputEventScreenTouch) -> void:
