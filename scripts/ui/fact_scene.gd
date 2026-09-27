@@ -32,12 +32,20 @@ func _fit_canvas() -> void:
 	position = (vp - DESIGN_SIZE * s) / 2.0
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not _wants_advance(event):
+		return
+	for comic in _comics:
+		if not comic.visible:
+			comic.fade_in()
+			_check_sequence_complete()
+			break
+
+func _wants_advance(event: InputEvent) -> bool:
 	if event.is_action_pressed("ui_accept"):
-		for comic in _comics:
-			if not comic.visible:
-				comic.fade_in()
-				_check_sequence_complete()
-				break
+		return true
+	if event is InputEventScreenTouch and event.pressed:
+		return true
+	return false
 
 func _start_comic_sequence() -> void:
 	for child in get_children():

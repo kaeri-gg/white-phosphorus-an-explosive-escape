@@ -159,6 +159,7 @@ func _physics_process(_delta: float) -> void:
 			player_sprite.play(jump_anim)
 		jump_count += 1
 		sound_manager.play("Jump")
+		Input.vibrate_handheld(30)
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("move_left", "move_right")

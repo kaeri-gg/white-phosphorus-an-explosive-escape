@@ -49,6 +49,7 @@ func update_health_display(current: int, _max_hp: int) -> void:
 func trigger_negative_feedback() -> void:
 	flash_screen()
 	shake_camera()
+	Input.vibrate_handheld(60, 0.8)
 
 func flash_screen() -> void:
 	var mat := damage_flash.material as ShaderMaterial
