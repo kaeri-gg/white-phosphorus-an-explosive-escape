@@ -1,2 +1,25 @@
-# Normalize EOL for all files that Git considers text files.
+# Normalize EOL on every OS. Godot writes LF; Windows autocrlf would otherwise
+# make every .import / .tscn / .tres look modified on one machine.
 * text=auto eol=lf
+
+# Godot text resources: be explicit so a stray autocrlf setting can't win.
+*.import  text eol=lf
+*.tscn    text eol=lf
+*.tres    text eol=lf
+*.gd      text eol=lf
+*.godot   text eol=lf
+*.cfg     text eol=lf
+*.uid     text eol=lf
+
+# Binary assets: never touch.
+*.png  binary
+*.jpg  binary
+*.webp binary
+*.svg  text eol=lf
+*.ogg  binary
+*.ogv  binary
+*.mp3  binary
+*.wav  binary
+*.ttf  binary
+*.otf  binary
+*.woff2 binary

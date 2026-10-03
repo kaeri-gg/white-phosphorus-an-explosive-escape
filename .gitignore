@@ -12,3 +12,9 @@ release/
 
 *.md
 !README.md
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
