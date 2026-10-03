@@ -1,0 +1,23 @@
+Upgrading Godot for this project
+================================
+One version is pinned in .godot-version (CI and the local guard both read it).
+Godot cannot reliably run one project on two different editor minor versions:
+a newer editor rewrites .import/.tscn/project.godot in a format older editors
+may refuse or silently downgrade. So the rule is: everyone is on the pin, and
+the pin moves for everyone at once.
+
+To upgrade (do on ONE machine, in its own branch):
+ 1. Install the new editor + export templates.
+ 2. Edit .godot-version  (e.g. 4.7-stable)   <- CI picks it up automatically.
+ 3. Open the project; let it re-import and resave. Run:
+      godot --headless --path . --import   (twice)
+ 4. Review `git diff --stat`: expect .import, some .tscn/.tres, project.godot
+    (config/features). Test-play, export for Web.
+ 5. Commit EVERYTHING together (pin + rewritten files) in one commit/PR.
+ 6. On the other machines: update Godot first, THEN pull. Never open the new
+    commit with the old editor.
+
+Until the MacBook is updated: stay on the previous commit/branch there, or
+just don't open the project. `tools/check_godot_version.sh` tells you if the
+editor and pin disagree; enable the commit guard with
+    git config core.hooksPath tools/hooks
