@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Block commits of editor-generated files when the local editor isn't the pinned version.
+# Enable once per clone:  git config core.hooksPath tools/hooks
+staged=$(git diff --cached --name-only | grep -E '\.(import|tscn|tres|godot)$|^project\.godot$')
+[ -z "$staged" ] && exit 0
+# Allow the commit that bumps the pin itself.
+git diff --cached --name-only | grep -qx '.godot-version' && exit 0
+bash "$(git rev-parse --show-toplevel)/tools/check_godot_version.sh" || {
+  echo "Commit blocked: staged Godot files were likely written by a different editor version."
+  echo "Bypass knowingly with: git commit --no-verify"; exit 1; }

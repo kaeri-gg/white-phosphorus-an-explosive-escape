@@ -22,6 +22,7 @@ A web-based small 2D platformer about a phosphorus character who survives in wat
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Running the Project](#running-the-project)
+- [Godot version](#godot-version)
 - [Building the Game](#building-the-game)
   - [Web Build (HTML5)](#web-build-html5)
 - [License](#license)
@@ -96,7 +97,7 @@ This game was created as a safe and enjoyable way for students and players to le
 
 ### Prerequisites
 
-- [Godot Engine **4.6**](https://godotengine.org/download) (Standard or .NET — Standard is sufficient since the project uses GDScript)
+- [Godot Engine **4.6**](https://godotengine.org/download) — the exact version is pinned in [`.godot-version`](.godot-version); see [Godot version](#godot-version). (Standard is sufficient since the project uses GDScript)
 - Git
 
 ### Running the Project
@@ -110,6 +111,22 @@ cd white-phosphorus-an-explosive-escape
 2. Click **Import**, navigate to the cloned folder, and select `project.godot`.
 3. Once the project loads, press **F5** (or the ▶ button) to run.
 
+## Godot version
+
+This project is pinned to **Godot 4.6-stable** (see [`.godot-version`](.godot-version)). That file is the
+single source of truth: CI reads it and the local guard compares your editor against it.
+
+Use exactly that version. Godot can't safely run one project on two editor versions: a newer editor
+rewrites `.import`, `.tscn`, `.tres` and `project.godot` in its own format, and an older one may refuse them or
+silently rewrite them back, which shows up as endless `.import` changes in Git.
+
+- **Check your editor:** `bash tools/check_godot_version.sh`
+- **Block wrong-version commits (once per clone):** `git config core.hooksPath tools/hooks`
+- **Upgrading Godot:** follow [`UPGRADING_GODOT.txt`](UPGRADING_GODOT.txt) - bump `.godot-version`, re-import on one
+  machine, commit everything together, then update Godot on your other machines *before* pulling.
+- **Not updated yet on another machine?** Don't open the new commit with the old editor; stay on the previous
+  commit until you've installed the pinned version.
+
 ## Building the Game
 
 The project ships with a pre-configured **Web** export preset that outputs to `release/index.html`.
@@ -117,7 +134,7 @@ The project ships with a pre-configured **Web** export preset that outputs to `r
 ### Web Build (HTML5)
 
 1. In the Godot editor, open **Project → Export…**.
-2. The preset `White Phosphorus: An Explosive Escape (Web)` is already set up.
+2. The preset `White Phosphorus: An Explosive Escape` is already set up.
 3. If prompted, install the matching **Export Templates** for Godot 4.6 (**Editor → Manage Export Templates…**).
 4. Click **Export Project…**, choose an output folder (e.g. `release/`), and uncheck **Export With Debug** for a production build.
 5. Godot will produce `index.html`, `.wasm`, `.pck`, and supporting files.
@@ -128,7 +145,7 @@ You can also export from the command line:
 godot --headless --export-release "White Phosphorus: An Explosive Escape" release/index.html
 ```
 
-> The web build requires the page to be served over HTTP(S) with cross-origin isolation headers (`Cross-Origin-Opener-Policy: same-origin`, `Cross-Origin-Embedder-Policy: require-corp`). Opening `index.html` directly from the filesystem will not work.
+> The web build is single-threaded (no cross-origin isolation headers needed), but it must be served over HTTP(S): opening `index.html` directly from the filesystem will not work.
 
 For local testing:
 
